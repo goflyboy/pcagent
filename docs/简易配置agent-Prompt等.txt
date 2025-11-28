@@ -1,0 +1,665 @@
+
+根据配置人员的，规划的任务列表如下：
+1、标书配置需求识别
+2、原始规格需求解析为标准规格需求
+3、按标准规格需求进行产品选型
+4、对选中产品进行参数配置
+
+
+
+开始进行标书配置需求识别
+
+ 
+完成标书配置需求识别，配置需求如下：
+  xxx
+  xxxx
+ 
+
+1、标书配置需求识别
+2、标书规格需求解析为标准规格需求
+3、按标准规格需求进行产品选型
+4、对选中产品进行参数配置
+
+开始进行原始规格需求解析为标准规格需求
+正在调用产品本体规格需求解析服务，输入...
+正在调用产品本体规格需求解析服务，输入...
+
+完成原始规格需求解析，结果如下：
+ 需求号： 原始规格需求    标准规格需求
+
+
+1、标书配置需求识别
+2、标书规格需求解析为标准规格需求
+3、按标准规格需求进行产品选型
+4、对选中产品进行参数配置
+
+开始按标准规格需求进行产品选型
+分解的子任务为：
+--调用本体服务获取产品列表
+--调用本体服务获取指定产品的规格列表
+--计算每个产品的规格匹配度
+--根据配置策略和规格匹配度进行产品排序
+--挑选目标产品
+
+--调用本体服务获取产品列表
+
+
+--根据配置策略和规格匹配度进行产品排序
+ --计算公式为：
+
+
+1、标书配置需求识别
+2、标书规格需求解析为标准规格需求
+3、按标准规格需求进行产品选型
+4、对选中产品进行参数配置
+
+开始对选中产品进行参数配置
+分解的子任务为：
+--调用本体服务获取产品参数列表
+--调用本体服务获取配置规则列表
+--按参数依赖图,对每个参数进行配置
+----进行参数进行配置，根据规格需求，xxx ,
+
+--调用配置算法进行校验检查
+
+
+ 
+完成整体配置的
+
+原始标书需求为：
+
+识别后配置需求：
+
+完成配置结果为：
+
+
+
+任务规划？  
+
+TODO：显示console版，然后再试文字版---让龙哥搞一下这个？
+
+
+
+
+
+userInput
+
+一、
+标书识别   
+
+  语义理解和意图识别
+请按下列要求实现一个BidParser，请调通他：
+
+#一、Prompt模版
+假设你是一名标书解析专家，请根据用户的输入{userInput}来解析标书，要求如下：
+
+1、解析要求：
+--产品系列仅是例举的清单，清单有{productSerials}，否则输出为空""
+--总套数也是有明确要求，否则给出说明totalQuantityMemo（例如：没有明确指定说明，默认值配置1套）
+--规格项拆分原则：按分割符拆分
+--配置策略，根据用户的诉求推理策略，默认PRICE_MIN_PRIORITY
+一
+2、输出两种格式，
+2.1 输出为格式json 
+class ConfigReq{ //配置需求
+ String productSerial;//产品系列
+ int totalQuantity;//总套数
+ List<String> specReqItems;//规格需求项
+ ConfigStrategy configStrategy;//配置策略    
+ String totalQuantityMemo;//总套数
+}
+
+enum ConfigStrategy{
+	PRICE_MIN_PRIORITY,//目录价最小优先，默认最新
+    TECH_MAX_PRIORITY, //技术最大优先对
+}
+ 
+
+##二、典型输入：
+productSerials:
+ONU,电脑，服务器，路由器 
+
+userInput:
+	我有一名高端客户，需要建立数据中心，要求如下：
+	数据中心服务器 500台
+	1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
+	2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
+	3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+
+##三计算要求
+
+##2.1 后端要求：
+1、访问大模型使用Spring AI，支持deepseek和Qinwen两个模型访问
+2、使用Jdk21，使用pom工程
+3、第三方库版本
+        <freemarker.version>2.3.33</freemarker.version>
+        <lombok.version>1.18.36</lombok.version>
+        <guava.version>33.1.0-jre</guava.version>
+        <jackson.version>2.17.0</jackson.version>
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+        <slf4j.version>2.0.16</slf4j.version>
+        <spring.version>5.3.39</spring.version>
+
+数据中心服务器 10套 
+1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
+2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
+3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+
+
+我有一名高端客户，需要建立数据中心，要求如下：
+数据中心服务器 500台
+1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
+2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
+3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+
+
+JGDL67B6F758008E72BB
+
+
+电脑的例子：
+https://www.dell.com/zh-cn/shop/%E6%88%B4%E5%B0%94%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91/dell-16-plus-%E7%AC%94%E8%AE%B0%E6%9C%AC/spd/dell-db16250-laptopI yeah定一个8点半的闹钟。你帮你设置好早上8:30的闹钟，到时会准时提醒你。
+
+
+https://e.huawei.com/cn/products/optical-terminal/optixstar-p813e-e
+
+参数	华为OptiXstar P813E-E
+尺寸（宽×深×高）	220mm x 150mm x 35mm 
+重量	约1.2kg
+工作环境温度	-40°C to +55°C
+工作环境湿度	5% RH to 95% RH (非凝结)
+电源适配器额定输入范围	100–240 V AC, 50/60 Hz 
+整机供电	56 V DC, 2.6 A
+网络侧接口	2*XGS-PON(1*BOB+1*SFP)
+用户侧接口	8*GE POE/POE+
+静态功耗	10W
+最大功耗	14W(POE端口不带受电设备)
+138W（POE端口带最大功耗受电设备）
+网络侧接口类型	SC/UPC
+XGS-PON 接口	• 支持XGS-PON光模块，接口类型：SC/UPC
+• 遵循G.9807.1协议
+• Class N1/N2
+• 接收灵敏度：-28dBm
+• 过载光功率：-9dBm
+• 传输速率：下行9.953 Gbit/s，上行9.953 Gbit/s
+• Type B单归属
+• Type B双归属（二层转发模式下支持）
+• Type C保护
+GE 接口	• 接口类型：RJ-45
+• 10/100/1000 Mbit/s接口速率自适应
+• MDI/MDIX自动配置
+• MAC地址学习数配置
+• 基于以太端口的VLAN透传、过滤
+最大POE输出功率	总功率130W,每个POE接口最大支持30W
+安全	• 802.1x
+• IPv6/IPv4防火墙
+• MAC过滤/IP地址过滤/URL过滤
+• 防DoS攻击/ARP防攻击
+• 静态MAC地址绑定
+• 设备访问控制
+• ONU端口级硬隔离
+
+
+我实现一个类似openapi的
+
+productconfigagent  //产品配置agent pcagent
+
+当前想实现一个产品配置的agent框架，请按下列架构实现
+
+
+
+请用Java语言实现下列功能，请写单元测试跑通它
+
+
+
+#一、实现功能要求
+1、完成配置需求识别（使用LLM），
+
+2、假设一个产品很多规格项（待候选的句子列表），先将这些规格项的向量值存储起来
+
+3、有客户化的规格（需要匹配的句子）：
+
+
+#二、实现技术的要求
+##2.1 后端要求：
+1、访问大模型使用Spring AI，支持deepseek和Qinwen两个模型访问
+2、使用Jdk21，使用pom工程
+3、第三方库版本
+  <freemarker.version>2.3.33</freemarker.version>
+        <lombok.version>1.18.36</lombok.version>
+        <guava.version>33.1.0-jre</guava.version>
+        <jackson.version>2.17.0</jackson.version>
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+        <slf4j.version>2.0.16</slf4j.version>
+        <spring.version>6.1.13</spring.version>
+        <!-- Spring AI 1.1.0 尚未发布，使用最新可用版本 1.0.0-M4 -->
+        <!-- 当 1.1.0 发布后，请将版本号更新为 1.1.0 -->
+        <spring.ai.version>1.0.0-M4</spring.ai.version>
+        <mockito.version>5.6.0</mockito.version>
+
+##2.2 前端要求：
+1、使用Vue框架
+
+
+#3、关键的类图
+
+##3.1产品本体数据服务设计
+###3.1.1 类设计
+class ProductOntoService {  //接口定义
+接口1：按销售目节点名称查找目录节点 querySalesCatalogNodes
+  req: sales_catalog_id=“001”, node_name(模糊搜索）
+  resp: List<CatalogNode> catalog_nodes;
+
+
+接口3：按目录节点获取产品列表 queryProductByNode
+  req: node_codes
+  resp: List<Product> products; 
+
+接口2: 解析规格 parseProductSpecs
+  req: node_code, orignal_specs:List<String>
+  rsp: spec_map:List<SpecficationReq>
+
+产品接口1： 获取指定产品的规格列表
+  req: product_code
+  rsq: List<Specfication> specs;
+
+产品接口2： 获取指定产品的参数列表
+  req: product_code
+  rsq: List<Parameter> paras;
+
+} 
+
+ class CatalogNode{
+  String fatherCode;
+  String code;
+  String name; 
+}
+
+class Product{
+   String fatherCode;
+   String code;
+   long id;
+   String name;
+}
+
+
+class Specfication{
+	String specName;
+	String compare;//有：“>、>=,=,<,<="操作符
+    String specValue;//有几种类型，数字类型-如：“1“，  字符类型-如:"GE", 列表类型-如:"大,中，小"
+    String unit;
+     public NOT_FOUND= new Specfication("NOT_FOUND");
+}
+class SpecficationReq{
+	String orignalSpec;
+	List<Specfication> stdSpecs;//标准规格，满足其中一条就可以
+}
+ 
+class ProductSpecfication{
+	String productCode;
+	List<Specfication> specs;	 
+}
+
+class ProductSpecficationReq{//产品级的规格需求
+	String catalogNode;//表示本目录下的产品
+	List<SpecficationReq> specReqs;	 
+}
+ 
+
+
+
+class Parameter{
+   String code;
+   String type;//类型，选择性，输入型
+   String defaultValue;//建议值
+   List<String> options;//可选值列表
+   String refSpecCode;//引用的规格Code
+}
+
+###3.1.1 样例数据  
+  
+按ProductOntoService接口，实现下列模块数据 ProductOntoService4Local
+
+1、样例数据采用json存储，参考ModuleUtils改写一个ProductOntoUtils
+2、数据如下
+-企业市场
+---服务器 CatalogNode
+----数据中心服务器  CatalogNode spec11  spec12  spec13
+------PowerEdge R760xa spec111  spec121  spec131  para11 para21 para31
+------PowerEdge R860xa spec112  spec122  spec132  para12 para22 para32
+------PowerEdge T860xa spec113  spec123  spec133  para13 para23 para33
+----家庭服务器  CatalogNode  spec21  spec22  spec23
+------Dell 16 Plus   Product  
+------Dell 17 Plus   Product
+
+---ONU
+-----OptiXstar P813E-E
+-----OptiXstar P813L
+-----OptiXstar P813W
+
+
+spec11:目录节点上
+class Specfication{
+	  specName = "最高工作环境温度”;
+	  compare="="
+      specValue=""
+      unit="°C"
+}
+
+ 
+spec111:
+class Specfication{
+	  specName = "最高工作环境温度”;
+	  compare="="
+      specValue="-40"
+      unit="°C"
+	 
+}
+
+
+
+
+
+##3.0 产品Agent服务的设计
+class  PCAgentConstroller {
+    .....
+
+}
+class  PCAgentService {
+	Map<sessionId,PCAgentService4Session> sessions;
+	
+}
+
+class  PCAgentService4Session {
+    String sessionId； 
+	Session currentSession;
+    void doGennerator(String sessionId,String userInput){
+		session  = createSession(sessionId);
+		//调用parseConfigReq解析客户需求
+		req = parseConfigReq(  input);
+		updateSession4NextStep(req,Plan.STEP1);
+		
+		//解析规格
+		List<Pair<CatalogNode,Specfication>> nodeSpecMap = parseProductSpecs(req.specReqItems)
+		updateSession4NextStep(nodeSpecMap,Plan.STEP2);
+
+		//和产品选型 
+		specs = parseProductSpecs(req.specReqItems)
+		updateSession4NextStep(specs,Plan.STEP2);
+	}
+   
+	
+
+	//做产品选型 
+	Product selectProduct(List<Pair<CatalogNode,Specfication>> nodeSpecMap) {
+		
+	}
+	//计算产品的偏离度
+	ProductDeviationDegree calcProductDeviationDegree(String productCode, Map<specName,Specfication> productSpecMap,List<SpecficationReq> specItemReqs) { 
+		result = new ProductDeviationDegree();
+		for(specItemReq: specItemReqs) {
+			if(specItemReq ==  Specfication.NOT_FOUND) result.add(SpecItemDeviationDegree.buildNotFound(...))  
+			result.addSpecItemDeviationDegree(calcSpecItemDeviationDegree(productSpec,specItemReq));
+		}
+
+		//计算result.totalDeviationDegrees
+		return result
+	}
+	SpecItemDeviationDegree calcSpecItemDeviationDegree(Map<specName,Specfication> productSpecMap,SpecficationReq specItemReq) {
+		 
+		 for(stdSpecItemReq specItemReq.stdSpecs){//匹配一条即可（后续考虑多条TODO）
+			productSpec = productSpecMap.get(stdSpecItemReq.name);
+			if(productSpec== null) {
+				//记录日志
+			}
+			return calcSpecItemDeviationDegree(productSpec,stdSpecItemReq);
+		 }
+		  //抛异常ParseProductSpecException
+	}
+
+	SpecItemDeviationDegree calcSpecItemDeviationDegree(Specfication productSpec,Specfication stdSpecItemReq) {
+		如果 stdSpecItemReq(specName1>=2), productSpec(specName1==3), 则result = DeviationDegree.POSITIVE
+		如果 stdSpecItemReq(specName1>=2), productSpec(specName1==1), 则result = DeviationDegree.NEGATIVE
+		如果 stdSpecItemReq(specName1>=2), productSpec(specName1==2), 则result = DeviationDegree.NONE
+		如果 stdSpecItemReq = Specfication.NOT_FOUND 则result = DeviationDegree.NOT_FOUND 
+	}
+
+
+
+
+	ConfigReq parseConfigReq(String input){
+		//调用LLMInvoker，config_req_parse_prompt.jtl 
+		生成req  
+		//调用validConfigReq进行校验   
+	}
+	void volidConfigReq(ConfigReq req){ //不合理抛异常 InvalidInputException(RuntimeException)
+		//....
+	
+	}
+		
+	List<Specfication> parseProductSpecs(List<String> specReqItems){
+		调用ProductOntoService.parseProductSpecs
+		错误抛异常 ParseProductSpecException(RuntimeException)
+	}
+
+	//规格解析
+	List<Specfication> parseProductSpecs(String catalogNode，List<String> specReqItems){//错误抛异常 ParseProductSpecException(RuntimeException) 
+		for(specReqItem: specReqItems) {
+			specs = ProductOntoService.parseProductSpecs(catalogNode.node_code)
+			result.add(catalogNode,specs);
+		}
+		return result;		
+	}
+
+	//规格解析 
+	List<Pair<CatalogNode,Specfication>> parseProductSpecs(String productSerial，List<String> specReqItems){//错误抛异常 ParseProductSpecException(RuntimeException) 
+		catalogNodes = ProductOntoService.querySalesCatalogNodes(node_name=productSerial) 
+		for(catalogNode: catalogNodes) {
+			specs = ProductOntoService.parseProductSpecs(catalogNode.node_code)
+			//如果找不到，则返回Specfication.NOT_FOUND
+			result.add(specs);
+		}
+		return result;		
+	}
+	 
+ 
+}
+
+class Plan {
+	public String STEP1 = "step1";
+	public String STEP2 = "step2";
+	public String STEP3 = "step3";
+	List<String> tasks = Arrays.asList(STEP1,STEP2,STEP3);
+}
+
+##3.3 返回数据对象设计
+
+class SessionUitils {
+	String nextSessionId() {
+		return UUID;
+	}
+	Session create(sessionId,Plan plan) {
+		Session session=  new Session();
+		session.session_id =  ;
+		session.current_step = "";
+		session.current_step = "execute";
+		session.progress.current= 0;
+		session.progress.total= plan.tasks.length;
+		session.progress.total= plan.tasks.length;
+		session.progress.message= ""; 
+		return session;
+	}
+	Session updateSession4NextStep(Session currentSession, Object data,String c)
+	{
+		//根据data，next_step,更新seesion信息
+	}
+	Session updateSession4CurrentStep(Session currentSession, Object data)
+	{
+		//根据data， 更新seesion信息（仅更新data）
+	} 
+	//TODO ；后续支持Session的存储，暂时不实现
+}
+
+##3.4 核心的类图--业务对象
+class  ProductDeviationDegree{
+	String productCode;
+	List<SpecItemDeviationDegree> specItemDeviationDegrees;
+	int totalDeviationDegrees;//总体满足度，如80%
+}
+class  SpecItemDeviationDegree{
+	String orignalSpec;//原始的规格需求描述
+	String spectName;//标准的规格名称
+	booolean satisfy=false;//是否满足
+	DeviationDegree deviationDegree;//偏离度
+	
+	SpecItemDeviationDegree buildNotFound(orignalSpec,spectName){....}
+}
+enum DeviationDegree{
+	NOT_FOUND("not found"),
+	POSITIVE("positive deviation"),
+	NEGATIVE("negative deviation"),
+	NONE("no deviation"), 
+}
+ 
+ 
+
+
+
+返回给前端的输入
+
+
+//配置需求识别prompt
+config_req_parse_prompt.jtl
+
+
+class ConfigReq{ //配置需求
+ String productSerial;//产品系列
+ int totalQuantity;//总套数
+ List<String> specReqItems;//规格需求项
+ ConfigStrategy configStrategy;//配置策略    
+ String totalQuantityMemo;//总套数
+}
+
+enum ConfigStrategy{
+	PRICE_MIN_PRIORITY,//目录价最小优先，默认最新
+    TECH_MAX_PRIORITY, //技术最大优先对
+}
+ 
+
+
+//参数配置结构
+
+Class ParameterConfigResult{
+  String code;
+  String value;//  
+}
+
+ 
+
+
+四、前后台接口定义
+
+
+1.创建会话接口 (POST)
+POST /api/v1/sessions
+Content-Type: application/json
+Authorization: Bearer <token>
+
+req:
+
+{
+  "user_input": "我想审核订单12345",
+  "context": {
+    "user_id": "user_001",
+    "user_role": "manager"
+  }
+}
+rsp: Session
+
+2. 继续会话接口 (POST)
+POST /api/v1/sessions/{session_id}/continue
+Content-Type: application/json
+
+{
+  "collected_data": {
+    "review_priority": "high",
+    "review_notes": "这是VIP客户的订单，请优先处理"
+  }
+}
+
+3. 获取会话状态接口 (GET)
+GET /api/v1/sessions/{session_id}
+Authorization: Bearer <token>
+
+
+4. 确认操作接口 (POST)
+POST /api/v1/sessions/{session_id}/confirm
+Content-Type: application/json
+
+{
+  "confirmed": true,
+  "confirmation_data": {} // 可选的额外确认数据
+}
+4. 销毁操作接口 (POST)
+POST /api/v1/sessions/{session_id}/terminate
+Content-Type: application/json
+
+ 
+//关键接口类— 
+export interface Session {
+  session_id: string;
+  current_step: string;
+  next_action: NextAction;
+  progress: Progress;
+  data?: any;
+}
+
+export interface NextAction {
+  type: 'wait' | 'collect_info' | 'execute' | 'confirm' | 'terminate';
+  instruction: Instruction;
+}
+
+export interface Instruction {
+  title?: string;
+  message?: string;  
+  action?: string;
+  target?: string;
+  parameters?: any; 
+}
+ 
+
+export interface Progress {
+  current: number;
+  total: number;
+  message: string;
+}
+
+
+Session的样例数据：
+
+样例：
+{
+  "session_id": "sess_001",
+  "current_step": "collecting_order_info",
+  "next_action": {
+    "type": "collect_info",
+    "instruction": {
+      "title": "订单审核信息收集", 
+      "submit_url": "/api/v1/sessions/sess_001/continue"
+    }
+  },
+  "progress": {
+    "current": 1,
+    "total": 4,
+    "message": "正在准备订单审核流程..."
+  }
+}
+ 
+
+ 
+
+TODO:
+1、可以先做node，如果匹配度满足，不需要再去匹配（目录也有筛选策略）
+2、偏离度计算公式待定
+3、 	  specName = "最高工作环境温度”; -->specCode
+idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,spectName){....} 模糊规格
+}
