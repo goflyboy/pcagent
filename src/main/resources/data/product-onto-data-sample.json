@@ -170,7 +170,7 @@
       "paras": [
         {
           "code": "QTY",
-          "type": "输入型",
+          "type": "INTEGER",
           "defaultValue": "1",
           "sortNo": 3,
           "options": [],
@@ -178,18 +178,26 @@
         },
         {
           "code": "CPU_CONFIG",
-          "type": "选择性",
+          "type": "ENUM",
           "defaultValue": "16核",
           "sortNo": 1,
-          "options": ["16核", "24核", "32核"],
+          "options": [
+            {"code": "16核", "value": 16, "sortNo": 0},
+            {"code": "24核", "value": 24, "sortNo": 1},
+            {"code": "32核", "value": 32, "sortNo": 2}
+          ],
           "refSpecCode": "CPU:处理器核心数"
         },
         {
           "code": "MEM_CONFIG",
-          "type": "选择性",
+          "type": "ENUM",
           "defaultValue": "256GB",
           "sortNo": 2,
-          "options": ["256GB", "512GB", "1TB"],
+          "options": [
+            {"code": "256GB", "value": 256, "sortNo": 0},
+            {"code": "512GB", "value": 512, "sortNo": 1},
+            {"code": "1TB", "value": 1024, "sortNo": 2}
+          ],
           "refSpecCode": "内存:内存容量"
         }
       ]
@@ -199,7 +207,7 @@
       "paras": [
         {
           "code": "QTY",
-          "type": "输入型",
+          "type": "INTEGER",
           "defaultValue": "1",
           "sortNo": 3,
           "options": [],
@@ -207,18 +215,26 @@
         },
         {
           "code": "CPU_CONFIG",
-          "type": "选择性",
+          "type": "ENUM",
           "defaultValue": "32核",
           "sortNo": 1,
-          "options": ["32核", "48核", "64核"],
+          "options": [
+            {"code": "32核", "value": 32, "sortNo": 0},
+            {"code": "48核", "value": 48, "sortNo": 1},
+            {"code": "64核", "value": 64, "sortNo": 2}
+          ],
           "refSpecCode": "CPU:处理器核心数"
         },
         {
           "code": "MEM_CONFIG",
-          "type": "选择性",
+          "type": "ENUM",
           "defaultValue": "512GB",
           "sortNo": 2,
-          "options": ["512GB", "1TB", "2TB"],
+          "options": [
+            {"code": "512GB", "value": 512, "sortNo": 0},
+            {"code": "1TB", "value": 1024, "sortNo": 1},
+            {"code": "2TB", "value": 2048, "sortNo": 2}
+          ],
           "refSpecCode": "内存:内存容量"
         }
       ]

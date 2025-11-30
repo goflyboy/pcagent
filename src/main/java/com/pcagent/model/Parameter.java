@@ -15,10 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 public class Parameter {
     private String code;
-    private String type; // 类型：选择性，输入型
+    private ParameterType type = ParameterType.INTEGER; // 参数类型，默认INTEGER
     private String defaultValue; // 建议值
     private Integer sortNo; // 排序号
-    private List<String> options = new ArrayList<>(); // 可选值列表
+    private List<ParameterOption> options = new ArrayList<>(); // 可选值列表
     private String refSpecCode; // 引用的规格Code
 }
 

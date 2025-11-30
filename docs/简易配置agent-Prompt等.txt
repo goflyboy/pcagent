@@ -378,7 +378,7 @@ class ParameterOption {
 	int sortNo = 0; 
 } 
 
-1、Parameter.options从List<String> 改成 List<ParameterOption> 
+3、Parameter.options从List<String> 改成 List<ParameterOption> 
 
  类似"16核"改成 {"code":"16核","value":16,"sortNo","0"}
 
@@ -401,5 +401,7 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
  P813EE的SystemTest  AcceptTest
 
 7、option还是要增加一个ref，规格的值**
+
+8、spec也要增加类型**
 
 

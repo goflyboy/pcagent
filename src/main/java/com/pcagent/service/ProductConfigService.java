@@ -192,11 +192,11 @@ public class ProductConfigService {
 
         // 根据parameter.options 和 specItemDeviationDegree.stdSpecReq 来生成paraConfigIntent.options
         if (parameter.getOptions() != null && !parameter.getOptions().isEmpty()) {
-            for (String optionValue : parameter.getOptions()) {
+            for (ParameterOption paramOption : parameter.getOptions()) {
                 ParameterConfigIntentOption option = new ParameterConfigIntentOption();
-                option.setValue(optionValue);
+                option.setValue(paramOption.getValue());
                 option.setMessage("根据规格需求 " + specItemDeviationDegree.getOriginalSpecReq() + 
-                        " 选择配置: " + optionValue);
+                        " 选择配置: " + paramOption.getCode());
                 option.setIsVisited(false);
                 paraConfigIntent.getIntentOptions().add(option);
             }
