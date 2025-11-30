@@ -35,4 +35,7 @@ logging:
   level:
     com.pcagent: DEBUG
     org.springframework.ai: DEBUG
+  file:
+    path: ./log
+    name: ./log/pcagent.log
 

@@ -129,19 +129,82 @@ public class LLMInvoker {
      * 调用 LLM
      */
     private String callLLM(String prompt) {
+        long startTime = System.currentTimeMillis();
+        
+        if (log.isDebugEnabled()) {
+            log.debug("=== LLM 调用开始 ===");
+            log.debug("Prompt 长度: {} 字符", prompt != null ? prompt.length() : 0);
+            // 打印 prompt 的前500个字符和后100个字符（如果超过600字符）
+            if (prompt != null && prompt.length() > 600) {
+                log.debug("Prompt 预览（前500字符）: {}", prompt.substring(0, Math.min(500, prompt.length())));
+                log.debug("Prompt 预览（后100字符）: {}", prompt.substring(Math.max(0, prompt.length() - 100)));
+            } else {
+                log.debug("Prompt 内容: {}", prompt);
+            }
+        }
+        
         try {
             Prompt aiPrompt = new Prompt(List.<Message>of(new UserMessage(prompt)));
+            
+            if (log.isDebugEnabled()) {
+                log.debug("发送请求到 LLM...");
+            }
+            
             ChatResponse response = chatModel.call(aiPrompt);
+            
+            long callDuration = System.currentTimeMillis() - startTime;
+            
             if (response == null) {
+                if (log.isDebugEnabled()) {
+                    log.debug("LLM 返回 null 响应，耗时: {} ms", callDuration);
+                    log.debug("=== LLM 调用结束（无响应）===");
+                }
                 return "";
             }
+            
             Generation generation = response.getResult();
             if (generation == null) {
+                if (log.isDebugEnabled()) {
+                    log.debug("LLM 响应中 Generation 为 null，耗时: {} ms", callDuration);
+                    log.debug("=== LLM 调用结束（无 Generation）===");
+                }
                 return "";
             }
+            
             // Spring AI 1.0.0-M4 使用 getOutput().getContent() 方法
-            return generation.getOutput().getContent();
+            String content = generation.getOutput().getContent();
+            
+            if (log.isDebugEnabled()) {
+                log.debug("LLM 调用成功，耗时: {} ms", callDuration);
+                log.debug("响应长度: {} 字符", content != null ? content.length() : 0);
+                
+                // 打印响应的前500个字符和后100个字符（如果超过600字符）
+                if (content != null && content.length() > 600) {
+                    log.debug("响应预览（前500字符）: {}", content.substring(0, Math.min(500, content.length())));
+                    log.debug("响应预览（后100字符）: {}", content.substring(Math.max(0, content.length() - 100)));
+                } else {
+                    log.debug("响应内容: {}", content);
+                }
+                
+                // 记录元数据信息
+                if (generation.getMetadata() != null) {
+                    log.debug("响应元数据: {}", generation.getMetadata());
+                }
+                
+                log.debug("=== LLM 调用结束 ===");
+            }
+            
+            return content;
         } catch (Exception e) {
+            long callDuration = System.currentTimeMillis() - startTime;
+            
+            if (log.isDebugEnabled()) {
+                log.debug("LLM 调用失败，耗时: {} ms", callDuration);
+                log.debug("异常类型: {}", e.getClass().getName());
+                log.debug("异常消息: {}", e.getMessage());
+                log.debug("=== LLM 调用结束（异常）===");
+            }
+            
             log.error("Failed to call LLM", e);
             throw new RuntimeException("Failed to call LLM", e);
         }
