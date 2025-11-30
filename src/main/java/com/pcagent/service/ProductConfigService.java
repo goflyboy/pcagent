@@ -355,11 +355,21 @@ public class ProductConfigService {
         paraConfigIntent.setBase(parameter);
         paraConfigIntent.setIntentOptions(new ArrayList<>());
 
-        ParameterConfigIntentOption option = new ParameterConfigIntentOption();
-        option.setValue(String.valueOf(reqQty != null ? reqQty : 1));
-        option.setMessage("根据需求配置数量: " + reqQty);
-        option.setIsVisited(false);
-        paraConfigIntent.getIntentOptions().add(option);
+        int qty = reqQty != null ? reqQty : 1;
+
+        // Option 1: 1个站点，每个站点配置reqQty
+        ParameterConfigIntentOption option1 = new ParameterConfigIntentOption();
+        option1.setValue(String.valueOf(qty));
+        option1.setMessage("1个站点，每个站点配置" + qty);
+        option1.setIsVisited(false);
+        paraConfigIntent.getIntentOptions().add(option1);
+
+        // Option 2: reqQty个站点，每个站点配置1
+        ParameterConfigIntentOption option2 = new ParameterConfigIntentOption();
+        option2.setValue("1");
+        option2.setMessage(qty + "个站点，每个站点配置1");
+        option2.setIsVisited(false);
+        paraConfigIntent.getIntentOptions().add(option2);
 
         return paraConfigIntent;
     }
