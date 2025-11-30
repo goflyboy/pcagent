@@ -340,9 +340,47 @@ GE 接口	• 接口类型：RJ-45
 • 设备访问控制
 • ONU端口级硬隔离
 
- 
+ 2025-11-30：
+配置意图的逻辑调通
+chekc prompt调通
+需求分解的调通 prompt 
+系统用例的调通
+前端界面调通
 
- 
+结下列的任务：
+1、按照P813E来做数据，调通所有的系统用例（对我接口尽量不变了，数据的问题) --龙哥  输出数据有那些问题？
+2、前端页面的调通
+3、
+怎么给领导讲，要思考一下？ ---**
+
+public class Parameter {
+    private String code;
+    private String type; // 类型：选择性，输入型
+    private String defaultValue; // 建议值
+    private Integer sortNo; // 排序号
+    private List<String> options = new ArrayList<>(); // 可选值列表
+    private String refSpecCode; // 引用的规格Code
+}
+
+1、Parameter.type String改成 ParameterType，默认值是ParameterType.INTEGER
+public enum ParameterType {
+    ENUM(0, "EnumType"),
+    BOOLEAN(1, "Boolean"),
+    INTEGER(2, "Integer"),
+    FLOAT(3, "Float"), 
+    STRING(5, "String") 
+}
+
+2、新增ParameterOption
+class ParameterOption {
+	String code;
+	String value;
+	int sortNo = 0; 
+} 
+
+1、Parameter.options从List<String> 改成 List<ParameterOption> 
+
+ 类似"16核"改成 {"code":"16核","value":16,"sortNo","0"}
 
 TODO:
 1、可以先做node，如果匹配度满足，不需要再去匹配（目录也有筛选策略）
