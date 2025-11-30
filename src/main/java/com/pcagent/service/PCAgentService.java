@@ -6,7 +6,7 @@ import com.pcagent.util.SessionUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Pair;
+import com.pcagent.util.Pair;
 
 import java.util.HashMap;
 import java.util.List;

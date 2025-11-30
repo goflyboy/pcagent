@@ -26,7 +26,7 @@ public class ProductSpecificationParserService {
      * @return 产品规格需求
      * @throws ParseProductSpecException 解析失败时抛出
      */
-    public ProductSpecificationReq parseProductSpecs(String catalogNode, List<String> specReqItems) {
+    public ProductSpecificationReq parseProductSpecs2(String catalogNode, List<String> specReqItems) {
         try {
             return productOntoService.parseProductSpecs(catalogNode, specReqItems);
         } catch (Exception e) {

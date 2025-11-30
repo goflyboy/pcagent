@@ -4,7 +4,7 @@ import com.pcagent.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Pair;
+import com.pcagent.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -34,10 +34,10 @@ public class ProductSelectionService {
         productDeviationDegrees.sort(Comparator.comparing(ProductDeviationDegree::getTotalDeviationDegrees).reversed());
 
         if (productDeviationDegrees.isEmpty()) {
-            return Pair.of(new ArrayList<>(), null);
+            return new Pair<>(new ArrayList<>(), null);
         }
 
-        return Pair.of(productDeviationDegrees, productDeviationDegrees.get(0));
+            return new Pair<>(productDeviationDegrees, productDeviationDegrees.get(0));
     }
 
     /**
