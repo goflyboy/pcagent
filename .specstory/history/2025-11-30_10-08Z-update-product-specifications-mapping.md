@@ -889,3 +889,510 @@ assertReq(result)
 
 ---
 
+_**User (2025-11-30 00:47Z)**_
+
+
+
+1.在ProductOntoService4Local增加方法
+
+ 	mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings) {
+
+		stdSpecJsonStrings转成Specification--> stdSpecs
+
+		mockOrgSpecToStdSpec（orgSpecDesc，stdSpecs)
+
+	}
+
+ 	mockSpecMatch(String orgSpecDesc, Specification... stdSpecs) {
+
+		data.orgSpecReqToStdSpecReqMap.put(orgSpecDesc,stdSpecs)
+
+	}
+
+2.在ProductSpecificationParserServiceTest 新增
+
+   @Test
+
+    void testTwoSpection () {
+
+		....
+
+		productOntoService.mockSpecMatch(“内存:配置≥128GB DDR1 ECC Registered内存”，"""
+
+		 {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
+
+		""",
+
+		""""
+
+		{"specName": "内存:集成内存","compare": ">=","specValue": "128","unit": "GB"}]
+
+		""" 
+
+		...
+
+	}
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看相关文件，了解当前结构：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSpecificationParserServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/ProductOntoUtils.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+在 `ProductOntoService4Local` 中添加 `mockSpecMatch` 方法，并更新测试类：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/Specification.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "import.*Arrays" in "src/main/java/com/pcagent/service/impl" • 0 matches</summary>
+
+Output mode: content
+
+
+_No matches found_
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+在 `ProductOntoService4Local` 中添加 `mockSpecMatch` 方法：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -11,4 +11,5 @@
+  import java.io.IOException;
+  import java.util.ArrayList;
++ import java.util.Arrays;
+  import java.util.List;
+  import java.util.stream.Collectors;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+**Chunk 1**
+Lines added: 38, lines removed: undefined
+
+```diff
+@@ -159,4 +159,42 @@
+          return param;
+      }
++ 
++     /**
++      * Mock规格匹配 - 通过JSON字符串数组
++      * @param orgSpecDesc 原始规格描述
++      * @param stdSpecJsonStrings JSON字符串数组，每个字符串代表一个Specification对象
++      */
++     public void mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings) {
++         try {
++             List&lt;Specification&gt; stdSpecs = new ArrayList&lt;&gt;();
++             for (String jsonString : stdSpecJsonStrings) {
++                 // 去除首尾空白字符（处理多行字符串）
++                 String trimmedJson = jsonString.trim();
++                 Specification spec = ProductOntoUtils.fromJsonString(trimmedJson, Specification.class);
++                 stdSpecs.add(spec);
++             }
++             mockSpecMatch(orgSpecDesc, stdSpecs.toArray(new Specification[0]));
++         } catch (IOException e) {
++             log.error(&quot;Failed to parse JSON string to Specification&quot;, e);
++             throw new RuntimeException(&quot;Failed to parse JSON string to Specification&quot;, e);
++         }
++     }
++ 
++     /**
++      * Mock规格匹配 - 通过Specification对象数组
++      * @param orgSpecDesc 原始规格描述
++      * @param stdSpecs Specification对象数组
++      */
++     public void mockSpecMatch(String orgSpecDesc, Specification... stdSpecs) {
++         if (data == null) {
++             data = new ProductOntoData();
++         }
++         if (data.getOrgSpecReqToStdSpecReqMap() == null) {
++             data.setOrgSpecReqToStdSpecReqMap(new java.util.HashMap&lt;&gt;());
++         }
++         List&lt;Specification&gt; specList = new ArrayList&lt;&gt;(Arrays.asList(stdSpecs));
++         data.getOrgSpecReqToStdSpecReqMap().put(orgSpecDesc, specList);
++         log.debug(&quot;Mocked spec match: {} -&gt; {} specifications&quot;, orgSpecDesc, specList.size());
++     }
+  }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+在测试类中添加新的测试方法：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSpecificationParserServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 44, lines removed: undefined
+
+```diff
+@@ -45,4 +45,48 @@
+                  .unitEqual(&quot;GB&quot;);
+      }
++ 
++     @Test
++     void testTwoSpection() {
++         // 准备测试数据
++         String catalogNode = &quot;data_center_server&quot;;
++         List&lt;String&gt; specReqItems = Arrays.asList(
++                 &quot;内存:配置≥128GB DDR1 ECC Registered内存&quot;
++         );
++ 
++         // Mock规格匹配
++         productOntoService.mockSpecMatch(
++                 &quot;内存:配置≥128GB DDR1 ECC Registered内存&quot;,
++                 &quot;&quot;&quot;
++                 {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;128&quot;,&quot;unit&quot;: &quot;GB&quot;}
++                 &quot;&quot;&quot;,
++                 &quot;&quot;&quot;
++                 {&quot;specName&quot;: &quot;内存:集成内存&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;128&quot;,&quot;unit&quot;: &quot;GB&quot;}
++                 &quot;&quot;&quot;
++         );
++ 
++         // 执行测试
++         ProductSpecificationReq result = parserService.parseProductSpecsByCatalogNode(catalogNode, specReqItems);
++ 
++         // 验证结果
++         assertReq(result)
++                 .catalogNodeEqual(&quot;data_center_server&quot;)
++                 .specReqsSize(1)
++                 .specReq(0)
++                 .stdSpecsSize(2)
++                 .stdSpec(0)
++                 .specNameEqual(&quot;内存:内存容量&quot;)
++                 .compareEqual(&quot;&gt;=&quot;)
++                 .specValueEqual(&quot;128&quot;)
++                 .unitEqual(&quot;GB&quot;);
++         
++         // 验证第二个规格
++         assertReq(result)
++                 .specReq(0)
++                 .stdSpec(1)
++                 .specNameEqual(&quot;内存:集成内存&quot;)
++                 .compareEqual(&quot;&gt;=&quot;)
++                 .specValueEqual(&quot;128&quot;)
++                 .unitEqual(&quot;GB&quot;);
++     }
+  }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java`
+- `src/test/java/com/pcagent/service/ProductSpecificationParserServiceTest.java`
+
+Lint results
+
+Lint errors for `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The method matchesSpec(String, Specification) from the type ProductOntoService4Local is never used locally | 92:21-92:77 | DIAGNOSTIC_SEVERITY_WARNING |
+| The method extractSpecValue(String, Specification) from the type ProductOntoService4Local is never used locally | 105:20-105:81 | DIAGNOSTIC_SEVERITY_WARNING |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+运行测试验证功能：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=ProductSpecificationParserServiceTest#testTwoSpection</summary>
+
+```bash
+mvn test -Dtest=ProductSpecificationParserServiceTest#testTwoSpection
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductSpecificationParserServiceTest
+18:30:09.665 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:09.750 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:09.750 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:09.753 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+18:30:09.756 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s -- in com.pcagent.service.ProductSpecificationParserServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.808 s
+[INFO] Finished at: 2025-11-30T18:30:09+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+测试通过。运行所有测试，确保没有破坏现有功能：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=ProductSpecificationParserServiceTest</summary>
+
+```bash
+mvn test -Dtest=ProductSpecificationParserServiceTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductSpecificationParserServiceTest
+18:30:16.883 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:16.969 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:16.969 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:16.971 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+18:30:16.972 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+18:30:16.985 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:16.985 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+18:30:16.985 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s -- in com.pcagent.service.ProductSpecificationParserServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.745 s
+[INFO] Finished at: 2025-11-30T18:30:17+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有测试通过。查看最终代码确认实现：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSpecificationParserServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有功能已实现并通过测试。总结如下：
+
+## 完成的工作
+
+### 1. 在 `ProductOntoService4Local` 中添加了两个 `mockSpecMatch` 方法：
+
+- **`mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings)`**
+  - 接收 JSON 字符串数组
+  - 将每个 JSON 字符串解析为 `Specification` 对象
+  - 调用第二个方法将映射添加到数据中
+
+- **`mockSpecMatch(String orgSpecDesc, Specification... stdSpecs)`**
+  - 接收 `Specification` 对象数组
+  - 将映射添加到 `data.orgSpecReqToStdSpecReqMap` 中
+  - 如果 `data` 或映射为 null，会自动初始化
+
+### 2. 在 `ProductSpecificationParserServiceTest` 中添加了 `testTwoSpection` 测试方法：
+
+- 使用 `mockSpecMatch` 方法模拟两个规格匹配
+- 验证解析结果包含两个标准规格
+- 使用流式断言 API 验证每个规格的属性
+
+## 测试结果
+
+所有测试通过：
+- `testParseProductSpecsByCatalogNode` - 原有测试通过
+- `testTwoSpection` - 新测试通过
+
+功能已实现，代码可正常使用。
+
+---
+

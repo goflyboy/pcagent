@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -156,6 +157,44 @@ public class ProductOntoService4Local implements ProductOntoService {
             });
         }
         return param;
+    }
+
+    /**
+     * Mock规格匹配 - 通过JSON字符串数组
+     * @param orgSpecDesc 原始规格描述
+     * @param stdSpecJsonStrings JSON字符串数组，每个字符串代表一个Specification对象
+     */
+    public void mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings) {
+        try {
+            List<Specification> stdSpecs = new ArrayList<>();
+            for (String jsonString : stdSpecJsonStrings) {
+                // 去除首尾空白字符（处理多行字符串）
+                String trimmedJson = jsonString.trim();
+                Specification spec = ProductOntoUtils.fromJsonString(trimmedJson, Specification.class);
+                stdSpecs.add(spec);
+            }
+            mockSpecMatch(orgSpecDesc, stdSpecs.toArray(new Specification[0]));
+        } catch (IOException e) {
+            log.error("Failed to parse JSON string to Specification", e);
+            throw new RuntimeException("Failed to parse JSON string to Specification", e);
+        }
+    }
+
+    /**
+     * Mock规格匹配 - 通过Specification对象数组
+     * @param orgSpecDesc 原始规格描述
+     * @param stdSpecs Specification对象数组
+     */
+    public void mockSpecMatch(String orgSpecDesc, Specification... stdSpecs) {
+        if (data == null) {
+            data = new ProductOntoData();
+        }
+        if (data.getOrgSpecReqToStdSpecReqMap() == null) {
+            data.setOrgSpecReqToStdSpecReqMap(new java.util.HashMap<>());
+        }
+        List<Specification> specList = new ArrayList<>(Arrays.asList(stdSpecs));
+        data.getOrgSpecReqToStdSpecReqMap().put(orgSpecDesc, specList);
+        log.debug("Mocked spec match: {} -> {} specifications", orgSpecDesc, specList.size());
     }
 }
 

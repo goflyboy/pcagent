@@ -267,6 +267,34 @@ class MockDataService {//是一个单列
 	}
 
 }
+
+在ProductOntoService4Local增加方法
+ 	mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings) {
+		stdSpecJsonStrings转成Specification--> stdSpecs
+		mockOrgSpecToStdSpec（orgSpecDesc，stdSpecs)
+	}
+ 	mockSpecMatch(String orgSpecDesc, Specification... stdSpecs) {
+		data.orgSpecReqToStdSpecReqMap.put(orgSpecDesc,stdSpecs)
+	}
+
+
+在ProductSpecificationParserServiceTest 新增
+
+
+   @Test
+    void testTwoSpection () {
+		....
+		productOntoService.mockSpecMatch(“内存:配置≥128GB DDR1 ECC Registered内存”，"""
+		 {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
+		""",
+		""""
+		{"specName": "内存:集成内存","compare": ">=","specValue": "128","unit": "GB"}]
+		""" 
+
+
+		...
+	}
+
 ProductOntoService4Local.parseSpecItemReq 
 class ProductSpecificationParserServiceTest {
 	mockSpecMatch(String orgSpecDesc,String stdSpecDesc){
