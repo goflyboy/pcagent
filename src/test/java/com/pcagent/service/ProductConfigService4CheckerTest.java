@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * - QINWEN_API_KEY: 通义千问 API key
  * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
  */
-class ProductConfigServiceSysTest {
+class ProductConfigService4CheckerTest {
 
     private static final String DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com";
     private static final String DEFAULT_QINWEN_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1";

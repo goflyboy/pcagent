@@ -185,7 +185,8 @@
           "defaultValue": "1",
           "sortNo": 3,
           "options": [],
-          "refSpecCode": ""
+          "refSpecCode": "",
+          "checkRule": ""
         },
         {
           "code": "CPU_CONFIG",
@@ -197,7 +198,8 @@
             {"code": "24核", "value": 24, "sortNo": 1},
             {"code": "32核", "value": 32, "sortNo": 2}
           ],
-          "refSpecCode": "CPU:处理器核心数"
+          "refSpecCode": "CPU:处理器核心数",
+          "checkRule": ""
         },
         {
           "code": "MEM_CONFIG",
@@ -209,7 +211,8 @@
             {"code": "512GB", "value": 512, "sortNo": 1},
             {"code": "1TB", "value": 1024, "sortNo": 2}
           ],
-          "refSpecCode": "内存:内存容量"
+          "refSpecCode": "内存:内存容量",
+          "checkRule": ""
         }
       ]
     },
@@ -222,7 +225,8 @@
           "defaultValue": "1",
           "sortNo": 3,
           "options": [],
-          "refSpecCode": ""
+          "refSpecCode": "",
+          "checkRule": ""
         },
         {
           "code": "CPU_CONFIG",
@@ -234,7 +238,8 @@
             {"code": "48核", "value": 48, "sortNo": 1},
             {"code": "64核", "value": 64, "sortNo": 2}
           ],
-          "refSpecCode": "CPU:处理器核心数"
+          "refSpecCode": "CPU:处理器核心数",
+          "checkRule": ""
         },
         {
           "code": "MEM_CONFIG",
@@ -246,7 +251,8 @@
             {"code": "1TB", "value": 1024, "sortNo": 1},
             {"code": "2TB", "value": 2048, "sortNo": 2}
           ],
-          "refSpecCode": "内存:内存容量"
+          "refSpecCode": "内存:内存容量",
+          "checkRule": ""
         }
       ]
     }
