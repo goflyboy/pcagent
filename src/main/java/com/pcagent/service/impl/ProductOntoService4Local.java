@@ -26,7 +26,7 @@ public class ProductOntoService4Local implements ProductOntoService {
     @PostConstruct
     public void init() {
         try {
-            String dataPath = CommHelper.getCodeResourcePath() + "/data/product-onto-data.json";
+            String dataPath = CommHelper.getCodeResourcePath() + "/data/product-onto-data-sample.json";
             this.data = ProductOntoUtils.fromJsonFile(dataPath, ProductOntoData.class);
             log.info("Product ontology data loaded successfully from: {}", dataPath);
         } catch (IOException e) {

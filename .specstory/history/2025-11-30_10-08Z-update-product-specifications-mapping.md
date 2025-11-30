@@ -3422,3 +3422,698 @@ mvn test -Dtest=ProductSelectionServiceTest
 
 ---
 
+_**User (2025-11-30 00:47Z)**_
+
+@ProductSelectionServiceTest.java (36-40)  提取成常量  放到impl.ProductOntoDataSample里
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看测试文件，确定需要提取的常量，然后创建或更新 `ProductOntoDataSample` 类：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "**/ProductOntoDataSample.java" • **0** result in **1** directory</summary>
+
+Directory: **d:\01.code\mygithub\pcagent** (0 file)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="list_dir">
+<details>
+            <summary>Tool use: **list_directory** • Listed directory undefined • **0** results</summary>
+        
+No results found
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+创建 `ProductOntoDataSample` 类，提取测试中的常量：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+创建 `ProductOntoDataSample` 类并提取常量：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoDataSample.java</summary>
+
+**Chunk 1**
+Lines added: 43, lines removed: 1
+
+```diff
+@@ -1,1 +1,43 @@
+- 
++ package com.pcagent.service.impl;
++ 
++ import java.util.Arrays;
++ import java.util.List;
++ 
++ /**
++  * 产品本体数据样例常量
++  * 用于测试和示例代码
++  */
++ public class ProductOntoDataSample {
++     
++     // 目录节点
++     public static final String CATALOG_NODE_DATA_CENTER_SERVER = &quot;data_center_server&quot;;
++     
++     // 产品代码
++     public static final String PRODUCT_CODE_POWEREDGE_R760XA = &quot;poweredge_r760xa&quot;;
++     public static final String PRODUCT_CODE_POWEREDGE_R860XA = &quot;poweredge_r860xa&quot;;
++     
++     // 规格需求 - 内存
++     public static final String SPEC_REQ_MEMORY_256GB = &quot;内存:配置≥256GB DDR4 ECC Registered内存&quot;;
++     public static final String SPEC_REQ_MEMORY_512GB = &quot;内存:配置≥512GB DDR4 ECC Registered内存&quot;;
++     
++     // 规格需求 - CPU
++     public static final String SPEC_REQ_CPU_16_CORES = &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 &quot;;
++     public static final String SPEC_REQ_CPU_32_CORES = &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥32核 &quot;;
++     
++     // 规格需求列表 - 常用组合
++     public static final List&lt;String&gt; SPEC_REQ_ITEMS_MEMORY_256GB_CPU_16 = Arrays.asList(
++             SPEC_REQ_MEMORY_256GB,
++             SPEC_REQ_CPU_16_CORES
++     );
++     
++     public static final List&lt;String&gt; SPEC_REQ_ITEMS_MEMORY_512GB_CPU_32 = Arrays.asList(
++             SPEC_REQ_MEMORY_512GB,
++             SPEC_REQ_CPU_32_CORES
++     );
++     
++     // 私有构造器，防止实例化
++     private ProductOntoDataSample() {
++         throw new UnsupportedOperationException(&quot;Utility class cannot be instantiated&quot;);
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -5,9 +5,9 @@
+  import com.pcagent.model.ProductSpecification;
+  import com.pcagent.model.ProductSpecificationReq;
++ import com.pcagent.service.impl.ProductOntoDataSample;
+  import com.pcagent.service.impl.ProductOntoService4Local;
+  import org.junit.jupiter.api.BeforeEach;
+  import org.junit.jupiter.api.Test;
+  
+- import java.util.Arrays;
+  import java.util.List;
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 6
+
+```diff
+@@ -34,12 +34,9 @@
+      void testCalcProductDeviationDegree_Satisfied() {
+          // 准备测试数据 - 解析规格需求
+-         String catalogNode = &quot;data_center_server&quot;;
+-         List&lt;String&gt; specReqItems = Arrays.asList(
+-                 &quot;内存:配置≥256GB DDR4 ECC Registered内存&quot;,
+-                 &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 &quot;
+-         );  
++         String catalogNode = ProductOntoDataSample.CATALOG_NODE_DATA_CENTER_SERVER;
++         List&lt;String&gt; specReqItems = ProductOntoDataSample.SPEC_REQ_ITEMS_MEMORY_256GB_CPU_16;
+          ProductSpecificationReq productSpecReq = parserService.parseProductSpecsByCatalogNode(catalogNode, specReqItems);
+          // 获取产品规格 - poweredge_r760xa: CPU&gt;=16核, 内存&gt;=256GB
+-         ProductSpecification productSpec = productOntoService.queryProductSpecification(&quot;poweredge_r760xa&quot;);
++         ProductSpecification productSpec = productOntoService.queryProductSpecification(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R760XA);
+    
+          // 执行测试
+```
+
+</details>
+
+</tool-use>
+
+---
+
+The model provided an ambiguous search string to replace.
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: 5
+
+```diff
+@@ -77,9 +77,6 @@
+      void testCalcProductDeviationDegree_PartiallySatisfied() {
+          // 准备测试数据 - 解析规格需求：要求内存&gt;=512GB, CPU&gt;=32核
+-         String catalogNode = &quot;data_center_server&quot;;
+-         List&lt;String&gt; specReqItems = Arrays.asList(
+-                 &quot;内存:配置≥512GB DDR4 ECC Registered内存&quot;,
+-                 &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥32核 &quot;
+-         );
++         String catalogNode = ProductOntoDataSample.CATALOG_NODE_DATA_CENTER_SERVER;
++         List&lt;String&gt; specReqItems = ProductOntoDataSample.SPEC_REQ_ITEMS_MEMORY_512GB_CPU_32;
+  
+          // Mock规格匹配
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: 2
+
+```diff
+@@ -82,11 +82,11 @@
+          // Mock规格匹配
+          productOntoService.mockSpecMatch(
+-                 &quot;内存:配置≥512GB DDR4 ECC Registered内存&quot;,
++                 ProductOntoDataSample.SPEC_REQ_MEMORY_512GB,
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;512&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;
+          );
+          productOntoService.mockSpecMatch(
+-                 &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥32核 &quot;,
++                 ProductOntoDataSample.SPEC_REQ_CPU_32_CORES,
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;32&quot;,&quot;unit&quot;: &quot;核&quot;}
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 3
+
+```diff
+@@ -97,14 +97,14 @@
+  
+          // 获取产品规格 - poweredge_r760xa: CPU&gt;=16核, 内存&gt;=256GB (不满足需求)
+-         ProductSpecification productSpec = productOntoService.queryProductSpecification(&quot;poweredge_r760xa&quot;);
++         ProductSpecification productSpec = productOntoService.queryProductSpecification(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R760XA);
+          assertNotNull(productSpec, &quot;产品规格不应为null&quot;);
+  
+          // 执行测试
+          var result = selectionService.calcProductDeviationDegree(productSpec, productSpecReq);
+-         result.setProductCode(&quot;poweredge_r760xa&quot;); // 手动设置productCode
++         result.setProductCode(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R760XA); // 手动设置productCode
+  
+          // 验证结果
+          assertDeviation(result)
+-                 .productCodeEqual(&quot;poweredge_r760xa&quot;)
++                 .productCodeEqual(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R760XA)
+                  .totalDeviationDegreesEqual(0) // 两个规格都不满足，满足度0%
+                  .specItemDeviationDegreesSize(2);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 6
+
+```diff
+@@ -126,13 +126,10 @@
+      void testCalcProductDeviationDegree_FullySatisfiedWithHigherSpec() {
+          // 准备测试数据 - 解析规格需求：要求内存&gt;=256GB, CPU&gt;=16核
+-         String catalogNode = &quot;data_center_server&quot;;
+-         List&lt;String&gt; specReqItems = Arrays.asList(
+-                 &quot;内存:配置≥256GB DDR4 ECC Registered内存&quot;,
+-                 &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 &quot;
+-         );
++         String catalogNode = ProductOntoDataSample.CATALOG_NODE_DATA_CENTER_SERVER;
++         List&lt;String&gt; specReqItems = ProductOntoDataSample.SPEC_REQ_ITEMS_MEMORY_256GB_CPU_16;
+  
+          // Mock规格匹配
+          productOntoService.mockSpecMatch(
+-                 &quot;CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 &quot;,
++                 ProductOntoDataSample.SPEC_REQ_CPU_16_CORES,
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;16&quot;,&quot;unit&quot;: &quot;核&quot;}
+```
+
+**Chunk 2**
+Lines added: 3, lines removed: 3
+
+```diff
+@@ -143,14 +140,14 @@
+  
+          // 获取产品规格 - poweredge_r860xa: CPU&gt;=32核, 内存&gt;=512GB (超过需求)
+-         ProductSpecification productSpec = productOntoService.queryProductSpecification(&quot;poweredge_r860xa&quot;);
++         ProductSpecification productSpec = productOntoService.queryProductSpecification(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R860XA);
+          assertNotNull(productSpec, &quot;产品规格不应为null&quot;);
+  
+          // 执行测试
+          var result = selectionService.calcProductDeviationDegree(productSpec, productSpecReq);
+-         result.setProductCode(&quot;poweredge_r860xa&quot;); // 手动设置productCode
++         result.setProductCode(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R860XA); // 手动设置productCode
+  
+          // 验证结果 - 产品规格超过需求，应该都满足
+          assertDeviation(result)
+-                 .productCodeEqual(&quot;poweredge_r860xa&quot;)
++                 .productCodeEqual(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R860XA)
+                  .totalDeviationDegreesEqual(100) // 两个规格都满足，满足度100%
+                  .specItemDeviationDegreesSize(2);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/service/impl/ProductOntoDataSample.java`
+- `src/test/java/com/pcagent/service/ProductSelectionServiceTest.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查并修复剩余问题：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=ProductSelectionServiceTest</summary>
+
+```bash
+mvn test -Dtest=ProductSelectionServiceTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 44 source files with javac [debug target 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 5 source files with javac [debug target 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+19:52:33.519 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.614 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.614 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.639 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.641 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.642 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.642 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+19:52:33.646 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.649 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.649 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:33.649 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+19:52:33.650 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.642 s
+[INFO] Finished at: 2025-11-30T19:52:33+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+测试通过。检查是否还有需要替换的地方：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复第47行剩余的硬编码字符串：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -45,5 +45,5 @@
+          // 验证结果
+          assertDeviation(result)
+-                 .productCodeEqual(&quot;poweredge_r760xa&quot;)
++                 .productCodeEqual(ProductOntoDataSample.PRODUCT_CODE_POWEREDGE_R760XA)
+                  .totalDeviationDegreesEqual(100) // 两个规格都满足，满足度100%
+                  .specItemDeviationDegreesSize(2);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=ProductSelectionServiceTest</summary>
+
+```bash
+mvn test -Dtest=ProductSelectionServiceTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+19:52:49.643 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.744 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.745 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.776 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.779 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.779 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.780 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+19:52:49.783 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.785 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.785 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data.json
+19:52:49.785 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+19:52:49.785 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.364 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.676 s
+[INFO] Finished at: 2025-11-30T19:52:49+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有测试通过。总结如下：
+
+## 完成的工作
+
+### 1. 创建了 `ProductOntoDataSample` 类
+   位置：`src/main/java/com/pcagent/service/impl/ProductOntoDataSample.java`
+   
+   包含以下常量：
+   - **目录节点常量**：
+     - `CATALOG_NODE_DATA_CENTER_SERVER = "data_center_server"`
+   
+   - **产品代码常量**：
+     - `PRODUCT_CODE_POWEREDGE_R760XA = "poweredge_r760xa"`
+     - `PRODUCT_CODE_POWEREDGE_R860XA = "poweredge_r860xa"`
+   
+   - **规格需求常量**：
+     - `SPEC_REQ_MEMORY_256GB = "内存:配置≥256GB DDR4 ECC Registered内存"`
+     - `SPEC_REQ_MEMORY_512GB = "内存:配置≥512GB DDR4 ECC Registered内存"`
+     - `SPEC_REQ_CPU_16_CORES = "CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 "`
+     - `SPEC_REQ_CPU_32_CORES = "CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥32核 "`
+   
+   - **规格需求列表常量**（常用组合）：
+     - `SPEC_REQ_ITEMS_MEMORY_256GB_CPU_16`
+     - `SPEC_REQ_ITEMS_MEMORY_512GB_CPU_32`
+
+### 2. 更新了 `ProductSelectionServiceTest` 测试类
+   - 移除了硬编码的字符串常量
+   - 使用 `ProductOntoDataSample` 中的常量替代
+   - 提高了代码的可维护性和可读性
+
+### 3. 代码改进
+   - 所有测试用例中的硬编码字符串都已替换为常量
+   - 测试代码更加清晰和易于维护
+   - 常量集中管理，便于后续扩展和修改
+
+## 测试结果
+
+所有 3 个测试用例均通过：
+- `testCalcProductDeviationDegree_Satisfied` ✅
+- `testCalcProductDeviationDegree_PartiallySatisfied` ✅
+- `testCalcProductDeviationDegree_FullySatisfiedWithHigherSpec` ✅
+
+常量提取完成，测试通过。代码更易维护。
+
+---
+
+_**User (2025-11-30 00:47Z)**_
+
+@ProductSelectionServiceTest.java (53-54) 请修复这个  org.opentest4j.AssertionFailedError: originalSpecReq应该等于: 内存:配置≥256GB DDR4 ECC Registered内存 ==> expected: <内存:配置≥256GB DDR4 ECC Registered内存> but was: <内存:内存容量>
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+问题是 `originalSpecReq` 被设置为 `specName` 而非原始规格需求。检查代码并修复：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/ProductSelectionService.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复 `calcSpecItemDeviationDegree`：将 `originalSpec` 传递进去，用原始规格需求设置 `originalSpecReq`，而不是使用 `specName`。
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="search_replace">
+<details>
+<summary>Tool use: **search_replace**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/service/ProductSelectionService.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;f8eb1aee-4882-4735-901a-febacecc6598&quot;
+}
+```
+User decision: **accepted**
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+

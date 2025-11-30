@@ -71,7 +71,7 @@ public class ProductSelectionService {
     public ProductDeviationDegree calcProductDeviationDegree(ProductSpecification productSpec,
             ProductSpecificationReq productSpecReq) {
         ProductDeviationDegree result = new ProductDeviationDegree();
-        
+        result.setProductCode(productSpec.getProductCode());
         for (SpecificationReq specItemReq : productSpecReq.getSpecReqs()) {
             if (specItemReq.getStdSpecs().contains(Specification.NOT_FOUND) || 
                 specItemReq.getStdSpecs().stream().anyMatch(s -> s == Specification.NOT_FOUND)) {
@@ -102,6 +102,7 @@ public class ProductSelectionService {
      */
     SpecItemDeviationDegree calcSpecItemDeviationDegree(ProductSpecification productSpec,
             SpecificationReq specItemReq) {
+        String originalSpec = specItemReq.getOriginalSpec();
         for (Specification stdSpecItemReq : specItemReq.getStdSpecs()) {
             // 查找产品规格中匹配的规格项
             Specification productSpecItem = productSpec.getSpecs().stream()
@@ -114,19 +115,19 @@ public class ProductSelectionService {
                 continue;
             }
 
-            return calcSpecItemDeviationDegree(productSpecItem, stdSpecItemReq);
+            return calcSpecItemDeviationDegree(productSpecItem, stdSpecItemReq, originalSpec);
         }
 
         // 如果都没找到，返回NOT_FOUND
-        return SpecItemDeviationDegree.buildNotFound(specItemReq.getOriginalSpec(), "");
+        return SpecItemDeviationDegree.buildNotFound(originalSpec, "");
     }
 
     /**
      * 计算规格项偏离度（具体规格项对比）
      */
-    SpecItemDeviationDegree calcSpecItemDeviationDegree(Specification specItem, Specification stdSpecItemReq) {
+    SpecItemDeviationDegree calcSpecItemDeviationDegree(Specification specItem, Specification stdSpecItemReq, String originalSpec) {
         SpecItemDeviationDegree result = new SpecItemDeviationDegree();
-        result.setOriginalSpecReq(stdSpecItemReq.getSpecName());
+        result.setOriginalSpecReq(originalSpec);
         result.setSpecName(stdSpecItemReq.getSpecName());
         result.setStdSpecReq(stdSpecItemReq);
 
