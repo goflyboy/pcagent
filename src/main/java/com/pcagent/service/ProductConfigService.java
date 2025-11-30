@@ -145,7 +145,7 @@ public class ProductConfigService {
     /**
      * 检查参数配置结果
      */
-    CheckResult checkParameterConfig(Stack<ParameterConfigIntent> paraConfigResultStack) {
+   public CheckResult checkParameterConfig(Stack<ParameterConfigIntent> paraConfigResultStack) {
         // 首先进行简单检查：所有参数都有值
         for (ParameterConfigIntent intent : paraConfigResultStack) {
             if (intent.getResult() == null || intent.getResult().getValue() == null) {
