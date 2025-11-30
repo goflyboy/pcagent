@@ -268,6 +268,14 @@
         "specValue": "256",
         "unit": "GB"
       }
+    ],
+    "CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ": [
+      {
+        "specName": "CPU:处理器核心数",
+        "compare": ">=",
+        "specValue": "16",
+        "unit": "核"
+      }
     ]
   }
 }

@@ -56,7 +56,7 @@ public class ProductSpecificationParserService {
 
             // 对每个目录节点解析规格
             for (CatalogNode catalogNode : catalogNodes) {
-                ProductSpecificationReq req = productOntoService.parseProductSpecs(catalogNode.getCode(), specReqItems);
+                ProductSpecificationReq req = parseProductSpecsByCatalogNode(catalogNode.getCode(), specReqItems);
                 // 如果找不到，则返回Specification.NOT_FOUND
                 result.add(req);
             }

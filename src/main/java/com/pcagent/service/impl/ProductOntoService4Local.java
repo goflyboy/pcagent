@@ -40,8 +40,12 @@ public class ProductOntoService4Local implements ProductOntoService {
         if (data == null || data.getCatalogNodes() == null) {
             return new ArrayList<>();
         }
+        if (nodeName == null) {
+            return new ArrayList<>(data.getCatalogNodes());
+        }
         return data.getCatalogNodes().stream()
-                .filter(node -> nodeName == null || node.getName().contains(nodeName))
+                .filter(node -> node.getName().contains(nodeName) || 
+                               (node.getCode() != null && node.getCode().contains(nodeName)))
                 .collect(Collectors.toList());
     }
 

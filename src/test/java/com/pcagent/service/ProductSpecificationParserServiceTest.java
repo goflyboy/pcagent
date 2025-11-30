@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.pcagent.service.ProductSpecificationReqAssert.assertReq;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * ProductSpecificationParserService测试类
@@ -25,7 +26,7 @@ class ProductSpecificationParserServiceTest {
     }
 
     @Test
-    void testParseProductSpecsByCatalogNode() {
+    void testParseProductSpecsByCatalogNodeOneSpec() {
         // 准备测试数据
         String catalogNode = "data_center_server";
         List<String> specReqItems = Arrays.asList(
@@ -46,14 +47,14 @@ class ProductSpecificationParserServiceTest {
     }
 
     @Test
-    void testTwoSpection() {
+    void testParseProductSpecsByCatalogNodeMultiSpecs() {
         // 准备测试数据
         String catalogNode = "data_center_server";
         List<String> specReqItems = Arrays.asList(
                 "内存:配置≥128GB DDR1 ECC Registered内存"
         );
 
-        // Mock规格匹配
+        // Mock规格匹配,支持动态根据匹配规格添加匹配场景
         productOntoService.mockSpecMatch(
                 "内存:配置≥128GB DDR1 ECC Registered内存",
                 """
@@ -87,6 +88,38 @@ class ProductSpecificationParserServiceTest {
                 .compareEqual(">=")
                 .specValueEqual("128")
                 .unitEqual("GB");
+    }
+
+    @Test
+    void testParseProductSpecs() {
+        // 准备测试数据
+        String productSerial = "center_server";
+        List<String> specReqItems = Arrays.asList(
+                "CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ",
+                "内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展"
+        );
+
+        // 执行测试
+        List<ProductSpecificationReq> results = parserService.parseProductSpecs(productSerial, specReqItems);
+  
+        // 验证第一个结果（应该匹配到 data_center_server 节点）
+        ProductSpecificationReq result = results.get(0);
+        assertReq(result)
+                .catalogNodeEqual("data_center_server")
+                .specReqsSize(2)
+                .specReq(0)
+                .originalSpecEqual("CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ")
+                .stdSpecsSize(1)
+                .stdSpec(0)
+                .specNameEqual("CPU:处理器核心数")
+                .compareEqual(">=")
+                .specValueEqual("16")
+                .unitEqual("核");
+        
+        // 验证第二个规格（内存规格，如果匹配到的话）
+        assertReq(result)
+                .specReq(1)
+                .originalSpecEqual("内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展");
     }
 }
 

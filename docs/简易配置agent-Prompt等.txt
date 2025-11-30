@@ -147,10 +147,27 @@ userInput:
 
 我有一名高端客户，需要建立数据中心，要求如下：
 数据中心服务器 500台
-1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
-2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
-3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+1. CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 
+2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。 
 
+      {
+        "specName": "CPU:处理器核心数",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "核"
+      }
+
+参考testParseProductSpecsByCatalogNodeOneSpec添加针对parseProductSpecs的用例
+输入：
+  productSerial = "center_server";
+  specReqItems=["CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ","内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展"];
+在：product-onto-data补充：orgSpecReqToStdSpecReqMap
+"CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 "：[      {
+        "specName": "CPU:处理器核心数",
+        "compare": ">=",
+        "specValue": "16",
+        "unit": "核"
+      }]
 
 String catalogNode，List<String> specReqItems
 catalogNode = data_center_server
@@ -161,9 +178,8 @@ specReqItems=["内存：配置≥256GB DDR4 ECC Registered内存，并提供≥1
 "totalQuantity": 500,
 "totalQuantityMemo": "",
 "specReqItems": [
-"形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。",
-"内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。",
-"存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。"
+"CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核。",
+"内存:配置≥128GB DDR1 ECC Registered内存" 
 ],
 "configStrategy": "PRICE_MIN_PRIORITY"
 }
@@ -250,50 +266,9 @@ specReqItems=["内存：配置≥256GB DDR4 ECC Registered内存，并提供≥1
 
 1、在appliction.yml增加一个开关
 
-//正式环境不能使用，仅在测试和demo时使用
-class MockDataService {//是一个单列
-	//<OriData
-	Map<String,Object> mockPairData =...
-	boolean isEnabled() {
-		//默认是false;
-	}
-
-	mockOrgSpecToStdSpec(String orgSpecDesc, Specification stdSpec) {
-		mockPairData.put(orgSpecDesc,stdSpec);
-	}
-	applyMockOrgSpecToStdSpec(String orgSpecDesc) {
-		if(isEnabled) {
-		}
-	}
-
+ 
 }
-
-在ProductOntoService4Local增加方法
- 	mockSpecMatch(String orgSpecDesc, String... stdSpecJsonStrings) {
-		stdSpecJsonStrings转成Specification--> stdSpecs
-		mockOrgSpecToStdSpec（orgSpecDesc，stdSpecs)
-	}
- 	mockSpecMatch(String orgSpecDesc, Specification... stdSpecs) {
-		data.orgSpecReqToStdSpecReqMap.put(orgSpecDesc,stdSpecs)
-	}
-
-
-在ProductSpecificationParserServiceTest 新增
-
-
-   @Test
-    void testTwoSpection () {
-		....
-		productOntoService.mockSpecMatch(“内存:配置≥128GB DDR1 ECC Registered内存”，"""
-		 {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
-		""",
-		""""
-		{"specName": "内存:集成内存","compare": ">=","specValue": "128","unit": "GB"}]
-		""" 
-
-
-		...
-	}
+ 
 
 ProductOntoService4Local.parseSpecItemReq 
 class ProductSpecificationParserServiceTest {
@@ -321,27 +296,7 @@ class ProductSpecificationParserServiceTest {
 orgSpecReqToStdSpecReqMap  
   “内存:配置≥256GB DDR4 ECC Registered内存”->{"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "°C"} 
   
-originalSpec=“内存:配置≥256GB DDR4 ECC Registered内存” 返回值是[
-{"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "°C"}]
-
-
-3、    public List<Specification> parseSpecItemReq(String originalSpec) {
-         在orgSpecReqToStdSpecReqMap.get(originalSpec),没有，返回Empty
-    }
-
-          "specName": "工作环境:最高工作环境温度",
-          "compare": "=",
-          "specValue": "-40",
-          "unit": "°C"
-
-
-assertReq(result).catalogNodeEqual("xxx");
-assertReq(result).specReqsSize(5);//result.specReqs.size是否5个
-assertReq(result).specReq(0).specNameEqual("内存:内存容量").compareEqual(">=").specValueEqual("256").unitEqual("GB");
-assertReq(result).specReq(0).specNameEqual("内存:内存容量");
-
-JGDL67B6F758008E72BB
-
+   
 
 电脑的例子：
 https://www.dell.com/zh-cn/shop/%E6%88%B4%E5%B0%94%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91/dell-16-plus-%E7%AC%94%E8%AE%B0%E6%9C%AC/spd/dell-db16250-laptopI yeah定一个8点半的闹钟。你帮你设置好早上8:30的闹钟，到时会准时提醒你。
@@ -395,8 +350,8 @@ TODO:
 3、 	  specName = "最高工作环境温度”; -->specCode
 idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,spectName){....} 模糊规格
 }
+ 
 
-3、ProductParameter 按sort   Todo 数据增
-
+4、补充对ProductSpecificationParserService的异常用例
 
 
