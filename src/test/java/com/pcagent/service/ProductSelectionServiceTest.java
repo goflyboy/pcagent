@@ -87,13 +87,13 @@ class ProductSelectionServiceTest {
         productOntoService.mockSpecMatch(
                 ProductOntoDataSample.SPEC_REQ_MEMORY_512GB,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB","type": "INTEGER"}
                 """
         );
         productOntoService.mockSpecMatch(
                 ProductOntoDataSample.SPEC_REQ_CPU_32_CORES,
                 """
-                {"specName": "CPU:处理器核心数","compare": ">=","specValue": "32","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">=","specValue": "32","unit": "核","type": "INTEGER"}
                 """
         );
 
@@ -136,7 +136,7 @@ class ProductSelectionServiceTest {
         productOntoService.mockSpecMatch(
                 ProductOntoDataSample.SPEC_REQ_CPU_16_CORES,
                 """
-                {"specName": "CPU:处理器核心数","compare": ">=","specValue": "16","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">=","specValue": "16","unit": "核","type": "INTEGER"}
                 """
         );
 
@@ -212,10 +212,10 @@ class ProductSelectionServiceTest {
         // 测试 >= 操作符，产品值满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 ""
         );
@@ -227,10 +227,10 @@ class ProductSelectionServiceTest {
         // 测试 >= 操作符，产品值不满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 ""
         );
@@ -242,10 +242,10 @@ class ProductSelectionServiceTest {
         // 测试 >= 操作符，产品值等于需求值
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 ""
         );
@@ -257,10 +257,10 @@ class ProductSelectionServiceTest {
         // 测试 > 操作符，产品值满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "CPU:处理器核心数","compare": ">","specValue": "32","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "32","unit": "核","type": "INTEGER"}
                 """,
                 """
-                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核","type": "INTEGER"}
                 """,
                 ""
         );
@@ -272,10 +272,10 @@ class ProductSelectionServiceTest {
         // 测试 > 操作符，产品值不满足需求（等于）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核","type": "INTEGER"}
                 """,
                 """
-                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核","type": "INTEGER"}
                 """,
                 ""
         );
@@ -287,10 +287,10 @@ class ProductSelectionServiceTest {
         // 测试 <= 操作符，产品值满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -302,10 +302,10 @@ class ProductSelectionServiceTest {
         // 测试 <= 操作符，产品值不满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "10","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "10","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -317,10 +317,10 @@ class ProductSelectionServiceTest {
         // 测试 < 操作符，产品值满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-50","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-50","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -332,10 +332,10 @@ class ProductSelectionServiceTest {
         // 测试 < 操作符，产品值不满足需求
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-30","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-30","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -347,10 +347,10 @@ class ProductSelectionServiceTest {
         // 测试 = 操作符，产品值满足需求（差值小于0.01）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -362,10 +362,10 @@ class ProductSelectionServiceTest {
         // 测试 = 操作符，产品值不满足需求（差值大于等于0.01）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-30","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-30","unit": "°C","type": "INTEGER"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -377,10 +377,10 @@ class ProductSelectionServiceTest {
         // 测试 = 操作符，产品值与需求值差值很小（小于0.01）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40.005","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40.005","unit": "°C","type": "FLOAT"}
                 """,
                 """
-                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C","type": "INTEGER"}
                 """,
                 ""
         );
@@ -392,10 +392,10 @@ class ProductSelectionServiceTest {
         // 测试 default 分支（未知操作符）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 ""
         );
@@ -408,10 +408,10 @@ class ProductSelectionServiceTest {
         String originalSpec = "内存:配置≥256GB DDR4 ECC Registered内存";
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 originalSpec
         );
@@ -424,10 +424,10 @@ class ProductSelectionServiceTest {
         // 测试异常情况：无法解析的数值（parseValue 返回 0.0，所以 0.0 < 256，结果为 NEGATIVE）
         SpecItemDeviationDegree result = calcDeviation(
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "invalid","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "invalid","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB","type": "INTEGER"}
                 """,
                 ""
         );

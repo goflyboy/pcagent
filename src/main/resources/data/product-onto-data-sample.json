@@ -84,19 +84,22 @@
           "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
-          "unit": "°C"
+          "unit": "°C",
+          "type": "INTEGER"
         },
         {
           "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "16",
-          "unit": "核"
+          "unit": "核",
+          "type": "INTEGER"
         },
         {
           "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "256",
-          "unit": "GB"
+          "unit": "GB",
+          "type": "INTEGER"
         }
       ]
     },
@@ -107,19 +110,22 @@
           "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
-          "unit": "°C"
+          "unit": "°C",
+          "type": "INTEGER"
         },
         {
           "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "32",
-          "unit": "核"
+          "unit": "核",
+          "type": "INTEGER"
         },
         {
           "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "512",
-          "unit": "GB"
+          "unit": "GB",
+          "type": "INTEGER"
         }
       ]
     },
@@ -130,19 +136,22 @@
           "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
-          "unit": "°C"
+          "unit": "°C",
+          "type": "INTEGER"
         },
         {
           "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "24",
-          "unit": "核"
+          "unit": "核",
+          "type": "INTEGER"
         },
         {
           "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "384",
-          "unit": "GB"
+          "unit": "GB",
+          "type": "INTEGER"
         }
       ]
     },
@@ -153,13 +162,15 @@
           "specName": "工作环境温度",
           "compare": "=",
           "specValue": "-40 to +55",
-          "unit": "°C"
+          "unit": "°C",
+          "type": "INTEGER"
         },
         {
           "specName": "网络侧接口",
           "compare": "=",
           "specValue": "2*XGS-PON",
-          "unit": ""
+          "unit": "",
+          "type": "STRING"
         }
       ]
     }
@@ -246,19 +257,22 @@
         "specName": "工作环境:最高工作环境温度",
         "compare": "=",
         "specValue": "",
-        "unit": "°C"
+        "unit": "°C",
+        "type": "INTEGER"
       },
       {
         "specName": "CPU:处理器核心数",
         "compare": ">=",
         "specValue": "",
-        "unit": "核"
+        "unit": "核",
+        "type": "INTEGER"
       },
       {
         "specName": "内存:内存容量",
         "compare": ">=",
         "specValue": "",
-        "unit": "GB"
+        "unit": "GB",
+        "type": "INTEGER"
       }
     ],
     "home_server": [
@@ -266,13 +280,15 @@
         "specName": "工作环境:最高工作环境温度",
         "compare": "=",
         "specValue": "",
-        "unit": "°C"
+        "unit": "°C",
+        "type": "INTEGER"
       },
       {
         "specName": "CPU:处理器核心数",
         "compare": ">=",
         "specValue": "",
-        "unit": "核"
+        "unit": "核",
+        "type": "INTEGER"
       }
     ]
   },
@@ -282,7 +298,8 @@
         "specName": "内存:内存容量",
         "compare": ">=",
         "specValue": "256",
-        "unit": "GB"
+        "unit": "GB",
+        "type": "INTEGER"
       }
     ],
     "CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ": [
@@ -290,7 +307,8 @@
         "specName": "CPU:处理器核心数",
         "compare": ">=",
         "specValue": "16",
-        "unit": "核"
+        "unit": "核",
+        "type": "INTEGER"
       }
     ]
   }

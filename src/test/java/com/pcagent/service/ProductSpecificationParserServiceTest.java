@@ -58,10 +58,10 @@ class ProductSpecificationParserServiceTest {
         productOntoService.mockSpecMatch(
                 "内存:配置≥128GB DDR1 ECC Registered内存",
                 """
-                {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB","type": "INTEGER"}
                 """,
                 """
-                {"specName": "内存:集成内存","compare": ">=","specValue": "128","unit": "GB"}
+                {"specName": "内存:集成内存","compare": ">=","specValue": "128","unit": "GB","type": "INTEGER"}
                 """
         );
 
