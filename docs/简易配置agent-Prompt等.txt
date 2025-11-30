@@ -135,6 +135,10 @@ userInput:
 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
 
 
+先调解析？
+
+
+
 我有一名高端客户，需要建立数据中心，要求如下：
 数据中心服务器 500台
 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
@@ -146,6 +150,23 @@ userInput:
 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+
+
+String catalogNode，List<String> specReqItems
+catalogNode = data_center_server
+specReqItems=["内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。"]
+
+{
+"productSerials": "服务器",
+"totalQuantity": 500,
+"totalQuantityMemo": "",
+"specReqItems": [
+"形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。",
+"内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。",
+"存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。"
+],
+"configStrategy": "PRICE_MIN_PRIORITY"
+}
 
 
 
@@ -178,7 +199,33 @@ userInput:
         }
       ]
 
-
+ "productCode": "poweredge_r860xa",
+      "paras": [
+        {
+          "code": "QTY",
+          "type": "输入型",
+          "defaultValue": "1",
+          "sortNo": 3,
+          "options": [],
+          "refSpecCode": ""
+        },
+        {
+          "code": "CPU_CONFIG",
+          "type": "选择性",
+          "defaultValue": "32核",
+          "sortNo": 1,
+          "options": ["32核", "48核", "64核"],
+          "refSpecCode": "处理器核心数"
+        },
+        {
+          "code": "MEM_CONFIG",
+          "type": "选择性",
+          "defaultValue": "512GB",
+          "sortNo": 2,
+          "options": ["512GB", "1TB", "2TB"],
+          "refSpecCode": "内存容量"
+        }
+      ]
 
     "data_center_server": [
       {
