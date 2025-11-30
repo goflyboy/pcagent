@@ -361,7 +361,10 @@ public class Parameter {
     private List<String> options = new ArrayList<>(); // 可选值列表
     private String refSpecCode; // 引用的规格Code
 }
-
+类似ParameterType，增加
+public class Specification 增加字段
+    ParameterType type; 默认是 ParameterType.INTEGER
+  
 1、Parameter.type String改成 ParameterType，默认值是ParameterType.INTEGER
 public enum ParameterType {
     ENUM(0, "EnumType"),
@@ -400,8 +403,14 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
  P813EE的SystemTest  AcceptTest
 
-7、option还是要增加一个ref，规格的值**
+7、optionb还是要增加一个ref，规格的值**
 
 8、spec也要增加类型**
 
+
+对外需求：
+  option是一个对象：
+
+ class Specification 增加字段
+    ParameterType type; 默认是 ParameterType.INTEGER
 

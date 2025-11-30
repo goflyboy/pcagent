@@ -7442,3 +7442,387 @@ mvn test
 
 ---
 
+_**User (2025-11-30 00:47Z)**_
+
+ class Specification 增加字段
+
+    ParameterType type; 默认是 ParameterType.INTEGER
+
+
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看 `Specification` 类，添加 `ParameterType type` 字段：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/Specification.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "Specification" • 16 matches</summary>
+
+Output mode: files_with_matches
+
+
+| File |
+|------|
+| `.\src\test\java\com\pcagent\service\ProductSelectionServiceTest.java` |
+| `.\src\main\java\com\pcagent\service\ProductSelectionService.java` |
+| `.\src\main\java\com\pcagent\service\impl\ProductOntoService4Local.java` |
+| `.\src\test\java\com\pcagent\service\ProductSpecificationParserServiceTest.java` |
+| `.\src\main\java\com\pcagent\service\ProductSpecificationParserService.java` |
+| `.\src\test\java\com\pcagent\service\ProductSpecificationReqAssert.java` |
+| `.\src\main\java\com\pcagent\model\ProductOntoData.java` |
+| `.\src\main\java\com\pcagent\service\PCAgentService.java` |
+| `.\src\main\java\com\pcagent\service\PCAgentService4Session.java` |
+| `.\src\test\java\com\pcagent\service\ProductOntoService4LocalTest.java` |
+| `.\src\main\java\com\pcagent\service\ProductOntoService.java` |
+| `.\src\main\java\com\pcagent\model\ProductSpecificationReq.java` |
+| `.\src\main\java\com\pcagent\model\SpecItemDeviationDegree.java` |
+| `.\src\main\java\com\pcagent\model\SpecificationReq.java` |
+| `.\src\main\java\com\pcagent\model\ProductSpecification.java` |
+| `.\src\main\java\com\pcagent\model\Specification.java` |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+在 `Specification` 类中添加 `ParameterType type` 字段：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/model/Specification.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 1
+
+```diff
+@@ -16,9 +16,11 @@
+      private String specValue; // 值：数字类型如&quot;1&quot;，字符类型如&quot;GE&quot;，列表类型如&quot;大,中,小&quot;
+      private String unit;
++     private ParameterType type = ParameterType.INTEGER; // 参数类型，默认INTEGER
+  
+-     public static final Specification NOT_FOUND = new Specification(&quot;NOT_FOUND&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;);
++     public static final Specification NOT_FOUND = new Specification(&quot;NOT_FOUND&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, ParameterType.INTEGER);
+  
+      public Specification(String specName) {
+          this.specName = specName;
++         this.type = ParameterType.INTEGER;
+      }
+  }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/model/Specification.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn compile</summary>
+
+```bash
+mvn compile
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.320 s
+[INFO] Finished at: 2025-11-30T21:38:04+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+运行测试，确保修改未破坏现有功能：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test</summary>
+
+```bash
+mvn test
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductOntoService4LocalTest
+21:38:12.997 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.102 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.102 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.119 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.122 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.123 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.127 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.129 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.129 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.132 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.135 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.135 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.138 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.140 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.140 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.396 s -- in com.pcagent.service.ProductOntoService4LocalTest
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+21:38:13.153 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.155 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.155 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.170 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.171 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.171 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.172 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.175 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.179 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.183 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.183 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.184 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.184 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.189 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.191 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.191 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.192 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.192 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.194 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.196 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.196 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.196 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.196 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.201 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.204 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.205 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.205 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.205 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.207 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.208 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.209 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.209 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.209 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.212 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.214 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.215 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.216 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.221 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.223 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.223 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.223 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.223 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.227 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.229 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.229 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.229 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.229 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.239 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.242 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.242 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.242 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.242 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.244 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.245 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.245 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.245 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.245 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.249 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.250 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.251 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.252 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.252 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.255 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.256 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.256 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.256 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.256 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.258 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.259 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.259 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.259 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.259 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.260 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.261 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.261 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.261 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.261 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.265 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.268 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.269 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.269 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.269 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.271 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.272 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.272 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.272 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.272 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] Running com.pcagent.service.ProductSpecificationParserServiceTest
+21:38:13.275 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.276 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.276 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.284 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.286 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.286 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.289 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.291 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.292 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:38:13.292 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:38:13.292 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.pcagent.service.ProductSpecificationParserServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.953 s
+[INFO] Finished at: 2025-11-30T21:38:13+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有测试通过。查看最终的 `Specification` 类，确认修改：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/Specification.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修改已完成。总结如下：
+
+## 完成的工作
+
+### 在 `Specification` 类中添加了 `ParameterType type` 字段
+
+1. 添加字段：
+   - `private ParameterType type = ParameterType.INTEGER;` - 参数类型，默认值为 `ParameterType.INTEGER`
+
+2. 更新了相关构造函数：
+   - 更新了 `NOT_FOUND` 常量，添加了 `ParameterType.INTEGER` 参数
+   - 更新了 `Specification(String specName)` 构造函数，在构造函数中设置 `type = ParameterType.INTEGER`
+
+### 修改详情
+
+- 字段声明：`private ParameterType type = ParameterType.INTEGER;`
+- `NOT_FOUND` 常量：`new Specification("NOT_FOUND", "", "", "", ParameterType.INTEGER)`
+- 单参数构造函数：在构造函数中设置 `this.type = ParameterType.INTEGER`
+
+### 测试结果
+
+所有 26 个测试用例均通过：
+- `ProductOntoService4LocalTest` - 5 个测试
+- `ProductSelectionServiceTest` - 18 个测试
+- `ProductSpecificationParserServiceTest` - 3 个测试
+
+修改已完成，代码可正常编译和运行。`Specification` 类现在包含 `type` 字段，默认值为 `ParameterType.INTEGER`。
+
+---
+
