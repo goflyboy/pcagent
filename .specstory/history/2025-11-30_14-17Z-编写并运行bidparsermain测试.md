@@ -5392,3 +5392,47 @@ tail -f log/pcagent-llm.log
 
 ---
 
+_**User (2025-11-30 22:05Z)**_
+
+@LLMInvokerSysTest.java (56)  为什么运行这个用例，没有看到日志？
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file">
+<details>
+<summary>Tool use: **read_file**</summary>
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
