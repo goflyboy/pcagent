@@ -81,19 +81,19 @@
       "productCode": "poweredge_r760xa",
       "specs": [
         {
-          "specName": "最高工作环境温度",
+          "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
           "unit": "°C"
         },
         {
-          "specName": "处理器核心数",
+          "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "16",
           "unit": "核"
         },
         {
-          "specName": "内存容量",
+          "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "256",
           "unit": "GB"
@@ -104,19 +104,19 @@
       "productCode": "poweredge_r860xa",
       "specs": [
         {
-          "specName": "最高工作环境温度",
+          "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
           "unit": "°C"
         },
         {
-          "specName": "处理器核心数",
+          "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "32",
           "unit": "核"
         },
         {
-          "specName": "内存容量",
+          "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "512",
           "unit": "GB"
@@ -127,19 +127,19 @@
       "productCode": "poweredge_t860xa",
       "specs": [
         {
-          "specName": "最高工作环境温度",
+          "specName": "工作环境:最高工作环境温度",
           "compare": "=",
           "specValue": "-40",
           "unit": "°C"
         },
         {
-          "specName": "处理器核心数",
+          "specName": "CPU:处理器核心数",
           "compare": ">=",
           "specValue": "24",
           "unit": "核"
         },
         {
-          "specName": "内存容量",
+          "specName": "内存:内存容量",
           "compare": ">=",
           "specValue": "384",
           "unit": "GB"
@@ -182,7 +182,7 @@
           "defaultValue": "16核",
           "sortNo": 1,
           "options": ["16核", "24核", "32核"],
-          "refSpecCode": "处理器核心数"
+          "refSpecCode": "CPU:处理器核心数"
         },
         {
           "code": "MEM_CONFIG",
@@ -190,7 +190,7 @@
           "defaultValue": "256GB",
           "sortNo": 2,
           "options": ["256GB", "512GB", "1TB"],
-          "refSpecCode": "内存容量"
+          "refSpecCode": "内存:内存容量"
         }
       ]
     },
@@ -211,7 +211,7 @@
           "defaultValue": "32核",
           "sortNo": 1,
           "options": ["32核", "48核", "64核"],
-          "refSpecCode": "处理器核心数"
+          "refSpecCode": "CPU:处理器核心数"
         },
         {
           "code": "MEM_CONFIG",
@@ -219,7 +219,7 @@
           "defaultValue": "512GB",
           "sortNo": 2,
           "options": ["512GB", "1TB", "2TB"],
-          "refSpecCode": "内存容量"
+          "refSpecCode": "内存:内存容量"
         }
       ]
     }
@@ -227,19 +227,19 @@
   "nodeSpecifications": {
     "data_center_server": [
       {
-        "specName": "最高工作环境温度",
+        "specName": "工作环境:最高工作环境温度",
         "compare": "=",
         "specValue": "",
         "unit": "°C"
       },
       {
-        "specName": "处理器核心数",
+        "specName": "CPU:处理器核心数",
         "compare": ">=",
         "specValue": "",
         "unit": "核"
       },
       {
-        "specName": "内存容量",
+        "specName": "内存:内存容量",
         "compare": ">=",
         "specValue": "",
         "unit": "GB"
@@ -247,16 +247,26 @@
     ],
     "home_server": [
       {
-        "specName": "最高工作环境温度",
+        "specName": "工作环境:最高工作环境温度",
         "compare": "=",
         "specValue": "",
         "unit": "°C"
       },
       {
-        "specName": "处理器核心数",
+        "specName": "CPU:处理器核心数",
         "compare": ">=",
         "specValue": "",
         "unit": "核"
+      }
+    ]
+  },
+  "orgSpecReqToStdSpecReqMap": {
+    "内存:配置≥256GB DDR4 ECC Registered内存": [
+      {
+        "specName": "内存:内存容量",
+        "compare": ">=",
+        "specValue": "256",
+        "unit": "GB"
       }
     ]
   }

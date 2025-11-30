@@ -54,6 +54,13 @@ public class ProductOntoService4Local implements ProductOntoService {
                 .collect(Collectors.toList());
     }
 
+    public List<Specification> parseSpecItemReq(String originalSpec) {
+        if (data == null || data.getOrgSpecReqToStdSpecReqMap() == null) {
+            return new ArrayList<>();
+        }
+        List<Specification> result = data.getOrgSpecReqToStdSpecReqMap().get(originalSpec);
+        return result != null ? result : new ArrayList<>();
+    }
     @Override
     public ProductSpecificationReq parseProductSpecs(String nodeCode, List<String> originalSpecs) {
         ProductSpecificationReq req = new ProductSpecificationReq();
@@ -65,31 +72,13 @@ public class ProductOntoService4Local implements ProductOntoService {
             log.warn("No specifications found for node: {}", nodeCode);
             return req;
         }
-
+        
         // 解析每个原始规格
         for (String originalSpec : originalSpecs) {
             SpecificationReq specReq = new SpecificationReq();
             specReq.setOriginalSpec(originalSpec);
-
-            // 尝试匹配节点规格模板
-            for (Specification nodeSpec : nodeSpecs) {
-                if (matchesSpec(originalSpec, nodeSpec)) {
-                    Specification stdSpec = new Specification();
-                    stdSpec.setSpecName(nodeSpec.getSpecName());
-                    stdSpec.setCompare(nodeSpec.getCompare());
-                    stdSpec.setUnit(nodeSpec.getUnit());
-                    // 从原始规格中提取值
-                    String specValue = extractSpecValue(originalSpec, nodeSpec);
-                    stdSpec.setSpecValue(specValue);
-                    specReq.getStdSpecs().add(stdSpec);
-                }
-            }
-
-            // 如果没找到匹配的规格，添加NOT_FOUND
-            if (specReq.getStdSpecs().isEmpty()) {
-                specReq.getStdSpecs().add(Specification.NOT_FOUND);
-            }
-
+            List<Specification> specItemReqs = parseSpecItemReq(originalSpec);
+            specReq.setStdSpecs(specItemReqs); 
             req.getSpecReqs().add(specReq);
         }
 
@@ -100,8 +89,13 @@ public class ProductOntoService4Local implements ProductOntoService {
      * 检查原始规格是否匹配节点规格模板
      */
     private boolean matchesSpec(String originalSpec, Specification nodeSpec) {
-        String specName = nodeSpec.getSpecName();
-        return originalSpec.contains(specName);
+        //这里按originalSpec和nodeSpec的":“分割，比较前半部分是否相等
+        String[] originalSpecParts = originalSpec.split(":");
+        String[] nodeSpecParts = nodeSpec.getSpecName().split(":");
+        if (originalSpecParts.length != 2 || nodeSpecParts.length != 2) {
+            return false;
+        }
+        return originalSpecParts[0].equals(nodeSpecParts[0]);      
     }
 
     /**

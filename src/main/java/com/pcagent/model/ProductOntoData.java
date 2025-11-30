@@ -31,5 +31,8 @@ public class ProductOntoData {
     
     // 目录节点规格映射：nodeCode -> List<Specification>
     private Map<String, List<Specification>> nodeSpecifications = new HashMap<>();
+    
+    // 原始规格请求到标准规格请求的映射：originalSpec -> List<Specification>
+    private Map<String, List<Specification>> orgSpecReqToStdSpecReqMap = new HashMap<>();
 }
 
