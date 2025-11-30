@@ -155,7 +155,7 @@ public class ProductConfigService {
                             parameter.getCode(), parameter.getRefSpecCode());
                 }
             } else {
-                paraIntents.add(generateParameterConfigIntent(parameter, specItemDeviation));
+                paraIntents.add(generateParameterConfigIntent(parameter, specItemDeviation.getStdSpecReq(), specItemDeviation.getOriginalSpecReq()));
             }
         }
 
@@ -182,26 +182,74 @@ public class ProductConfigService {
 
     /**
      * 生成配置意图
+     * 根据 Specification 的 type/compare/specValue 和 Parameter 的 type/options 来生成配置意图选项
+     * 
+     * @param parameter 参数
+     * @param stdSpecReq 标准规格需求
+     * @param originalSpecReq 原始规格需求
+     * @return 参数配置意图
      */
-    ParameterConfigIntent generateParameterConfigIntent(Parameter parameter,
-            SpecItemDeviationDegree specItemDeviationDegree) {
+    public ParameterConfigIntent generateParameterConfigIntent(Parameter parameter,
+        Specification stdSpecReq, String originalSpecReq) {
         ParameterConfigIntent paraConfigIntent = new ParameterConfigIntent();
         paraConfigIntent.setCode(parameter.getCode());
         paraConfigIntent.setBase(parameter);
         paraConfigIntent.setIntentOptions(new ArrayList<>());
 
-        // 根据parameter.options 和 specItemDeviationDegree.stdSpecReq 来生成paraConfigIntent.options
+        // 如果参数有选项列表（枚举型参数）
         if (parameter.getOptions() != null && !parameter.getOptions().isEmpty()) {
+            // 解析规格需求的值
+            double specValue = parseValue(stdSpecReq.getSpecValue());
+            String compare = stdSpecReq.getCompare();
+            
+            // 遍历参数选项，根据比较操作符过滤匹配的选项
             for (ParameterOption paramOption : parameter.getOptions()) {
-                ParameterConfigIntentOption option = new ParameterConfigIntentOption();
-                option.setValue(paramOption.getValue());
-                option.setMessage("根据规格需求 " + specItemDeviationDegree.getOriginalSpecReq() + 
-                        " 选择配置: " + paramOption.getCode());
-                option.setIsVisited(false);
-                paraConfigIntent.getIntentOptions().add(option);
+                // 解析选项的值
+                double optionValue = parseValue(paramOption.getValue());
+                
+                // 根据比较操作符判断是否匹配
+                boolean matches = false;
+                switch (compare) {
+                    case "=":
+                        // 等于：选项值等于规格需求值（允许小的误差）
+                        matches = Math.abs(optionValue - specValue) < 0.01;
+                        break;
+                    case ">":
+                        // 大于：选项值大于规格需求值
+                        matches = optionValue > specValue;
+                        break;
+                    case ">=":
+                        // 大于等于：选项值大于等于规格需求值
+                        matches = optionValue >= specValue;
+                        break;
+                    case "<":
+                        // 小于：选项值小于规格需求值
+                        matches = optionValue < specValue;
+                        break;
+                    case "<=":
+                        // 小于等于：选项值小于等于规格需求值
+                        matches = optionValue <= specValue;
+                        break;
+                    default:
+                        // 未知操作符，默认不匹配
+                        log.warn("Unknown compare operator: {}", compare);
+                        matches = false;
+                        break;
+                }
+                
+                // 如果匹配，则添加配置意图选项
+                if (matches) {
+                    ParameterConfigIntentOption option = new ParameterConfigIntentOption();
+                    // 使用 code 作为输出值（如 "48核"），而不是 value（如 48）
+                    option.setValue(paramOption.getCode());
+                    option.setMessage("根据规格需求 " + originalSpecReq + 
+                            " 选择配置: " + paramOption.getCode());
+                    option.setIsVisited(false);
+                    paraConfigIntent.getIntentOptions().add(option);
+                }
             }
         } else {
-            // 输入型参数
+            // 输入型参数（没有选项列表），使用默认值
             ParameterConfigIntentOption option = new ParameterConfigIntentOption();
             option.setValue(parameter.getDefaultValue());
             option.setMessage("使用默认值: " + parameter.getDefaultValue());
@@ -210,6 +258,30 @@ public class ProductConfigService {
         }
 
         return paraConfigIntent;
+    }
+
+    /**
+     * 解析数值
+     * 从字符串中提取数字部分并转换为 double
+     * 
+     * @param value 字符串值
+     * @return 解析后的数值
+     */
+    private double parseValue(String value) {
+        if (value == null || value.trim().isEmpty()) {
+            return 0.0;
+        }
+        // 提取数字部分（包括负号和小数点）
+        String numberStr = value.replaceAll("[^0-9.-]", "");
+        if (numberStr.isEmpty()) {
+            return 0.0;
+        }
+        try {
+            return Double.parseDouble(numberStr);
+        } catch (NumberFormatException e) {
+            log.warn("Failed to parse value: {}", value, e);
+            return 0.0;
+        }
     }
 }
 

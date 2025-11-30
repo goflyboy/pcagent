@@ -350,7 +350,9 @@ chekc prompt调通
 结下列的任务：
 1、按照P813E来做数据，调通所有的系统用例（对我接口尽量不变了，数据的问题) --龙哥  输出数据有那些问题？
 2、前端页面的调通
-3、
+3、切换公司内部的数据模型 --接口的适配？ --
+
+
 怎么给领导讲，要思考一下？ ---**
 
 public class Parameter {
@@ -385,6 +387,83 @@ class ParameterOption {
 
  类似"16核"改成 {"code":"16核","value":16,"sortNo","0"}
 
+1、选择的代码逻辑写的不对，应该根据spec的type/compare/specValue  及 Parameter的type,Option来生成意图，请改写代码，要写注释
+例如： Specification.type=INTEGER -->  Parameter.type=ENUM,(二者类型不要求相等）
+	如果compare = "=",  则 Parameter.option.value  = Specification.specValue ,则添加配置意图
+    如果compare = ">",  则 Parameter.option.value > Specification.specValue  ,则添加配置意图
+    如果compare = ">=",  则 Parameter.option.value >= Specification.specValue  ,则添加配置意图
+    如果compare = "<=",  则 Parameter.option.value <= Specification.specValue  ,则添加配置意图
+	//....请补充
+//....请补充
+
+2、参考testCalcSpecItemDeviationDegree_GreaterEqual_Satisfied用例 构建 generateParameterConfigIntent的测试用例
+2.1  用json方式构建数据Specification，Parameter（originalSpecReq=“” 
+2.2 先仅写3个用例
+2.3 支持流式比较，ProductConfigIntentAssert（重点是比较intentOptions）
+2.4 
+ 
+输入：
+	parameter1:
+    {
+          "code": "CPU_CONFIG",
+          "type": "ENUM",
+          "defaultValue": "32核",
+          "sortNo": 1,
+          "options": [
+            {"code": "32核", "value": 32, "sortNo": 0},
+            {"code": "48核", "value": 48, "sortNo": 1},
+            {"code": "64核", "value": 64, "sortNo": 2}
+          ],
+          "refSpecCode": "CPU:处理器核心数"
+        },
+	spec1:
+      {
+        "specName": "CPU:处理器核心数",
+        "compare": ">=",
+        "specValue": "48",
+        "unit": "核",
+        "type": "INTEGER"
+      }
+预期输出：
+  public class ParameterConfigIntent {
+     code = “CPU_CONFIG”; // 参数code
+     intentOptions = [{
+		      value="48核";  
+			  message="";  
+             isVisited = false;},{
+		      value="64核";  
+			  message="";  
+             isVisited = false;},
+	]
+}
+
+
+ideda： 测试框架？ 先写3个，抽取？ 再逻辑覆盖？
+
+a.抽取测试框架，避免类似用例重复代码,  
+
+
+
+
+                 {"specName": "CPU:处理器核心数","compare": ">=","specValue": "16","unit": "核","type": "INTEGER"}
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB","type": "INTEGER"}
+
+
+
+参考testParseProductSpecsByCatalogNodeOneSpec添加针对parseProductSpecs的用例
+输入：
+  productSerial = "center_server";
+  specReqItems=["CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 ","内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展"];
+在：product-onto-data补充：orgSpecReqToStdSpecReqMap
+"CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 "：[      {
+        "specName": "CPU:处理器核心数",
+        "compare": ">=",
+        "specValue": "16",
+        "unit": "核"
+      }]
+
+
+
 TODO:
 1、可以先做node，如果匹配度满足，不需要再去匹配（目录也有筛选策略）
 2、偏离度计算公式待定
@@ -405,7 +484,11 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
 7、optionb还是要增加一个ref，规格的值**
 
-8、spec也要增加类型**
+8、刷新一下设计文档*
+
+9、ProductConfigService4ParameterIntentTest
+    //TODO 待补充其它场景
+    
 
 
 对外需求：
@@ -413,4 +496,7 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
  class Specification 增加字段
     ParameterType type; 默认是 ParameterType.INTEGER
+
+
+
 

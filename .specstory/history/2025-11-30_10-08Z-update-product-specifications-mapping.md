@@ -7458,7 +7458,6 @@ _**Agent (model default, mode Agent)**_
 
 ---
 
-
 查看 `Specification` 类，添加 `ParameterType type` 字段：
 
 
@@ -7507,7 +7506,6 @@ Output mode: files_with_matches
 
 
 ---
-
 
 在 `Specification` 类中添加 `ParameterType type` 字段：
 
@@ -7596,7 +7594,6 @@ mvn compile
 
 
 ---
-
 
 运行测试，确保修改未破坏现有功能：
 
@@ -7777,7 +7774,6 @@ mvn test
 
 ---
 
-
 所有测试通过。查看最终的 `Specification` 类，确认修改：
 
 
@@ -7794,7 +7790,6 @@ mvn test
 
 
 ---
-
 
 修改已完成。总结如下：
 
@@ -7837,7 +7832,6 @@ _**Agent (model default, mode Agent)**_
 
 
 ---
-
 
 更新 JSON 数据文件和测试用例中的 Specification 数据，添加 `type` 字段。先检查需要更新的位置：
 
@@ -7928,7 +7922,6 @@ Output mode: content
 
 ---
 
-
 更新 JSON 数据文件和测试用例中的 Specification 数据，添加 `type` 字段：
 
 
@@ -7953,7 +7946,6 @@ Output mode: content
 
 
 ---
-
 
 批量更新 JSON 数据文件和测试用例，为所有 Specification 对象添加 `type` 字段：
 
@@ -8225,7 +8217,6 @@ Lines added: 2, lines removed: 1
 
 
 ---
-
 
 更新测试用例中的 JSON 字符串，添加 `type` 字段：
 
@@ -9010,7 +9001,6 @@ mvn test
 
 ---
 
-
 检查是否还有遗漏的 JSON 字符串需要更新：
 
 
@@ -9079,7 +9069,6 @@ Output mode: content
 
 ---
 
-
 所有测试用例已更新。检查 JSON 数据文件，确保所有 Specification 对象都已包含 `type` 字段：
 
 
@@ -9111,7 +9100,6 @@ _No matches found_
 
 ---
 
-
 检查 JSON 文件的关键部分，确认所有 Specification 对象都已包含 `type` 字段：
 
 
@@ -9137,7 +9125,6 @@ _No matches found_
 
 ---
 
-
 检查 `orgSpecReqToStdSpecReqMap` 部分，确认已更新：
 
 
@@ -9154,7 +9141,6 @@ _No matches found_
 
 
 ---
-
 
 所有数据已更新。运行一次完整测试，确认一切正常：
 
@@ -9186,7 +9172,6 @@ mvn test -Dtest=ProductSelectionServiceTest,ProductSpecificationParserServiceTes
 
 
 ---
-
 
 运行完整测试：
 
@@ -9367,7 +9352,6 @@ mvn test
 
 ---
 
-
 所有测试通过。总结如下：
 
 ## 完成的工作
@@ -9392,6 +9376,38 @@ mvn test
    - `ProductSpecificationParserServiceTest` - 3 个测试
 
 所有数据已更新，代码可正常编译和运行。`Specification` 类中的 `type` 字段已正确序列化和反序列化。
+
+---
+
+_**User (2025-11-30 13:58Z)**_
+
+@ProductConfigService.java (185-213) 1、选择的代码逻辑写的不对，应该根据spec的type/compare/specValue  及 Parameter的type,Option  
+
+Specification.type=INTEGER  Parameter.type=ENUM,
+
+	如果compare = "=",  则 Parameter.option.value  = Specification.specValue ,则添加配置意图
+
+    如果compare = ">",  则 Parameter.option.value > Specification.specValue  ,则添加配置意图
+
+    如果compare = ">=",  则 Parameter.option.value >= Specification.specValue  ,则添加配置意图
+
+    如果compare = "<=",  则 Parameter.option.value <= Specification.specValue  ,则添加配置意图
+
+	//..
+
+//....
+
+
+
+2、参考testCalcSpecItemDeviationDegree_GreaterEqual_Satisfied用例 构建 generateParameterConfigIntent的测试用例（a.抽取测试框架，避免类似用例重复代码, b.尽量逻辑覆盖， c.用json方式构建数据Specification，Parameter（originalSpecReq=“” 
+
+ 
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
 
 ---
 
