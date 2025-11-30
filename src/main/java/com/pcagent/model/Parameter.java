@@ -20,5 +20,6 @@ public class Parameter {
     private Integer sortNo; // 排序号
     private List<ParameterOption> options = new ArrayList<>(); // 可选值列表
     private String refSpecCode; // 引用的规格Code
+    private String checkRule = ""; // 检查规则，用于LLM校验配置结果
 }
 

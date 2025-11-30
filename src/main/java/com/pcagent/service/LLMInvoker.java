@@ -14,10 +14,16 @@ import org.springframework.ai.chat.model.Generation;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.openai.OpenAiChatOptions;
+import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -126,35 +132,38 @@ public class LLMInvoker {
     }
 
     /**
+     * 调用 LLM 进行配置检查（公共方法，供其他服务调用）
+     */
+    public String callLLMForCheck(String prompt) {
+        if (chatModel == null) {
+            log.warn("ChatModel not available for config check");
+            return null;
+        }
+        return callLLM(prompt);
+    }
+
+    /**
      * 调用 LLM
      */
     private String callLLM(String prompt) {
         long startTime = System.currentTimeMillis();
         
+        // 打印 LLM 请求参数信息
         if (log.isDebugEnabled()) {
-            log.debug("=== LLM 调用开始 ===");
-            log.debug("Prompt 长度: {} 字符", prompt != null ? prompt.length() : 0);
-            // 打印 prompt 的前500个字符和后100个字符（如果超过600字符）
-            if (prompt != null && prompt.length() > 600) {
-                log.debug("Prompt 预览（前500字符）: {}", prompt.substring(0, Math.min(500, prompt.length())));
-                log.debug("Prompt 预览（后100字符）: {}", prompt.substring(Math.max(0, prompt.length() - 100)));
-            } else {
-                log.debug("Prompt 内容: {}", prompt);
-            }
+            logLLMRequestInfo();
         }
         
         try {
             Prompt aiPrompt = new Prompt(List.<Message>of(new UserMessage(prompt)));
-            
+
             if (log.isDebugEnabled()) {
                 log.debug("发送请求到 LLM...");
             }
-            
+
             ChatResponse response = chatModel.call(aiPrompt);
-            
-            long callDuration = System.currentTimeMillis() - startTime;
-            
+
             if (response == null) {
+                long callDuration = System.currentTimeMillis() - startTime;
                 if (log.isDebugEnabled()) {
                     log.debug("LLM 返回 null 响应，耗时: {} ms", callDuration);
                     log.debug("=== LLM 调用结束（无响应）===");
@@ -163,21 +172,24 @@ public class LLMInvoker {
             }
             
             Generation generation = response.getResult();
+            
             if (generation == null) {
+                long callDuration = System.currentTimeMillis() - startTime;
                 if (log.isDebugEnabled()) {
                     log.debug("LLM 响应中 Generation 为 null，耗时: {} ms", callDuration);
                     log.debug("=== LLM 调用结束（无 Generation）===");
                 }
                 return "";
-            }
+            } 
             
             // Spring AI 1.0.0-M4 使用 getOutput().getContent() 方法
             String content = generation.getOutput().getContent();
             
+            long callDuration = System.currentTimeMillis() - startTime;
+            
             if (log.isDebugEnabled()) {
                 log.debug("LLM 调用成功，耗时: {} ms", callDuration);
                 log.debug("响应长度: {} 字符", content != null ? content.length() : 0);
-                
                 // 打印响应的前500个字符和后100个字符（如果超过600字符）
                 if (content != null && content.length() > 600) {
                     log.debug("响应预览（前500字符）: {}", content.substring(0, Math.min(500, content.length())));
@@ -185,28 +197,114 @@ public class LLMInvoker {
                 } else {
                     log.debug("响应内容: {}", content);
                 }
-                
-                // 记录元数据信息
-                if (generation.getMetadata() != null) {
-                    log.debug("响应元数据: {}", generation.getMetadata());
-                }
-                
                 log.debug("=== LLM 调用结束 ===");
             }
             
             return content;
         } catch (Exception e) {
             long callDuration = System.currentTimeMillis() - startTime;
-            
+
             if (log.isDebugEnabled()) {
                 log.debug("LLM 调用失败，耗时: {} ms", callDuration);
                 log.debug("异常类型: {}", e.getClass().getName());
                 log.debug("异常消息: {}", e.getMessage());
                 log.debug("=== LLM 调用结束（异常）===");
             }
-            
+
             log.error("Failed to call LLM", e);
             throw new RuntimeException("Failed to call LLM", e);
+        }
+    }
+
+    /**
+     * 打印 LLM 请求参数信息（URL、模型、temperature 等）
+     */
+    private void logLLMRequestInfo() {
+        if (chatModel == null) {
+            log.debug("LLM 请求参数: ChatModel 为 null，使用简单解析");
+            return;
+        }
+
+        try {
+            // 尝试获取 OpenAiChatModel 的配置信息
+            if (chatModel instanceof OpenAiChatModel) {
+                OpenAiChatModel openAiChatModel = (OpenAiChatModel) chatModel;
+                
+                // 通过反射获取 OpenAiApi
+                Field apiField = OpenAiChatModel.class.getDeclaredField("openAiApi");
+                apiField.setAccessible(true);
+                OpenAiApi api = (OpenAiApi) apiField.get(openAiChatModel);
+                
+                // 获取 baseUrl
+                String baseUrl = "未知";
+                try {
+                    Method getBaseUrlMethod = OpenAiApi.class.getMethod("getBaseUrl");
+                    baseUrl = (String) getBaseUrlMethod.invoke(api);
+                } catch (Exception e) {
+                    // 如果方法不存在，尝试通过字段获取
+                    try {
+                        Field baseUrlField = OpenAiApi.class.getDeclaredField("baseUrl");
+                        baseUrlField.setAccessible(true);
+                        baseUrl = (String) baseUrlField.get(api);
+                    } catch (Exception ex) {
+                        log.debug("无法获取 baseUrl: {}", ex.getMessage());
+                    }
+                }
+                
+                // 通过反射获取 OpenAiChatOptions
+                Field optionsField = OpenAiChatModel.class.getDeclaredField("defaultOptions");
+                optionsField.setAccessible(true);
+                OpenAiChatOptions options = (OpenAiChatOptions) optionsField.get(openAiChatModel);
+                
+                // 获取模型名称
+                String model = "未知";
+                if (options != null) {
+                    try {
+                        Method getModelMethod = OpenAiChatOptions.class.getMethod("getModel");
+                        model = (String) getModelMethod.invoke(options);
+                    } catch (Exception e) {
+                        try {
+                            Field modelField = OpenAiChatOptions.class.getDeclaredField("model");
+                            modelField.setAccessible(true);
+                            model = (String) modelField.get(options);
+                        } catch (Exception ex) {
+                            log.debug("无法获取 model: {}", ex.getMessage());
+                        }
+                    }
+                }
+                
+                // 获取 temperature
+                Double temperature = null;
+                if (options != null) {
+                    try {
+                        Method getTemperatureMethod = OpenAiChatOptions.class.getMethod("getTemperature");
+                        temperature = (Double) getTemperatureMethod.invoke(options);
+                    } catch (Exception e) {
+                        try {
+                            Field temperatureField = OpenAiChatOptions.class.getDeclaredField("temperature");
+                            temperatureField.setAccessible(true);
+                            temperature = (Double) temperatureField.get(options);
+                        } catch (Exception ex) {
+                            log.debug("无法获取 temperature: {}", ex.getMessage());
+                        }
+                    }
+                }
+                
+                // 打印请求参数信息
+                log.debug("=== LLM 请求参数信息 ===");
+                log.debug("Provider: {}", provider);
+                log.debug("Base URL: {}", baseUrl);
+                log.debug("Model: {}", model != null ? model : "未知");
+                log.debug("Temperature: {}", temperature != null ? temperature : "未知");
+                log.debug("ChatModel 类型: {}", chatModel.getClass().getName());
+                log.debug("=========================");
+            } else {
+                log.debug("LLM 请求参数: ChatModel 类型为 {}, 无法提取详细配置信息", 
+                        chatModel.getClass().getName());
+            }
+        } catch (Exception e) {
+            log.debug("获取 LLM 请求参数信息失败: {}", e.getMessage());
+            log.debug("ChatModel 类型: {}", chatModel != null ? chatModel.getClass().getName() : "null");
         }
     }
 

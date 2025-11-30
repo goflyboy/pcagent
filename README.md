@@ -45,7 +45,8 @@ pcagent/
        openai:
          api-key: ${OPENAI_API_KEY}
    ```
-
+   在环境变量里设置
+   设置 DEEPSEEK_API_KEY 或 QINWEN_API_KEY 环境变量以运行真实 LLM 测试
 2. 编译和运行：
    ```bash
    mvn clean install

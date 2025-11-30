@@ -1,13 +1,23 @@
 package com.pcagent.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pcagent.model.*;
-import lombok.RequiredArgsConstructor;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -15,9 +25,28 @@ import java.util.Stack;
  */
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class ProductConfigService {
     private final ProductOntoService productOntoService;
+    private final LLMInvoker llmInvoker;
+    private final ObjectMapper objectMapper;
+    private final Configuration freeMarkerConfig;
+
+    @Autowired(required = false)
+    public ProductConfigService(ProductOntoService productOntoService, LLMInvoker llmInvoker) {
+        this.productOntoService = productOntoService;
+        this.llmInvoker = llmInvoker;
+        this.objectMapper = new ObjectMapper();
+        // 初始化 FreeMarker 配置
+        this.freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_33);
+        this.freeMarkerConfig.setDefaultEncoding(StandardCharsets.UTF_8.name());
+        this.freeMarkerConfig.setClassLoaderForTemplateLoading(
+                Thread.currentThread().getContextClassLoader(), "templates");
+        this.freeMarkerConfig.setAPIBuiltinEnabled(true);
+    }
+
+    public ProductConfigService(ProductOntoService productOntoService) {
+        this(productOntoService, null);
+    }
 
     /**
      * 执行参数配置
@@ -117,8 +146,7 @@ public class ProductConfigService {
      * 检查参数配置结果
      */
     CheckResult checkParameterConfig(Stack<ParameterConfigIntent> paraConfigResultStack) {
-        // TODO: 调用LLM检查结果是否正确？
-        // 目前简单检查：所有参数都有值
+        // 首先进行简单检查：所有参数都有值
         for (ParameterConfigIntent intent : paraConfigResultStack) {
             if (intent.getResult() == null || intent.getResult().getValue() == null) {
                 CheckResult result = new CheckResult();
@@ -129,11 +157,167 @@ public class ProductConfigService {
             }
         }
 
+        // 如果有 LLM 可用，使用 LLM 进行深度检查
+        if (llmInvoker != null) {
+            try {
+                // 构造配置知识（从 Parameter 的 checkRule）
+                StringBuilder configKnowledge = new StringBuilder();
+                for (ParameterConfigIntent intent : paraConfigResultStack) {
+                    Parameter base = intent.getBase();
+                    if (base != null && base.getCheckRule() != null && !base.getCheckRule().trim().isEmpty()) {
+                        configKnowledge.append(base.getCode()).append("(").append(base.getCode()).append("):\n");
+                        configKnowledge.append(base.getCheckRule()).append("\n\n");
+                    }
+                }
+
+                // 如果没有任何 checkRule，则使用简单检查
+                if (configKnowledge.length() == 0) {
+                    log.debug("No checkRule found, using simple check");
+                    CheckResult result = new CheckResult();
+                    result.setLevel(CheckResultLevel.SUCCESS);
+                    result.setErrorCode(0);
+                    result.setErrorMessage("配置检查通过");
+                    return result;
+                }
+
+                // 构造配置结果
+                StringBuilder configResult = new StringBuilder();
+                for (ParameterConfigIntent intent : paraConfigResultStack) {
+                    if (intent.getResult() != null) {
+                        configResult.append(intent.getResult().getCode())
+                                .append(" = ")
+                                .append("\"").append(intent.getResult().getValue()).append("\"")
+                                .append("\n");
+                    }
+                }
+
+                // 调用 LLM 检查
+                CheckResult llmResult = checkConfigWithLLM(configKnowledge.toString(), configResult.toString());
+                if (llmResult != null) {
+                    return llmResult;
+                }
+            } catch (Exception e) {
+                log.warn("Failed to check config with LLM, fallback to simple check", e);
+            }
+        }
+
+        // 默认返回成功
         CheckResult result = new CheckResult();
         result.setLevel(CheckResultLevel.SUCCESS);
         result.setErrorCode(0);
         result.setErrorMessage("配置检查通过");
         return result;
+    }
+
+    /**
+     * 使用 LLM 检查配置
+     */
+    private CheckResult checkConfigWithLLM(String configKnowledge, String configResult) {
+        try {
+            // 渲染 prompt
+            String prompt = renderConfigCheckPrompt(configKnowledge, configResult);
+            log.debug("Rendered config check prompt: {}", prompt);
+
+            // 调用 LLM
+            String response = llmInvoker.callLLMForCheck(prompt);
+            log.debug("LLM check response: {}", response);
+
+            // 解析 JSON 响应
+            CheckResult checkResult = parseCheckResult(response);
+            if (checkResult == null) {
+                log.warn("LLM response is not a valid CheckResult JSON, fallback to simple check. response={}", response);
+                return null;
+            }
+
+            // 根据 errorCode 设置 level
+            if (checkResult.getErrorCode() == null || checkResult.getErrorCode() == 0) {
+                checkResult.setLevel(CheckResultLevel.SUCCESS);
+            } else {
+                checkResult.setLevel(CheckResultLevel.ERROR);
+            }
+
+            return checkResult;
+
+        } catch (Exception e) {
+            log.error("Failed to check config with LLM", e);
+            return null;
+        }
+    }
+
+    /**
+     * 渲染配置检查 prompt 模板
+     */
+    private String renderConfigCheckPrompt(String configKnowledge, String configResult) {
+        try {
+            Template template = freeMarkerConfig.getTemplate("config-check.ftl", StandardCharsets.UTF_8.name());
+            Map<String, Object> dataModel = new HashMap<>();
+            dataModel.put("configKnowledge", configKnowledge != null ? configKnowledge : "");
+            dataModel.put("configResult", configResult != null ? configResult : "");
+
+            StringWriter writer = new StringWriter();
+            template.process(dataModel, writer);
+            return writer.toString();
+        } catch (TemplateException | IOException e) {
+            log.error("Failed to render config check prompt template", e);
+            throw new IllegalStateException("Unable to render config check prompt template", e);
+        }
+    }
+
+    /**
+     * 解析 LLM 返回的 CheckResult JSON
+     */
+    private CheckResult parseCheckResult(String response) {
+        if (response == null || response.trim().isEmpty()) {
+            return null;
+        }
+        try {
+            // 尝试提取 JSON（可能包含 markdown 代码块）
+            String json = extractJson(response);
+            @SuppressWarnings("unchecked")
+            Map<String, Object> map = objectMapper.readValue(json, Map.class);
+            
+            CheckResult result = new CheckResult();
+            Object errorCodeObj = map.get("errorCode");
+            if (errorCodeObj instanceof Number) {
+                result.setErrorCode(((Number) errorCodeObj).intValue());
+            } else if (errorCodeObj instanceof String) {
+                result.setErrorCode(Integer.parseInt((String) errorCodeObj));
+            }
+            
+            Object errorMessageObj = map.get("errorMessage");
+            if (errorMessageObj != null) {
+                result.setErrorMessage(errorMessageObj.toString());
+            } else {
+                result.setErrorMessage("");
+            }
+            
+            return result;
+        } catch (JsonProcessingException e) {
+            log.debug("Failed to parse LLM response as CheckResult JSON", e);
+            return null;
+        }
+    }
+
+    /**
+     * 从响应中提取 JSON（可能包含在 markdown 代码块中）
+     */
+    private String extractJson(String response) {
+        String trimmed = response.trim();
+        // 如果包含 markdown 代码块，提取其中的内容
+        if (trimmed.startsWith("```")) {
+            int start = trimmed.indexOf("{");
+            int end = trimmed.lastIndexOf("}");
+            if (start >= 0 && end > start) {
+                return trimmed.substring(start, end + 1);
+            }
+        }
+        // 直接查找 JSON 对象
+        int start = trimmed.indexOf("{");
+        int end = trimmed.lastIndexOf("}");
+        if (start >= 0 && end > start) {
+            return trimmed.substring(start, end + 1);
+        }
+        return trimmed;
     }
 
     /**
