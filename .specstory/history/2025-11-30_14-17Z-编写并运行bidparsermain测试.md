@@ -2706,7 +2706,6 @@ _**Agent (model default, mode Agent)**_
 
 ---
 
-
 查看相关文件以了解实现方式：
 
 
@@ -2739,7 +2738,6 @@ _**Agent (model default, mode Agent)**_
 
 
 ---
-
 
 查看相关模型和服务类：
 
@@ -2794,7 +2792,6 @@ No results found
 
 
 ---
-
 
 编写测试用例：
 
@@ -3056,7 +3053,6 @@ Lint errors for `src/test/java/com/pcagent/service/PCAgentService4SessionTest.ja
 
 ---
 
-
 修复导入问题，然后运行测试：
 
 
@@ -3139,7 +3135,6 @@ cd D:\01.code\mygithub\pcagent && mvn test -Dtest=PCAgentService4SessionTest#tes
 
 ---
 
-
 分步运行测试：
 
 
@@ -3221,7 +3216,6 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 
 
 ---
-
 
 测试通过。运行所有测试用例：
 
@@ -3397,7 +3391,6 @@ java.lang.ClassCastException: class com.pcagent.model.ProductConfig cannot be ca
 
 
 ---
-
 
 修复测试用例中的问题：
 
@@ -3595,7 +3588,6 @@ com.pcagent.exception.InvalidInputException: ��Ʒϵ�в���Ϊ��
 
 ---
 
-
 所有测试已通过。总结如下：
 
 ## 完成的测试用例
@@ -3683,32 +3675,836 @@ _**Agent (model default, mode Agent)**_
 
 ---
 
-<tool-use data-tool-type="unknown" data-tool-name="write">
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/LLMInvokerTest.java</summary>
+
+**Chunk 1**
+Lines added: 230, lines removed: 1
+
+```diff
+@@ -1,1 +1,230 @@
+- 
++ package com.pcagent.service;
++ 
++ import com.pcagent.model.ConfigReq;
++ import com.pcagent.model.ConfigStrategy;
++ import org.junit.jupiter.api.BeforeEach;
++ import org.junit.jupiter.api.Test;
++ import org.springframework.ai.chat.model.ChatModel;
++ import org.springframework.ai.chat.model.ChatResponse;
++ import org.springframework.ai.chat.model.Generation;
++ import org.springframework.ai.chat.messages.AssistantMessage;
++ import org.springframework.ai.chat.prompt.Prompt;
++ 
++ import java.util.List;
++ 
++ import static org.junit.jupiter.api.Assertions.*;
++ import static org.mockito.ArgumentMatchers.any;
++ import static org.mockito.Mockito.*;
++ 
++ /**
++  * LLMInvoker 测试类
++  * 参考 BidParserTest 编写
++  */
++ class LLMInvokerTest {
++ 
++     private ChatModel chatModel;
++     private LLMInvoker llmInvoker;
++ 
++     @BeforeEach
++     void setUp() {
++         chatModel = mock(ChatModel.class);
++         llmInvoker = new LLMInvoker(chatModel);
++     }
++ 
++     /**
++      * 测试 LLM 返回有效 JSON 时使用 LLM 响应
++      * 参考 BidParserTest.shouldUseLlmResponseWhenJsonValid
++      */
++     @Test
++     void shouldUseLlmResponseWhenJsonValid() {
++         // Mock LLM 返回有效的 JSON
++         String llmResponse = &quot;&quot;&quot;
++                 {
++                   &quot;productSerial&quot;: &quot;服务器&quot;,
++                   &quot;totalQuantity&quot;: 512,
++                   &quot;specReqItems&quot;: [
++                     &quot;2U机架式服务器，双路CPU&quot;,
++                     &quot;256GB DDR4 ECC Registered内存，16个插槽&quot;,
++                     &quot;8块2.4TB 10K RPM SAS硬盘，RAID 0/1/5/10，缓存≥4GB&quot;
++                   ],
++                   &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
++                   &quot;totalQuantityMemo&quot;: &quot;&quot;
++                 }
++                 &quot;&quot;&quot;;
++ 
++         mockChatModelResponse(llmResponse);
++ 
++         String userInput = sampleInput();
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(512, result.getTotalQuantity());
++         assertEquals(ConfigStrategy.TECH_MAX_PRIORITY, result.getConfigStrategy());
++         assertEquals(3, result.getSpecReqItems().size());
++         assertEquals(&quot;&quot;, result.getTotalQuantityMemo());
++ 
++         // 验证 ChatModel 被调用
++         verify(chatModel, times(1)).call(any(Prompt.class));
++     }
++ 
++     /**
++      * 测试 LLM 返回无效 JSON 时使用 fallback
++      * 参考 BidParserTest.shouldFallbackWhenLlmResponseInvalid
++      */
++     @Test
++     void shouldFallbackWhenLlmResponseInvalid() {
++         // Mock LLM 返回无效的 JSON
++         mockChatModelResponse(&quot;not a json&quot;);
++ 
++         String userInput = sampleInput();
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         // Fallback 应该能解析出基本信息
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(512, result.getTotalQuantity());
++         assertEquals(ConfigStrategy.PRICE_MIN_PRIORITY, result.getConfigStrategy());
++         assertTrue(result.getSpecReqItems().size() &gt;= 3, &quot;应该至少解析出3个规格项&quot;);
++     }
++ 
++     /**
++      * 测试 LLM 返回包含 markdown 代码块的 JSON
++      */
++     @Test
++     void shouldExtractJsonFromMarkdownCodeBlock() {
++         // Mock LLM 返回包含 markdown 代码块的响应
++         String llmResponse = &quot;&quot;&quot;
++                 &#96;&#96;&#96;json
++                 {
++                   &quot;productSerial&quot;: &quot;服务器&quot;,
++                   &quot;totalQuantity&quot;: 512,
++                   &quot;specReqItems&quot;: [
++                     &quot;2U机架式服务器&quot;
++                   ],
++                   &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
++                   &quot;totalQuantityMemo&quot;: &quot;&quot;
++                 }
++                 &#96;&#96;&#96;
++                 &quot;&quot;&quot;;
++ 
++         mockChatModelResponse(llmResponse);
++ 
++         String userInput = sampleInput();
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(512, result.getTotalQuantity());
++     }
++ 
++     /**
++      * 测试没有 ChatModel 时使用简单解析
++      */
++     @Test
++     void shouldUseSimpleParserWhenChatModelNotAvailable() {
++         // 创建没有 ChatModel 的 LLMInvoker
++         LLMInvoker simpleInvoker = new LLMInvoker();
++ 
++         String userInput = &quot;&quot;&quot;
++                 数据中心服务器 500台
++                 1. CPU核心数≥16核
++                 2. 内存≥256GB
++                 &quot;&quot;&quot;;
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = simpleInvoker.parseConfigReq(userInput, productSerials);
++ 
++         assertNotNull(result);
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(500, result.getTotalQuantity());
++         assertEquals(ConfigStrategy.PRICE_MIN_PRIORITY, result.getConfigStrategy());
++         assertTrue(result.getSpecReqItems().size() &gt;= 2);
++     }
++ 
++     /**
++      * 测试产品系列验证
++      */
++     @Test
++     void shouldValidateProductSerial() {
++         // Mock LLM 返回不在枚举中的产品系列
++         String llmResponse = &quot;&quot;&quot;
++                 {
++                   &quot;productSerial&quot;: &quot;不存在的产品&quot;,
++                   &quot;totalQuantity&quot;: 100,
++                   &quot;specReqItems&quot;: [],
++                   &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
++                   &quot;totalQuantityMemo&quot;: &quot;&quot;
++                 }
++                 &quot;&quot;&quot;;
++ 
++         mockChatModelResponse(llmResponse);
++ 
++         String userInput = &quot;需要100台服务器&quot;;
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         // 产品系列应该被清空（因为不在枚举中）
++         assertEquals(&quot;&quot;, result.getProductSerial());
++     }
++ 
++     /**
++      * 测试数量默认值处理
++      */
++     @Test
++     void shouldSetDefaultQuantityWhenNotSpecified() {
++         // Mock LLM 返回没有数量的响应
++         String llmResponse = &quot;&quot;&quot;
++                 {
++                   &quot;productSerial&quot;: &quot;服务器&quot;,
++                   &quot;totalQuantity&quot;: 0,
++                   &quot;specReqItems&quot;: [],
++                   &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
++                   &quot;totalQuantityMemo&quot;: &quot;&quot;
++                 }
++                 &quot;&quot;&quot;;
++ 
++         mockChatModelResponse(llmResponse);
++ 
++         String userInput = &quot;需要服务器&quot;;
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         // 数量应该被设置为1
++         assertEquals(1, result.getTotalQuantity());
++         assertTrue(result.getTotalQuantityMemo().contains(&quot;默认值配置1套&quot;));
++     }
++ 
++     /**
++      * Mock ChatModel 响应
++      */
++     private void mockChatModelResponse(String response) {
++         ChatResponse chatResponse = mock(ChatResponse.class);
++         Generation generation = mock(Generation.class);
++         AssistantMessage assistantMessage = mock(AssistantMessage.class);
++ 
++         when(chatModel.call(any(Prompt.class))).thenReturn(chatResponse);
++         when(chatResponse.getResult()).thenReturn(generation);
++         when(generation.getOutput()).thenReturn(assistantMessage);
++         when(assistantMessage.getContent()).thenReturn(response);
++     }
++ 
++     /**
++      * 示例输入
++      */
++     private String sampleInput() {
++         return &quot;&quot;&quot;
++                 我有一名高端客户，需要建立数据中心，要求如下：
++                 数据中心服务器 512台
++                 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
++                 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
++                 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
++                 &quot;&quot;&quot;;
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
 <details>
-<summary>Tool use: **write**</summary>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/service/LLMInvokerTest.java`
+
+Lint results
+
+Lint errors for `src/test/java/com/pcagent/service/LLMInvokerTest.java`
 
 
-Parameters:
-
-```json
-{
-  &quot;relativeWorkspacePath&quot;: &quot;src/test/java/com/pcagent/service/LLMInvokerTest.java&quot;
-}
-```
-Additional data:
-
-```json
-{
-  &quot;codeblockId&quot;: &quot;a9a2e284-f720-4940-ac95-b28805bd35bf&quot;
-}
-```
-User decision: **accepted**
-
-Status: **loading**
+| Message | Range | Severity |
+|-------|-------|----------|
+| The import java.util.List is never used | 13:8-13:22 | DIAGNOSTIC_SEVERITY_WARNING |
 
 
 </details>
 </tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: cd D:\01.code\mygithub\pcagent</summary>
+
+```bash
+cd D:\01.code\mygithub\pcagent
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复导入问题并运行测试：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/LLMInvokerTest.java</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 2
+
+```diff
+@@ -10,6 +10,4 @@
+  import org.springframework.ai.chat.messages.AssistantMessage;
+  import org.springframework.ai.chat.prompt.Prompt;
+- 
+- import java.util.List;
+  
+  import static org.junit.jupiter.api.Assertions.*;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=LLMInvokerTest</summary>
+
+```bash
+mvn test -Dtest=LLMInvokerTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 10 source files with javac [debug target 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.LLMInvokerTest
+WARNING: A Java agent has been loaded dynamically (C:\Users\Administrator\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+06:07:04.394 [main] WARN com.pcagent.service.LLMInvoker -- ChatModel not available, using simple parser
+06:07:04.409 [main] WARN com.pcagent.service.LLMInvoker -- LLM response is not a valid ConfigReq JSON, fallback to simple parser. response=not a json
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.970 s -- in com.pcagent.service.LLMInvokerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.710 s
+[INFO] Finished at: 2025-12-01T06:07:04+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有测试已通过。总结如下：
+
+## 完成的测试用例
+
+已创建 `LLMInvokerTest` 测试类，参考 `BidParserTest` 和 `BidParserMain` 编写，包含 6 个测试用例：
+
+### 1. `shouldUseLlmResponseWhenJsonValid` - LLM 返回有效 JSON
+- 测试 LLM 返回有效 JSON 时使用 LLM 响应
+- 验证解析结果正确（产品系列、数量、策略、规格项等）
+- 验证 ChatModel 被正确调用
+
+### 2. `shouldFallbackWhenLlmResponseInvalid` - LLM 返回无效 JSON 时使用 fallback
+- 测试 LLM 返回无效 JSON 时自动使用简单解析作为 fallback
+- 验证 fallback 能正确解析基本信息
+
+### 3. `shouldExtractJsonFromMarkdownCodeBlock` - 从 Markdown 代码块提取 JSON
+- 测试 LLM 返回包含 markdown 代码块的响应时能正确提取 JSON
+- 验证 JSON 提取逻辑正确
+
+### 4. `shouldUseSimpleParserWhenChatModelNotAvailable` - 没有 ChatModel 时使用简单解析
+- 测试没有 ChatModel 时自动使用简单解析
+- 验证简单解析能正确工作
+
+### 5. `shouldValidateProductSerial` - 产品系列验证
+- 测试产品系列不在枚举中时被清空
+- 验证产品系列验证逻辑正确
+
+### 6. `shouldSetDefaultQuantityWhenNotSpecified` - 数量默认值处理
+- 测试数量为 0 或未指定时设置为默认值 1
+- 验证默认值处理逻辑正确
+
+### 测试结果
+```
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+BUILD SUCCESS
+```
+
+所有测试用例已通过，代码可以正常运行。测试覆盖了 `LLMInvoker.parseConfigReq` 的主要场景，包括正常流程、异常处理和边界情况。
+
+---
+
+_**User (2025-11-30 22:05Z)**_
+
+@LLMInvokerTest.java (37)  参考这个写一个不mockChatModelResponse的用例, 放到 LLMInvokerSysTest
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看现有测试代码，创建不 mock ChatModel 的系统测试用例：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/LLMInvokerTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="codebase_search">
+<details>
+                <summary>Tool use: **codebase_search** • Searched codebase "ChatModel bean configuration Spring AI" • **15** results</summary>
+            
+| File | Lines |
+|------|-------|
+| `src/main/java/com/pcagent/config/SpringAIConfig.java` | L35 |
+| `src/main/resources/application.yml` | L38 |
+| `src/main/java/com/pcagent/service/LLMInvoker.java` | L30-70 |
+| `src/main/java/com/pcagent/service/LLMInvoker.java` | L39 |
+| `src/main/java/com/pcagent/service/LLMInvoker.java` | L99-152 |
+| `README.md` | L98 |
+| `src/main/java/com/pcagent/service/LLMInvoker.java` | L61-105 |
+| `pom.xml` | L54 |
+| `pom.xml` | L49-104 |
+| `README.md` | L91-132 |
+| `src/main/java/com/pcagent/service/PCAgentService.java` | L48 |
+| `src/main/java/com/pcagent/controller/PCAgentController.java` | L59 |
+| `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java` | L52 |
+| `frontend/src/App.vue` | L59-134 |
+| `src/main/java/com/pcagent/PcAgentApplication.java` | L15 |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+创建系统测试类，使用真实的 ChatModel（不 mock）：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: D:\01.code\mygithub\myjavademo\src\main\java\com\example\bidparser\BidParserMain.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/LLMInvokerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 193, lines removed: 1
+
+```diff
+@@ -1,1 +1,193 @@
+- 
++ package com.pcagent.service;
++ 
++ import com.pcagent.model.ConfigReq;
++ import com.pcagent.model.ConfigStrategy;
++ import org.junit.jupiter.api.BeforeEach;
++ import org.junit.jupiter.api.Test;
++ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
++ import org.springframework.ai.chat.model.ChatModel;
++ import org.springframework.ai.openai.OpenAiChatModel;
++ import org.springframework.ai.openai.OpenAiChatOptions;
++ import org.springframework.ai.openai.api.OpenAiApi;
++ 
++ import static org.junit.jupiter.api.Assertions.*;
++ 
++ /**
++  * LLMInvoker 系统测试类
++  * 使用真实的 ChatModel（不 mock）
++  * 参考 BidParserMain 编写
++  * 
++  * 注意：需要设置环境变量才能运行：
++  * - DEEPSEEK_API_KEY: DeepSeek API key
++  * - DEEPSEEK_BASE_URL: DeepSeek API base URL (可选，默认: https://api.deepseek.com)
++  * 或
++  * - QINWEN_API_KEY: 通义千问 API key
++  * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
++  */
++ class LLMInvokerSysTest {
++ 
++     private static final String DEFAULT_DEEPSEEK_BASE_URL = &quot;https://api.deepseek.com&quot;;
++     private static final String DEFAULT_QINWEN_BASE_URL = &quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;;
++     private static final String DEFAULT_DEEPSEEK_MODEL = &quot;deepseek-chat&quot;;
++     private static final String DEFAULT_QINWEN_MODEL = &quot;qwen-turbo&quot;;
++ 
++     private LLMInvoker llmInvoker;
++ 
++     @BeforeEach
++     void setUp() {
++         // 尝试创建真实的 ChatModel
++         ChatModel chatModel = createChatModelIfAvailable();
++         if (chatModel != null) {
++             llmInvoker = new LLMInvoker(chatModel);
++         } else {
++             // 如果没有可用的 ChatModel，使用无参构造函数（会使用简单解析）
++             llmInvoker = new LLMInvoker();
++         }
++     }
++ 
++     /**
++      * 测试使用真实 LLM 解析配置需求
++      * 参考 LLMInvokerTest.shouldUseLlmResponseWhenJsonValid
++      * 
++      * 注意：此测试需要设置环境变量才能运行
++      */
++     @Test
++     @EnabledIfEnvironmentVariable(named = &quot;DEEPSEEK_API_KEY&quot;, matches = &quot;.+&quot;)
++     void shouldUseRealLlmToParseConfigReq() {
++         String userInput = &quot;&quot;&quot;
++                 我有一名高端客户，需要建立数据中心，要求如下：
++                 数据中心服务器 512台
++                 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
++                 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
++                 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
++                 &quot;&quot;&quot;;
++ 
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         // 验证基本字段不为空
++         assertNotNull(result, &quot;ConfigReq不应为null&quot;);
++         assertNotNull(result.getProductSerial(), &quot;产品系列不应为null&quot;);
++         assertTrue(result.getTotalQuantity() &gt; 0, &quot;总套数应该大于0&quot;);
++         assertNotNull(result.getConfigStrategy(), &quot;配置策略不应为null&quot;);
++         assertNotNull(result.getSpecReqItems(), &quot;规格项列表不应为null&quot;);
++         assertTrue(result.getSpecReqItems().size() &gt; 0, &quot;应该至少有一个规格项&quot;);
++ 
++         // 验证产品系列在枚举中
++         assertTrue(
++                 productSerials.contains(result.getProductSerial()),
++                 &quot;产品系列应该在枚举中: &quot; + result.getProductSerial()
++         );
++ 
++         // 验证数量
++         assertEquals(512, result.getTotalQuantity(), &quot;总套数应该是512&quot;);
++ 
++         // 验证规格项数量
++         assertTrue(result.getSpecReqItems().size() &gt;= 3, &quot;应该至少解析出3个规格项&quot;);
++     }
++ 
++     /**
++      * 测试使用真实 LLM 解析简单输入
++      */
++     @Test
++     @EnabledIfEnvironmentVariable(named = &quot;DEEPSEEK_API_KEY&quot;, matches = &quot;.+&quot;)
++     void shouldUseRealLlmToParseSimpleInput() {
++         String userInput = &quot;&quot;&quot;
++                 数据中心服务器 500台
++                 1. CPU核心数≥16核
++                 2. 内存≥256GB
++                 &quot;&quot;&quot;;
++ 
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
++ 
++         assertNotNull(result);
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(500, result.getTotalQuantity());
++         assertTrue(result.getSpecReqItems().size() &gt;= 2);
++     }
++ 
++     /**
++      * 测试使用真实 LLM 解析时，如果 LLM 不可用则使用 fallback
++      */
++     @Test
++     void shouldFallbackToSimpleParserWhenLlmNotAvailable() {
++         // 使用无 ChatModel 的 LLMInvoker
++         LLMInvoker simpleInvoker = new LLMInvoker();
++ 
++         String userInput = &quot;&quot;&quot;
++                 数据中心服务器 500台
++                 1. CPU核心数≥16核
++                 2. 内存≥256GB
++                 &quot;&quot;&quot;;
++         String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
++ 
++         ConfigReq result = simpleInvoker.parseConfigReq(userInput, productSerials);
++ 
++         // Fallback 应该能解析出基本信息
++         assertNotNull(result);
++         assertEquals(&quot;服务器&quot;, result.getProductSerial());
++         assertEquals(500, result.getTotalQuantity());
++         assertEquals(ConfigStrategy.PRICE_MIN_PRIORITY, result.getConfigStrategy());
++         assertTrue(result.getSpecReqItems().size() &gt;= 2);
++     }
++ 
++     /**
++      * 创建 ChatModel（如果环境变量可用）
++      * 参考 BidParserMain.createChatModel
++      */
++     private ChatModel createChatModelIfAvailable() {
++         // 优先尝试 DeepSeek
++         String deepseekApiKey = getEnvVar(&quot;DEEPSEEK_API_KEY&quot;);
++         if (deepseekApiKey != null &amp;&amp; !deepseekApiKey.isEmpty()) {
++             String baseUrl = getEnvVar(&quot;DEEPSEEK_BASE_URL&quot;, DEFAULT_DEEPSEEK_BASE_URL);
++             return createChatModel(&quot;deepseek&quot;, deepseekApiKey, baseUrl, DEFAULT_DEEPSEEK_MODEL);
++         }
++ 
++         // 尝试通义千问
++         String qinwenApiKey = getEnvVar(&quot;QINWEN_API_KEY&quot;);
++         if (qinwenApiKey != null &amp;&amp; !qinwenApiKey.isEmpty()) {
++             String baseUrl = getEnvVar(&quot;QINWEN_BASE_URL&quot;, DEFAULT_QINWEN_BASE_URL);
++             return createChatModel(&quot;qinwen&quot;, qinwenApiKey, baseUrl, DEFAULT_QINWEN_MODEL);
++         }
++ 
++         // 如果都没有，返回 null
++         return null;
++     }
++ 
++     /**
++      * 创建 ChatModel
++      * 参考 BidParserMain.createChatModel
++      */
++     private ChatModel createChatModel(String modelType, String apiKey, String baseUrl, String modelName) {
++         try {
++             OpenAiApi openAiApi = new OpenAiApi(baseUrl, apiKey);
++             OpenAiChatOptions options = OpenAiChatOptions.builder()
++                     .withModel(modelName)
++                     .withTemperature(0.7)
++                     .build();
++             return new OpenAiChatModel(openAiApi, options);
++         } catch (Exception e) {
++             System.err.println(&quot;Failed to create ChatModel: &quot; + e.getMessage());
++             return null;
++         }
++     }
++ 
++     /**
++      * 获取环境变量
++      */
++     private String getEnvVar(String key) {
++         return getEnvVar(key, null);
++     }
++ 
++     /**
++      * 获取环境变量（带默认值）
++      */
++     private String getEnvVar(String key, String defaultValue) {
++         String value = System.getenv(key);
++         return value != null ? value : defaultValue;
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/service/LLMInvokerSysTest.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=LLMInvokerSysTest#shouldFallbackToSimpleParserWhenLlmNotAvailable</summary>
+
+```bash
+mvn test -Dtest=LLMInvokerSysTest#shouldFallbackToSimpleParserWhenLlmNotAvailable
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 11 source files with javac [debug target 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.LLMInvokerSysTest
+06:11:08.880 [main] WARN com.pcagent.service.LLMInvoker -- ChatModel not available, using simple parser
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.704 s -- in com.pcagent.service.LLMInvokerSysTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.191 s
+[INFO] Finished at: 2025-12-01T06:11:09+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+运行所有系统测试用例：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=LLMInvokerSysTest</summary>
+
+```bash
+mvn test -Dtest=LLMInvokerSysTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.LLMInvokerSysTest
+06:11:20.506 [main] WARN com.pcagent.service.LLMInvoker -- ChatModel not available, using simple parser
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.57 s -- in com.pcagent.service.LLMInvokerSysTest
+
+```
+</details>
+</tool-use>
+
+---
+
+
 
 ---
 
