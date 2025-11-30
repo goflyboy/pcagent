@@ -125,7 +125,7 @@ public class ProductSelectionService {
     /**
      * 计算规格项偏离度（具体规格项对比）
      */
-    SpecItemDeviationDegree calcSpecItemDeviationDegree(Specification specItem, Specification stdSpecItemReq, String originalSpec) {
+   public SpecItemDeviationDegree calcSpecItemDeviationDegree(Specification specItem, Specification stdSpecItemReq, String originalSpec) {
         SpecItemDeviationDegree result = new SpecItemDeviationDegree();
         result.setOriginalSpecReq(originalSpec);
         result.setSpecName(stdSpecItemReq.getSpecName());

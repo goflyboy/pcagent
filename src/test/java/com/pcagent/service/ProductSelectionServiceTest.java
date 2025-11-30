@@ -4,11 +4,15 @@ import com.pcagent.model.DeviationDegree;
 import com.pcagent.model.ProductDeviationDegree;
 import com.pcagent.model.ProductSpecification;
 import com.pcagent.model.ProductSpecificationReq;
+import com.pcagent.model.SpecItemDeviationDegree;
+import com.pcagent.model.Specification;
 import com.pcagent.service.impl.ProductOntoDataSample;
 import com.pcagent.service.impl.ProductOntoService4Local;
+import com.pcagent.util.ProductOntoUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 import static com.pcagent.service.ProductDeviationDegreeAssert.assertDeviation;
@@ -163,6 +167,354 @@ class ProductSelectionServiceTest {
                 .specItemDeviationDegreeBySpecName("CPU:处理器核心数")
                 .satisfyEqual(true)
                 .deviationDegreeEqual(DeviationDegree.POSITIVE);
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_GreaterEqual_Satisfied() throws IOException {
+        // 测试 >= 操作符，产品值满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertEquals(originalSpec, result.getOriginalSpecReq());
+        assertEquals("内存:内存容量", result.getSpecName());
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_GreaterEqual_NotSatisfied() throws IOException {
+        // 测试 >= 操作符，产品值不满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "128","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_GreaterEqual_Equal() throws IOException {
+        // 测试 >= 操作符，产品值等于需求值
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Greater_Satisfied() throws IOException {
+        // 测试 > 操作符，产品值满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "32","unit": "核"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Greater_NotSatisfied() throws IOException {
+        // 测试 > 操作符，产品值不满足需求（等于）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "CPU:处理器核心数","compare": ">","specValue": "16","unit": "核"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_LessEqual_Satisfied() throws IOException {
+        // 测试 <= 操作符，产品值满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_LessEqual_NotSatisfied() throws IOException {
+        // 测试 <= 操作符，产品值不满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "10","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<=","specValue": "0","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Less_Satisfied() throws IOException {
+        // 测试 < 操作符，产品值满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-50","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Less_NotSatisfied() throws IOException {
+        // 测试 < 操作符，产品值不满足需求
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-30","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "<","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Equal_Satisfied() throws IOException {
+        // 测试 = 操作符，产品值满足需求（差值小于0.01）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.NONE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Equal_NotSatisfied() throws IOException {
+        // 测试 = 操作符，产品值不满足需求（差值大于等于0.01）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-30","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Equal_WithSmallDifference() throws IOException {
+        // 测试 = 操作符，产品值与需求值差值很小（小于0.01）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40.005","unit": "°C"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "工作环境:最高工作环境温度","compare": "=","specValue": "-40","unit": "°C"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertTrue(result.getSatisfy());
+        assertEquals(DeviationDegree.NONE, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_Default_NotSatisfied() throws IOException {
+        // 测试 default 分支（未知操作符）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": "!=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NOT_FOUND, result.getDeviationDegree());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_WithOriginalSpec() throws IOException {
+        // 测试 originalSpec 不为空的情况
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "内存:配置≥256GB DDR4 ECC Registered内存";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        assertEquals(originalSpec, result.getOriginalSpecReq());
+        assertTrue(result.getSatisfy());
+    }
+
+    @Test
+    void testCalcSpecItemDeviationDegree_WithInvalidValue() throws IOException {
+        // 测试异常情况：无法解析的数值（parseValue 返回 0.0，所以 0.0 < 256，结果为 NEGATIVE）
+        Specification specItem = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "invalid","unit": "GB"}
+                """,
+                Specification.class
+        );
+        Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                """
+                {"specName": "内存:内存容量","compare": ">=","specValue": "256","unit": "GB"}
+                """,
+                Specification.class
+        );
+        String originalSpec = "";
+
+        SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+
+        // parseValue("invalid") 返回 0.0，0.0 < 256，所以 satisfy=false, deviationDegree=NEGATIVE
+        assertFalse(result.getSatisfy());
+        assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
     }
 }
 

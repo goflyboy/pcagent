@@ -354,4 +354,12 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
 4、补充对ProductSpecificationParserService的异常用例
 
+5、补充     SpecItemDeviationDegree calcSpecItemDeviationDegree用例**  非数值型的支持
+
+
+6、补充系统测试用例？---补充一下
+ SampleSystemTest
+
+ P813EE的SystemTest  AcceptTest
+
 
