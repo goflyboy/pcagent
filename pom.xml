@@ -27,7 +27,7 @@
         <spring.version>6.1.13</spring.version>
         <spring.ai.version>1.0.0-M4</spring.ai.version>
         <mockito.version>5.6.0</mockito.version>
-        <spring-boot.version>3.2.0</spring-boot.version>
+        <spring-boot.version>3.3.4</spring-boot.version>
     </properties>
 
     <repositories>
@@ -101,7 +101,8 @@
             <version>${freemarker.version}</version>
         </dependency>
 
-        <!-- SLF4J -->
+        <!-- SLF4J - Spring Boot已经包含了logback，不需要slf4j-simple -->
+        <!--
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -112,6 +113,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        -->
 
         <!-- Test -->
         <dependency>
@@ -151,6 +153,25 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>com.pcagent.PcAgentApplication</mainClass>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.pcagent.PcAgentApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
