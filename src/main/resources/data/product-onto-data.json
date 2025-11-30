@@ -1,0 +1,264 @@
+{
+  "catalogNodes": [
+    {
+      "fatherCode": "",
+      "code": "enterprise_market",
+      "name": "企业市场"
+    },
+    {
+      "fatherCode": "enterprise_market",
+      "code": "server",
+      "name": "服务器"
+    },
+    {
+      "fatherCode": "server",
+      "code": "data_center_server",
+      "name": "数据中心服务器"
+    },
+    {
+      "fatherCode": "server",
+      "code": "home_server",
+      "name": "家庭服务器"
+    },
+    {
+      "fatherCode": "enterprise_market",
+      "code": "onu",
+      "name": "ONU"
+    }
+  ],
+  "products": [
+    {
+      "fatherCode": "data_center_server",
+      "code": "poweredge_r760xa",
+      "id": 1,
+      "name": "PowerEdge R760xa"
+    },
+    {
+      "fatherCode": "data_center_server",
+      "code": "poweredge_r860xa",
+      "id": 2,
+      "name": "PowerEdge R860xa"
+    },
+    {
+      "fatherCode": "data_center_server",
+      "code": "poweredge_t860xa",
+      "id": 3,
+      "name": "PowerEdge T860xa"
+    },
+    {
+      "fatherCode": "home_server",
+      "code": "dell_16_plus",
+      "id": 4,
+      "name": "Dell 16 Plus"
+    },
+    {
+      "fatherCode": "home_server",
+      "code": "dell_17_plus",
+      "id": 5,
+      "name": "Dell 17 Plus"
+    },
+    {
+      "fatherCode": "onu",
+      "code": "optixstar_p813e_e",
+      "id": 6,
+      "name": "OptiXstar P813E-E"
+    },
+    {
+      "fatherCode": "onu",
+      "code": "optixstar_p813l",
+      "id": 7,
+      "name": "OptiXstar P813L"
+    },
+    {
+      "fatherCode": "onu",
+      "code": "optixstar_p813w",
+      "id": 8,
+      "name": "OptiXstar P813W"
+    }
+  ],
+  "productSpecifications": {
+    "poweredge_r760xa": {
+      "productCode": "poweredge_r760xa",
+      "specs": [
+        {
+          "specName": "最高工作环境温度",
+          "compare": "=",
+          "specValue": "-40",
+          "unit": "°C"
+        },
+        {
+          "specName": "处理器核心数",
+          "compare": ">=",
+          "specValue": "16",
+          "unit": "核"
+        },
+        {
+          "specName": "内存容量",
+          "compare": ">=",
+          "specValue": "256",
+          "unit": "GB"
+        }
+      ]
+    },
+    "poweredge_r860xa": {
+      "productCode": "poweredge_r860xa",
+      "specs": [
+        {
+          "specName": "最高工作环境温度",
+          "compare": "=",
+          "specValue": "-40",
+          "unit": "°C"
+        },
+        {
+          "specName": "处理器核心数",
+          "compare": ">=",
+          "specValue": "32",
+          "unit": "核"
+        },
+        {
+          "specName": "内存容量",
+          "compare": ">=",
+          "specValue": "512",
+          "unit": "GB"
+        }
+      ]
+    },
+    "poweredge_t860xa": {
+      "productCode": "poweredge_t860xa",
+      "specs": [
+        {
+          "specName": "最高工作环境温度",
+          "compare": "=",
+          "specValue": "-40",
+          "unit": "°C"
+        },
+        {
+          "specName": "处理器核心数",
+          "compare": ">=",
+          "specValue": "24",
+          "unit": "核"
+        },
+        {
+          "specName": "内存容量",
+          "compare": ">=",
+          "specValue": "384",
+          "unit": "GB"
+        }
+      ]
+    },
+    "optixstar_p813e_e": {
+      "productCode": "optixstar_p813e_e",
+      "specs": [
+        {
+          "specName": "工作环境温度",
+          "compare": "=",
+          "specValue": "-40 to +55",
+          "unit": "°C"
+        },
+        {
+          "specName": "网络侧接口",
+          "compare": "=",
+          "specValue": "2*XGS-PON",
+          "unit": ""
+        }
+      ]
+    }
+  },
+  "productParameters": {
+    "poweredge_r760xa": {
+      "productCode": "poweredge_r760xa",
+      "paras": [
+        {
+          "code": "QTY",
+          "type": "输入型",
+          "defaultValue": "1",
+          "sortNo": 1,
+          "options": [],
+          "refSpecCode": ""
+        },
+        {
+          "code": "CPU_CONFIG",
+          "type": "选择性",
+          "defaultValue": "16核",
+          "sortNo": 2,
+          "options": ["16核", "24核", "32核"],
+          "refSpecCode": "处理器核心数"
+        },
+        {
+          "code": "MEM_CONFIG",
+          "type": "选择性",
+          "defaultValue": "256GB",
+          "sortNo": 3,
+          "options": ["256GB", "512GB", "1TB"],
+          "refSpecCode": "内存容量"
+        }
+      ]
+    },
+    "poweredge_r860xa": {
+      "productCode": "poweredge_r860xa",
+      "paras": [
+        {
+          "code": "QTY",
+          "type": "输入型",
+          "defaultValue": "1",
+          "sortNo": 1,
+          "options": [],
+          "refSpecCode": ""
+        },
+        {
+          "code": "CPU_CONFIG",
+          "type": "选择性",
+          "defaultValue": "32核",
+          "sortNo": 2,
+          "options": ["32核", "48核", "64核"],
+          "refSpecCode": "处理器核心数"
+        },
+        {
+          "code": "MEM_CONFIG",
+          "type": "选择性",
+          "defaultValue": "512GB",
+          "sortNo": 3,
+          "options": ["512GB", "1TB", "2TB"],
+          "refSpecCode": "内存容量"
+        }
+      ]
+    }
+  },
+  "nodeSpecifications": {
+    "data_center_server": [
+      {
+        "specName": "最高工作环境温度",
+        "compare": "=",
+        "specValue": "",
+        "unit": "°C"
+      },
+      {
+        "specName": "处理器核心数",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "核"
+      },
+      {
+        "specName": "内存容量",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "GB"
+      }
+    ],
+    "home_server": [
+      {
+        "specName": "最高工作环境温度",
+        "compare": "=",
+        "specValue": "",
+        "unit": "°C"
+      },
+      {
+        "specName": "处理器核心数",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "核"
+      }
+    ]
+  }
+}
+
