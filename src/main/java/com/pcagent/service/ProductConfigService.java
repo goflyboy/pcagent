@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -43,6 +44,7 @@ public class ProductConfigService {
 
         // 参数已按sortNo排序
         List<Parameter> paras = productPara.getParas();
+        paras.sort(Comparator.comparingInt(Parameter::getSortNo));
 
         // 生成配置意图
         List<ParameterConfigIntent> paraIntents = generateParameterConfigIntents(
@@ -163,7 +165,7 @@ public class ProductConfigService {
     /**
      * 生成数量参数配置意图
      */
-    ParameterConfigIntent generateParameterConfigIntent4Qty(Parameter parameter, Integer reqQty) {
+    public ParameterConfigIntent generateParameterConfigIntent4Qty(Parameter parameter, Integer reqQty) {
         ParameterConfigIntent paraConfigIntent = new ParameterConfigIntent();
         paraConfigIntent.setCode(parameter.getCode());
         paraConfigIntent.setBase(parameter);

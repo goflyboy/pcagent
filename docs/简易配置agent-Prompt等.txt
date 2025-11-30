@@ -362,4 +362,6 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
  P813EE的SystemTest  AcceptTest
 
+7、option还是要增加一个ref，规格的值**
+
 

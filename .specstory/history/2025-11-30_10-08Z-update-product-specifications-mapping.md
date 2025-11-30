@@ -5317,3 +5317,946 @@ mvn test -Dtest=ProductSelectionServiceTest
 
 ---
 
+_**User (2025-11-30 00:47Z)**_
+
+刚刚生成的代码太多重复代码了，请在当前类中抽取几个公共方法，简化用例代码
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看当前测试代码，识别重复模式并抽取公共方法：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+查看更多测试代码，了解完整模式：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+抽取公共方法以简化测试代码：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 38, lines removed: undefined
+
+```diff
+@@ -169,4 +169,42 @@
+                  .deviationDegreeEqual(DeviationDegree.POSITIVE);
+      }
++ 
++     // ========== 公共辅助方法 ==========
++ 
++     /**
++      * 从 JSON 字符串解析 Specification 对象
++      */
++     private Specification parseSpec(String json) throws IOException {
++         return ProductOntoUtils.fromJsonString(json.trim(), Specification.class);
++     }
++ 
++     /**
++      * 计算规格项偏离度
++      */
++     private SpecItemDeviationDegree calcDeviation(String specItemJson, String stdSpecItemReqJson, String originalSpec) throws IOException {
++         Specification specItem = parseSpec(specItemJson);
++         Specification stdSpecItemReq = parseSpec(stdSpecItemReqJson);
++         return selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
++     }
++ 
++     /**
++      * 验证满足的情况
++      */
++     private void assertSatisfied(SpecItemDeviationDegree result, String expectedSpecName, String expectedOriginalSpec, DeviationDegree expectedDeviation) {
++         assertEquals(expectedOriginalSpec, result.getOriginalSpecReq());
++         assertEquals(expectedSpecName, result.getSpecName());
++         assertTrue(result.getSatisfy());
++         assertEquals(expectedDeviation, result.getDeviationDegree());
++     }
++ 
++     /**
++      * 验证不满足的情况
++      */
++     private void assertNotSatisfied(SpecItemDeviationDegree result, DeviationDegree expectedDeviation) {
++         assertFalse(result.getSatisfy());
++         assertEquals(expectedDeviation, result.getDeviationDegree());
++     }
++ 
++     // ========== calcSpecItemDeviationDegree 测试用例 ==========
+  
+      @Test
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 13
+
+```diff
+@@ -211,24 +211,14 @@
+      void testCalcSpecItemDeviationDegree_GreaterEqual_Satisfied() throws IOException {
+          // 测试 &gt;= 操作符，产品值满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;512&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
++                 &quot;&quot;
+          );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertEquals(originalSpec, result.getOriginalSpecReq());
+-         assertEquals(&quot;内存:内存容量&quot;, result.getSpecName());
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
++         assertSatisfied(result, &quot;内存:内存容量&quot;, &quot;&quot;, DeviationDegree.POSITIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 4, lines removed: 12
+
+```diff
+@@ -226,22 +226,14 @@
+      void testCalcSpecItemDeviationDegree_GreaterEqual_NotSatisfied() throws IOException {
+          // 测试 &gt;= 操作符，产品值不满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;128&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 4, lines removed: 12
+
+```diff
+@@ -241,22 +241,14 @@
+      void testCalcSpecItemDeviationDegree_GreaterEqual_Equal() throws IOException {
+          // 测试 &gt;= 操作符，产品值等于需求值
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;内存:内存容量&quot;, &quot;&quot;, DeviationDegree.POSITIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 4, lines removed: 12
+
+```diff
+@@ -256,22 +256,14 @@
+      void testCalcSpecItemDeviationDegree_Greater_Satisfied() throws IOException {
+          // 测试 &gt; 操作符，产品值满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;&quot;,&quot;specValue&quot;: &quot;32&quot;,&quot;unit&quot;: &quot;核&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;&quot;,&quot;specValue&quot;: &quot;16&quot;,&quot;unit&quot;: &quot;核&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;CPU:处理器核心数&quot;, &quot;&quot;, DeviationDegree.POSITIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 4, lines removed: 12
+
+```diff
+@@ -271,22 +271,14 @@
+      void testCalcSpecItemDeviationDegree_Greater_NotSatisfied() throws IOException {
+          // 测试 &gt; 操作符，产品值不满足需求（等于）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;&quot;,&quot;specValue&quot;: &quot;16&quot;,&quot;unit&quot;: &quot;核&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;CPU:处理器核心数&quot;,&quot;compare&quot;: &quot;&gt;&quot;,&quot;specValue&quot;: &quot;16&quot;,&quot;unit&quot;: &quot;核&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+继续简化剩余的测试用例：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 16, lines removed: 48
+
+```diff
+@@ -286,91 +286,59 @@
+      void testCalcSpecItemDeviationDegree_LessEqual_Satisfied() throws IOException {
+          // 测试 &lt;= 操作符，产品值满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;=&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;=&quot;,&quot;specValue&quot;: &quot;0&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;工作环境:最高工作环境温度&quot;, &quot;&quot;, DeviationDegree.POSITIVE);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_LessEqual_NotSatisfied() throws IOException {
+          // 测试 &lt;= 操作符，产品值不满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;=&quot;,&quot;specValue&quot;: &quot;10&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;=&quot;,&quot;specValue&quot;: &quot;0&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_Less_Satisfied() throws IOException {
+          // 测试 &lt; 操作符，产品值满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;&quot;,&quot;specValue&quot;: &quot;-50&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.POSITIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;工作环境:最高工作环境温度&quot;, &quot;&quot;, DeviationDegree.POSITIVE);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_Less_NotSatisfied() throws IOException {
+          // 测试 &lt; 操作符，产品值不满足需求
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;&quot;,&quot;specValue&quot;: &quot;-30&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;&lt;&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 12, lines removed: 36
+
+```diff
+@@ -346,68 +346,44 @@
+      void testCalcSpecItemDeviationDegree_Equal_Satisfied() throws IOException {
+          // 测试 = 操作符，产品值满足需求（差值小于0.01）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.NONE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;工作环境:最高工作环境温度&quot;, &quot;&quot;, DeviationDegree.NONE);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_Equal_NotSatisfied() throws IOException {
+          // 测试 = 操作符，产品值不满足需求（差值大于等于0.01）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-30&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_Equal_WithSmallDifference() throws IOException {
+          // 测试 = 操作符，产品值与需求值差值很小（小于0.01）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-40.005&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;工作环境:最高工作环境温度&quot;,&quot;compare&quot;: &quot;=&quot;,&quot;specValue&quot;: &quot;-40&quot;,&quot;unit&quot;: &quot;°C&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertTrue(result.getSatisfy());
+-         assertEquals(DeviationDegree.NONE, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertSatisfied(result, &quot;工作环境:最高工作环境温度&quot;, &quot;&quot;, DeviationDegree.NONE);
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+**Chunk 1**
+Lines added: 7, lines removed: 21
+
+```diff
+@@ -391,43 +391,29 @@
+      void testCalcSpecItemDeviationDegree_Default_NotSatisfied() throws IOException {
+          // 测试 default 分支（未知操作符）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;!=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;!=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NOT_FOUND, result.getDeviationDegree());
++                 &quot;&quot;
++         );
++         assertNotSatisfied(result, DeviationDegree.NOT_FOUND);
+      }
+  
+      @Test
+      void testCalcSpecItemDeviationDegree_WithOriginalSpec() throws IOException {
+          // 测试 originalSpec 不为空的情况
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         String originalSpec = &quot;内存:配置≥256GB DDR4 ECC Registered内存&quot;;
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;512&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
++                 originalSpec
+          );
+-         String originalSpec = &quot;内存:配置≥256GB DDR4 ECC Registered内存&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+          assertEquals(originalSpec, result.getOriginalSpecReq());
+          assertTrue(result.getSatisfy());
+```
+
+**Chunk 2**
+Lines added: 3, lines removed: 11
+
+```diff
+@@ -437,23 +423,15 @@
+      void testCalcSpecItemDeviationDegree_WithInvalidValue() throws IOException {
+          // 测试异常情况：无法解析的数值（parseValue 返回 0.0，所以 0.0 &lt; 256，结果为 NEGATIVE）
+-         Specification specItem = ProductOntoUtils.fromJsonString(
++         SpecItemDeviationDegree result = calcDeviation(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;invalid&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
+-         );
+-         Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(
+                  &quot;&quot;&quot;
+                  {&quot;specName&quot;: &quot;内存:内存容量&quot;,&quot;compare&quot;: &quot;&gt;=&quot;,&quot;specValue&quot;: &quot;256&quot;,&quot;unit&quot;: &quot;GB&quot;}
+                  &quot;&quot;&quot;,
+-                 Specification.class
++                 &quot;&quot;
+          );
+-         String originalSpec = &quot;&quot;;
+- 
+-         SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(specItem, stdSpecItemReq, originalSpec);
+- 
+          // parseValue(&quot;invalid&quot;) 返回 0.0，0.0 &lt; 256，所以 satisfy=false, deviationDegree=NEGATIVE
+-         assertFalse(result.getSatisfy());
+-         assertEquals(DeviationDegree.NEGATIVE, result.getDeviationDegree());
++         assertNotSatisfied(result, DeviationDegree.NEGATIVE);
+      }
+  }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/service/ProductSelectionServiceTest.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+运行测试，确保重构后一切正常：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=ProductSelectionServiceTest</summary>
+
+```bash
+mvn test -Dtest=ProductSelectionServiceTest
+```
+
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------&lt; com.pcagent:pcagent &gt;-------------------------
+[INFO] Building Product Config Agent 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pcagent ---
+[INFO] skip non existing resourceDirectory D:\01.code\mygithub\pcagent\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ pcagent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pcagent ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+21:05:59.216 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.301 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.302 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.324 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.327 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.327 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.327 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.329 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.331 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.333 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.333 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.333 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.333 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.336 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.337 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.337 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.338 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.338 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.343 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.345 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.345 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.345 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.345 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.347 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.348 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.348 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.349 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.349 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.352 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.353 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.353 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.353 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.353 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.356 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.358 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.358 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.358 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.360 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.361 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.361 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.361 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.362 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.363 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.364 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.364 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.364 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.364 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.366 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.368 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.369 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.369 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.370 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.374 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.376 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.376 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.376 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.376 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.378 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.378 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.379 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.379 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.379 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.381 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.382 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.382 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.382 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.382 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.385 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.387 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.387 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.388 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.388 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.391 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.393 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.394 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.394 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.395 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.397 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.397 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.398 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.398 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.398 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.399 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.400 [main] INFO com.pcagent.util.ProductOntoUtils -- Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.400 [main] INFO com.pcagent.service.impl.ProductOntoService4Local -- Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+21:05:59.400 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+21:05:59.400 [main] INFO com.pcagent.util.ProductOntoUtils -- Deserializing object from JSON string
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.420 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.816 s
+[INFO] Finished at: 2025-11-30T21:05:59+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+所有测试通过。查看重构后的代码，确认简化效果：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+查看一个完整的测试用例，确认简化效果：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/ProductSelectionServiceTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+重构完成。总结如下：
+
+## 重构总结
+
+### 抽取的公共方法
+
+1. **`parseSpec(String json)`** - 从 JSON 字符串解析 Specification 对象
+   - 封装了 `ProductOntoUtils.fromJsonString()` 调用
+   - 自动处理字符串 trim
+
+2. **`calcDeviation(String specItemJson, String stdSpecItemReqJson, String originalSpec)`** - 计算规格项偏离度
+   - 封装了 JSON 解析和方法调用
+   - 简化测试用例的数据准备
+
+3. **`assertSatisfied(...)`** - 验证满足的情况
+   - 统一验证 `originalSpecReq`、`specName`、`satisfy`、`deviationDegree`
+
+4. **`assertNotSatisfied(...)`** - 验证不满足的情况
+   - 统一验证 `satisfy` 和 `deviationDegree`
+
+### 代码简化效果
+
+**重构前**：每个测试用例约 15-20 行代码
+```java
+Specification specItem = ProductOntoUtils.fromJsonString(...);
+Specification stdSpecItemReq = ProductOntoUtils.fromJsonString(...);
+String originalSpec = "";
+SpecItemDeviationDegree result = selectionService.calcSpecItemDeviationDegree(...);
+assertEquals(...);
+assertEquals(...);
+assertTrue(...);
+assertEquals(...);
+```
+
+**重构后**：每个测试用例约 10 行代码
+```java
+SpecItemDeviationDegree result = calcDeviation(
+    """...""",
+    """...""",
+    ""
+);
+assertSatisfied(result, "内存:内存容量", "", DeviationDegree.POSITIVE);
+```
+
+### 改进效果
+
+- 代码行数减少：每个测试用例从 ~20 行减少到 ~10 行
+- 可读性提升：测试意图更清晰
+- 维护性提升：公共逻辑集中管理，修改更容易
+- 一致性提升：所有测试用例使用相同的辅助方法
+
+### 测试结果
+
+所有 18 个测试用例均通过，重构未影响功能。
+
+代码已简化，测试用例更清晰、易维护。
+
+---
+
