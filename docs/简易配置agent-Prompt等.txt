@@ -354,99 +354,26 @@ chekc prompt调通
 
 
 怎么给领导讲，要思考一下？ ---**
-
-public class Parameter {
-    private String code;
-    private String type; // 类型：选择性，输入型
-    private String defaultValue; // 建议值
-    private Integer sortNo; // 排序号
-    private List<String> options = new ArrayList<>(); // 可选值列表
-    private String refSpecCode; // 引用的规格Code
-}
-类似ParameterType，增加
-public class Specification 增加字段
-    ParameterType type; 默认是 ParameterType.INTEGER
-  
-1、Parameter.type String改成 ParameterType，默认值是ParameterType.INTEGER
-public enum ParameterType {
-    ENUM(0, "EnumType"),
-    BOOLEAN(1, "Boolean"),
-    INTEGER(2, "Integer"),
-    FLOAT(3, "Float"), 
-    STRING(5, "String") 
-}
-
-2、新增ParameterOption
-class ParameterOption {
-	String code;
-	String value;
-	int sortNo = 0; 
-} 
-
-3、Parameter.options从List<String> 改成 List<ParameterOption> 
-
- 类似"16核"改成 {"code":"16核","value":16,"sortNo","0"}
-
-1、选择的代码逻辑写的不对，应该根据spec的type/compare/specValue  及 Parameter的type,Option来生成意图，请改写代码，要写注释
-例如： Specification.type=INTEGER -->  Parameter.type=ENUM,(二者类型不要求相等）
-	如果compare = "=",  则 Parameter.option.value  = Specification.specValue ,则添加配置意图
-    如果compare = ">",  则 Parameter.option.value > Specification.specValue  ,则添加配置意图
-    如果compare = ">=",  则 Parameter.option.value >= Specification.specValue  ,则添加配置意图
-    如果compare = "<=",  则 Parameter.option.value <= Specification.specValue  ,则添加配置意图
-	//....请补充
-//....请补充
-
-2、参考testCalcSpecItemDeviationDegree_GreaterEqual_Satisfied用例 构建 generateParameterConfigIntent的测试用例
-2.1  用json方式构建数据Specification，Parameter（originalSpecReq=“” 
-2.2 先仅写3个用例
-2.3 支持流式比较，ProductConfigIntentAssert（重点是比较intentOptions）
-2.4 
  
-输入：
-	parameter1:
-    {
-          "code": "CPU_CONFIG",
-          "type": "ENUM",
-          "defaultValue": "32核",
-          "sortNo": 1,
-          "options": [
-            {"code": "32核", "value": 32, "sortNo": 0},
-            {"code": "48核", "value": 48, "sortNo": 1},
-            {"code": "64核", "value": 64, "sortNo": 2}
-          ],
-          "refSpecCode": "CPU:处理器核心数"
-        },
-	spec1:
-      {
-        "specName": "CPU:处理器核心数",
-        "compare": ">=",
-        "specValue": "48",
-        "unit": "核",
-        "type": "INTEGER"
-      }
-预期输出：
-  public class ParameterConfigIntent {
-     code = “CPU_CONFIG”; // 参数code
-     intentOptions = [{
-		      value="48核";  
-			  message="";  
-             isVisited = false;},{
-		      value="64核";  
-			  message="";  
-             isVisited = false;},
-	]
-}
+ 
+
+Parameter请增加一个字段
+ String checkRule； 默认是""
+
+请调整sample数据
 
 
-ideda： 测试框架？ 先写3个，抽取？ 再逻辑覆盖？
+请参考下列文件来实现parseConfigReq，参考代码如下，
+D:\01.code\mygithub\myjavademo\src\main\java\com\example\bidparser
 
-a.抽取测试框架，避免类似用例重复代码,  
+请直接使用这个Prompt  template
+D:\01.code\mygithub\myjavademo\src\main\resources\templates\bid-parser.ftl
 
 
 
 
-                 {"specName": "CPU:处理器核心数","compare": ">=","specValue": "16","unit": "核","type": "INTEGER"}
-                {"specName": "内存:内存容量","compare": ">=","specValue": "512","unit": "GB","type": "INTEGER"}
+PCAgentService4Session
+
 
 
 

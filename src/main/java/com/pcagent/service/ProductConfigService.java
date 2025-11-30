@@ -239,13 +239,13 @@ public class ProductConfigService {
                 
                 // 如果匹配，则添加配置意图选项
                 if (matches) {
-                    ParameterConfigIntentOption option = new ParameterConfigIntentOption();
+                ParameterConfigIntentOption option = new ParameterConfigIntentOption();
                     // 使用 code 作为输出值（如 "48核"），而不是 value（如 48）
                     option.setValue(paramOption.getCode());
-                    option.setMessage("根据规格需求 " + originalSpecReq + 
-                            " 选择配置: " + paramOption.getCode());
-                    option.setIsVisited(false);
-                    paraConfigIntent.getIntentOptions().add(option);
+                option.setMessage("根据规格需求 " + originalSpecReq + 
+                        " 选择配置: " + paramOption.getCode());
+                option.setIsVisited(false);
+                paraConfigIntent.getIntentOptions().add(option);
                 }
             }
         } else {
