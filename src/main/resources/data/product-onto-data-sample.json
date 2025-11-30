@@ -186,7 +186,7 @@
           "sortNo": 3,
           "options": [],
           "refSpecCode": "",
-          "checkRule": ""
+          "checkRule": "波兰企业市场要求只能输入1， 但为提升项目盈利，推荐50台以上起售"
         },
         {
           "code": "CPU_CONFIG",
@@ -239,7 +239,7 @@
             {"code": "64核", "value": 64, "sortNo": 2}
           ],
           "refSpecCode": "CPU:处理器核心数",
-          "checkRule": ""
+          "checkRule": "波兰企业市场要求只能输入1， 但为提升项目盈利，推荐50台以上起售 "
         },
         {
           "code": "MEM_CONFIG",

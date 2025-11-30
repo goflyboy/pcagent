@@ -2,13 +2,11 @@ package com.pcagent.service;
 
 import com.pcagent.model.ConfigReq;
 import com.pcagent.model.ConfigStrategy;
+import com.pcagent.util.ChatModelBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.ai.chat.model.ChatModel;
-import org.springframework.ai.openai.OpenAiChatModel;
-import org.springframework.ai.openai.OpenAiChatOptions;
-import org.springframework.ai.openai.api.OpenAiApi;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,17 +24,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class LLMInvokerSysTest {
 
-    private static final String DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com";
-    private static final String DEFAULT_QINWEN_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1";
-    private static final String DEFAULT_DEEPSEEK_MODEL = "deepseek-chat";
-    private static final String DEFAULT_QINWEN_MODEL = "qwen-turbo";
-
     private LLMInvoker llmInvoker;
 
     @BeforeEach
     void setUp() {
         // 尝试创建真实的 ChatModel
-        ChatModel chatModel = createChatModelIfAvailable();
+        ChatModel chatModel = ChatModelBuilder.createIfAvailable();
         if (chatModel != null) {
             llmInvoker = new LLMInvoker(chatModel);
         } else {
@@ -134,60 +127,5 @@ class LLMInvokerSysTest {
         assertTrue(result.getSpecReqItems().size() >= 2);
     }
 
-    /**
-     * 创建 ChatModel（如果环境变量可用）
-     * 参考 BidParserMain.createChatModel
-     */
-    private ChatModel createChatModelIfAvailable() {
-        // 优先尝试 DeepSeek
-        String deepseekApiKey = getEnvVar("DEEPSEEK_API_KEY");
-        if (deepseekApiKey != null && !deepseekApiKey.isEmpty()) {
-            String baseUrl = getEnvVar("DEEPSEEK_BASE_URL", DEFAULT_DEEPSEEK_BASE_URL);
-            return createChatModel("deepseek", deepseekApiKey, baseUrl, DEFAULT_DEEPSEEK_MODEL);
-        }
-
-        // 尝试通义千问
-        String qinwenApiKey = getEnvVar("QINWEN_API_KEY");
-        if (qinwenApiKey != null && !qinwenApiKey.isEmpty()) {
-            String baseUrl = getEnvVar("QINWEN_BASE_URL", DEFAULT_QINWEN_BASE_URL);
-            return createChatModel("qinwen", qinwenApiKey, baseUrl, DEFAULT_QINWEN_MODEL);
-        }
-
-        // 如果都没有，返回 null
-        return null;
-    }
-
-    /**
-     * 创建 ChatModel
-     * 参考 BidParserMain.createChatModel
-     */
-    private ChatModel createChatModel(String modelType, String apiKey, String baseUrl, String modelName) {
-        try {
-            OpenAiApi openAiApi = new OpenAiApi(baseUrl, apiKey);
-            OpenAiChatOptions options = OpenAiChatOptions.builder()
-                    .withModel(modelName)
-                    .withTemperature(0.7)
-                    .build();
-            return new OpenAiChatModel(openAiApi, options);
-        } catch (Exception e) {
-            System.err.println("Failed to create ChatModel: " + e.getMessage());
-            return null;
-        }
-    }
-
-    /**
-     * 获取环境变量
-     */
-    private String getEnvVar(String key) {
-        return getEnvVar(key, null);
-    }
-
-    /**
-     * 获取环境变量（带默认值）
-     */
-    private String getEnvVar(String key, String defaultValue) {
-        String value = System.getenv(key);
-        return value != null ? value : defaultValue;
-    }
 }
 

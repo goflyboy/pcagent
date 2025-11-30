@@ -3,9 +3,11 @@ package com.pcagent.service;
 import com.pcagent.model.*;
 import com.pcagent.service.impl.ProductOntoDataSample;
 import com.pcagent.service.impl.ProductOntoService4Local;
+import com.pcagent.util.ChatModelBuilder;
 import com.pcagent.util.ProductOntoUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.ai.chat.model.ChatModel;
 
 import java.io.IOException;
 
@@ -15,12 +17,22 @@ import java.io.IOException;
 class ProductConfigServiceTest {
     private ProductConfigService configService;
     private ProductOntoService4Local productOntoService;
+    private LLMInvoker llmInvoker;
 
     @BeforeEach
     void setUp() {
         productOntoService = new ProductOntoService4Local();
         productOntoService.init();
-        configService = new ProductConfigService(productOntoService);
+        
+        // 尝试创建真实的 ChatModel
+        ChatModel chatModel = ChatModelBuilder.createIfAvailable();
+        if (chatModel != null) {
+            llmInvoker = new LLMInvoker(chatModel);
+            configService = new ProductConfigService(productOntoService, llmInvoker);
+        } else {
+            // 如果没有可用的 ChatModel，使用无 LLMInvoker 的构造函数
+            configService = new ProductConfigService(productOntoService);
+        }
     }
 
     /**
