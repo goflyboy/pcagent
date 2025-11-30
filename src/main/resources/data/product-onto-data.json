@@ -172,7 +172,7 @@
           "code": "QTY",
           "type": "输入型",
           "defaultValue": "1",
-          "sortNo": 1,
+          "sortNo": 3,
           "options": [],
           "refSpecCode": ""
         },
@@ -180,7 +180,7 @@
           "code": "CPU_CONFIG",
           "type": "选择性",
           "defaultValue": "16核",
-          "sortNo": 2,
+          "sortNo": 1,
           "options": ["16核", "24核", "32核"],
           "refSpecCode": "处理器核心数"
         },
@@ -188,7 +188,7 @@
           "code": "MEM_CONFIG",
           "type": "选择性",
           "defaultValue": "256GB",
-          "sortNo": 3,
+          "sortNo": 2,
           "options": ["256GB", "512GB", "1TB"],
           "refSpecCode": "内存容量"
         }
@@ -201,7 +201,7 @@
           "code": "QTY",
           "type": "输入型",
           "defaultValue": "1",
-          "sortNo": 1,
+          "sortNo": 3,
           "options": [],
           "refSpecCode": ""
         },
@@ -209,7 +209,7 @@
           "code": "CPU_CONFIG",
           "type": "选择性",
           "defaultValue": "32核",
-          "sortNo": 2,
+          "sortNo": 1,
           "options": ["32核", "48核", "64核"],
           "refSpecCode": "处理器核心数"
         },
@@ -217,7 +217,7 @@
           "code": "MEM_CONFIG",
           "type": "选择性",
           "defaultValue": "512GB",
-          "sortNo": 3,
+          "sortNo": 2,
           "options": ["512GB", "1TB", "2TB"],
           "refSpecCode": "内存容量"
         }

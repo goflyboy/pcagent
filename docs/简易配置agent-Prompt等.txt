@@ -127,18 +127,7 @@ userInput:
 	3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
 
 ##三计算要求
-
-##2.1 后端要求：
-1、访问大模型使用Spring AI，支持deepseek和Qinwen两个模型访问
-2、使用Jdk21，使用pom工程
-3、第三方库版本
-        <freemarker.version>2.3.33</freemarker.version>
-        <lombok.version>1.18.36</lombok.version>
-        <guava.version>33.1.0-jre</guava.version>
-        <jackson.version>2.17.0</jackson.version>
-        <junit-jupiter.version>5.10.1</junit-jupiter.version>
-        <slf4j.version>2.0.16</slf4j.version>
-        <spring.version>5.3.39</spring.version>
+ 
 
 数据中心服务器 10套 
 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
@@ -152,6 +141,64 @@ userInput:
 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
 
+我有一名高端客户，需要建立数据中心，要求如下：
+数据中心服务器 500台
+1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
+2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。
+3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
+
+
+
+ "poweredge_r760xa": {
+      "productCode": "poweredge_r760xa",
+      "paras": [
+        {
+          "code": "QTY",
+          "type": "输入型",
+          "defaultValue": "1",
+          "sortNo": 3,
+          "options": [],
+          "refSpecCode": ""
+        },
+        {
+          "code": "CPU_CONFIG",
+          "type": "选择性",
+          "defaultValue": "16核",
+          "sortNo": 1,
+          "options": ["16核", "24核", "32核"],
+          "refSpecCode": "处理器核心数"
+        },
+        {
+          "code": "MEM_CONFIG",
+          "type": "选择性",
+          "defaultValue": "256GB",
+          "sortNo": 2,
+          "options": ["256GB", "512GB", "1TB"],
+          "refSpecCode": "内存容量"
+        }
+      ]
+
+
+
+    "data_center_server": [
+      {
+        "specName": "最高工作环境温度",
+        "compare": "=",
+        "specValue": "",
+        "unit": "°C"
+      },
+      {
+        "specName": "处理器核心数",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "核"
+      },
+      {
+        "specName": "内存容量",
+        "compare": ">=",
+        "specValue": "",
+        "unit": "GB"
+      }
 
 JGDL67B6F758008E72BB
 
@@ -198,38 +245,7 @@ GE 接口	• 接口类型：RJ-45
 • 设备访问控制
 • ONU端口级硬隔离
 
-
-我实现一个类似openapi的
-
-productconfigagent  //产品配置agent pcagent
-
-当前想实现一个产品配置的agent框架，请按下列架构实现
-
-
-
-请按照产品配置Agent方案设计.md 请用Java语言实现下列功能，调佣样例数据
  
-#、实现技术的要求
-##2.1 后端要求：
-1、访问大模型使用Spring AI，支持deepseek和Qinwen两个模型访问
-2、使用Jdk21，使用pom工程
-3、第三方库版本
-  <freemarker.version>2.3.33</freemarker.version>
-        <lombok.version>1.18.36</lombok.version>
-        <guava.version>33.1.0-jre</guava.version>
-        <jackson.version>2.17.0</jackson.version>
-        <junit-jupiter.version>5.10.1</junit-jupiter.version>
-        <slf4j.version>2.0.16</slf4j.version>
-        <spring.version>6.1.13</spring.version>
-        <!-- Spring AI 1.1.0 尚未发布，使用最新可用版本 1.0.0-M4 -->
-        <!-- 当 1.1.0 发布后，请将版本号更新为 1.1.0 -->
-        <spring.ai.version>1.0.0-M4</spring.ai.version>
-        <mockito.version>5.6.0</mockito.version>
-4、尽量复用ref里的类
-
-##2.2 前端要求：
-1、使用Vue框架
-
 
  
 
@@ -241,3 +257,6 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 }
 
 3、ProductParameter 按sort   Todo 数据增
+
+
+
