@@ -37,7 +37,7 @@ public class ProductSelectionService {
             return new Pair<>(new ArrayList<>(), null);
         }
 
-            return new Pair<>(productDeviationDegrees, productDeviationDegrees.get(0));
+        return new Pair<>(productDeviationDegrees, productDeviationDegrees.get(0));
     }
 
     /**
@@ -68,7 +68,7 @@ public class ProductSelectionService {
     /**
      * 计算产品的偏离度
      */
-    ProductDeviationDegree calcProductDeviationDegree(ProductSpecification productSpec,
+    public ProductDeviationDegree calcProductDeviationDegree(ProductSpecification productSpec,
             ProductSpecificationReq productSpecReq) {
         ProductDeviationDegree result = new ProductDeviationDegree();
         
