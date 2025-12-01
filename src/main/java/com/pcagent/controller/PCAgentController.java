@@ -38,20 +38,20 @@ public class PCAgentController {
         return ResponseEntity.ok(session);
     }
 
-    /**
-     * 继续会话接口
-     */
-    @PostMapping("/sessions/{session_id}/continue")
-    public ResponseEntity<Session> continueSession(
-            @PathVariable("session_id") String sessionId,
-            @RequestBody Map<String, Object> request) {
-        // TODO: 实现继续会话逻辑
-        Session session = agentService.getLatestSession(sessionId);
-        if (session == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(session);
-    }
+    // /**
+    //  * 继续会话接口
+    //  */
+    // @PostMapping("/sessions/{session_id}/continue")
+    // public ResponseEntity<Session> continueSession(
+    //         @PathVariable("session_id") String sessionId,
+    //         @RequestBody Map<String, Object> request) {
+    //     // TODO: 实现继续会话逻辑
+    //     Session session = agentService.getLatestSession(sessionId);
+    //     if (session == null) {
+    //         return ResponseEntity.notFound().build();
+    //     }
+    //     return ResponseEntity.ok(session);
+    // }
 
     /**
      * 获取会话状态接口
@@ -65,32 +65,32 @@ public class PCAgentController {
         return ResponseEntity.ok(session);
     }
 
-    /**
-     * 确认操作接口
-     */
-    @PostMapping("/sessions/{session_id}/confirm")
-    public ResponseEntity<Session> confirmSession(
-            @PathVariable("session_id") String sessionId,
-            @RequestBody Map<String, Object> request) {
-        // TODO: 实现确认操作逻辑
-        Session session = agentService.getLatestSession(sessionId);
-        if (session == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(session);
-    }
+    // /**
+    //  * 确认操作接口
+    //  */
+    // @PostMapping("/sessions/{session_id}/confirm")
+    // public ResponseEntity<Session> confirmSession(
+    //         @PathVariable("session_id") String sessionId,
+    //         @RequestBody Map<String, Object> request) {
+    //     // TODO: 实现确认操作逻辑
+    //     Session session = agentService.getLatestSession(sessionId);
+    //     if (session == null) {
+    //         return ResponseEntity.notFound().build();
+    //     }
+    //     return ResponseEntity.ok(session);
+    // }
 
-    /**
-     * 销毁操作接口
-     */
-    @PostMapping("/sessions/{session_id}/terminate")
-    public ResponseEntity<Map<String, String>> terminateSession(
-            @PathVariable("session_id") String sessionId) {
-        // TODO: 实现销毁操作逻辑
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "terminated");
-        response.put("session_id", sessionId);
-        return ResponseEntity.ok(response);
-    }
+    // /**
+    //  * 销毁操作接口
+    //  */
+    // @PostMapping("/sessions/{session_id}/terminate")
+    // public ResponseEntity<Map<String, String>> terminateSession(
+    //         @PathVariable("session_id") String sessionId) {
+    //     // TODO: 实现销毁操作逻辑
+    //     Map<String, String> response = new HashMap<>();
+    //     response.put("status", "terminated");
+    //     response.put("session_id", sessionId);
+    //     return ResponseEntity.ok(response);
+    // }
 }
 
