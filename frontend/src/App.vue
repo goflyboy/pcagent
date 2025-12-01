@@ -73,6 +73,14 @@ export default {
   },
   mounted() {
     this.addSystemMessage('欢迎使用产品配置Agent！请输入您的配置需求。')
+    // 设置默认用户输入
+    this.userInput = `我有一名高端客户，需要建立数据中心，要求如下：
+
+数据中心服务器 500台
+
+1. CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核 
+
+2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。`
   },
   beforeUnmount() {
     if (this.pollInterval) {
