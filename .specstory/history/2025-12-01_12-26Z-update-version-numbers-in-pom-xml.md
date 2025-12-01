@@ -173,14 +173,5350 @@ Downloading from central: https://repo.maven.apache.org/maven2/org/springframewo
 Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.2.10/spring-test-6.2.10.jar
 Progress (1): 0/2.0 MBProgress (1): 0/2.0 MBProgress (2): 0/2.0 MB | 0/1.0 MBProgress (2): 0/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.1/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.2/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.3/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.4/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.5/2.0 MB | 0.1/1.0 MBProgress (2): 0.6/2.0 MB | 0.1/1.0 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.1/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.2/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.6/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.7/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.1/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.8/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.3/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.2/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 0.9/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.4/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.0/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.5/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.1/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.2/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.3/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.6/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.4/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.3/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.4/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.5/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.7/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.8/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.5/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 0.9/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.6/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.7/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.8/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.6/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.7/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.7/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.7/7.6 MBProgress (3): 1.9/2.0 MB | 1.0/1.0 MB | 0.7/7.6 MBProgress (3): 1.9/2.0 MB | 1.0 MB | 0.7/7.6 MB                                                  Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.2.10/spring-test-6.2.10.jar (1.0 MB at 192 kB/s)
 Progress (2): 1.9/2.0 MB | 0.7/7.6 MBProgress (2): 2.0/2.0 MB | 0.7/7.6 MBProgress (2): 2.0 MB | 0.7/7.6 MB                                     Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/6.2.10/spring-core-6.2.10.jar (2.0 MB at 365 kB/s)
-Progress (1): 0.7/7.6 MBProgress (1): 0.7/7.6 MBProgress (1): 0.7/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.9/7.6 MB
+Progress (1): 0.7/7.6 MBProgress (1): 0.7/7.6 MBProgress (1): 0.7/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.8/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 0.9/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.0/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.1/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.2/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.3/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.4/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.5/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.6/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.7/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.8/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 1.9/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.0/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.1/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.2/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.3/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.4/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.5/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.6/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.7/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.8/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 2.9/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.0/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.1/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.2/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.3/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.4/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.5/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.6/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.7/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.8/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 3.9/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.0/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.1/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.2/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.3/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.4/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.5/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.6/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.7/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.8/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 4.9/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.0/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.1/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.2/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.3/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.4/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.5/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.6/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.7/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.8/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 5.9/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.0/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.1/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.2/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.3/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.4/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.5/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.6/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.7/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.8/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 6.9/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.0/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.1/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.2/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.3/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.4/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.5/7.6 MBProgress (1): 7.6/7.6 MBProgress (1): 7.6/7.6 MBProgress (1): 7.6/7.6 MBProgress (1): 7.6/7.6 MBProgress (1): 7.6 MB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/groovy/groovy/4.0.22/groovy-4.0.22.jar (7.6 MB at 341 kB/s)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pcagent ---
+[INFO] Copying 5 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pcagent ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 48 source files with javac [debug target 21] to target\classes
+[INFO] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/ChatModelBuilder.java: D:\01.code\mygithub\pcagent\src\main\java\com\pcagent\util\ChatModelBuilder.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/ChatModelBuilder.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/service/LLMInvoker.java:[186,52] �Ҳ�������
+  ����:   ���� getContent()
+  λ��: �� org.springframework.ai.chat.messages.AssistantMessage
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/ChatModelBuilder.java:[84,21] �Ҳ�������
+  ����:   ���� withModel(java.lang.String)
+  λ��: �� org.springframework.ai.openai.OpenAiChatOptions.Builder
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/CustomRestChatModel.java:[235,24] �Ҳ�������
+  ����:   ���� getContent()
+  λ��: ����Ϊorg.springframework.ai.chat.messages.Message�ı��� message
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/CustomRestChatModel.java:[236,34] �Ҳ�������
+  ����:   ���� getContent()
+  λ��: ����Ϊorg.springframework.ai.chat.messages.Message�ı��� message
+[INFO] 4 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  47.993 s
+[INFO] Finished at: 2025-12-01T20:32:20+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pcagent: Compilation failure: Compilation failure: 
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/service/LLMInvoker.java:[186,52] �Ҳ�������
+[ERROR]   ����:   ���� getContent()
+[ERROR]   λ��: �� org.springframework.ai.chat.messages.AssistantMessage
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/ChatModelBuilder.java:[84,21] �Ҳ�������
+[ERROR]   ����:   ���� withModel(java.lang.String)
+[ERROR]   λ��: �� org.springframework.ai.openai.OpenAiChatOptions.Builder
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/CustomRestChatModel.java:[235,24] �Ҳ�������
+[ERROR]   ����:   ���� getContent()
+[ERROR]   λ��: ����Ϊorg.springframework.ai.chat.messages.Message�ı��� message
+[ERROR] /D:/01.code/mygithub/pcagent/src/main/java/com/pcagent/util/CustomRestChatModel.java:[236,34] �Ҳ�������
+[ERROR]   ����:   ���� getContent()
+[ERROR]   λ��: ����Ϊorg.springframework.ai.chat.messages.Message�ı��� message
+[ERROR] -&gt; [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
 ```
 </details>
 </tool-use>
 
 ---
 
+<think><details><summary>Thought Process</summary>
+**Resolving compile errors**
 
+I’m facing compile errors due to changes in the Spring AI API after upgrading from M4 to M6, which means I need to adjust my code. I'll inspect the relevant files using `read_file` for LLMInvoker, ChatModelBuilder, and CustomRestChatModel. It looks like `getContent()` might have been removed or its type changed—maybe it’s now `getOutputText()` or a different message structure. I should check the spring-ai 1.0.0-M6 documentation, but I can also infer some details from the code itself.</details></think>
+
+---
+
+我已经跑了 `mvn test`，目前是编译阶段就失败了，主要是 Spring AI 升级后部分 API 变更（`getContent()`、`withModel(...)` 等方法不存在）。我先打开出错的几个类，按 M6 的用法改掉这些不兼容的地方，然后再重新编译/跑用例。
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/ChatModelBuilder.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/CustomRestChatModel.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Looking into API errors**
+
+I’m noticing some errors with getContent on AssistantMessage and Message, plus an issue with withModel on OpenAiChatOptions.Builder. I really need to find out more about the new API for version M6. It would make sense to do a web search for “spring ai 1.0.0-M6 AssistantMessage” to gather relevant information. I’m curious what updates I might find there to resolve these issues!</details></think>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `Spring AI 1.0.0-M6 AssistantMessage getContent OpenAiChatOptions builder withModel` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web Search Results |  | 好的，您已将 `pom.xml` 中的 `spring.ai.version` 从 `1.0.0-M4` 更新至 `1.0.0-M6`，并将 `spring-boot.version` 从 `3.3.4` 更新至 `3.4.9`。接下来，我们可以运行测试用例以确保项目在新版本下正常工作。<br/><br/>**运行测试用例的步骤：**<br/><br/>1. **打开终端或命令提示符**：导航至项目的根目录，即包含 `pom.xml` 文件的目录。<br/><br/>2. **执行测试命令**：在终端中输入以下命令以运行所有测试用例：<br/><br/>   ```bash<br/>   mvn test<br/>   ```<br/><br/><br/>   此命令将使用 Maven 的 Surefire 插件执行项目中的所有测试用例。<br/><br/>**注意事项：**<br/><br/>- **测试未执行的问题**：如果在运行 `mvn test` 时发现测试用例未被执行，可能与 `maven-surefire-plugin` 的版本有关。某些版本的 Surefire 插件在处理 JUnit 4.13.2 及以上版本时可能存在兼容性问题，导致测试未被执行。建议检查 `pom.xml` 中的 `maven-surefire-plugin` 版本，并根据需要进行调整。例如，某些用户发现将 `maven-surefire-plugin` 的版本降至 2.21 可以解决此问题。 ([cnblogs.com](https://www.cnblogs.com/kelelipeng/p/17602439.html?utm_source=openai))<br/><br/>- **测试选择机制的变化**：从 `maven-surefire-plugin` 2.7 版本开始，插件对测试用例的选择机制发生了变化，仅执行符合 JUnit 规范的测试用例。如果某些测试未被执行，可能是因为它们不符合新的测试选择标准。可以使用以下命令进行诊断：<br/><br/>   ```bash<br/>   mvn test -Dsurefire.junit4.upgradecheck<br/>   ```<br/><br/><br/>   此命令将帮助识别未被执行的测试用例，并提供相应的修复建议。 ([php.cn](https://www.php.cn/faq/1730595.html?utm_source=openai))<br/><br/>**总结：**<br/><br/>在更新依赖版本后，运行测试用例是确保项目稳定性的关键步骤。如果遇到测试未执行的问题，建议检查 `maven-surefire-plugin` 的版本，并根据需要进行调整。同时，确保所有测试用例符合 JUnit 的规范，以适应新的测试选择机制。 |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `"class AssistantMessage" "spring-ai" getContent` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web Search Results |  | 您已将 `pom.xml` 文件中的 `spring.ai.version` 从 `1.0.0-M4` 更新至 `1.0.0-M6`，并将 `spring-boot.version` 从 `3.3.4` 更新至 `3.4.9`。接下来，您可以按照以下步骤运行测试用例，以确保升级后的项目正常运行：<br/><br/>1. **清理并构建项目**：在项目根目录下，执行以下命令清理并重新构建项目：<br/><br/>   ```bash<br/>   mvn clean install<br/>   ```<br/><br/><br/>   此命令将删除先前的构建产物，并根据更新后的依赖重新构建项目。<br/><br/>2. **运行测试用例**：在项目根目录下，执行以下命令运行所有测试用例：<br/><br/>   ```bash<br/>   mvn test<br/>   ```<br/><br/><br/>   此命令将执行项目中的所有测试用例，并显示测试结果。<br/><br/>3. **检查测试结果**：在测试执行完毕后，Maven 会在控制台输出测试结果。请检查是否有测试失败或错误。如果所有测试均通过，说明项目在升级后运行正常。<br/><br/>如果在测试过程中遇到问题，可能是由于升级导致的兼容性问题。建议您参考 [Spring Boot 3.0 升级指南](https://developer.baidu.com/article/details/2774383) 以获取更多信息和解决方案。<br/><br/>此外，升级到 Spring Boot 3.x 可能需要注意一些变化和注意事项，您可以参考 [从 Spring Boot 2.x 升级到 3.x：你所需要知道的一切](https://developer.baidu.com/article/details/2780270) 以获取更详细的指导。<br/><br/>请确保在升级和测试过程中，您的开发环境满足新版本的要求，并根据需要更新相关配置和代码。 |
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Hmm, the web_search tool appears to be malfunctioning—it’s only giving me generic Chinese text and not any API documentation. I need to think this through. An alternative could be to use grep on the getContent usage to identify any patterns. It’s a bit of a roundabout way, but I think it might help me figure out what’s going wrong. Let’s see if this approach yields better results!</details></think>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "getContent\(" in "src" • 5 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src\main\java\com\pcagent\util\CustomRestChatModel.java` | `if (message.getContent() != null) \{` | L235 |
+| `src\main\java\com\pcagent\util\CustomRestChatModel.java` | `sb.append(message.getContent()).append("\n");` | L236 |
+| `src\main\java\com\pcagent\service\LLMInvoker.java` | `// Spring AI 1.0.0-M4 使用 getOutput().getContent() 方法` | L185 |
+| `src\main\java\com\pcagent\service\LLMInvoker.java` | `String content = generation.getOutput().getContent();` | L186 |
+| `src\test\java\com\pcagent\service\LLMInvokerTest.java` | `when(assistantMessage.getContent()).thenReturn(response);` | L212 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/LLMInvokerTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `"class Generation" "org.springframework.ai.chat.model" getOutputText` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web Search Results |  | 您希望在升级了 `spring.ai.version` 至 `1.0.0-M6` 和 `spring-boot.version` 至 `3.4.9` 后，运行项目的测试用例。以下是执行测试用例的步骤：<br/><br/>1. **运行测试用例**：在项目根目录下，使用以下命令运行所有测试用例：<br/><br/>   ```bash<br/>   mvn test<br/>   ```<br/><br/><br/>   此命令会执行项目中的所有单元测试和集成测试。<br/><br/>2. **检查测试结果**：测试完成后，Maven 会在控制台显示测试结果，包括通过的测试数量、失败的测试数量以及错误信息。<br/><br/>3. **处理测试失败**：如果有测试失败，您需要查看失败的详细信息，定位问题所在。可能的原因包括：<br/><br/>   - **依赖版本不兼容**：升级 `spring-boot.version` 至 `3.4.9` 后，某些依赖可能需要同步升级以保持兼容性。<br/><br/>   - **代码变更影响**：升级后，某些 API 或行为可能发生变化，导致测试失败。<br/><br/>   建议您参考 [Spring Boot 3.4.0 的新特性和升级指南](https://www.xuanyuanli.cn/pages/84a0a4/) 了解可能的变更，并根据需要调整代码或依赖。<br/><br/>4. **重新运行测试**：修复问题后，重新运行 `mvn test`，确保所有测试用例通过。<br/><br/>如果您在升级过程中遇到特定问题，建议查阅 [Spring Boot 3.4.0 升级指南与版本更新内容](https://blog.csdn.net/qq_40001822/article/details/134428603) 以获取更多信息。 |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/service/LLMInvoker.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;173237ad-6e36-4cd6-bd32-96f8d2174566&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;                  }\r\n                  return \&quot;\&quot;;\r\n-             } \r\n-             \r\n-             // Spring AI 1.0.0-M4 使用 getOutput().getContent() 方法\r\n-             String content = generation.getOutput().getContent();\r\n+             }\r\n+ \r\n+             // 为兼容 Spring AI 不同版本，这里通过反射获取文本内容：\r\n+             // - 优先尝试 output.getText()\r\n+             // - 然后尝试 output.getContent()\r\n+             // - 最后回退到 output.toString()\r\n+             Object output = generation.getOutput();\r\n+             String content = \&quot;\&quot;;\r\n+             if (output != null) {\r\n+                 try {\r\n+                     java.lang.reflect.Method getText = output.getClass().getMethod(\&quot;getText\&quot;);\r\n+                     Object v = getText.invoke(output);\r\n+                     content = v != null ? v.toString() : \&quot;\&quot;;\r\n+                 } catch (NoSuchMethodException ignore) {\r\n+                     try {\r\n+                         java.lang.reflect.Method getContent = output.getClass().getMethod(\&quot;getContent\&quot;);\r\n+                         Object v = getContent.invoke(output);\r\n+                         content = v != null ? v.toString() : \&quot;\&quot;;\r\n+                     } catch (NoSuchMethodException ignore2) {\r\n+                         content = output.toString();\r\n+                     }\r\n+                 }\r\n+             }\r\n              \r\n              long callDuration = System.currentTimeMillis() - startTime;\r&quot;,
+        &quot;oldStart&quot;: 181,
+        &quot;newStart&quot;: 181,
+        &quot;oldLines&quot;: 8,
+        &quot;newLines&quot;: 27,
+        &quot;linesRemoved&quot;: 4,
+        &quot;linesAdded&quot;: 23
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/main/java/com/pcagent/service/LLMInvoker.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.service;\r\n\r\nimport com.fasterxml.jackson.core.JsonProcessingException;\r\nimport com.fasterxml.jackson.databind.ObjectMapper;\r\nimport com.pcagent.model.ConfigReq;\r\nimport com.pcagent.model.ConfigStrategy;\r\nimport freemarker.template.Configuration;\r\nimport freemarker.template.Template;\r\nimport freemarker.template.TemplateException;\r\nimport lombok.extern.slf4j.Slf4j;\r\nimport org.springframework.ai.chat.model.ChatModel;\r\nimport org.springframework.ai.chat.model.ChatResponse;\r\nimport org.springframework.ai.chat.model.Generation;\r\nimport org.springframework.ai.chat.messages.Message;\r\nimport org.springframework.ai.chat.messages.UserMessage;\r\nimport org.springframework.ai.chat.prompt.Prompt;\r\nimport org.springframework.ai.openai.OpenAiChatModel;\r\nimport org.springframework.ai.openai.OpenAiChatOptions;\r\nimport org.springframework.ai.openai.api.OpenAiApi;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.beans.factory.annotation.Value;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.util.StringUtils;\r\n\r\nimport java.lang.reflect.Field;\r\nimport java.lang.reflect.Method;\r\n\r\nimport java.io.IOException;\r\nimport java.io.StringWriter;\r\nimport java.nio.charset.StandardCharsets;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.Optional;\r\nimport java.util.regex.Pattern;\r\n\r\n/**\r\n * LLM调用服务\r\n * 支持deepseek和Qinwen两个模型\r\n * 注意：由于Spring AI依赖问题，当前使用简单解析实现\r\n */\r\n@Slf4j\r\n@Service\r\npublic class LLMInvoker {\r\n    @Value(\&quot;${spring.ai.provider:openai}\&quot;)\r\n    private String provider;\r\n\r\n    private final ChatModel chatModel;\r\n    private final Configuration freeMarkerConfig;\r\n    private final ObjectMapper objectMapper;\r\n\r\n    @Autowired(required = false)\r\n    public LLMInvoker(ChatModel chatModel) {\r\n        this.chatModel = chatModel;\r\n        this.objectMapper = new ObjectMapper();\r\n        // 初始化 FreeMarker 配置\r\n        this.freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_33);\r\n        this.freeMarkerConfig.setDefaultEncoding(StandardCharsets.UTF_8.name());\r\n        this.freeMarkerConfig.setClassLoaderForTemplateLoading(\r\n                Thread.currentThread().getContextClassLoader(), \&quot;templates\&quot;);\r\n        this.freeMarkerConfig.setAPIBuiltinEnabled(true);\r\n    }\r\n\r\n    public LLMInvoker() {\r\n        this(null);\r\n    }\r\n\r\n    /**\r\n     * 解析配置需求\r\n     * \r\n     * @param userInput     用户输入\r\n     * @param productSerials 产品系列列表（逗号分隔的字符串）\r\n     * @return 配置需求\r\n     */\r\n    public ConfigReq parseConfigReq(String userInput, String productSerials) {\r\n        if (chatModel == null) {\r\n            log.warn(\&quot;ChatModel not available, using simple parser\&quot;);\r\n            return parseConfigReqSimple(userInput, productSerials);\r\n        }\r\n\r\n        try {\r\n            // 渲染 prompt\r\n            String prompt = renderPrompt(userInput, productSerials);\r\n            log.debug(\&quot;Rendered prompt: {}\&quot;, prompt);\r\n\r\n            // 调用 LLM\r\n            String response = callLLM(prompt);\r\n            log.debug(\&quot;LLM response: {}\&quot;, response);\r\n\r\n            // 解析 JSON 响应\r\n            ConfigReq configReq = tryParseResponse(response);\r\n            if (configReq == null) {\r\n                log.warn(\&quot;LLM response is not a valid ConfigReq JSON, fallback to simple parser. response={}\&quot;, response);\r\n                return parseConfigReqSimple(userInput, productSerials);\r\n            }\r\n\r\n            // 确保默认值和验证\r\n            ensureDefaults(userInput, productSerials, configReq);\r\n            return configReq;\r\n\r\n        } catch (Exception e) {\r\n            log.error(\&quot;Failed to parse config req with LLM, fallback to simple parser\&quot;, e);\r\n            return parseConfigReqSimple(userInput, productSerials);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 渲染 prompt 模板\r\n     */\r\n    private String renderPrompt(String userInput, String productSerials) {\r\n        try {\r\n            Template template = freeMarkerConfig.getTemplate(\&quot;bid-parser.ftl\&quot;, StandardCharsets.UTF_8.name());\r\n            Map&lt;String, Object&gt; dataModel = new HashMap&lt;&gt;();\r\n            dataModel.put(\&quot;userInput\&quot;, userInput != null ? userInput : \&quot;\&quot;);\r\n            \r\n            // 解析产品系列列表\r\n            List&lt;String&gt; serialsList = new ArrayList&lt;&gt;();\r\n            if (StringUtils.hasText(productSerials)) {\r\n                serialsList = Arrays.asList(productSerials.split(\&quot;,\&quot;));\r\n            }\r\n            dataModel.put(\&quot;productSerials\&quot;, serialsList);\r\n\r\n            StringWriter writer = new StringWriter();\r\n            template.process(dataModel, writer);\r\n            return writer.toString();\r\n        } catch (TemplateException | IOException e) {\r\n            log.error(\&quot;Failed to render prompt template\&quot;, e);\r\n            throw new IllegalStateException(\&quot;Unable to render prompt template\&quot;, e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 调用 LLM 进行配置检查（公共方法，供其他服务调用）\r\n     */\r\n    public String callLLMForCheck(String prompt) {\r\n        if (chatModel == null) {\r\n            log.warn(\&quot;ChatModel not available for config check\&quot;);\r\n            return null;\r\n        }\r\n        return callLLM(prompt);\r\n    }\r\n\r\n    /**\r\n     * 调用 LLM\r\n     */\r\n    private String callLLM(String prompt) {\r\n        long startTime = System.currentTimeMillis();\r\n        \r\n        // 打印 LLM 请求参数信息\r\n        if (log.isDebugEnabled()) {\r\n            logLLMRequestInfo();\r\n        }\r\n        \r\n        try {\r\n            Prompt aiPrompt = new Prompt(List.&lt;Message&gt;of(new UserMessage(prompt)));\r\n\r\n            if (log.isDebugEnabled()) {\r\n                log.debug(\&quot;发送请求到 LLM...\&quot;);\r\n            }\r\n\r\n            ChatResponse response = chatModel.call(aiPrompt);\r\n\r\n            if (response == null) {\r\n                long callDuration = System.currentTimeMillis() - startTime;\r\n                if (log.isDebugEnabled()) {\r\n                    log.debug(\&quot;LLM 返回 null 响应，耗时: {} ms\&quot;, callDuration);\r\n                    log.debug(\&quot;=== LLM 调用结束（无响应）===\&quot;);\r\n                }\r\n                return \&quot;\&quot;;\r\n            }\r\n            \r\n            Generation generation = response.getResult();\r\n            \r\n            if (generation == null) {\r\n                long callDuration = System.currentTimeMillis() - startTime;\r\n                if (log.isDebugEnabled()) {\r\n                    log.debug(\&quot;LLM 响应中 Generation 为 null，耗时: {} ms\&quot;, callDuration);\r\n                    log.debug(\&quot;=== LLM 调用结束（无 Generation）===\&quot;);\r\n                }\r\n                return \&quot;\&quot;;\r\n            }\r\n\r\n            // 为兼容 Spring AI 不同版本，这里通过反射获取文本内容：\r\n            // - 优先尝试 output.getText()\r\n            // - 然后尝试 output.getContent()\r\n            // - 最后回退到 output.toString()\r\n            Object output = generation.getOutput();\r\n            String content = \&quot;\&quot;;\r\n            if (output != null) {\r\n                try {\r\n                    java.lang.reflect.Method getText = output.getClass().getMethod(\&quot;getText\&quot;);\r\n                    Object v = getText.invoke(output);\r\n                    content = v != null ? v.toString() : \&quot;\&quot;;\r\n                } catch (NoSuchMethodException ignore) {\r\n                    try {\r\n                        java.lang.reflect.Method getContent = output.getClass().getMethod(\&quot;getContent\&quot;);\r\n                        Object v = getContent.invoke(output);\r\n                        content = v != null ? v.toString() : \&quot;\&quot;;\r\n                    } catch (NoSuchMethodException ignore2) {\r\n                        content = output.toString();\r\n                    }\r\n                }\r\n            }\r\n            \r\n            long callDuration = System.currentTimeMillis() - startTime;\r\n            \r\n            if (log.isDebugEnabled()) {\r\n                log.debug(\&quot;LLM 调用成功，耗时: {} ms\&quot;, callDuration);\r\n                log.debug(\&quot;响应长度: {} 字符\&quot;, content != null ? content.length() : 0);\r\n                // 打印响应的前500个字符和后100个字符（如果超过600字符）\r\n                if (content != null &amp;&amp; content.length() &gt; 600) {\r\n                    log.debug(\&quot;响应预览（前500字符）: {}\&quot;, content.substring(0, Math.min(500, content.length())));\r\n                    log.debug(\&quot;响应预览（后100字符）: {}\&quot;, content.substring(Math.max(0, content.length() - 100)));\r\n                } else {\r\n                    log.debug(\&quot;响应内容: {}\&quot;, content);\r\n                }\r\n                log.debug(\&quot;=== LLM 调用结束 ===\&quot;);\r\n            }\r\n            \r\n            return content;\r\n        } catch (Exception e) {\r\n            long callDuration = System.currentTimeMillis() - startTime;\r\n\r\n            if (log.isDebugEnabled()) {\r\n                log.debug(\&quot;LLM 调用失败，耗时: {} ms\&quot;, callDuration);\r\n                log.debug(\&quot;异常类型: {}\&quot;, e.getClass().getName());\r\n                log.debug(\&quot;异常消息: {}\&quot;, e.getMessage());\r\n                log.debug(\&quot;=== LLM 调用结束（异常）===\&quot;);\r\n            }\r\n\r\n            log.error(\&quot;Failed to call LLM\&quot;, e);\r\n            throw new RuntimeException(\&quot;Failed to call LLM\&quot;, e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 打印 LLM 请求参数信息（URL、模型、temperature 等）\r\n     */\r\n    private void logLLMRequestInfo() {\r\n        if (chatModel == null) {\r\n            log.debug(\&quot;LLM 请求参数: ChatModel 为 null，使用简单解析\&quot;);\r\n            return;\r\n        }\r\n\r\n        try {\r\n            // 尝试获取 OpenAiChatModel 的配置信息\r\n            if (chatModel instanceof OpenAiChatModel) {\r\n                OpenAiChatModel openAiChatModel = (OpenAiChatModel) chatModel;\r\n                \r\n                // 通过反射获取 OpenAiApi\r\n                Field apiField = OpenAiChatModel.class.getDeclaredField(\&quot;openAiApi\&quot;);\r\n                apiField.setAccessible(true);\r\n                OpenAiApi api = (OpenAiApi) apiField.get(openAiChatModel);\r\n                \r\n                // 获取 baseUrl\r\n                String baseUrl = \&quot;未知\&quot;;\r\n                try {\r\n                    Method getBaseUrlMethod = OpenAiApi.class.getMethod(\&quot;getBaseUrl\&quot;);\r\n                    baseUrl = (String) getBaseUrlMethod.invoke(api);\r\n                } catch (Exception e) {\r\n                    // 如果方法不存在，尝试通过字段获取\r\n                    try {\r\n                        Field baseUrlField = OpenAiApi.class.getDeclaredField(\&quot;baseUrl\&quot;);\r\n                        baseUrlField.setAccessible(true);\r\n                        baseUrl = (String) baseUrlField.get(api);\r\n                    } catch (Exception ex) {\r\n                        log.debug(\&quot;无法获取 baseUrl: {}\&quot;, ex.getMessage());\r\n                    }\r\n                }\r\n                \r\n                // 通过反射获取 OpenAiChatOptions\r\n                Field optionsField = OpenAiChatModel.class.getDeclaredField(\&quot;defaultOptions\&quot;);\r\n                optionsField.setAccessible(true);\r\n                OpenAiChatOptions options = (OpenAiChatOptions) optionsField.get(openAiChatModel);\r\n                \r\n                // 获取模型名称\r\n                String model = \&quot;未知\&quot;;\r\n                if (options != null) {\r\n                    try {\r\n                        Method getModelMethod = OpenAiChatOptions.class.getMethod(\&quot;getModel\&quot;);\r\n                        model = (String) getModelMethod.invoke(options);\r\n                    } catch (Exception e) {\r\n                        try {\r\n                            Field modelField = OpenAiChatOptions.class.getDeclaredField(\&quot;model\&quot;);\r\n                            modelField.setAccessible(true);\r\n                            model = (String) modelField.get(options);\r\n                        } catch (Exception ex) {\r\n                            log.debug(\&quot;无法获取 model: {}\&quot;, ex.getMessage());\r\n                        }\r\n                    }\r\n                }\r\n                \r\n                // 获取 temperature\r\n                Double temperature = null;\r\n                if (options != null) {\r\n                    try {\r\n                        Method getTemperatureMethod = OpenAiChatOptions.class.getMethod(\&quot;getTemperature\&quot;);\r\n                        temperature = (Double) getTemperatureMethod.invoke(options);\r\n                    } catch (Exception e) {\r\n                        try {\r\n                            Field temperatureField = OpenAiChatOptions.class.getDeclaredField(\&quot;temperature\&quot;);\r\n                            temperatureField.setAccessible(true);\r\n                            temperature = (Double) temperatureField.get(options);\r\n                        } catch (Exception ex) {\r\n                            log.debug(\&quot;无法获取 temperature: {}\&quot;, ex.getMessage());\r\n                        }\r\n                    }\r\n                }\r\n                \r\n                // 打印请求参数信息\r\n                log.debug(\&quot;=== LLM 请求参数信息 ===\&quot;);\r\n                log.debug(\&quot;Provider: {}\&quot;, provider);\r\n                log.debug(\&quot;Base URL: {}\&quot;, baseUrl);\r\n                log.debug(\&quot;Model: {}\&quot;, model != null ? model : \&quot;未知\&quot;);\r\n                log.debug(\&quot;Temperature: {}\&quot;, temperature != null ? temperature : \&quot;未知\&quot;);\r\n                log.debug(\&quot;ChatModel 类型: {}\&quot;, chatModel.getClass().getName());\r\n                log.debug(\&quot;=========================\&quot;);\r\n            } else {\r\n                log.debug(\&quot;LLM 请求参数: ChatModel 类型为 {}, 无法提取详细配置信息\&quot;, \r\n                        chatModel.getClass().getName());\r\n            }\r\n        } catch (Exception e) {\r\n            log.debug(\&quot;获取 LLM 请求参数信息失败: {}\&quot;, e.getMessage());\r\n            log.debug(\&quot;ChatModel 类型: {}\&quot;, chatModel != null ? chatModel.getClass().getName() : \&quot;null\&quot;);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 尝试解析 LLM 响应为 ConfigReq\r\n     */\r\n    private ConfigReq tryParseResponse(String response) {\r\n        if (response == null || response.trim().isEmpty()) {\r\n            return null;\r\n        }\r\n        try {\r\n            // 尝试提取 JSON（可能包含 markdown 代码块）\r\n            String json = extractJson(response);\r\n            return objectMapper.readValue(json, ConfigReq.class);\r\n        } catch (JsonProcessingException e) {\r\n            log.debug(\&quot;Failed to parse LLM response as JSON\&quot;, e);\r\n            return null;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 从响应中提取 JSON（可能包含在 markdown 代码块中）\r\n     */\r\n    private String extractJson(String response) {\r\n        String trimmed = response.trim();\r\n        // 如果包含 markdown 代码块，提取其中的内容\r\n        if (trimmed.startsWith(\&quot;&#96;&#96;&#96;\&quot;)) {\r\n            int start = trimmed.indexOf(\&quot;{\&quot;);\r\n            int end = trimmed.lastIndexOf(\&quot;}\&quot;);\r\n            if (start &gt;= 0 &amp;&amp; end &gt; start) {\r\n                return trimmed.substring(start, end + 1);\r\n            }\r\n        }\r\n        // 直接查找 JSON 对象\r\n        int start = trimmed.indexOf(\&quot;{\&quot;);\r\n        int end = trimmed.lastIndexOf(\&quot;}\&quot;);\r\n        if (start &gt;= 0 &amp;&amp; end &gt; start) {\r\n            return trimmed.substring(start, end + 1);\r\n        }\r\n        return trimmed;\r\n    }\r\n\r\n    /**\r\n     * 确保默认值和验证\r\n     */\r\n    private void ensureDefaults(String userInput, String productSerials, ConfigReq configReq) {\r\n        // 验证产品系列是否在枚举中\r\n        List&lt;String&gt; validSerials = new ArrayList&lt;&gt;();\r\n        if (StringUtils.hasText(productSerials)) {\r\n            validSerials = Arrays.asList(productSerials.split(\&quot;,\&quot;));\r\n        }\r\n        if (!validSerials.contains(configReq.getProductSerial())) {\r\n            configReq.setProductSerial(\&quot;\&quot;);\r\n        }\r\n\r\n        // 确保配置策略不为空\r\n        if (configReq.getConfigStrategy() == null) {\r\n            configReq.setConfigStrategy(ConfigStrategy.PRICE_MIN_PRIORITY);\r\n        }\r\n\r\n        // 确保数量大于0\r\n        if (configReq.getTotalQuantity() == null || configReq.getTotalQuantity() &lt;= 0) {\r\n            configReq.setTotalQuantity(1);\r\n            configReq.setTotalQuantityMemo(\&quot;没有明确指定说明，默认值配置1套\&quot;);\r\n        } else if (!StringUtils.hasText(configReq.getTotalQuantityMemo())) {\r\n            // 检查是否真的在输入中找到了数量\r\n            Optional&lt;Integer&gt; detectedQuantity = detectTotalQuantity(userInput);\r\n            if (detectedQuantity.isEmpty()) {\r\n                configReq.setTotalQuantityMemo(\&quot;没有明确指定说明，默认值配置1套\&quot;);\r\n            }\r\n        }\r\n\r\n        // 确保规格项列表不为空\r\n        if (configReq.getSpecReqItems() == null || configReq.getSpecReqItems().isEmpty()) {\r\n            configReq.setSpecReqItems(extractSpecItems(userInput));\r\n        }\r\n\r\n        // 确保 memo 不为 null\r\n        if (configReq.getTotalQuantityMemo() == null) {\r\n            configReq.setTotalQuantityMemo(\&quot;\&quot;);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 检测总数量\r\n     */\r\n    private Optional&lt;Integer&gt; detectTotalQuantity(String userInput) {\r\n        if (userInput == null || userInput.trim().isEmpty()) {\r\n            return Optional.empty();\r\n        }\r\n        Pattern pattern = Pattern.compile(\&quot;(\\\\d+)\\\\s*[台套]\&quot;);\r\n        java.util.regex.Matcher matcher = pattern.matcher(userInput);\r\n        if (matcher.find()) {\r\n            try {\r\n                return Optional.of(Integer.parseInt(matcher.group(1)));\r\n            } catch (NumberFormatException e) {\r\n                return Optional.empty();\r\n            }\r\n        }\r\n        return Optional.empty();\r\n    }\r\n\r\n    /**\r\n     * 提取规格项\r\n     */\r\n    private List&lt;String&gt; extractSpecItems(String userInput) {\r\n        List&lt;String&gt; items = new ArrayList&lt;&gt;();\r\n        if (userInput == null || userInput.trim().isEmpty()) {\r\n            return items;\r\n        }\r\n        // 按分隔符拆分\r\n        String[] parts = userInput.split(\&quot;[\\\\n；;。、]+\&quot;);\r\n        for (String part : parts) {\r\n            String trimmed = part.trim();\r\n            if (!trimmed.isEmpty() &amp;&amp; trimmed.matches(\&quot;.*[≥&gt;=&lt;≤].*\&quot;)) {\r\n                items.add(trimmed);\r\n            }\r\n        }\r\n        return items;\r\n    }\r\n\r\n    /**\r\n     * 简单解析配置需求（当LLM不可用时使用）\r\n     */\r\n    private ConfigReq parseConfigReqSimple(String userInput, String productSerials) {\r\n        ConfigReq req = new ConfigReq();\r\n        req.setTotalQuantity(1);\r\n        req.setTotalQuantityMemo(\&quot;LLM不可用，使用简单解析\&quot;);\r\n        req.setConfigStrategy(ConfigStrategy.PRICE_MIN_PRIORITY);\r\n        req.setSpecReqItems(new java.util.ArrayList&lt;&gt;());\r\n\r\n        // 简单提取产品系列\r\n        String[] serials = productSerials.split(\&quot;,\&quot;);\r\n        for (String serial : serials) {\r\n            if (userInput.contains(serial.trim())) {\r\n                req.setProductSerial(serial.trim());\r\n                break;\r\n            }\r\n        }\r\n\r\n        // 简单提取数量\r\n        java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(\&quot;(\\\\d+)\\\\s*[台套]\&quot;);\r\n        java.util.regex.Matcher matcher = pattern.matcher(userInput);\r\n        if (matcher.find()) {\r\n            req.setTotalQuantity(Integer.parseInt(matcher.group(1)));\r\n        }\r\n\r\n        // 简单提取规格项（按行分割）\r\n        String[] lines = userInput.split(\&quot;\\n\&quot;);\r\n        for (String line : lines) {\r\n            if (line.trim().matches(\&quot;.*[≥&gt;=&lt;≤].*\&quot;)) {\r\n                req.getSpecReqItems().add(line.trim());\r\n            }\r\n        }\r\n\r\n        return req;\r\n    }\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+我已经改了 `LLMInvoker`，用反射方式兼容不同 Spring AI 版本的输出内容获取。接下来会更新自定义 ChatModel 的消息合并和测试用例，然后重新跑一次 `mvn test`。
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/util/CustomRestChatModel.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;1b5f9520-3cb7-4e0e-ad5c-dbfe47affa9e&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;      /**\r\n       * 合并消息列表为单个文本\r\n+      * 使用反射兼容 Spring AI 不同版本的消息结构：\r\n+      * - 优先尝试 message.getText()\r\n+      * - 然后尝试 message.getContent()\r\n+      * - 最后回退到 message.toString()\r\n       */\r\n      private String mergeMessages(List&lt;Message&gt; messages) {\r\n          StringBuilder sb = new StringBuilder();\r\n+         if (messages == null) {\r\n+             return \&quot;\&quot;;\r\n+         }\r\n          for (Message message : messages) {\r\n-             if (message.getContent() != null) {\r\n-                 sb.append(message.getContent()).append(\&quot;\\n\&quot;);\r\n+             if (message == null) {\r\n+                 continue;\r\n+             }\r\n+             String text = \&quot;\&quot;;\r\n+             Object target = message;\r\n+             try {\r\n+                 java.lang.reflect.Method getText = target.getClass().getMethod(\&quot;getText\&quot;);\r\n+                 Object v = getText.invoke(target);\r\n+                 text = v != null ? v.toString() : \&quot;\&quot;;\r\n+             } catch (NoSuchMethodException e) {\r\n+                 try {\r\n+                     java.lang.reflect.Method getContent = target.getClass().getMethod(\&quot;getContent\&quot;);\r\n+                     Object v = getContent.invoke(target);\r\n+                     text = v != null ? v.toString() : \&quot;\&quot;;\r\n+                 } catch (NoSuchMethodException ex) {\r\n+                     text = target.toString();\r\n+                 } catch (Exception ex) {\r\n+                     log.debug(\&quot;Failed to get message content via getContent: {}\&quot;, ex.getMessage());\r\n+                 }\r\n+             } catch (Exception e) {\r\n+                 log.debug(\&quot;Failed to get message content via getText: {}\&quot;, e.getMessage());\r\n+             }\r\n+ \r\n+             if (!text.isEmpty()) {\r\n+                 sb.append(text).append(\&quot;\\n\&quot;);\r\n              }\r\n          }\r&quot;,
+        &quot;oldStart&quot;: 229,
+        &quot;newStart&quot;: 229,
+        &quot;oldLines&quot;: 10,
+        &quot;newLines&quot;: 40,
+        &quot;linesRemoved&quot;: 2,
+        &quot;linesAdded&quot;: 32
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/main/java/com/pcagent/util/CustomRestChatModel.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.util;\r\n\r\nimport com.fasterxml.jackson.databind.JsonNode;\r\nimport com.fasterxml.jackson.databind.ObjectMapper;\r\nimport lombok.extern.slf4j.Slf4j;\r\nimport org.springframework.ai.chat.model.ChatModel;\r\nimport org.springframework.ai.chat.model.ChatResponse;\r\nimport org.springframework.ai.chat.model.Generation;\r\nimport org.springframework.ai.chat.messages.AssistantMessage;\r\nimport org.springframework.ai.chat.messages.Message;\r\nimport org.springframework.ai.chat.prompt.ChatOptions;\r\nimport org.springframework.ai.chat.prompt.Prompt;\r\nimport org.springframework.http.*;\r\nimport org.springframework.web.client.RestClientException;\r\nimport org.springframework.web.client.RestTemplate;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\n/**\r\n * 自定义REST API ChatModel适配器\r\n * 用于调用非标准OpenAPI接口的第三方大模型API\r\n * \r\n * 配置说明：\r\n * - CUSTOM_LLM_API_URL: 第三方API的完整URL（必需）\r\n * - CUSTOM_LLM_API_KEY: API密钥（可选，根据实际需求）\r\n * - CUSTOM_LLM_MODEL: 模型名称（可选）\r\n * - CUSTOM_LLM_REQUEST_BODY_TEMPLATE: 请求体模板（可选，JSON格式）\r\n * \r\n * 请求体模板支持以下占位符：\r\n * - {messages}: 将被替换为消息列表\r\n * - {prompt}: 将被替换为合并后的提示文本\r\n * - {model}: 将被替换为模型名称\r\n * - {temperature}: 将被替换为温度参数（默认0.7）\r\n */\r\n@Slf4j\r\npublic class CustomRestChatModel implements ChatModel {\r\n\r\n    private final String apiUrl;\r\n    private final String apiKey;\r\n    private final String model;\r\n    private final Double temperature;\r\n    private final String requestBodyTemplate;\r\n    private final RestTemplate restTemplate;\r\n    private final ObjectMapper objectMapper;\r\n\r\n    /**\r\n     * 构造函数\r\n     * \r\n     * @param apiUrl API的完整URL\r\n     * @param apiKey API密钥（可为null）\r\n     * @param model 模型名称（可为null）\r\n     * @param temperature 温度参数（可为null，默认0.7）\r\n     * @param requestBodyTemplate 请求体模板（可为null，使用默认模板）\r\n     */\r\n    public CustomRestChatModel(String apiUrl, String apiKey, String model, \r\n                               Double temperature, String requestBodyTemplate) {\r\n        if (apiUrl == null || apiUrl.isEmpty()) {\r\n            throw new IllegalArgumentException(\&quot;API URL cannot be null or empty\&quot;);\r\n        }\r\n        this.apiUrl = apiUrl;\r\n        this.apiKey = apiKey;\r\n        this.model = model;\r\n        this.temperature = temperature != null ? temperature : 0.7;\r\n        this.requestBodyTemplate = requestBodyTemplate;\r\n        this.restTemplate = new RestTemplate();\r\n        this.objectMapper = new ObjectMapper();\r\n    }\r\n\r\n    /**\r\n     * 从环境变量创建CustomRestChatModel实例\r\n     * \r\n     * @return CustomRestChatModel实例，如果环境变量不可用则返回null\r\n     */\r\n    public static CustomRestChatModel createIfAvailable() {\r\n        String apiUrl = getEnvVar(\&quot;CUSTOM_LLM_API_URL\&quot;);\r\n        if (apiUrl == null || apiUrl.isEmpty()) {\r\n            return null;\r\n        }\r\n\r\n        String apiKey = getEnvVar(\&quot;CUSTOM_LLM_API_KEY\&quot;);\r\n        String model = getEnvVar(\&quot;CUSTOM_LLM_MODEL\&quot;);\r\n        String temperatureStr = getEnvVar(\&quot;CUSTOM_LLM_TEMPERATURE\&quot;);\r\n        Double temperature = temperatureStr != null ? Double.parseDouble(temperatureStr) : null;\r\n        String requestBodyTemplate = getEnvVar(\&quot;CUSTOM_LLM_REQUEST_BODY_TEMPLATE\&quot;);\r\n\r\n        try {\r\n            return new CustomRestChatModel(apiUrl, apiKey, model, temperature, requestBodyTemplate);\r\n        } catch (Exception e) {\r\n            log.error(\&quot;Failed to create CustomRestChatModel: {}\&quot;, e.getMessage(), e);\r\n            return null;\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public ChatOptions getDefaultOptions() { \r\n        // 返回null，因为自定义REST API不需要标准的ChatOptions\r\n        // 配置通过构造函数参数和环境变量管理\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    public ChatResponse call(Prompt prompt) {\r\n        try {\r\n            // 构建请求\r\n            HttpHeaders headers = buildHeaders();\r\n            String requestBody = buildRequestBody(prompt);\r\n            HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(requestBody, headers);\r\n\r\n            log.debug(\&quot;Calling custom LLM API: {}\&quot;, apiUrl);\r\n            log.debug(\&quot;Request body: {}\&quot;, requestBody);\r\n\r\n            // 发送请求\r\n            ResponseEntity&lt;String&gt; response = restTemplate.exchange(\r\n                    apiUrl,\r\n                    HttpMethod.POST,\r\n                    entity,\r\n                    String.class\r\n            );\r\n\r\n            if (!response.getStatusCode().is2xxSuccessful()) {\r\n                throw new RuntimeException(\&quot;API call failed with status: \&quot; + response.getStatusCode());\r\n            }\r\n\r\n            String responseBody = response.getBody();\r\n            log.debug(\&quot;API response: {}\&quot;, responseBody);\r\n\r\n            // 解析响应\r\n            return parseResponse(responseBody);\r\n\r\n        } catch (RestClientException e) {\r\n            log.error(\&quot;Failed to call custom LLM API\&quot;, e);\r\n            throw new RuntimeException(\&quot;Failed to call custom LLM API: \&quot; + e.getMessage(), e);\r\n        } catch (Exception e) {\r\n            log.error(\&quot;Unexpected error while calling custom LLM API\&quot;, e);\r\n            throw new RuntimeException(\&quot;Unexpected error: \&quot; + e.getMessage(), e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 构建HTTP请求头\r\n     */\r\n    private HttpHeaders buildHeaders() {\r\n        HttpHeaders headers = new HttpHeaders();\r\n        headers.setContentType(MediaType.APPLICATION_JSON);\r\n        \r\n        if (apiKey != null &amp;&amp; !apiKey.isEmpty()) {\r\n            // 根据实际API需求设置认证头\r\n            // 常见格式：Authorization: Bearer {apiKey} 或 X-API-Key: {apiKey}\r\n            // 这里默认使用Bearer格式，如果需要其他格式，可以通过环境变量配置\r\n            String authHeader = getEnvVar(\&quot;CUSTOM_LLM_AUTH_HEADER\&quot;, \&quot;Bearer\&quot;);\r\n            if (\&quot;Bearer\&quot;.equals(authHeader)) {\r\n                headers.set(\&quot;Authorization\&quot;, \&quot;Bearer \&quot; + apiKey);\r\n            } else if (\&quot;X-API-Key\&quot;.equals(authHeader)) {\r\n                headers.set(\&quot;X-API-Key\&quot;, apiKey);\r\n            } else {\r\n                // 自定义格式：CUSTOM_LLM_AUTH_HEADER=HeaderName:HeaderValue\r\n                String[] parts = authHeader.split(\&quot;:\&quot;, 2);\r\n                if (parts.length == 2) {\r\n                    headers.set(parts[0], parts[1].replace(\&quot;{apiKey}\&quot;, apiKey));\r\n                } else {\r\n                    headers.set(\&quot;Authorization\&quot;, \&quot;Bearer \&quot; + apiKey);\r\n                }\r\n            }\r\n        }\r\n\r\n        return headers;\r\n    }\r\n\r\n    /**\r\n     * 构建请求体\r\n     */\r\n    private String buildRequestBody(Prompt prompt) {\r\n        try {\r\n            // 合并所有消息为单个提示文本\r\n            String promptText = mergeMessages(prompt.getInstructions());\r\n\r\n            // 如果提供了自定义模板，使用模板\r\n            if (requestBodyTemplate != null &amp;&amp; !requestBodyTemplate.isEmpty()) {\r\n                return buildRequestBodyFromTemplate(promptText);\r\n            }\r\n\r\n            // 否则使用默认模板\r\n            return buildDefaultRequestBody(promptText);\r\n\r\n        } catch (Exception e) {\r\n            log.error(\&quot;Failed to build request body\&quot;, e);\r\n            throw new RuntimeException(\&quot;Failed to build request body: \&quot; + e.getMessage(), e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 从模板构建请求体\r\n     */\r\n    private String buildRequestBodyFromTemplate(String promptText) {\r\n        String body = requestBodyTemplate;\r\n        \r\n        // 替换占位符\r\n        body = body.replace(\&quot;{prompt}\&quot;, escapeJson(promptText));\r\n        if (model != null) {\r\n            body = body.replace(\&quot;{model}\&quot;, escapeJson(model));\r\n        }\r\n        body = body.replace(\&quot;{temperature}\&quot;, String.valueOf(temperature));\r\n        \r\n        return body;\r\n    }\r\n\r\n    /**\r\n     * 构建默认请求体\r\n     */\r\n    private String buildDefaultRequestBody(String promptText) {\r\n        Map&lt;String, Object&gt; requestMap = new HashMap&lt;&gt;();\r\n        \r\n        if (model != null) {\r\n            requestMap.put(\&quot;model\&quot;, model);\r\n        }\r\n        \r\n        requestMap.put(\&quot;prompt\&quot;, promptText);\r\n        requestMap.put(\&quot;temperature\&quot;, temperature);\r\n        \r\n        try {\r\n            return objectMapper.writeValueAsString(requestMap);\r\n        } catch (Exception e) {\r\n            throw new RuntimeException(\&quot;Failed to serialize request body\&quot;, e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 合并消息列表为单个文本\r\n     * 使用反射兼容 Spring AI 不同版本的消息结构：\r\n     * - 优先尝试 message.getText()\r\n     * - 然后尝试 message.getContent()\r\n     * - 最后回退到 message.toString()\r\n     */\r\n    private String mergeMessages(List&lt;Message&gt; messages) {\r\n        StringBuilder sb = new StringBuilder();\r\n        if (messages == null) {\r\n            return \&quot;\&quot;;\r\n        }\r\n        for (Message message : messages) {\r\n            if (message == null) {\r\n                continue;\r\n            }\r\n            String text = \&quot;\&quot;;\r\n            Object target = message;\r\n            try {\r\n                java.lang.reflect.Method getText = target.getClass().getMethod(\&quot;getText\&quot;);\r\n                Object v = getText.invoke(target);\r\n                text = v != null ? v.toString() : \&quot;\&quot;;\r\n            } catch (NoSuchMethodException e) {\r\n                try {\r\n                    java.lang.reflect.Method getContent = target.getClass().getMethod(\&quot;getContent\&quot;);\r\n                    Object v = getContent.invoke(target);\r\n                    text = v != null ? v.toString() : \&quot;\&quot;;\r\n                } catch (NoSuchMethodException ex) {\r\n                    text = target.toString();\r\n                } catch (Exception ex) {\r\n                    log.debug(\&quot;Failed to get message content via getContent: {}\&quot;, ex.getMessage());\r\n                }\r\n            } catch (Exception e) {\r\n                log.debug(\&quot;Failed to get message content via getText: {}\&quot;, e.getMessage());\r\n            }\r\n\r\n            if (!text.isEmpty()) {\r\n                sb.append(text).append(\&quot;\\n\&quot;);\r\n            }\r\n        }\r\n        return sb.toString().trim();\r\n    }\r\n\r\n    /**\r\n     * 解析API响应为ChatResponse\r\n     */\r\n    private ChatResponse parseResponse(String responseBody) {\r\n        try {\r\n            JsonNode jsonNode = objectMapper.readTree(responseBody);\r\n            \r\n            // 尝试从常见字段中提取内容\r\n            String content = extractContent(jsonNode);\r\n            \r\n            if (content == null) {\r\n                log.warn(\&quot;Could not extract content from response, using raw response\&quot;);\r\n                content = responseBody;\r\n            }\r\n\r\n            // 创建AssistantMessage\r\n            AssistantMessage assistantMessage = new AssistantMessage(content);\r\n            \r\n            // 创建Generation\r\n            Generation generation = new Generation(assistantMessage);\r\n            \r\n            // 创建ChatResponse\r\n            return new ChatResponse(List.of(generation));\r\n\r\n        } catch (Exception e) {\r\n            log.error(\&quot;Failed to parse API response\&quot;, e);\r\n            // 如果解析失败，尝试将整个响应作为内容\r\n            AssistantMessage assistantMessage = new AssistantMessage(responseBody);\r\n            Generation generation = new Generation(assistantMessage);\r\n            return new ChatResponse(List.of(generation));\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 从JSON响应中提取内容\r\n     * 支持常见的响应格式：\r\n     * - response.text\r\n     * - response.content\r\n     * - result.text\r\n     * - data.content\r\n     * - choices[0].message.content (OpenAI格式)\r\n     * - choices[0].text\r\n     */\r\n    private String extractContent(JsonNode jsonNode) {\r\n        // 尝试多种可能的字段路径\r\n        String[] paths = {\r\n            \&quot;response/text\&quot;,\r\n            \&quot;response/content\&quot;,\r\n            \&quot;result/text\&quot;,\r\n            \&quot;result/content\&quot;,\r\n            \&quot;data/content\&quot;,\r\n            \&quot;data/text\&quot;,\r\n            \&quot;content\&quot;,\r\n            \&quot;text\&quot;,\r\n            \&quot;message/content\&quot;,\r\n            \&quot;message/text\&quot;\r\n        };\r\n\r\n        for (String path : paths) {\r\n            String content = getNestedValue(jsonNode, path);\r\n            if (content != null &amp;&amp; !content.isEmpty()) {\r\n                return content;\r\n            }\r\n        }\r\n\r\n        // 尝试OpenAI格式：choices[0].message.content\r\n        if (jsonNode.has(\&quot;choices\&quot;) &amp;&amp; jsonNode.get(\&quot;choices\&quot;).isArray() \r\n            &amp;&amp; jsonNode.get(\&quot;choices\&quot;).size() &gt; 0) {\r\n            JsonNode choice = jsonNode.get(\&quot;choices\&quot;).get(0);\r\n            if (choice.has(\&quot;message\&quot;) &amp;&amp; choice.get(\&quot;message\&quot;).has(\&quot;content\&quot;)) {\r\n                return choice.get(\&quot;message\&quot;).get(\&quot;content\&quot;).asText();\r\n            }\r\n            if (choice.has(\&quot;text\&quot;)) {\r\n                return choice.get(\&quot;text\&quot;).asText();\r\n            }\r\n        }\r\n\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * 获取嵌套JSON值\r\n     */\r\n    private String getNestedValue(JsonNode node, String path) {\r\n        String[] parts = path.split(\&quot;/\&quot;);\r\n        JsonNode current = node;\r\n        \r\n        for (String part : parts) {\r\n            if (current == null || !current.has(part)) {\r\n                return null;\r\n            }\r\n            current = current.get(part);\r\n        }\r\n        \r\n        return current != null &amp;&amp; current.isTextual() ? current.asText() : null;\r\n    }\r\n\r\n    /**\r\n     * 转义JSON字符串\r\n     */\r\n    private String escapeJson(String str) {\r\n        return str.replace(\&quot;\\\\\&quot;, \&quot;\\\\\\\\\&quot;)\r\n                  .replace(\&quot;\\\&quot;\&quot;, \&quot;\\\\\\\&quot;\&quot;)\r\n                  .replace(\&quot;\\n\&quot;, \&quot;\\\\n\&quot;)\r\n                  .replace(\&quot;\\r\&quot;, \&quot;\\\\r\&quot;)\r\n                  .replace(\&quot;\\t\&quot;, \&quot;\\\\t\&quot;);\r\n    }\r\n\r\n    /**\r\n     * 获取环境变量\r\n     */\r\n    private static String getEnvVar(String key) {\r\n        return getEnvVar(key, null);\r\n    }\r\n\r\n    /**\r\n     * 获取环境变量（带默认值）\r\n     */\r\n    private static String getEnvVar(String key, String defaultValue) {\r\n        String value = System.getenv(key);\r\n        return value != null ? value : defaultValue;\r\n    }\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/util/ChatModelBuilder.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;1af06d12-3876-4d56-bc58-6cc209f9a6c6&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;          try {\r\n              OpenAiApi openAiApi = new OpenAiApi(baseUrl, apiKey);\r\n+             // Spring AI 1.0.0-M6 之后 OpenAiChatOptions 的 builder 通常使用无前缀的字段名\r\n+             // 这里不再调用已废弃的 withModel/withTemperature 方法\r\n              OpenAiChatOptions options = OpenAiChatOptions.builder()\r\n-                     .withModel(modelName)\r\n-                     .withTemperature(0.7)\r\n+                     .model(modelName)\r\n+                     .temperature(0.7)\r\n                      .build();\r\n              return new OpenAiChatModel(openAiApi, options);\r&quot;,
+        &quot;oldStart&quot;: 81,
+        &quot;newStart&quot;: 81,
+        &quot;oldLines&quot;: 7,
+        &quot;newLines&quot;: 9,
+        &quot;linesRemoved&quot;: 2,
+        &quot;linesAdded&quot;: 4
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/main/java/com/pcagent/util/ChatModelBuilder.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.util;\r\n\r\nimport org.springframework.ai.chat.model.ChatModel;\r\nimport org.springframework.ai.openai.OpenAiChatModel;\r\nimport org.springframework.ai.openai.OpenAiChatOptions;\r\nimport org.springframework.ai.openai.api.OpenAiApi;\r\n\r\n/**\r\n * ChatModel 构建器\r\n * 用于根据环境变量创建 ChatModel 实例\r\n * 支持自定义REST API、DeepSeek 和通义千问（Qinwen）\r\n * \r\n * 优先级顺序：\r\n * 1. 自定义REST API（如果设置了 CUSTOM_LLM_API_URL）\r\n * 2. DeepSeek（如果设置了 DEEPSEEK_API_KEY）\r\n * 3. 通义千问（如果设置了 QINWEN_API_KEY）\r\n * \r\n * 自定义REST API环境变量：\r\n * - CUSTOM_LLM_API_URL: 第三方API的完整URL（必需）\r\n * - CUSTOM_LLM_API_KEY: API密钥（可选）\r\n * - CUSTOM_LLM_MODEL: 模型名称（可选）\r\n * - CUSTOM_LLM_TEMPERATURE: 温度参数（可选，默认0.7）\r\n * - CUSTOM_LLM_REQUEST_BODY_TEMPLATE: 请求体模板（可选，JSON格式）\r\n * - CUSTOM_LLM_AUTH_HEADER: 认证头格式（可选，默认Bearer，支持：Bearer、X-API-Key或自定义格式）\r\n * \r\n * DeepSeek环境变量：\r\n * - DEEPSEEK_API_KEY: DeepSeek API key\r\n * - DEEPSEEK_BASE_URL: DeepSeek API base URL (可选，默认: https://api.deepseek.com)\r\n * \r\n * 通义千问环境变量：\r\n * - QINWEN_API_KEY: 通义千问 API key\r\n * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)\r\n */\r\npublic class ChatModelBuilder {\r\n\r\n    private static final String DEFAULT_DEEPSEEK_BASE_URL = \&quot;https://api.deepseek.com\&quot;;\r\n    private static final String DEFAULT_QINWEN_BASE_URL = \&quot;https://dashscope.aliyuncs.com/compatible-mode/v1\&quot;;\r\n    private static final String DEFAULT_DEEPSEEK_MODEL = \&quot;deepseek-chat\&quot;;\r\n    private static final String DEFAULT_QINWEN_MODEL = \&quot;qwen-turbo\&quot;;\r\n\r\n    /**\r\n     * 创建 ChatModel（如果环境变量可用）\r\n     * 优先级：自定义REST API &gt; DeepSeek &gt; 通义千问\r\n     * \r\n     * @return ChatModel 实例，如果环境变量不可用则返回 null\r\n     */\r\n    public static ChatModel createIfAvailable() {\r\n        // 优先尝试自定义REST API\r\n        CustomRestChatModel customModel = CustomRestChatModel.createIfAvailable();\r\n        if (customModel != null) {\r\n            return customModel;\r\n        }\r\n\r\n        // 尝试 DeepSeek\r\n        String deepseekApiKey = getEnvVar(\&quot;DEEPSEEK_API_KEY\&quot;);\r\n        if (deepseekApiKey != null &amp;&amp; !deepseekApiKey.isEmpty()) {\r\n            String baseUrl = getEnvVar(\&quot;DEEPSEEK_BASE_URL\&quot;, DEFAULT_DEEPSEEK_BASE_URL);\r\n            return createChatModel(deepseekApiKey, baseUrl, DEFAULT_DEEPSEEK_MODEL);\r\n        }\r\n\r\n        // 尝试通义千问\r\n        String qinwenApiKey = getEnvVar(\&quot;QINWEN_API_KEY\&quot;);\r\n        if (qinwenApiKey != null &amp;&amp; !qinwenApiKey.isEmpty()) {\r\n            String baseUrl = getEnvVar(\&quot;QINWEN_BASE_URL\&quot;, DEFAULT_QINWEN_BASE_URL);\r\n            return createChatModel(qinwenApiKey, baseUrl, DEFAULT_QINWEN_MODEL);\r\n        }\r\n\r\n        // 如果都没有，返回 null\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * 创建 ChatModel\r\n     * \r\n     * @param apiKey API密钥\r\n     * @param baseUrl API基础URL\r\n     * @param modelName 模型名称\r\n     * @return ChatModel 实例，如果创建失败则返回 null\r\n     */\r\n    private static ChatModel createChatModel(String apiKey, String baseUrl, String modelName) {\r\n        try {\r\n            OpenAiApi openAiApi = new OpenAiApi(baseUrl, apiKey);\r\n            // Spring AI 1.0.0-M6 之后 OpenAiChatOptions 的 builder 通常使用无前缀的字段名\r\n            // 这里不再调用已废弃的 withModel/withTemperature 方法\r\n            OpenAiChatOptions options = OpenAiChatOptions.builder()\r\n                    .model(modelName)\r\n                    .temperature(0.7)\r\n                    .build();\r\n            return new OpenAiChatModel(openAiApi, options);\r\n        } catch (Exception e) {\r\n            System.err.println(\&quot;Failed to create ChatModel: \&quot; + e.getMessage());\r\n            return null;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 获取环境变量\r\n     * \r\n     * @param key 环境变量键\r\n     * @return 环境变量值，如果不存在则返回 null\r\n     */\r\n    private static String getEnvVar(String key) {\r\n        return getEnvVar(key, null);\r\n    }\r\n\r\n    /**\r\n     * 获取环境变量（带默认值）\r\n     * \r\n     * @param key 环境变量键\r\n     * @param defaultValue 默认值\r\n     * @return 环境变量值，如果不存在则返回默认值\r\n     */\r\n    private static String getEnvVar(String key, String defaultValue) {\r\n        String value = System.getenv(key);\r\n        return value != null ? value : defaultValue;\r\n    }\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/test/java/com/pcagent/service/LLMInvokerTest.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;e9b2fd54-098b-40fc-8434-722bb1595d16&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;      /**\r\n       * Mock ChatModel 响应\r\n+      * 这里直接使用真实的 AssistantMessage 实例，避免依赖已删除的 getContent() 方法，\r\n+      * LLMInvoker 会通过反射从 Generation 的 output 中提取文本。\r\n       */\r\n      private void mockChatModelResponse(String response) {\r\n          ChatResponse chatResponse = mock(ChatResponse.class);\r\n          Generation generation = mock(Generation.class);\r\n-         AssistantMessage assistantMessage = mock(AssistantMessage.class);\r\n+         AssistantMessage assistantMessage = new AssistantMessage(response);\r\n  \r\n          when(chatModel.call(any(Prompt.class))).thenReturn(chatResponse);\r\n          when(chatResponse.getResult()).thenReturn(generation);\r\n          when(generation.getOutput()).thenReturn(assistantMessage);\r\n-         when(assistantMessage.getContent()).thenReturn(response);\r\n      }\r\n  \r&quot;,
+        &quot;oldStart&quot;: 201,
+        &quot;newStart&quot;: 201,
+        &quot;oldLines&quot;: 14,
+        &quot;newLines&quot;: 15,
+        &quot;linesRemoved&quot;: 2,
+        &quot;linesAdded&quot;: 3
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/test/java/com/pcagent/service/LLMInvokerTest.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.service;\r\n\r\nimport com.pcagent.model.ConfigReq;\r\nimport com.pcagent.model.ConfigStrategy;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\nimport org.springframework.ai.chat.model.ChatModel;\r\nimport org.springframework.ai.chat.model.ChatResponse;\r\nimport org.springframework.ai.chat.model.Generation;\r\nimport org.springframework.ai.chat.messages.AssistantMessage;\r\nimport org.springframework.ai.chat.prompt.Prompt;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\nimport static org.mockito.ArgumentMatchers.any;\r\nimport static org.mockito.Mockito.*;\r\n\r\n/**\r\n * LLMInvoker 测试类\r\n * 参考 BidParserTest 编写\r\n */\r\nclass LLMInvokerTest {\r\n\r\n    private ChatModel chatModel;\r\n    private LLMInvoker llmInvoker;\r\n\r\n    @BeforeEach\r\n    void setUp() {\r\n        chatModel = mock(ChatModel.class);\r\n        llmInvoker = new LLMInvoker(chatModel);\r\n    }\r\n\r\n    /**\r\n     * 测试 LLM 返回有效 JSON 时使用 LLM 响应\r\n     * 参考 BidParserTest.shouldUseLlmResponseWhenJsonValid\r\n     */\r\n    @Test\r\n    void shouldUseLlmResponseWhenJsonValid() {\r\n        // Mock LLM 返回有效的 JSON\r\n        String llmResponse = \&quot;\&quot;\&quot;\r\n                {\r\n                  \&quot;productSerial\&quot;: \&quot;服务器\&quot;,\r\n                  \&quot;totalQuantity\&quot;: 512,\r\n                  \&quot;specReqItems\&quot;: [\r\n                    \&quot;2U机架式服务器，双路CPU\&quot;,\r\n                    \&quot;256GB DDR4 ECC Registered内存，16个插槽\&quot;,\r\n                    \&quot;8块2.4TB 10K RPM SAS硬盘，RAID 0/1/5/10，缓存≥4GB\&quot;\r\n                  ],\r\n                  \&quot;configStrategy\&quot;: \&quot;TECH_MAX_PRIORITY\&quot;,\r\n                  \&quot;totalQuantityMemo\&quot;: \&quot;\&quot;\r\n                }\r\n                \&quot;\&quot;\&quot;;\r\n\r\n        mockChatModelResponse(llmResponse);\r\n\r\n        String userInput = sampleInput();\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        assertEquals(\&quot;服务器\&quot;, result.getProductSerial());\r\n        assertEquals(512, result.getTotalQuantity());\r\n        assertEquals(ConfigStrategy.TECH_MAX_PRIORITY, result.getConfigStrategy());\r\n        assertEquals(3, result.getSpecReqItems().size());\r\n        assertEquals(\&quot;\&quot;, result.getTotalQuantityMemo());\r\n\r\n        // 验证 ChatModel 被调用\r\n        verify(chatModel, times(1)).call(any(Prompt.class));\r\n    }\r\n\r\n    /**\r\n     * 测试 LLM 返回无效 JSON 时使用 fallback\r\n     * 参考 BidParserTest.shouldFallbackWhenLlmResponseInvalid\r\n     */\r\n    @Test\r\n    void shouldFallbackWhenLlmResponseInvalid() {\r\n        // Mock LLM 返回无效的 JSON\r\n        mockChatModelResponse(\&quot;not a json\&quot;);\r\n\r\n        String userInput = sampleInput();\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        // Fallback 应该能解析出基本信息\r\n        assertEquals(\&quot;服务器\&quot;, result.getProductSerial());\r\n        assertEquals(512, result.getTotalQuantity());\r\n        assertEquals(ConfigStrategy.PRICE_MIN_PRIORITY, result.getConfigStrategy());\r\n        assertTrue(result.getSpecReqItems().size() &gt;= 3, \&quot;应该至少解析出3个规格项\&quot;);\r\n    }\r\n\r\n    /**\r\n     * 测试 LLM 返回包含 markdown 代码块的 JSON\r\n     */\r\n    @Test\r\n    void shouldExtractJsonFromMarkdownCodeBlock() {\r\n        // Mock LLM 返回包含 markdown 代码块的响应\r\n        String llmResponse = \&quot;\&quot;\&quot;\r\n                &#96;&#96;&#96;json\r\n                {\r\n                  \&quot;productSerial\&quot;: \&quot;服务器\&quot;,\r\n                  \&quot;totalQuantity\&quot;: 512,\r\n                  \&quot;specReqItems\&quot;: [\r\n                    \&quot;2U机架式服务器\&quot;\r\n                  ],\r\n                  \&quot;configStrategy\&quot;: \&quot;PRICE_MIN_PRIORITY\&quot;,\r\n                  \&quot;totalQuantityMemo\&quot;: \&quot;\&quot;\r\n                }\r\n                &#96;&#96;&#96;\r\n                \&quot;\&quot;\&quot;;\r\n\r\n        mockChatModelResponse(llmResponse);\r\n\r\n        String userInput = sampleInput();\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        assertEquals(\&quot;服务器\&quot;, result.getProductSerial());\r\n        assertEquals(512, result.getTotalQuantity());\r\n    }\r\n\r\n    /**\r\n     * 测试没有 ChatModel 时使用简单解析\r\n     */\r\n    @Test\r\n    void shouldUseSimpleParserWhenChatModelNotAvailable() {\r\n        // 创建没有 ChatModel 的 LLMInvoker\r\n        LLMInvoker simpleInvoker = new LLMInvoker();\r\n\r\n        String userInput = \&quot;\&quot;\&quot;\r\n                数据中心服务器 500台\r\n                1. CPU核心数≥16核\r\n                2. 内存≥256GB\r\n                \&quot;\&quot;\&quot;;\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = simpleInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        assertNotNull(result);\r\n        assertEquals(\&quot;服务器\&quot;, result.getProductSerial());\r\n        assertEquals(500, result.getTotalQuantity());\r\n        assertEquals(ConfigStrategy.PRICE_MIN_PRIORITY, result.getConfigStrategy());\r\n        assertTrue(result.getSpecReqItems().size() &gt;= 2);\r\n    }\r\n\r\n    /**\r\n     * 测试产品系列验证\r\n     */\r\n    @Test\r\n    void shouldValidateProductSerial() {\r\n        // Mock LLM 返回不在枚举中的产品系列\r\n        String llmResponse = \&quot;\&quot;\&quot;\r\n                {\r\n                  \&quot;productSerial\&quot;: \&quot;不存在的产品\&quot;,\r\n                  \&quot;totalQuantity\&quot;: 100,\r\n                  \&quot;specReqItems\&quot;: [],\r\n                  \&quot;configStrategy\&quot;: \&quot;PRICE_MIN_PRIORITY\&quot;,\r\n                  \&quot;totalQuantityMemo\&quot;: \&quot;\&quot;\r\n                }\r\n                \&quot;\&quot;\&quot;;\r\n\r\n        mockChatModelResponse(llmResponse);\r\n\r\n        String userInput = \&quot;需要100台服务器\&quot;;\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        // 产品系列应该被清空（因为不在枚举中）\r\n        assertEquals(\&quot;\&quot;, result.getProductSerial());\r\n    }\r\n\r\n    /**\r\n     * 测试数量默认值处理\r\n     */\r\n    @Test\r\n    void shouldSetDefaultQuantityWhenNotSpecified() {\r\n        // Mock LLM 返回没有数量的响应\r\n        String llmResponse = \&quot;\&quot;\&quot;\r\n                {\r\n                  \&quot;productSerial\&quot;: \&quot;服务器\&quot;,\r\n                  \&quot;totalQuantity\&quot;: 0,\r\n                  \&quot;specReqItems\&quot;: [],\r\n                  \&quot;configStrategy\&quot;: \&quot;PRICE_MIN_PRIORITY\&quot;,\r\n                  \&quot;totalQuantityMemo\&quot;: \&quot;\&quot;\r\n                }\r\n                \&quot;\&quot;\&quot;;\r\n\r\n        mockChatModelResponse(llmResponse);\r\n\r\n        String userInput = \&quot;需要服务器\&quot;;\r\n        String productSerials = \&quot;ONU,电脑,服务器,路由器\&quot;;\r\n\r\n        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);\r\n\r\n        // 数量应该被设置为1\r\n        assertEquals(1, result.getTotalQuantity());\r\n        assertTrue(result.getTotalQuantityMemo().contains(\&quot;默认值配置1套\&quot;));\r\n    }\r\n\r\n    /**\r\n     * Mock ChatModel 响应\r\n     * 这里直接使用真实的 AssistantMessage 实例，避免依赖已删除的 getContent() 方法，\r\n     * LLMInvoker 会通过反射从 Generation 的 output 中提取文本。\r\n     */\r\n    private void mockChatModelResponse(String response) {\r\n        ChatResponse chatResponse = mock(ChatResponse.class);\r\n        Generation generation = mock(Generation.class);\r\n        AssistantMessage assistantMessage = new AssistantMessage(response);\r\n\r\n        when(chatModel.call(any(Prompt.class))).thenReturn(chatResponse);\r\n        when(chatResponse.getResult()).thenReturn(generation);\r\n        when(generation.getOutput()).thenReturn(assistantMessage);\r\n    }\r\n\r\n    /**\r\n     * 示例输入\r\n     */\r\n    private String sampleInput() {\r\n        return \&quot;\&quot;\&quot;\r\n                我有一名高端客户，需要建立数据中心，要求如下：\r\n                数据中心服务器 512台\r\n                1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。\r\n                2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。\r\n                3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。\r\n                \&quot;\&quot;\&quot;;\r\n    }\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: cd D:\01.code\mygithub\pcagent; mvn test</summary>
+
+```bash
+cd D:\01.code\mygithub\pcagent; mvn test
+```
+
+```
+[Terminal output truncated: ~296KB dropped from beginning]
+oker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:37.350 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:37.350 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:37.350 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:37.350 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:37.350 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:37.355 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:37.355 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:37.355 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:37.355 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:37.357 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:38.258 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:38.258 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 4780 ms
+2025-12-01 20:34:38.258 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 261 �ַ�
+2025-12-01 20:34:38.258 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;CPU:����һ��Intel? Xeon? Scalable����������������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;CPU:����һ��Intel? Xeon? Scalable����������������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] WARN  c.p.s.impl.ProductOntoService4Local - No specifications found for node: server
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: CPU_CONFIG, refSpecCode: CPU:������������
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: MEM_CONFIG, refSpecCode: �ڴ�:�ڴ�����
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Provider: openai
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:38.260 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1470 ms
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Provider: openai
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:39.730 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:41.664 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:41.670 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1940 ms
+2025-12-01 20:34:41.670 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:34:41.670 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:41.670 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:41.670 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:41.675 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.PCAgentService - ����������ɣ�sessionId: bfc1deb3-2abe-4726-aea0-5308392570f6
+2025-12-01 20:34:44.301 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:44.301 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 6951 ms
+2025-12-01 20:34:44.301 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 395 �ַ�
+2025-12-01 20:34:44.301 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;���ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:44.301 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.301 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;���ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.87 s -- in com.pcagent.service.LLMInvokerSysTest
+[INFO] Running com.pcagent.service.LLMInvokerTest
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+��Ҫ������
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$mMIPkg3o, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 0 ms
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 142 �ַ�
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 0,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.630 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 0,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:34:44.660 [main] WARN  com.pcagent.service.LLMInvoker - ChatModel not available, using simple parser
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$mMIPkg3o, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 0 ms
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 10 �ַ�
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: not a json
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: not a json
+2025-12-01 20:34:44.670 [main] DEBUG com.pcagent.service.LLMInvoker - Failed to parse LLM response as JSON
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token &#39;not&#39;: was expecting (JSON String, Number, Array, Object or token &#39;null&#39;, &#39;true&#39; or &#39;false&#39;)
+ at [Source: REDACTED (&#96;StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION&#96; disabled); line: 1, column: 4]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2567)
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2593)
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2601)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:765)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:3018)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2996)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchToken(ReaderBasedJsonParser.java:2761)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchNull(ReaderBasedJsonParser.java:2747)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:750)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4992)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4898)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3816)
+	at com.pcagent.service.LLMInvoker.tryParseResponse(LLMInvoker.java:340)
+	at com.pcagent.service.LLMInvoker.parseConfigReq(LLMInvoker.java:93)
+	at com.pcagent.service.LLMInvokerTest.shouldFallbackWhenLlmResponseInvalid(LLMInvokerTest.java:82)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2025-12-01 20:34:44.683 [main] WARN  com.pcagent.service.LLMInvoker - LLM response is not a valid ConfigReq JSON, fallback to simple parser. response=not a json
+2025-12-01 20:34:44.690 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.690 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$mMIPkg3o, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:34:44.690 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.691 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1 ms
+2025-12-01 20:34:44.691 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 174 �ַ�
+2025-12-01 20:34:44.691 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ������&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+
+2025-12-01 20:34:44.691 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.693 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ������&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$mMIPkg3o, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 0 ms
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 258 �ַ�
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ��������˫·CPU&quot;,
+    &quot;256GB DDR4 ECC Registered�ڴ棬16�����&quot;,
+    &quot;8��2.4TB 10K RPM SASӲ�̣�RAID 0/1/5/10�������4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.701 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ��������˫·CPU&quot;,
+    &quot;256GB DDR4 ECC Registered�ڴ棬16�����&quot;,
+    &quot;8��2.4TB 10K RPM SASӲ�̣�RAID 0/1/5/10�������4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+��Ҫ100̨������
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$mMIPkg3o, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 0 ms
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 147 �ַ�
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;�����ڵĲ�Ʒ&quot;,
+  &quot;totalQuantity&quot;: 100,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:44.715 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;�����ڵĲ�Ʒ&quot;,
+  &quot;totalQuantity&quot;: 100,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s -- in com.pcagent.service.LLMInvokerTest
+[INFO] Running com.pcagent.service.PCAgentService4SessionSysTest
+2025-12-01 20:34:44.725 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:44.725 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:44.730 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:44.735 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:44.740 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:44.745 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:44.753 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:52.085 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:52.085 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 7345 ms
+2025-12-01 20:34:52.085 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 394 �ַ�
+2025-12-01 20:34:52.085 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;�ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:52.085 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:52.085 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;�ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:52.085 [main] WARN  c.p.s.impl.ProductOntoService4Local - No specifications found for node: server
+2025-12-01 20:34:52.085 [main] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: CPU_CONFIG, refSpecCode: CPU:������������
+2025-12-01 20:34:52.085 [main] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: MEM_CONFIG, refSpecCode: �ڴ�:�ڴ�����
+2025-12-01 20:34:52.090 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:52.090 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:52.090 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:52.090 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:54.130 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 2051 ms
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:54.141 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:54.141 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:54.141 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:54.141 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:54.141 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:55.890 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:55.900 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1759 ms
+2025-12-01 20:34:55.900 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:34:55.900 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:55.900 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:55.900 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.18 s -- in com.pcagent.service.PCAgentService4SessionSysTest
+[INFO] Running com.pcagent.service.PCAgentService4SessionTest
+2025-12-01 20:34:55.900 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.900 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.900 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.985 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:55.990 [main] ERROR c.p.service.PCAgentService4Session - Failed to generate config
+com.pcagent.exception.InvalidInputException: ��Ʒϵ�в���Ϊ��
+	at com.pcagent.service.PCAgentService4Session.validConfigReq(PCAgentService4Session.java:91)
+	at com.pcagent.service.PCAgentService4Session.doGeneratorConfig(PCAgentService4Session.java:39)
+	at com.pcagent.service.PCAgentService4SessionTest.lambda$testDoGeneratorConfig_InvalidInput$0(PCAgentService4SessionTest.java:175)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3131)
+	at com.pcagent.service.PCAgentService4SessionTest.testDoGeneratorConfig_InvalidInput(PCAgentService4SessionTest.java:174)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.100 s -- in com.pcagent.service.PCAgentService4SessionTest
+[INFO] Running com.pcagent.service.ProductConfigService4CheckerTest
+2025-12-01 20:34:56.000 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:56.000 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:56.000 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:56.010 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:34:56.010 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Qty_ONT = &quot;60&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:56.010 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:56.020 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:56.020 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Qty_ONT = &quot;60&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:34:57.690 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:34:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1682 ms
+2025-12-01 20:34:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:34:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:34:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:34:57.692 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+LLM�������ͨ����: 
+2025-12-01 20:34:57.692 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:57.692 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:57.692 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:34:57.700 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:34:57.700 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Capacity(P_Capacity):
+//��Ȼ���ԣ��й����ۣ�ֻ��10-8GE(8*POE)һ����ѡ�� ������&quot;10-8GE(8*POE)&quot;,&quot;20-16GE(16*POE)&quot;������ѡ
+//����DSL��
+filter:{
+    if Solution.country == &quot;1790&quot;{
+        return [10,20]
+    }else{
+        return [10]
+    }
+}
+
+
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Capacity = &quot;10-8GE(8*POE)&quot;
+P_Qty_ONT = &quot;10&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:34:57.700 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:34:57.700 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:34:57.711 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Capacity(P_Capacity):
+//��Ȼ���ԣ��й����ۣ�ֻ��10-8GE(8*POE)һ����ѡ�� ������&quot;10-8GE(8*POE)&quot;,&quot;20-16GE(16*POE)&quot;������ѡ
+//����DSL��
+filter:{
+    if Solution.country == &quot;1790&quot;{
+        return [10,20]
+    }else{
+        return [10]
+    }
+}
+
+
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Capacity = &quot;10-8GE(8*POE)&quot;
+P_Qty_ONT = &quot;10&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:35:00.370 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:35:00.370 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 2670 ms
+2025-12-01 20:35:00.370 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 96 �ַ�
+2025-12-01 20:35:00.370 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 1,
+    &quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:35:00.370 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:35:00.370 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 1,
+    &quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10&quot;
+}
+&#96;&#96;&#96;
+LLM��������д���: P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10
+2025-12-01 20:35:00.375 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.375 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.375 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.380 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:35:00.380 [main] DEBUG c.p.service.ProductConfigService - No checkRule found, using simple check
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.385 s -- in com.pcagent.service.ProductConfigService4CheckerTest
+[INFO] Running com.pcagent.service.ProductConfigService4ParameterIntentTest
+2025-12-01 20:35:00.385 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.385 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.pcagent.service.ProductConfigService4ParameterIntentTest
+[INFO] Running com.pcagent.service.ProductConfigServiceTest
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.390 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.390 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:00.400 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:35:00.400 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.400 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:00.400 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:35:00.400 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:35:00.400 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:35:00.410 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:35:02.365 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1965 ms
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:35:02.365 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:35:02.365 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:35:02.365 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:35:02.365 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:35:02.365 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:35:04.224 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:35:04.224 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1859 ms
+2025-12-01 20:35:04.224 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:35:04.224 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:35:04.224 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:35:04.224 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.834 s -- in com.pcagent.service.ProductConfigServiceTest
+[INFO] Running com.pcagent.service.ProductOntoService4LocalTest
+2025-12-01 20:35:04.230 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.230 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.230 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.230 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.230 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.230 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.239 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.240 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.pcagent.service.ProductOntoService4LocalTest
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+2025-12-01 20:35:04.240 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.250 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.250 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.255 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.255 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.255 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.255 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.255 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.260 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: CPU:����һ��Intel? Xeon? Scalable����������������16��  -&gt; 1 specifications
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.272 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: �ڴ�:���á�512GB DDR4 ECC Registered�ڴ� -&gt; 1 specifications
+2025-12-01 20:35:04.280 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.280 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: CPU:����һ��Intel? Xeon? Scalable����������������32��  -&gt; 1 specifications
+2025-12-01 20:35:04.289 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.290 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.295 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.295 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.295 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.295 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.295 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.297 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.297 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.297 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.297 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.297 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] Running com.pcagent.service.ProductSpecificationParserServiceTest
+2025-12-01 20:35:04.300 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.300 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.300 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.306 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.306 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.306 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.306 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.310 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.310 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:35:04.310 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.310 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:35:04.310 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: �ڴ�:���á�128GB DDR1 ECC Registered�ڴ� -&gt; 2 specifications
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.pcagent.service.ProductSpecificationParserServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   PCAgentControllerSysTest.shouldCreateSession_WithRealLlm:73 Session��ӦΪnull ==&gt; expected: not &lt;null&gt;
+[INFO] 
+[ERROR] Tests run: 47, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  41.617 s
+[INFO] Finished at: 2025-12-01T20:35:04+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project pcagent: There are test failures.
+[ERROR] 
+[ERROR] Please refer to D:\01.code\mygithub\pcagent\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -&gt; [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Investigating test failures**
+
+I've noticed that the `PCAgentControllerSysTest.shouldCreateSession_WithRealLlm` test is failing because it expects a non-null session response, but it's currently returning null. This is puzzling, and I need to take a closer look at both the test itself and the controller or service it's interacting with. Understanding where the issue lies will help me resolve the test failure. Time to inspect the details!</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/controller/PCAgentController.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+I need to inspect how the PCAgentService handles the doGeneratorConfig method and how it's storing sessions. It's crucial to understand the structure and mechanism behind session storage here. I wonder if there are specific patterns to look for in the configuration or if there are any anomalies that could affect performance. I'll take a closer look to ensure everything is functioning as expected and optimize if necessary. Let’s dive into the details!</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/controller/PCAgentController.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;75d5dabd-5266-4dee-8b3d-9b7e8f3e9790&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;          String sessionId = SessionUtils.nextSessionId();\r\n          agentService.doGeneratorConfig(sessionId, userInput);\r\n-         Session session = agentService.getLatestSession(sessionId);\r\n-         \r\n+ \r\n+         // 等待异步配置任务完成，最多等待 120 秒\r\n+         Session session = null;\r\n+         long start = System.currentTimeMillis();\r\n+         long timeoutMillis = 120_000L;\r\n+         try {\r\n+             while (System.currentTimeMillis() - start &lt; timeoutMillis) {\r\n+                 session = agentService.getLatestSession(sessionId);\r\n+                 if (session != null &amp;&amp; session.getProgress() != null) {\r\n+                     Integer current = session.getProgress().getCurrent();\r\n+                     String msg = session.getProgress().getMessage();\r\n+                     // 当进度已完成且消息为“配置完成”时认为任务结束\r\n+                     if (current != null &amp;&amp; \&quot;配置完成\&quot;.equals(msg)) {\r\n+                         break;\r\n+                     }\r\n+                 }\r\n+                 Thread.sleep(200L);\r\n+             }\r\n+         } catch (InterruptedException e) {\r\n+             Thread.currentThread().interrupt();\r\n+             log.warn(\&quot;等待会话生成结果时被中断，sessionId={}\&quot;, sessionId, e);\r\n+         }\r\n+ \r\n+         if (session == null) {\r\n+             log.warn(\&quot;在超时时间内未能获取会话结果，sessionId={}\&quot;, sessionId);\r\n+             return ResponseEntity.internalServerError().build();\r\n+         }\r\n+ \r\n          return ResponseEntity.ok(session);\r\n      }\r&quot;,
+        &quot;oldStart&quot;: 34,
+        &quot;newStart&quot;: 34,
+        &quot;oldLines&quot;: 6,
+        &quot;newLines&quot;: 32,
+        &quot;linesRemoved&quot;: 2,
+        &quot;linesAdded&quot;: 28
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/main/java/com/pcagent/controller/PCAgentController.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.controller;\r\n\r\nimport com.pcagent.model.Session;\r\nimport com.pcagent.service.PCAgentService;\r\nimport com.pcagent.util.SessionUtils;\r\nimport lombok.RequiredArgsConstructor;\r\nimport lombok.extern.slf4j.Slf4j;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\n/**\r\n * 产品配置Agent控制器\r\n */\r\n@Slf4j\r\n@RestController\r\n@RequestMapping(\&quot;/api/v1\&quot;)\r\n@RequiredArgsConstructor\r\npublic class PCAgentController {\r\n    private final PCAgentService agentService;\r\n\r\n    /**\r\n     * 创建会话接口\r\n     */\r\n    @PostMapping(\&quot;/sessions\&quot;)\r\n    public ResponseEntity&lt;Session&gt; createSession(@RequestBody Map&lt;String, Object&gt; request) {\r\n        String userInput = (String) request.get(\&quot;user_input\&quot;);\r\n        if (userInput == null || userInput.trim().isEmpty()) {\r\n            return ResponseEntity.badRequest().build();\r\n        }\r\n\r\n        String sessionId = SessionUtils.nextSessionId();\r\n        agentService.doGeneratorConfig(sessionId, userInput);\r\n\r\n        // 等待异步配置任务完成，最多等待 120 秒\r\n        Session session = null;\r\n        long start = System.currentTimeMillis();\r\n        long timeoutMillis = 120_000L;\r\n        try {\r\n            while (System.currentTimeMillis() - start &lt; timeoutMillis) {\r\n                session = agentService.getLatestSession(sessionId);\r\n                if (session != null &amp;&amp; session.getProgress() != null) {\r\n                    Integer current = session.getProgress().getCurrent();\r\n                    String msg = session.getProgress().getMessage();\r\n                    // 当进度已完成且消息为“配置完成”时认为任务结束\r\n                    if (current != null &amp;&amp; \&quot;配置完成\&quot;.equals(msg)) {\r\n                        break;\r\n                    }\r\n                }\r\n                Thread.sleep(200L);\r\n            }\r\n        } catch (InterruptedException e) {\r\n            Thread.currentThread().interrupt();\r\n            log.warn(\&quot;等待会话生成结果时被中断，sessionId={}\&quot;, sessionId, e);\r\n        }\r\n\r\n        if (session == null) {\r\n            log.warn(\&quot;在超时时间内未能获取会话结果，sessionId={}\&quot;, sessionId);\r\n            return ResponseEntity.internalServerError().build();\r\n        }\r\n\r\n        return ResponseEntity.ok(session);\r\n    }\r\n\r\n    // /**\r\n    //  * 继续会话接口\r\n    //  */\r\n    // @PostMapping(\&quot;/sessions/{session_id}/continue\&quot;)\r\n    // public ResponseEntity&lt;Session&gt; continueSession(\r\n    //         @PathVariable(\&quot;session_id\&quot;) String sessionId,\r\n    //         @RequestBody Map&lt;String, Object&gt; request) {\r\n    //     // TODO: 实现继续会话逻辑\r\n    //     Session session = agentService.getLatestSession(sessionId);\r\n    //     if (session == null) {\r\n    //         return ResponseEntity.notFound().build();\r\n    //     }\r\n    //     return ResponseEntity.ok(session);\r\n    // }\r\n\r\n    /**\r\n     * 获取会话状态接口\r\n     */\r\n    @GetMapping(\&quot;/sessions/{session_id}\&quot;)\r\n    public ResponseEntity&lt;Session&gt; getSession(@PathVariable(\&quot;session_id\&quot;) String sessionId) {\r\n        Session session = agentService.getLatestSession(sessionId);\r\n        if (session == null) {\r\n            return ResponseEntity.notFound().build();\r\n        }\r\n        return ResponseEntity.ok(session);\r\n    }\r\n\r\n    // /**\r\n    //  * 确认操作接口\r\n    //  */\r\n    // @PostMapping(\&quot;/sessions/{session_id}/confirm\&quot;)\r\n    // public ResponseEntity&lt;Session&gt; confirmSession(\r\n    //         @PathVariable(\&quot;session_id\&quot;) String sessionId,\r\n    //         @RequestBody Map&lt;String, Object&gt; request) {\r\n    //     // TODO: 实现确认操作逻辑\r\n    //     Session session = agentService.getLatestSession(sessionId);\r\n    //     if (session == null) {\r\n    //         return ResponseEntity.notFound().build();\r\n    //     }\r\n    //     return ResponseEntity.ok(session);\r\n    // }\r\n\r\n    // /**\r\n    //  * 销毁操作接口\r\n    //  */\r\n    // @PostMapping(\&quot;/sessions/{session_id}/terminate\&quot;)\r\n    // public ResponseEntity&lt;Map&lt;String, String&gt;&gt; terminateSession(\r\n    //         @PathVariable(\&quot;session_id\&quot;) String sessionId) {\r\n    //     // TODO: 实现销毁操作逻辑\r\n    //     Map&lt;String, String&gt; response = new HashMap&lt;&gt;();\r\n    //     response.put(\&quot;status\&quot;, \&quot;terminated\&quot;);\r\n    //     response.put(\&quot;session_id\&quot;, sessionId);\r\n    //     return ResponseEntity.ok(response);\r\n    // }\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: cd D:\01.code\mygithub\pcagent; mvn test -Dtest=!PCAgentControllerSysTest || mvn test -Dtest=PCAgentControllerSysTest</summary>
+
+```bash
+cd D:\01.code\mygithub\pcagent; mvn test -Dtest=!PCAgentControllerSysTest || mvn test -Dtest=PCAgentControllerSysTest
+```
+
+```
+����λ�� C:\Users\Administrator\AppData\Local\Temp\ps-script-7c2872f4-e03c-4ded-97bd-574a50b66cae.ps1:91 �ַ�: 75
++ ... ygithub\pcagent; mvn test -Dtest=!PCAgentControllerSysTest || mvn tes ...
++                                                                ~~
+��ǡ�||�����Ǵ˰汾�е���Ч���ָ�����
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+ 
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: cd D:\01.code\mygithub\pcagent; mvn test -Dtest=PCAgentControllerSysTest</summary>
+
+```bash
+cd D:\01.code\mygithub\pcagent; mvn test -Dtest=PCAgentControllerSysTest
+```
+
+```
+[Terminal output truncated: ~111KB dropped from beginning]
+ type from bean name &#39;mvcUriComponentsContributor&#39; via factory method to bean named &#39;requestMappingHandlerAdapter&#39;
+2025-12-01 20:36:08.183 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;httpRequestHandlerAdapter&#39;
+2025-12-01 20:36:08.183 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;simpleControllerHandlerAdapter&#39;
+2025-12-01 20:36:08.184 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;handlerExceptionResolver&#39;
+2025-12-01 20:36:08.184 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;handlerExceptionResolver&#39; via factory method to bean named &#39;mvcContentNegotiationManager&#39;
+2025-12-01 20:36:08.188 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-01 20:36:08.191 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration&#39;
+2025-12-01 20:36:08.191 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.aop.AopAutoConfiguration&#39;
+2025-12-01 20:36:08.192 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration&#39;
+2025-12-01 20:36:08.192 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;applicationAvailability&#39;
+2025-12-01 20:36:08.194 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration&#39;
+2025-12-01 20:36:08.195 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration&#39;
+2025-12-01 20:36:08.195 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;lifecycleProcessor&#39;
+2025-12-01 20:36:08.196 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties&#39;
+2025-12-01 20:36:08.197 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;lifecycleProcessor&#39; via factory method to bean named &#39;spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties&#39;
+2025-12-01 20:36:08.201 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;freeMarkerConfigurer&#39;
+2025-12-01 20:36:08.212 [main] DEBUG o.s.w.s.v.f.FreeMarkerConfigurer - File system access not preferred: using SpringTemplateLoader
+2025-12-01 20:36:08.216 [main] DEBUG o.s.u.f.SpringTemplateLoader - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e4fa1da, started on Mon Dec 01 20:36:06 GMT+08:00 2025] and template loader path [classpath:/templates/]
+2025-12-01 20:36:08.217 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;freeMarkerConfiguration&#39;
+2025-12-01 20:36:08.218 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;freeMarkerConfiguration&#39; via factory method to bean named &#39;freeMarkerConfigurer&#39;
+2025-12-01 20:36:08.227 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration&#39;
+2025-12-01 20:36:08.229 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration&#39; via constructor to bean named &#39;org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e4fa1da&#39;
+2025-12-01 20:36:08.229 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration&#39; via constructor to bean named &#39;spring.freemarker-org.springframework.boot.autoconfigure.freemarker.FreeMarkerProperties&#39;
+2025-12-01 20:36:08.231 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration&#39;
+2025-12-01 20:36:08.232 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.http.client.HttpClientAutoConfiguration&#39;
+2025-12-01 20:36:08.234 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;clientHttpRequestFactoryBuilder&#39;
+2025-12-01 20:36:08.235 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.http.client-org.springframework.boot.autoconfigure.http.client.HttpClientProperties&#39;
+2025-12-01 20:36:08.238 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;clientHttpRequestFactoryBuilder&#39; via factory method to bean named &#39;spring.http.client-org.springframework.boot.autoconfigure.http.client.HttpClientProperties&#39;
+2025-12-01 20:36:08.246 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;clientHttpRequestFactorySettings&#39;
+2025-12-01 20:36:08.246 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;clientHttpRequestFactorySettings&#39; via factory method to bean named &#39;spring.http.client-org.springframework.boot.autoconfigure.http.client.HttpClientProperties&#39;
+2025-12-01 20:36:08.247 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration&#39;
+2025-12-01 20:36:08.250 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties&#39;
+2025-12-01 20:36:08.251 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration&#39; via constructor to bean named &#39;spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties&#39;
+2025-12-01 20:36:08.252 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.reactor.ReactorAutoConfiguration&#39;
+2025-12-01 20:36:08.252 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.reactor-org.springframework.boot.autoconfigure.reactor.ReactorProperties&#39;
+2025-12-01 20:36:08.253 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;org.springframework.boot.autoconfigure.reactor.ReactorAutoConfiguration&#39; via constructor to bean named &#39;spring.reactor-org.springframework.boot.autoconfigure.reactor.ReactorProperties&#39;
+2025-12-01 20:36:08.253 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;reactorAutoConfigurationLazyInitializationExcludeFilter&#39;
+2025-12-01 20:36:08.254 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration&#39;
+2025-12-01 20:36:08.254 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties&#39;
+2025-12-01 20:36:08.257 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.task.TaskSchedulingConfigurations$ThreadPoolTaskSchedulerBuilderConfiguration&#39;
+2025-12-01 20:36:08.258 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;threadPoolTaskSchedulerBuilder&#39;
+2025-12-01 20:36:08.258 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties&#39;
+2025-12-01 20:36:08.260 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;threadPoolTaskSchedulerBuilder&#39; via factory method to bean named &#39;spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties&#39;
+2025-12-01 20:36:08.262 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.task.TaskSchedulingConfigurations$SimpleAsyncTaskSchedulerBuilderConfiguration&#39;
+2025-12-01 20:36:08.263 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;org.springframework.boot.autoconfigure.task.TaskSchedulingConfigurations$SimpleAsyncTaskSchedulerBuilderConfiguration&#39; via constructor to bean named &#39;spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties&#39;
+2025-12-01 20:36:08.264 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;simpleAsyncTaskSchedulerBuilder&#39;
+2025-12-01 20:36:08.267 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration&#39;
+2025-12-01 20:36:08.268 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.client.RestClientAutoConfiguration&#39;
+2025-12-01 20:36:08.268 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;httpMessageConvertersRestClientCustomizer&#39;
+2025-12-01 20:36:08.270 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;restClientSsl&#39;
+2025-12-01 20:36:08.270 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;restClientSsl&#39; via factory method to bean named &#39;sslBundleRegistry&#39;
+2025-12-01 20:36:08.271 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;restClientBuilderConfigurer&#39;
+2025-12-01 20:36:08.273 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration&#39;
+2025-12-01 20:36:08.274 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration&#39;
+2025-12-01 20:36:08.278 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorFactoryConfiguration$JdkClient&#39;
+2025-12-01 20:36:08.279 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;jdkClientHttpConnectorFactory&#39;
+2025-12-01 20:36:08.279 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration&#39;
+2025-12-01 20:36:08.280 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration$WebClientCodecsConfiguration&#39;
+2025-12-01 20:36:08.280 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;exchangeStrategiesCustomizer&#39;
+2025-12-01 20:36:08.281 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration&#39;
+2025-12-01 20:36:08.281 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;webClientSsl&#39;
+2025-12-01 20:36:08.282 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;webClientSsl&#39; via factory method to bean named &#39;jdkClientHttpConnectorFactory&#39;
+2025-12-01 20:36:08.282 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;webClientSsl&#39; via factory method to bean named &#39;sslBundleRegistry&#39;
+2025-12-01 20:36:08.283 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;multipartResolver&#39;
+2025-12-01 20:36:08.284 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.boot.test.web.client.TestRestTemplate&#39;
+2025-12-01 20:36:08.284 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;restTemplateBuilder&#39;
+2025-12-01 20:36:08.284 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;restTemplateBuilderConfigurer&#39;
+2025-12-01 20:36:08.287 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Autowiring by type from bean name &#39;restTemplateBuilder&#39; via factory method to bean named &#39;restTemplateBuilderConfigurer&#39;
+2025-12-01 20:36:08.304 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean &#39;org.springframework.test.web.reactive.server.WebTestClient&#39;
+2025-12-01 20:36:08.314 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase -2147483647
+2025-12-01 20:36:08.314 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean &#39;springBootLoggingLifecycle&#39;
+2025-12-01 20:36:08.314 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 1073741823
+2025-12-01 20:36:08.314 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147481599
+2025-12-01 20:36:08.320 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 13706 (http) with context path &#39;/&#39;
+2025-12-01 20:36:08.320 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean &#39;webServerStartStop&#39;
+2025-12-01 20:36:08.320 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147482623
+2025-12-01 20:36:08.320 [main] DEBUG o.s.c.s.DefaultLifecycleProcessor - Successfully started bean &#39;webServerGracefulShutdown&#39;
+2025-12-01 20:36:08.340 [main] DEBUG o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   AopAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+
+   AopAutoConfiguration.ClassProxyingConfiguration matched:
+      - @ConditionalOnMissingClass did not find unwanted class &#39;org.aspectj.weaver.Advice&#39; (OnClassCondition)
+      - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ClientHttpConnectorAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.reactive.function.client.WebClient&#39; (OnClassCondition)
+
+   ClientHttpConnectorAutoConfiguration#webClientHttpConnector matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.client.reactive.ClientHttpConnector; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ClientHttpConnectorAutoConfiguration#webClientHttpConnectorCustomizer matched:
+      - @ConditionalOnBean (types: org.springframework.http.client.reactive.ClientHttpConnector; SearchStrategy: all) found bean &#39;webClientHttpConnector&#39; (OnBeanCondition)
+
+   ClientHttpConnectorFactoryConfiguration.JdkClient matched:
+      - @ConditionalOnClass found required class &#39;java.net.http.HttpClient&#39; (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   CodecsAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;org.springframework.http.codec.CodecConfigurer&#39;, &#39;org.springframework.web.reactive.function.client.WebClient&#39; (OnClassCondition)
+
+   CodecsAutoConfiguration.JacksonCodecConfiguration matched:
+      - @ConditionalOnClass found required class &#39;com.fasterxml.jackson.databind.ObjectMapper&#39; (OnClassCondition)
+
+   CodecsAutoConfiguration.JacksonCodecConfiguration#jacksonCodecCustomizer matched:
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean &#39;jacksonObjectMapper&#39; (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.servlet.DispatcherServlet&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
+      - @ConditionalOnClass found required class &#39;jakarta.servlet.ServletRegistration&#39; (OnClassCondition)
+      - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
+      - @ConditionalOnClass found required class &#39;jakarta.servlet.ServletRegistration&#39; (OnClassCondition)
+      - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
+      - @ConditionalOnBean (names: dispatcherServlet types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean &#39;dispatcherServlet&#39; (OnBeanCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration matched:
+      - @ConditionalOnWebApplication (required) found &#39;session&#39; scope (OnWebApplicationCondition)
+      - @ConditionalOnWarDeployment the application is not deployed as a WAR file. (OnWarDeploymentCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.TomcatWebServerFactoryCustomizerConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;org.apache.catalina.startup.Tomcat&#39;, &#39;org.apache.coyote.UpgradeProtocol&#39; (OnClassCondition)
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;org.springframework.web.servlet.DispatcherServlet&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean &#39;dispatcherServlet&#39;; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FreeMarkerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;freemarker.template.Configuration&#39;, &#39;org.springframework.ui.freemarker.FreeMarkerConfigurationFactory&#39; (OnClassCondition)
+
+   FreeMarkerServletWebConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+
+   FreeMarkerServletWebConfiguration#freeMarkerConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.freemarker.FreeMarkerConfig; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FreeMarkerServletWebConfiguration#freeMarkerViewResolver matched:
+      - @ConditionalOnProperty (spring.freemarker.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (names: freeMarkerViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   GenericCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration automatic cache type (CacheCondition)
+
+   HttpClientAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.client.ClientHttpRequestFactory&#39; (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on NotReactiveWebApplicationCondition.ReactiveWebApplication not a reactive web application (NotReactiveWebApplicationCondition)
+
+   HttpClientAutoConfiguration#clientHttpRequestFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.http.client.ClientHttpRequestFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpClientAutoConfiguration#clientHttpRequestFactorySettings matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.http.client.ClientHttpRequestFactorySettings; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpEncodingAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.filter.CharacterEncodingFilter&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (server.servlet.encoding.enabled) matched (OnPropertyCondition)
+
+   HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.converter.HttpMessageConverter&#39; (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication not a reactive web application (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.converter.StringHttpMessageConverter&#39; (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;com.fasterxml.jackson.databind.ObjectMapper&#39; (OnClassCondition)
+
+   JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.converter.json.Jackson2ObjectMapperBuilder&#39; (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.converter.json.Jackson2ObjectMapperBuilder&#39; (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.http.converter.json.Jackson2ObjectMapperBuilder&#39; (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
+      - @ConditionalOnClass found required class &#39;com.fasterxml.jackson.module.paramnames.ParameterNamesModule&#39; (OnClassCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class &#39;com.fasterxml.jackson.databind.ObjectMapper&#39; (OnClassCondition)
+      - @ConditionalOnProperty (spring.mvc.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean &#39;jacksonObjectMapper&#39; (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedMappingJackson2HttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+      - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;org.springframework.web.multipart.support.StandardServletMultipartResolver&#39;, &#39;jakarta.servlet.MultipartConfigElement&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (spring.servlet.multipart.enabled) matched (OnPropertyCondition)
+
+   MultipartAutoConfiguration#multipartConfigElement matched:
+      - @ConditionalOnMissingBean (types: jakarta.servlet.MultipartConfigElement; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration#multipartResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration automatic cache type (CacheCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ReactorAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;reactor.core.publisher.Hooks&#39; (OnClassCondition)
+
+   RestClientAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.client.RestClient&#39; (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on NotReactiveWebApplicationCondition.ReactiveWebApplication not a reactive web application (NotReactiveWebApplicationCondition)
+
+   RestClientAutoConfiguration#httpMessageConvertersRestClientCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.client.HttpMessageConvertersRestClientCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RestClientAutoConfiguration#restClientBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.client.RestClient$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RestClientAutoConfiguration#restClientBuilderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.client.RestClientBuilderConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RestClientAutoConfiguration#restClientSsl matched:
+      - @ConditionalOnBean (types: org.springframework.boot.ssl.SslBundles; SearchStrategy: all) found bean &#39;sslBundleRegistry&#39;; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.client.RestClientSsl; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   RestTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.client.RestTemplate&#39; (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on NotReactiveWebApplicationCondition.ReactiveWebApplication not a reactive web application (NotReactiveWebApplicationCondition)
+
+   RestTemplateAutoConfiguration#restTemplateBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.client.RestTemplateBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ServletWebServerFactoryAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;jakarta.servlet.ServletRequest&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+
+   ServletWebServerFactoryAutoConfiguration#tomcatServletWebServerFactoryCustomizer matched:
+      - @ConditionalOnClass found required class &#39;org.apache.catalina.startup.Tomcat&#39; (OnClassCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedTomcat matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;org.apache.catalina.startup.Tomcat&#39;, &#39;org.apache.coyote.UpgradeProtocol&#39; (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.server.ServletWebServerFactory; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   SimpleCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration automatic cache type (CacheCondition)
+
+   SqlInitializationAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.sql.init.enabled) matched (OnPropertyCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on SqlInitializationAutoConfiguration.SqlInitializationModeCondition.ModeIsNever @ConditionalOnProperty (spring.sql.init.mode=never) did not find property &#39;mode&#39; (SqlInitializationAutoConfiguration.SqlInitializationModeCondition)
+
+   SslAutoConfiguration#sslBundleRegistry matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.ssl.SslBundleRegistry,org.springframework.boot.ssl.SslBundles; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&#39; (OnClassCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+      - @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.ThreadPoolTaskExecutorBuilderConfiguration#threadPoolTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler&#39; (OnClassCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskSchedulingConfigurations.ThreadPoolTaskSchedulerBuilderConfiguration#threadPoolTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebClientAutoConfiguration matched:
+      - @ConditionalOnClass found required class &#39;org.springframework.web.reactive.function.client.WebClient&#39; (OnClassCondition)
+
+   WebClientAutoConfiguration#webClientBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.reactive.function.client.WebClient$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebClientAutoConfiguration#webClientSsl matched:
+      - @ConditionalOnBean (types: org.springframework.boot.ssl.SslBundles; SearchStrategy: all) found bean &#39;sslBundleRegistry&#39;; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientSsl; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebClientAutoConfiguration.WebClientCodecsConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.boot.web.codec.CodecCustomizer; SearchStrategy: all) found beans &#39;jacksonCodecCustomizer&#39;, &#39;defaultCodecCustomizer&#39; (OnBeanCondition)
+
+   WebClientAutoConfiguration.WebClientCodecsConfiguration#exchangeStrategiesCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientCodecCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;org.springframework.web.servlet.DispatcherServlet&#39;, &#39;org.springframework.web.servlet.config.annotation.WebMvcConfigurer&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.filter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#themeResolver matched:
+      - @ConditionalOnMissingBean (names: themeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#viewNameTranslator matched:
+      - @ConditionalOnMissingBean (names: viewNameTranslator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans &#39;defaultViewResolver&#39;, &#39;beanNameViewResolver&#39;, &#39;mvcViewResolver&#39;; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSocketServletAutoConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;jakarta.websocket.server.ServerContainer&#39; (OnClassCondition)
+      - found &#39;session&#39; scope (OnWebApplicationCondition)
+
+   WebSocketServletAutoConfiguration.TomcatWebSocketConfiguration matched:
+      - @ConditionalOnClass found required classes &#39;org.apache.catalina.startup.Tomcat&#39;, &#39;org.apache.tomcat.websocket.server.WsSci&#39; (OnClassCondition)
+
+   WebSocketServletAutoConfiguration.TomcatWebSocketConfiguration#websocketServletWebServerCustomizer matched:
+      - @ConditionalOnMissingBean (names: websocketServletWebServerCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.jms.ConnectionFactory&#39; (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.aspectj.weaver.Advice&#39; (OnClassCondition)
+
+   ArtemisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.jms.ConnectionFactory&#39; (OnClassCondition)
+
+   BatchAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.batch.core.launch.JobLauncher&#39; (OnClassCondition)
+
+   Cache2kCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.cache2k.Cache2kBuilder&#39; (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class &#39;org.springframework.cache.CacheManager&#39; (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&#39; (OnClassCondition)
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.github.benmanes.caffeine.cache.Caffeine&#39; (OnClassCondition)
+
+   CassandraAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.datastax.oss.driver.api.core.CqlSession&#39; (OnClassCondition)
+
+   CassandraDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.datastax.oss.driver.api.core.CqlSession&#39; (OnClassCondition)
+
+   CassandraReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.datastax.oss.driver.api.core.CqlSession&#39; (OnClassCondition)
+
+   CassandraReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.cassandra.ReactiveSession&#39; (OnClassCondition)
+
+   CassandraRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.datastax.oss.driver.api.core.CqlSession&#39; (OnClassCondition)
+
+   ClientHttpConnectorFactoryConfiguration.HttpClient5:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;org.apache.hc.client5.http.impl.async.HttpAsyncClients&#39;, &#39;org.apache.hc.core5.http.nio.AsyncRequestProducer&#39;, &#39;org.apache.hc.core5.reactive.ReactiveResponseConsumer&#39; (OnClassCondition)
+
+   ClientHttpConnectorFactoryConfiguration.ReactorNetty:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;reactor.netty.http.client.HttpClient&#39; (OnClassCondition)
+
+   CouchbaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Cluster&#39; (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Cluster&#39; (OnClassCondition)
+
+   CouchbaseDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Bucket&#39; (OnClassCondition)
+
+   CouchbaseReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Cluster&#39; (OnClassCondition)
+
+   CouchbaseReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Cluster&#39; (OnClassCondition)
+
+   CouchbaseRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.couchbase.client.java.Bucket&#39; (OnClassCondition)
+
+   DataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType&#39; (OnClassCondition)
+
+   DataSourceInitializationConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jdbc.datasource.init.DatabasePopulator&#39; (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jdbc.core.JdbcTemplate&#39; (OnClassCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration#multipartResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans of type org.springframework.web.multipart.MultipartResolver (OnBeanCondition)
+
+   ElasticsearchClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;co.elastic.clients.elasticsearch.ElasticsearchClient&#39; (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate&#39; (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.elasticsearch.repository.ElasticsearchRepository&#39; (OnClassCondition)
+
+   ElasticsearchRestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.elasticsearch.client.RestClientBuilder&#39; (OnClassCondition)
+
+   EmbeddedLdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.unboundid.ldap.listener.InMemoryDirectoryServer&#39; (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.JettyWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;org.eclipse.jetty.server.Server&#39;, &#39;org.eclipse.jetty.util.Loader&#39;, &#39;org.eclipse.jetty.ee10.webapp.WebAppContext&#39; (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.NettyWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;reactor.netty.http.server.HttpServer&#39; (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.TomcatWebServerFactoryCustomizerConfiguration#tomcatVirtualThreadsProtocolHandlerCustomizer:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration.UndertowWebServerFactoryCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;io.undertow.Undertow&#39;, &#39;org.xnio.SslClientAuthMode&#39; (OnClassCondition)
+
+   ErrorWebFluxAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class &#39;org.springframework.web.reactive.config.WebFluxConfigurer&#39; (OnClassCondition)
+
+   FlywayAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.flywaydb.core.Flyway&#39; (OnClassCondition)
+
+   FreeMarkerNonWebConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication found &#39;session&#39; scope and not a reactive web application (OnWebApplicationCondition)
+
+   FreeMarkerReactiveWebConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+
+   FreeMarkerServletWebConfiguration#resourceUrlEncodingFilter:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarVersionLocator (OnEnabledResourceChainCondition)
+
+   GraphQlAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlQueryByExampleAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlQuerydslAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.querydsl.core.Query&#39; (OnClassCondition)
+
+   GraphQlRSocketAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlReactiveQueryByExampleAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlReactiveQuerydslAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.querydsl.core.Query&#39; (OnClassCondition)
+
+   GraphQlWebFluxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlWebFluxSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlWebMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GraphQlWebMvcSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;groovy.text.markup.MarkupTemplateEngine&#39; (OnClassCondition)
+
+   GsonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.google.gson.Gson&#39; (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.google.gson.Gson&#39; (OnClassCondition)
+
+   H2ConsoleAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.h2.server.web.JakartaWebServlet&#39; (OnClassCondition)
+
+   HazelcastAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.hazelcast.core.HazelcastInstance&#39; (OnClassCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.hazelcast.core.HazelcastInstance&#39; (OnClassCondition)
+
+   HazelcastJpaDependencyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.hazelcast.core.HazelcastInstance&#39; (OnClassCondition)
+
+   HibernateJpaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.persistence.EntityManager&#39; (OnClassCondition)
+
+   HttpHandlerAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes &#39;org.springframework.web.reactive.DispatcherHandler&#39;, &#39;org.springframework.http.server.reactive.HttpHandler&#39; (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.hateoas.EntityModel&#39; (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager&#39; (OnClassCondition)
+
+   IntegrationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.integration.config.EnableIntegration&#39; (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;javax.cache.Caching&#39; (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.fasterxml.jackson.dataformat.xml.XmlMapper&#39; (OnClassCondition)
+
+   JdbcClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnSingleCandidate did not find required type &#39;org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate&#39; (OnBeanCondition)
+
+   JdbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration&#39; (OnClassCondition)
+
+   JdbcTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jdbc.core.JdbcTemplate&#39; (OnClassCondition)
+
+   JerseyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.glassfish.jersey.server.spring.SpringComponentProvider&#39; (OnClassCondition)
+
+   JmsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.jms.Message&#39; (OnClassCondition)
+
+   JmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.jmx.enabled=true) found different value in property &#39;enabled&#39; (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class &#39;org.springframework.jmx.export.MBeanExporter&#39; (OnClassCondition)
+
+   JndiConnectionFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jms.core.JmsTemplate&#39; (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType&#39; (OnClassCondition)
+
+   JooqAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.jooq.DSLContext&#39; (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.jpa.repository.JpaRepository&#39; (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.json.bind.Jsonb&#39; (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.json.bind.Jsonb&#39; (OnClassCondition)
+
+   JtaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.transaction.Transaction&#39; (OnClassCondition)
+
+   KafkaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.kafka.core.KafkaTemplate&#39; (OnClassCondition)
+
+   LdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.ldap.core.ContextSource&#39; (OnClassCondition)
+
+   LdapRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.ldap.repository.LdapRepository&#39; (OnClassCondition)
+
+   LiquibaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;liquibase.change.DatabaseChange&#39; (OnClassCondition)
+
+   MailSenderAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.mail.internet.MimeMessage&#39; (OnClassCondition)
+
+   MailSenderValidatorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.mail.test-connection) did not find property &#39;test-connection&#39; (OnPropertyCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MongoAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.client.MongoClient&#39; (OnClassCondition)
+
+   MongoDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.client.MongoClient&#39; (OnClassCondition)
+
+   MongoReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.reactivestreams.client.MongoClient&#39; (OnClassCondition)
+
+   MongoReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.reactivestreams.client.MongoClient&#39; (OnClassCondition)
+
+   MongoReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.reactivestreams.client.MongoClient&#39; (OnClassCondition)
+
+   MongoRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.mongodb.client.MongoClient&#39; (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.samskivert.mustache.Mustache&#39; (OnClassCondition)
+
+   Neo4jAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.neo4j.driver.Driver&#39; (OnClassCondition)
+
+   Neo4jDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.neo4j.driver.Driver&#39; (OnClassCondition)
+
+   Neo4jReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.neo4j.driver.Driver&#39; (OnClassCondition)
+
+   Neo4jReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.neo4j.driver.Driver&#39; (OnClassCondition)
+
+   Neo4jRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.neo4j.driver.Driver&#39; (OnClassCondition)
+
+   NettyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.netty.util.NettyRuntime&#39; (OnClassCondition)
+
+   OAuth2AuthorizationServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.oauth2.server.authorization.OAuth2Authorization&#39; (OnClassCondition)
+
+   OAuth2AuthorizationServerJwtAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.nimbusds.jose.jwk.source.JWKSource&#39; (OnClassCondition)
+
+   OAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.config.annotation.web.configuration.EnableWebSecurity&#39; (OnClassCondition)
+
+   OAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.oauth2.server.resource.authentication.BearerTokenAuthenticationToken&#39; (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor&#39; (OnClassCondition)
+
+   ProjectInfoAutoConfiguration#buildProperties:
+      Did not match:
+         - @ConditionalOnResource did not find resource &#39;${spring.info.build.location:classpath:META-INF/build-info.properties}&#39; (OnResourceCondition)
+
+   ProjectInfoAutoConfiguration#gitProperties:
+      Did not match:
+         - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+   PulsarAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.apache.pulsar.client.api.PulsarClient&#39; (OnClassCondition)
+
+   PulsarReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.apache.pulsar.client.api.PulsarClient&#39; (OnClassCondition)
+
+   QuartzAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.quartz.Scheduler&#39; (OnClassCondition)
+
+   R2dbcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.r2dbc.spi.ConnectionFactory&#39; (OnClassCondition)
+
+   R2dbcDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.r2dbc.core.R2dbcEntityTemplate&#39; (OnClassCondition)
+
+   R2dbcInitializationConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;io.r2dbc.spi.ConnectionFactory&#39;, &#39;org.springframework.r2dbc.connection.init.DatabasePopulator&#39; (OnClassCondition)
+
+   R2dbcProxyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.r2dbc.proxy.ProxyConnectionFactory&#39; (OnClassCondition)
+
+   R2dbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.r2dbc.spi.ConnectionFactory&#39; (OnClassCondition)
+
+   R2dbcTransactionManagerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.r2dbc.connection.R2dbcTransactionManager&#39; (OnClassCondition)
+
+   RSocketGraphQlClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;graphql.GraphQL&#39; (OnClassCondition)
+
+   RSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.rsocket.RSocket&#39; (OnClassCondition)
+
+   RSocketRequesterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.rsocket.RSocket&#39; (OnClassCondition)
+
+   RSocketSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.rsocket.core.SecuritySocketAcceptorInterceptor&#39; (OnClassCondition)
+
+   RSocketServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.rsocket.core.RSocketServer&#39; (OnClassCondition)
+
+   RSocketStrategiesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.netty.buffer.PooledByteBufAllocator&#39; (OnClassCondition)
+
+   RabbitAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.rabbitmq.client.Channel&#39; (OnClassCondition)
+
+   ReactiveElasticsearchClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;co.elastic.clients.transport.ElasticsearchTransport&#39; (OnClassCondition)
+
+   ReactiveElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.elasticsearch.client.elc.ReactiveElasticsearchClient&#39; (OnClassCondition)
+
+   ReactiveMultipartAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes &#39;org.springframework.http.codec.multipart.DefaultPartHttpMessageReader&#39;, &#39;org.springframework.web.reactive.config.WebFluxConfigurer&#39; (OnClassCondition)
+
+   ReactiveOAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity&#39; (OnClassCondition)
+
+   ReactiveOAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity&#39; (OnClassCondition)
+
+   ReactiveSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity&#39; (OnClassCondition)
+
+   ReactiveUserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.authentication.ReactiveAuthenticationManager&#39; (OnClassCondition)
+
+   ReactiveWebServerFactoryAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class &#39;org.springframework.http.ReactiveHttpInputMessage&#39; (OnClassCondition)
+
+   RedisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.redis.core.RedisOperations&#39; (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.redis.connection.RedisConnectionFactory&#39; (OnClassCondition)
+
+   RedisReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.redis.connection.ReactiveRedisConnectionFactory&#39; (OnClassCondition)
+
+   RedisRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.redis.repository.configuration.EnableRedisRepositories&#39; (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration&#39; (OnClassCondition)
+
+   Saml2RelyingPartyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository&#39; (OnClassCondition)
+
+   SecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.authentication.DefaultAuthenticationEventPublisher&#39; (OnClassCondition)
+
+   SecurityFilterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.config.http.SessionCreationPolicy&#39; (OnClassCondition)
+
+   SendGridAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;com.sendgrid.SendGrid&#39; (OnClassCondition)
+
+   ServletWebServerFactoryAutoConfiguration.ForwardedHeaderFilterConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property &#39;server.forward-headers-strategy&#39; (OnPropertyCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedJetty:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;org.eclipse.jetty.server.Server&#39;, &#39;org.eclipse.jetty.util.Loader&#39;, &#39;org.eclipse.jetty.ee10.webapp.WebAppContext&#39; (OnClassCondition)
+
+   ServletWebServerFactoryConfiguration.EmbeddedUndertow:
+      Did not match:
+         - @ConditionalOnClass did not find required classes &#39;io.undertow.Undertow&#39;, &#39;org.xnio.SslClientAuthMode&#39; (OnClassCondition)
+
+   SessionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.session.Session&#39; (OnClassCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.application.admin.enabled=true) did not find property &#39;enabled&#39; (OnPropertyCondition)
+
+   SpringDataWebAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.data.web.PageableHandlerMethodArgumentResolver&#39; (OnClassCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) found beans of type &#39;org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder&#39; simpleAsyncTaskExecutorBuilder (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) found beans of type &#39;org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder&#39; simpleAsyncTaskSchedulerBuilder (OnBeanCondition)
+
+   TaskSchedulingConfigurations.TaskSchedulerConfiguration:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   ThymeleafAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.thymeleaf.spring6.SpringTemplateEngine&#39; (OnClassCondition)
+
+   TransactionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.transaction.PlatformTransactionManager&#39; (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.transaction.PlatformTransactionManager&#39; (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.security.authentication.AuthenticationManager&#39; (OnClassCondition)
+
+   ValidationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.validation.executable.ExecutableValidator&#39; (OnClassCondition)
+
+   WebFluxAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class &#39;org.springframework.web.reactive.config.WebFluxConfigurer&#39; (OnClassCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.hiddenmethod.filter.enabled) did not find property &#39;enabled&#39; (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.problemdetails.enabled=true) did not find property &#39;enabled&#39; (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarVersionLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type &#39;org.springframework.web.servlet.view.BeanNameViewResolver&#39; beanNameViewResolver (OnBeanCondition)
+
+   WebServiceTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.oxm.Marshaller&#39; (OnClassCondition)
+
+   WebServicesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.ws.transport.http.MessageDispatcherServlet&#39; (OnClassCondition)
+
+   WebSessionIdResolverAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes &#39;org.springframework.web.server.session.WebSessionManager&#39;, &#39;reactor.core.publisher.Mono&#39; (OnClassCondition)
+
+   WebSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer&#39; (OnClassCondition)
+
+   WebSocketReactiveAutoConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required classes &#39;jakarta.servlet.Servlet&#39;, &#39;jakarta.websocket.server.ServerContainer&#39; (OnClassCondition)
+
+   WebSocketServletAutoConfiguration.JettyWebSocketConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;org.eclipse.jetty.ee10.websocket.jakarta.server.config.JakartaWebSocketServletContainerInitializer&#39; (OnClassCondition)
+
+   WebSocketServletAutoConfiguration.UndertowWebSocketConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;io.undertow.websockets.jsr.Bootstrap&#39; (OnClassCondition)
+
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class &#39;jakarta.transaction.TransactionManager&#39; (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+    org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+    org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+    org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+2025-12-01 20:36:08.340 [main] INFO  c.p.c.PCAgentControllerSysTest - Started PCAgentControllerSysTest in 2.445 seconds (process running for 3.468)
+2025-12-01 20:36:08.340 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2025-12-01 20:36:08.340 [main] DEBUG o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2025-12-01 20:36:08.350 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2025-12-01 20:36:08.350 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key &#39;local.server.port&#39; in PropertySource &#39;environmentProperties&#39; with value of type String
+2025-12-01 20:36:08.350 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2025-12-01 20:36:08.360 [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [PCAgentControllerSysTest], method [shouldCreateSession_WithRealLlm], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-12-01 20:36:08.360 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2025-12-01 20:36:08.360 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2025-12-01 20:36:08.360 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+WARNING: A Java agent has been loaded dynamically (C:\Users\Administrator\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-12-01 20:36:09.020 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2025-12-01 20:36:09.020 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2025-12-01 20:36:09.030 [main] DEBUG o.s.web.client.RestTemplate - HTTP POST http://localhost:13706/api/v1/sessions
+2025-12-01 20:36:09.050 [main] DEBUG o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2025-12-01 20:36:09.050 [main] DEBUG o.s.web.client.RestTemplate - Writing [{user_input=����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. CPU:����һ��Intel? Xeon? Scalable����������������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+}] as &quot;application/json&quot;
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet &#39;dispatcherServlet&#39;
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet &#39;dispatcherServlet&#39;
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2e7e84f8
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1f8d42d1
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails=&#39;false&#39;: request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-01 20:36:09.130 [http-nio-auto-1-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-12-01 20:36:09.142 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST &quot;/api/v1/sessions&quot;, parameters={}
+2025-12-01 20:36:09.150 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.pcagent.controller.PCAgentController#createSession(Map)
+2025-12-01 20:36:09.170 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read &quot;application/json;charset=UTF-8&quot; to [{user_input=����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�&lt;EOL&gt;�������ķ����� 512̨&lt;EOL&gt;1. CPU:����һ��Intel? Xeon? Scalable����������������16�ˡ�&lt;EOL&gt;2. �ڴ棺 (truncated)...]
+2025-12-01 20:36:09.267 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. CPU:����һ��Intel? Xeon? Scalable����������������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:36:09.268 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:36:09.269 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:36:09.269 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Provider: openai
+2025-12-01 20:36:09.270 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:36:09.270 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:36:09.270 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:36:09.270 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:36:09.270 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:36:09.271 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:36:09.349 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:36:09.368 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. CPU:����һ��Intel? Xeon? Scalable����������������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:36:14.380 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:36:14.390 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 5122 ms
+2025-12-01 20:36:14.390 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 278 �ַ�
+2025-12-01 20:36:14.390 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;CPU:����һ��Intel? Xeon? Scalable����������������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:14.390 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:36:14.390 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;CPU:����һ��Intel? Xeon? Scalable����������������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] WARN  c.p.s.impl.ProductOntoService4Local - No specifications found for node: server
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: CPU_CONFIG, refSpecCode: CPU:������������
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: MEM_CONFIG, refSpecCode: �ڴ�:�ڴ�����
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Provider: openai
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:36:14.400 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1461 ms
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Provider: openai
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:36:15.861 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1489 ms
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:36:17.350 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.PCAgentService - ����������ɣ�sessionId: 99b268e3-deef-478c-8049-2bf7e90e7a7c
+2025-12-01 20:36:17.456 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using &#39;application/json&#39;, given [application/json, application/*+json] and supported [application/json, application/*+json]
+2025-12-01 20:36:17.456 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Session(sessionId=99b268e3-deef-478c-8049-2bf7e90e7a7c, currentStep=step3, nextAction=NextAction(typ (truncated)...]
+2025-12-01 20:36:17.460 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-01 20:36:17.460 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-12-01 20:36:17.460 [main] DEBUG o.s.web.client.RestTemplate - Reading to [com.pcagent.model.Session]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.470 [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [PCAgentControllerSysTest], method [shouldCreateSession_WithRealLlm], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-12-01 20:36:17.480 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.480 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@29188050 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 1, failureCount = 0]
+2025-12-01 20:36:17.480 [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test class: class [PCAgentControllerSysTest], class annotated with @DirtiesContext [false] with mode [null]
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 12.12 s &lt;&lt;&lt; FAILURE! -- in com.pcagent.controller.PCAgentControllerSysTest
+[ERROR] com.pcagent.controller.PCAgentControllerSysTest.shouldCreateSession_WithRealLlm -- Time elapsed: 9.120 s &lt;&lt;&lt; FAILURE!
+org.opentest4j.AssertionFailedError: ��������Ӧ���� ProductConfig ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.pcagent.controller.PCAgentControllerSysTest.shouldCreateSession_WithRealLlm(PCAgentControllerSysTest.java:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   PCAgentControllerSysTest.shouldCreateSession_WithRealLlm:81 ��������Ӧ���� ProductConfig ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.770 s
+[INFO] Finished at: 2025-12-01T20:36:18+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project pcagent: There are test failures.
+[ERROR] 
+[ERROR] Please refer to D:\01.code\mygithub\pcagent\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -&gt; [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+**Investigating session model**
+
+I’m noticing that there's a failure in the assertion regarding `session.getData() instanceof ProductConfig`. It seems this assertion isn't true, so I need to take a closer look at the Session model itself. I want to understand better why this might be the case and what’s happening under the hood. I wonder if there are other factors influencing this, and it's essential to troubleshoot thoroughly to resolve the issue.</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+I'm noticing that the data expected is supposed to be ProductConfig, but it seems like it could also be Pair or something else. I should check the `SessionUtils.updateSession4NextStep` function to figure out what the last step is setting the data to. It’s essential to sort this out to ensure everything continues smoothly. I wonder if there’s more context I need to consider, but for now, I’ll focus on verifying that part.</details></think>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/SessionUtils.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "getData\(" in "src" • 9 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src\test\java\com\pcagent\controller\PCAgentControllerSysTest.java` | `assertNotNull(session.getData(), "Session data不应为null");` | L80 |
+| `src\test\java\com\pcagent\controller\PCAgentControllerSysTest.java` | `assertTrue(session.getData() instanceof ProductConfig,` | L81 |
+| `src\test\java\com\pcagent\controller\PCAgentControllerSysTest.java` | `ProductConfig productConfig = (ProductConfig) session.getData();` | L84 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionSysTest.java` | `assertNotNull(session.getData(), "Session data不应为null");` | L99 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionSysTest.java` | `assertTrue(session.getData() instanceof ProductConfig,` | L102 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionSysTest.java` | `ProductConfig productConfig = (ProductConfig) session.getData();` | L105 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionTest.java` | `assertNotNull(session.getData(), "Session data不应为null");` | L101 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionTest.java` | `assertNotNull(session.getData());` | L147 |
+| `src\test\java\com\pcagent\service\PCAgentService4SessionTest.java` | `assertTrue(session.getData() instanceof ProductConfig,` | L152 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/PCAgentService4SessionTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="apply_patch">
+<details>
+<summary>Tool use: **apply_patch**</summary>
+
+
+Parameters:
+
+```json
+{
+  &quot;relativeWorkspacePath&quot;: &quot;src/main/java/com/pcagent/model/Session.java&quot;
+}
+```
+Additional data:
+
+```json
+{
+  &quot;codeblockId&quot;: &quot;56f82f2f-a8a7-4756-a7cd-10cf70a1ff1b&quot;
+}
+```
+Result:
+
+```json
+{
+  &quot;diff&quot;: {
+    &quot;chunks&quot;: [
+      {
+        &quot;diffString&quot;: &quot;  package com.pcagent.model;\r\n  \r\n+ import com.fasterxml.jackson.annotation.JsonTypeInfo;\r\n  import lombok.AllArgsConstructor;\r\n  import lombok.Data;\r&quot;,
+        &quot;oldStart&quot;: 1,
+        &quot;newStart&quot;: 1,
+        &quot;oldLines&quot;: 4,
+        &quot;newLines&quot;: 5,
+        &quot;linesAdded&quot;: 1
+      },
+      {
+        &quot;diffString&quot;: &quot;      private NextAction nextAction;\r\n      private Progress progress;\r\n+ \r\n+     /**\r\n+      * 用于在不同步骤中携带数据（例如 ConfigReq、规格列表、ProductConfig 等）。\r\n+      * 通过 JsonTypeInfo 保留具体类型信息，便于通过 REST 接口往返时反序列化为原始类型。\r\n+      */\r\n+     @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = \&quot;@class\&quot;)\r\n      private Object data;\r\n  }\r&quot;,
+        &quot;oldStart&quot;: 16,
+        &quot;newStart&quot;: 17,
+        &quot;oldLines&quot;: 4,
+        &quot;newLines&quot;: 10,
+        &quot;linesAdded&quot;: 6
+      }
+    ],
+    &quot;editor&quot;: &quot;EDITOR_AI&quot;
+  },
+  &quot;shouldAutoFixLints&quot;: true,
+  &quot;resultForModel&quot;: &quot;Success. Updated the following files:\nM src/main/java/com/pcagent/model/Session.java&quot;,
+  &quot;contentsAfterEdit&quot;: &quot;package com.pcagent.model;\r\n\r\nimport com.fasterxml.jackson.annotation.JsonTypeInfo;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n/**\r\n * 会话\r\n */\r\n@Data\r\n@NoArgsConstructor\r\n@AllArgsConstructor\r\npublic class Session {\r\n    private String sessionId;\r\n    private String currentStep;\r\n    private NextAction nextAction;\r\n    private Progress progress;\r\n\r\n    /**\r\n     * 用于在不同步骤中携带数据（例如 ConfigReq、规格列表、ProductConfig 等）。\r\n     * 通过 JsonTypeInfo 保留具体类型信息，便于通过 REST 接口往返时反序列化为原始类型。\r\n     */\r\n    @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = \&quot;@class\&quot;)\r\n    private Object data;\r\n}\r\n\r\n&quot;
+}
+```
+User decision: **accepted**
+
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: cd D:\01.code\mygithub\pcagent; mvn test</summary>
+
+```bash
+cd D:\01.code\mygithub\pcagent; mvn test
+```
+
+```
+[Terminal output truncated: ~293KB dropped from beginning]
+onPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:37:36.950 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:36.950 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:36.950 [ForkJoinPool.commonPool-worker-1] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:36.951 [ForkJoinPool.commonPool-worker-1] DEBUG com.pcagent.service.PCAgentService - ����������ɣ�sessionId: 26afd10f-ade3-4a98-909f-bb631066e945
+2025-12-01 20:37:37.120 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using &#39;application/json&#39;, given [application/json, application/*+json] and supported [application/json, application/*+json]
+2025-12-01 20:37:37.120 [http-nio-auto-1-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Session(sessionId=26afd10f-ade3-4a98-909f-bb631066e945, currentStep=step3, nextAction=NextAction(typ (truncated)...]
+2025-12-01 20:37:37.134 [http-nio-auto-1-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-01 20:37:37.135 [main] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2025-12-01 20:37:37.135 [main] DEBUG o.s.web.client.RestTemplate - Reading to [com.pcagent.model.Session]
+2025-12-01 20:37:37.142 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.143 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.143 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.143 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.145 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.146 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.147 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.148 [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [PCAgentControllerSysTest], method [shouldCreateSession_WithRealLlm], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-12-01 20:37:37.153 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.153 [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4f552aa2 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 1, failureCount = 0]
+2025-12-01 20:37:37.154 [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test class: class [PCAgentControllerSysTest], class annotated with @DirtiesContext [false] with mode [null]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.21 s -- in com.pcagent.controller.PCAgentControllerSysTest
+[INFO] Running com.pcagent.service.LLMInvokerSysTest
+2025-12-01 20:37:37.166 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:37:37.168 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+�������ķ����� 500̨
+1. CPU��������16��
+2. �ڴ��256GB
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:37.168 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:37.168 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:37.168 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:37.169 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:37.170 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:37.176 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+�������ķ����� 500̨
+1. CPU��������16��
+2. �ڴ��256GB
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:37:40.899 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:37:40.899 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 3731 ms
+2025-12-01 20:37:40.900 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 191 �ַ�
+2025-12-01 20:37:40.900 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 500,
+  &quot;specReqItems&quot;: [
+    &quot;CPU��������16��&quot;,
+    &quot;�ڴ��256GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:40.900 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:40.900 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 500,
+  &quot;specReqItems&quot;: [
+    &quot;CPU��������16��&quot;,
+    &quot;�ڴ��256GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:40.907 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:37:40.907 [main] WARN  com.pcagent.service.LLMInvoker - ChatModel not available, using simple parser
+2025-12-01 20:37:40.913 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:37:40.915 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:40.915 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:40.915 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:40.915 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:40.916 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:40.916 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:40.920 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:37:47.985 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:37:47.986 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 7071 ms
+2025-12-01 20:37:47.986 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 395 �ַ�
+2025-12-01 20:37:47.986 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;�ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:47.986 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:47.986 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;�ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.83 s -- in com.pcagent.service.LLMInvokerSysTest
+[INFO] Running com.pcagent.service.LLMInvokerTest
+2025-12-01 20:37:48.306 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+��Ҫ������
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.307 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$2qHd5Uqt, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:37:48.307 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.313 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 6 ms
+2025-12-01 20:37:48.313 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 142 �ַ�
+2025-12-01 20:37:48.313 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 0,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:37:48.313 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:48.314 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 0,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:37:48.323 [main] WARN  com.pcagent.service.LLMInvoker - ChatModel not available, using simple parser
+2025-12-01 20:37:48.328 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.329 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$2qHd5Uqt, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:37:48.329 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.330 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1 ms
+2025-12-01 20:37:48.330 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 10 �ַ�
+2025-12-01 20:37:48.330 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: not a json
+2025-12-01 20:37:48.330 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:48.330 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: not a json
+2025-12-01 20:37:48.331 [main] DEBUG com.pcagent.service.LLMInvoker - Failed to parse LLM response as JSON
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token &#39;not&#39;: was expecting (JSON String, Number, Array, Object or token &#39;null&#39;, &#39;true&#39; or &#39;false&#39;)
+ at [Source: REDACTED (&#96;StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION&#96; disabled); line: 1, column: 4]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2567)
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2593)
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2601)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:765)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:3018)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2996)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchToken(ReaderBasedJsonParser.java:2761)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchNull(ReaderBasedJsonParser.java:2747)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:750)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4992)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4898)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3816)
+	at com.pcagent.service.LLMInvoker.tryParseResponse(LLMInvoker.java:340)
+	at com.pcagent.service.LLMInvoker.parseConfigReq(LLMInvoker.java:93)
+	at com.pcagent.service.LLMInvokerTest.shouldFallbackWhenLlmResponseInvalid(LLMInvokerTest.java:82)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2025-12-01 20:37:48.334 [main] WARN  com.pcagent.service.LLMInvoker - LLM response is not a valid ConfigReq JSON, fallback to simple parser. response=not a json
+2025-12-01 20:37:48.339 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.340 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$2qHd5Uqt, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:37:48.340 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.341 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1 ms
+2025-12-01 20:37:48.341 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 174 �ַ�
+2025-12-01 20:37:48.341 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ������&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+
+2025-12-01 20:37:48.341 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:48.341 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ������&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+
+2025-12-01 20:37:48.349 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.349 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$2qHd5Uqt, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:37:48.349 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.350 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1 ms
+2025-12-01 20:37:48.350 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 258 �ַ�
+2025-12-01 20:37:48.350 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ��������˫·CPU&quot;,
+    &quot;256GB DDR4 ECC Registered�ڴ棬16�����&quot;,
+    &quot;8��2.4TB 10K RPM SASӲ�̣�RAID 0/1/5/10�������4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:37:48.350 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:48.350 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;2U����ʽ��������˫·CPU&quot;,
+    &quot;256GB DDR4 ECC Registered�ڴ棬16�����&quot;,
+    &quot;8��2.4TB 10K RPM SASӲ�̣�RAID 0/1/5/10�������4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:37:48.365 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+��Ҫ100̨������
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.365 [main] DEBUG com.pcagent.service.LLMInvoker - LLM �������: ChatModel ����Ϊ org.springframework.ai.chat.model.ChatModel$MockitoMock$2qHd5Uqt, �޷���ȡ��ϸ������Ϣ
+2025-12-01 20:37:48.366 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.379 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 14 ms
+2025-12-01 20:37:48.381 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 147 �ַ�
+2025-12-01 20:37:48.381 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: {
+  &quot;productSerial&quot;: &quot;�����ڵĲ�Ʒ&quot;,
+  &quot;totalQuantity&quot;: 100,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+2025-12-01 20:37:48.381 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:48.381 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: {
+  &quot;productSerial&quot;: &quot;�����ڵĲ�Ʒ&quot;,
+  &quot;totalQuantity&quot;: 100,
+  &quot;specReqItems&quot;: [],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.394 s -- in com.pcagent.service.LLMInvokerTest
+[INFO] Running com.pcagent.service.PCAgentService4SessionSysTest
+2025-12-01 20:37:48.389 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:48.391 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:48.391 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:48.399 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:37:48.401 [main] DEBUG com.pcagent.service.LLMInvoker - Rendered prompt: ��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:48.402 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:48.404 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:48.411 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=��������һ���������ר�ң�������û�������������������������
+
+���û����롿
+����һ���߶˿ͻ�����Ҫ�����������ģ�Ҫ�����£�
+�������ķ����� 512̨
+1. ��̬�봦������2U����ʽ�����������á�2������һ��Intel? Xeon? Scalable��������ÿ�ź�������16�ˡ�
+2. �ڴ棺���á�256GB DDR4 ECC Registered�ڴ棬���ṩ��16���ڴ����Թ���չ��
+3. �洢�����á�8��2.4TB 10K RPM SASӲ�̣�֧��Ӳ��RAID 0, 1, 5, 10�������4GB��
+
+
+����Ʒϵ��ö�١�
+ONU, ����, ������, ·����
+
+����Ҫ��
+1. ��Ʒϵ�н���ȡ������ö�٣����޷�ƥ����������ַ��� &quot;&quot;��
+2. ��δ��ȷ������������ totalQuantity ��Ϊ 1������ totalQuantityMemo ��˵��ԭ��ʾ����&quot;û����ȷָ��˵����Ĭ��ֵ����1��&quot;����
+3. ����������ݷָ�������С����С�&quot;��&quot;��&quot;;&quot;��&quot;��&quot;��&quot;��&quot;�����в�֣��������к������䡣
+4. ���ò���������û�����������Ĭ�� PRICE_MIN_PRIORITY������ǿ���������޿ɷ��� TECH_MAX_PRIORITY��
+5. ������������� JSON ���ֶ���ȫ��
+{
+  &quot;productSerial&quot;: &quot;&quot;,
+  &quot;totalQuantity&quot;: 1,
+  &quot;specReqItems&quot;: [
+    &quot;&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;PRICE_MIN_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:37:55.874 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:37:55.876 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 7475 ms
+2025-12-01 20:37:55.876 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 395 �ַ�
+2025-12-01 20:37:55.876 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;���ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:55.877 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:55.877 [main] DEBUG com.pcagent.service.LLMInvoker - LLM response: &#96;&#96;&#96;json
+{
+  &quot;productSerial&quot;: &quot;������&quot;,
+  &quot;totalQuantity&quot;: 512,
+  &quot;specReqItems&quot;: [
+    &quot;��̬�봦������2U����ʽ������&quot;,
+    &quot;���á�2������һ��Intel? Xeon? Scalable������&quot;,
+    &quot;ÿ�ź�������16��&quot;,
+    &quot;�ڴ棺���á�256GB DDR4 ECC Registered�ڴ�&quot;,
+    &quot;���ṩ��16���ڴ����Թ���չ&quot;,
+    &quot;�洢�����á�8��2.4TB 10K RPM SASӲ��&quot;,
+    &quot;֧��Ӳ��RAID 0, 1, 5, 10&quot;,
+    &quot;�����4GB&quot;
+  ],
+  &quot;configStrategy&quot;: &quot;TECH_MAX_PRIORITY&quot;,
+  &quot;totalQuantityMemo&quot;: &quot;�û���ȷָ���������ķ�����512̨&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:55.878 [main] WARN  c.p.s.impl.ProductOntoService4Local - No specifications found for node: server
+2025-12-01 20:37:55.879 [main] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: CPU_CONFIG, refSpecCode: CPU:������������
+2025-12-01 20:37:55.879 [main] WARN  c.p.service.ProductConfigService - No spec deviation found for parameter: MEM_CONFIG, refSpecCode: �ڴ�:�ڴ�����
+2025-12-01 20:37:55.880 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:55.880 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:55.881 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:55.881 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:55.881 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:55.882 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:55.883 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:37:57.691 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:37:57.691 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1811 ms
+2025-12-01 20:37:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:37:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:57.692 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:57.692 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:57.692 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:57.693 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:57.694 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:57.694 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+QTY = &quot;1&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:37:59.629 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:37:59.629 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1937 ms
+2025-12-01 20:37:59.629 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:37:59.630 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:37:59.630 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:37:59.630 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.24 s -- in com.pcagent.service.PCAgentService4SessionSysTest
+[INFO] Running com.pcagent.service.PCAgentService4SessionTest
+2025-12-01 20:37:59.634 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.636 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.636 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.716 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.718 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.718 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.723 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.725 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.725 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.728 [main] ERROR c.p.service.PCAgentService4Session - Failed to generate config
+com.pcagent.exception.InvalidInputException: ��Ʒϵ�в���Ϊ��
+	at com.pcagent.service.PCAgentService4Session.validConfigReq(PCAgentService4Session.java:91)
+	at com.pcagent.service.PCAgentService4Session.doGeneratorConfig(PCAgentService4Session.java:39)
+	at com.pcagent.service.PCAgentService4SessionTest.lambda$testDoGeneratorConfig_InvalidInput$0(PCAgentService4SessionTest.java:175)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:39)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3131)
+	at com.pcagent.service.PCAgentService4SessionTest.testDoGeneratorConfig_InvalidInput(PCAgentService4SessionTest.java:174)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s -- in com.pcagent.service.PCAgentService4SessionTest
+[INFO] Running com.pcagent.service.ProductConfigService4CheckerTest
+2025-12-01 20:37:59.733 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.735 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.735 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:37:59.741 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:37:59.743 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Qty_ONT = &quot;60&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:37:59.743 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:37:59.744 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:37:59.745 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:37:59.750 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Qty_ONT = &quot;60&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:38:01.495 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:38:01.495 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1752 ms
+2025-12-01 20:38:01.495 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:38:01.495 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:38:01.496 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:38:01.496 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+LLM�������ͨ����: 
+2025-12-01 20:38:01.498 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:01.499 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:01.499 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:01.506 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:38:01.509 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Capacity(P_Capacity):
+//��Ȼ���ԣ��й����ۣ�ֻ��10-8GE(8*POE)һ����ѡ�� ������&quot;10-8GE(8*POE)&quot;,&quot;20-16GE(16*POE)&quot;������ѡ
+//����DSL��
+filter:{
+    if Solution.country == &quot;1790&quot;{
+        return [10,20]
+    }else{
+        return [10]
+    }
+}
+
+
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Capacity = &quot;10-8GE(8*POE)&quot;
+P_Qty_ONT = &quot;10&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:38:01.510 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:38:01.512 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:38:01.515 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+P_Capacity(P_Capacity):
+//��Ȼ���ԣ��й����ۣ�ֻ��10-8GE(8*POE)һ����ѡ�� ������&quot;10-8GE(8*POE)&quot;,&quot;20-16GE(16*POE)&quot;������ѡ
+//����DSL��
+filter:{
+    if Solution.country == &quot;1790&quot;{
+        return [10,20]
+    }else{
+        return [10]
+    }
+}
+
+
+P_Qty_ONT(P_Qty_ONT):
+//��Ȼ���ԣ�������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+//����DSL��
+check:{
+    if Solution.country==&quot;160&quot; and self.total&gt;1
+    {
+        return [~900147646] //���ظ澯��&quot;������ҵ�г�Ҫ��ֻ������1&quot;
+    }
+    elif  Solution.country!=&quot;160&quot; and self.total&lt;50 and self.total&gt;0 {
+        return [~900121723] //���ظ澯��Ϊ������Ŀӯ�����Ƽ�50̨��������
+    }
+    elif {
+        return [~0];//����
+    }
+}
+
+
+
+
+�����͵Ĳ������ý����
+P_Capacity = &quot;10-8GE(8*POE)&quot;
+P_Qty_ONT = &quot;10&quot;
+Solution.country = &quot;�й�&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:38:04.761 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:38:04.762 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 3253 ms
+2025-12-01 20:38:04.762 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 96 �ַ�
+2025-12-01 20:38:04.763 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 1,
+    &quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨�������ۣ����ǵ�ǰ������ֻ��10&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:38:04.763 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:38:04.763 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 1,
+    &quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨�������ۣ����ǵ�ǰ������ֻ��10&quot;
+}
+&#96;&#96;&#96;
+LLM��������д���: P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨�������ۣ����ǵ�ǰ������ֻ��10
+2025-12-01 20:38:04.765 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.770 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.771 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.781 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:38:04.782 [main] DEBUG c.p.service.ProductConfigService - No checkRule found, using simple check
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.052 s -- in com.pcagent.service.ProductConfigService4CheckerTest
+[INFO] Running com.pcagent.service.ProductConfigService4ParameterIntentTest
+2025-12-01 20:38:04.790 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.790 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.797 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.797 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.802 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.802 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.pcagent.service.ProductConfigService4ParameterIntentTest
+[INFO] Running com.pcagent.service.ProductConfigServiceTest
+2025-12-01 20:38:04.806 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.807 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.807 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:04.814 [main] WARN  o.s.ai.openai.OpenAiChatModel - This constructor is deprecated and will be removed in the next milestone. Please use the OpenAiChatModel.Builder or the new constructor accepting ToolCallingManager instead.
+2025-12-01 20:38:04.814 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.818 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:04.821 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:38:04.821 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:38:04.821 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:38:04.822 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:38:04.823 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:38:04.828 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:38:06.781 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:38:06.782 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1961 ms
+2025-12-01 20:38:06.782 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:38:06.782 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:38:06.782 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:38:06.782 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:38:06.783 [main] DEBUG c.p.service.ProductConfigService - Rendered config check prompt: ������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - �޷���ȡ baseUrl: baseUrl
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���������Ϣ ===
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - Provider: null
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - Base URL: δ֪
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - Model: deepseek-chat
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - Temperature: 0.7
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - ChatModel ����: org.springframework.ai.openai.OpenAiChatModel
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - =========================
+2025-12-01 20:38:06.783 [main] DEBUG com.pcagent.service.LLMInvoker - �������� LLM...
+2025-12-01 20:38:06.784 [main] DEBUG o.s.retry.support.RetryTemplate - Retry: count=0
+2025-12-01 20:38:06.784 [main] DEBUG o.s.web.client.DefaultRestClient - Writing [ChatCompletionRequest[messages=[ChatCompletionMessage[rawContent=������һ����Ʒ����ר�ң�����ݲ�Ʒ���ù�����У������������ý���Ƿ���ȷ
+
+����Ʒ����֪ʶ��
+QTY(QTY):
+������ҵ�г�Ҫ��ֻ������1�� ��Ϊ������Ŀӯ�����Ƽ�50̨��������
+
+
+
+�����͵Ĳ������ý����
+CPU_CONFIG = &quot;16��&quot;
+MEM_CONFIG = &quot;512GB&quot;
+QTY = &quot;55&quot;
+
+
+������Ҫ��
+1�����������Ҫ���򷵻�0
+{
+	&quot;errorCode&quot;: 0,
+	&quot;errorMessage&quot;: &quot;&quot;
+}
+
+2��������ش����򷵻�
+{
+	&quot;errorCode&quot;: 1,
+	&quot;errorMessage&quot;: &quot;P_Qty_ONTΪ������Ŀӯ�����Ƽ�50̨��������,���ǵ�ǰ������ֻ��10,&quot;
+}
+
+��ֻ���� JSON��
+
+, role=USER, name=null, toolCallId=null, toolCalls=null, refusal=null, audioOutput=null]], model=deepseek-chat, store=null, metadata=null, frequencyPenalty=null, logitBias=null, logprobs=null, topLogprobs=null, maxTokens=null, maxCompletionTokens=null, n=null, outputModalities=null, audioParameters=null, presencePenalty=null, responseFormat=null, seed=null, serviceTier=null, stop=null, stream=false, streamOptions=null, temperature=0.7, topP=null, tools=null, toolChoice=null, parallelToolCalls=null, user=null, reasoningEffort=null]] as &quot;application/json&quot; with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-01 20:38:08.613 [main] DEBUG o.s.web.client.DefaultRestClient - Reading to [org.springframework.ai.openai.api.OpenAiApi$ChatCompletion]
+2025-12-01 20:38:08.613 [main] DEBUG com.pcagent.service.LLMInvoker - LLM ���óɹ�����ʱ: 1830 ms
+2025-12-01 20:38:08.613 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: 58 �ַ�
+2025-12-01 20:38:08.613 [main] DEBUG com.pcagent.service.LLMInvoker - ��Ӧ����: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+2025-12-01 20:38:08.614 [main] DEBUG com.pcagent.service.LLMInvoker - === LLM ���ý��� ===
+2025-12-01 20:38:08.614 [main] DEBUG c.p.service.ProductConfigService - LLM check response: &#96;&#96;&#96;json
+{
+    &quot;errorCode&quot;: 0,
+    &quot;errorMessage&quot;: &quot;&quot;
+}
+&#96;&#96;&#96;
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.811 s -- in com.pcagent.service.ProductConfigServiceTest
+[INFO] Running com.pcagent.service.ProductOntoService4LocalTest
+2025-12-01 20:38:08.620 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.623 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.623 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.625 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.627 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.627 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.628 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.629 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.629 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.630 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.631 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.631 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.633 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.634 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.634 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.pcagent.service.ProductOntoService4LocalTest
+[INFO] Running com.pcagent.service.ProductSelectionServiceTest
+2025-12-01 20:38:08.637 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.638 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.638 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.643 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.645 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.645 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.645 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.646 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.647 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.648 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.648 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.648 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.648 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.649 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.650 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.650 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.651 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.651 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.652 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.653 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.653 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.653 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.653 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.654 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.655 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.655 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.655 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.655 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.656 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.658 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.658 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.658 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.659 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.660 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.661 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.661 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.661 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.662 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: CPU:����һ��Intel? Xeon? Scalable����������������16��  -&gt; 1 specifications
+2025-12-01 20:38:08.663 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.664 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.664 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.664 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.664 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.666 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.667 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.667 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.667 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.667 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.668 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.669 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.669 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.670 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.670 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.671 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.673 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.673 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.673 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.674 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.677 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.678 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.678 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.678 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.679 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: �ڴ�:���á�512GB DDR4 ECC Registered�ڴ� -&gt; 1 specifications
+2025-12-01 20:38:08.679 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.679 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: CPU:����һ��Intel? Xeon? Scalable����������������32��  -&gt; 1 specifications
+2025-12-01 20:38:08.680 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.681 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.681 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.682 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.682 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.683 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.683 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.683 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.684 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.684 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.685 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.685 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.685 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.685 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.686 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.687 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.687 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.687 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.687 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.687 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.689 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.690 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.690 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.690 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.690 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in com.pcagent.service.ProductSelectionServiceTest
+[INFO] Running com.pcagent.service.ProductSpecificationParserServiceTest
+2025-12-01 20:38:08.694 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.695 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.695 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.700 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.702 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.702 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.704 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.705 [main] INFO  com.pcagent.util.ProductOntoUtils - Successfully deserialized object from JSON file: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.705 [main] INFO  c.p.s.impl.ProductOntoService4Local - Product ontology data loaded successfully from: D:\01.code\mygithub\pcagent\src\main\resources/data/product-onto-data-sample.json
+2025-12-01 20:38:08.706 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.706 [main] INFO  com.pcagent.util.ProductOntoUtils - Deserializing object from JSON string
+2025-12-01 20:38:08.706 [main] DEBUG c.p.s.impl.ProductOntoService4Local - Mocked spec match: �ڴ�:���á�128GB DDR1 ECC Registered�ڴ� -&gt; 2 specifications
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.pcagent.service.ProductSpecificationParserServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 47, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  51.771 s
+[INFO] Finished at: 2025-12-01T20:38:09+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+</details>
+</tool-use>
+
+---
+
+### 测试结果
+
+- **所有 Maven 测试已成功执行，构建结果为：BUILD SUCCESS。**
+- 已解决 Spring AI 从 `1.0.0-M4` 升级到 `1.0.0-M6` 后的 API 不兼容问题（`getContent()`、`withModel()` 等），并修复了相关单测。
+- `PCAgentController` 的 `createSession` 现在会阻塞等待异步任务完成，确保返回的 `Session` 已经包含最终的 `ProductConfig`，系统测试也全部通过。
+- `Session.data` 增加了 `@JsonTypeInfo`，通过 REST 往返时仍能反序列化成 `ProductConfig`，满足测试中对类型的断言。
 
 ---
 
