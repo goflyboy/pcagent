@@ -160,7 +160,7 @@ export default {
       const url = `/api/v1/sessions/${this.sessionId}/events`
       this.eventSource = new EventSource(url)
 
-      this.eventSource.onmessage = (e) => {
+      const handleSessionUpdate = (e) => {
         try {
           const session = JSON.parse(e.data)
           this.session = session
@@ -176,6 +176,10 @@ export default {
           console.error('Error parsing SSE data:', err)
         }
       }
+
+      // 后端使用 SseEmitter.event().name("session-update") 发送自定义事件名
+      // 这里通过 addEventListener 订阅该事件
+      this.eventSource.addEventListener('session-update', handleSessionUpdate)
 
       this.eventSource.onerror = (e) => {
         console.error('SSE connection error:', e)
@@ -195,9 +199,10 @@ export default {
       if (!this.session || !this.session.data) return
 
       // 根据当前步骤显示不同的信息
-      const step = this.session.currentStep
+      const step = this.  session.currentStep
       const data = this.session.data
-
+      //打印data的内容
+      this.addSystemMessage(`data: ${JSON.stringify(data)}`)
       if (step === 'step1' && data.productSerial) {
         this.addSystemMessage(`识别到产品系列: ${data.productSerial}, 总套数: ${data.totalQuantity}`)
       } else if (step === 'step2' && Array.isArray(data)) {
