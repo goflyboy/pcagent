@@ -351,5 +351,3 @@ body {
 }
 </style>
 
-</template>
-
