@@ -57,6 +57,7 @@ public class PCAgentService {
     public Session getLatestSession(String sessionId) {
         PCAgentService4Session sessionService = sessions.get(sessionId);
         if (sessionService == null) {
+            log.warn("No session found for sessionId: {}", sessionId);
             return null;
         }
         return sessionService.getCurrentSession();

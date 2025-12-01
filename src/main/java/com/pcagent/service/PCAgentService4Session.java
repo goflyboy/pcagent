@@ -15,7 +15,7 @@ import java.util.function.Consumer;
  * 产品配置Agent会话服务
  */
 @Slf4j
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 @Getter
 public class PCAgentService4Session {
     private final String sessionId;
@@ -28,16 +28,25 @@ public class PCAgentService4Session {
      * 以便通过 WebSocket/SSE 推送给前端。测试中可以传入空实现。
      */
     private final Consumer<Session> sessionUpdateCallback;
-    
-    private Session currentSession;
     private Plan plan = new Plan();
+    private Session currentSession;
+
+    public PCAgentService4Session(String sessionId, LLMInvoker llmInvoker, ProductSpecificationParserService specParserService, ProductSelectionService selectionService, ProductConfigService configService, Consumer<Session> sessionUpdateCallback) {
+        this.sessionId = sessionId;
+        this.llmInvoker = llmInvoker;
+        this.specParserService = specParserService;
+        this.selectionService = selectionService;
+        this.configService = configService;
+        this.sessionUpdateCallback = sessionUpdateCallback;
+        currentSession = SessionUtils.create(this.sessionId, plan);
+    }
 
     /**
      * 生成配置
      */
     public void doGeneratorConfig(String userInput) {
         // 创建会话
-        currentSession = SessionUtils.create(sessionId, plan);
+        // currentSession = SessionUtils.create(sessionId, plan);
         notifySessionUpdated();
 
         try {
@@ -112,6 +121,7 @@ public class PCAgentService4Session {
      * 触发会话更新回调
      */
     private void notifySessionUpdated() {
+        log.info("notifySessionUpdated: sessionId->  {}", sessionId);
         if (sessionUpdateCallback != null && currentSession != null) {
             try {
                 sessionUpdateCallback.accept(currentSession);
