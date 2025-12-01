@@ -416,7 +416,7 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 9、ProductConfigService4ParameterIntentTest
     //TODO 待补充其它场景
 10.       String response = llmInvoker.callLLMForCheck(prompt); 要整理一下
-
+11. Session 可以测试 
 
 
 对外需求：
