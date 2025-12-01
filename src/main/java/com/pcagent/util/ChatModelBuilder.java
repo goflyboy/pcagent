@@ -80,9 +80,11 @@ public class ChatModelBuilder {
     private static ChatModel createChatModel(String apiKey, String baseUrl, String modelName) {
         try {
             OpenAiApi openAiApi = new OpenAiApi(baseUrl, apiKey);
+            // Spring AI 1.0.0-M6 之后 OpenAiChatOptions 的 builder 通常使用无前缀的字段名
+            // 这里不再调用已废弃的 withModel/withTemperature 方法
             OpenAiChatOptions options = OpenAiChatOptions.builder()
-                    .withModel(modelName)
-                    .withTemperature(0.7)
+                    .model(modelName)
+                    .temperature(0.7)
                     .build();
             return new OpenAiChatModel(openAiApi, options);
         } catch (Exception e) {

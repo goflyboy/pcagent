@@ -33,8 +33,34 @@ public class PCAgentController {
 
         String sessionId = SessionUtils.nextSessionId();
         agentService.doGeneratorConfig(sessionId, userInput);
-        Session session = agentService.getLatestSession(sessionId);
-        
+
+        // 等待异步配置任务完成，最多等待 120 秒
+        Session session = null;
+        long start = System.currentTimeMillis();
+        long timeoutMillis = 120_000L;
+        try {
+            while (System.currentTimeMillis() - start < timeoutMillis) {
+                session = agentService.getLatestSession(sessionId);
+                if (session != null && session.getProgress() != null) {
+                    Integer current = session.getProgress().getCurrent();
+                    String msg = session.getProgress().getMessage();
+                    // 当进度已完成且消息为“配置完成”时认为任务结束
+                    if (current != null && "配置完成".equals(msg)) {
+                        break;
+                    }
+                }
+                Thread.sleep(200L);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            log.warn("等待会话生成结果时被中断，sessionId={}", sessionId, e);
+        }
+
+        if (session == null) {
+            log.warn("在超时时间内未能获取会话结果，sessionId={}", sessionId);
+            return ResponseEntity.internalServerError().build();
+        }
+
         return ResponseEntity.ok(session);
     }
 

@@ -228,12 +228,42 @@ public class CustomRestChatModel implements ChatModel {
 
     /**
      * 合并消息列表为单个文本
+     * 使用反射兼容 Spring AI 不同版本的消息结构：
+     * - 优先尝试 message.getText()
+     * - 然后尝试 message.getContent()
+     * - 最后回退到 message.toString()
      */
     private String mergeMessages(List<Message> messages) {
         StringBuilder sb = new StringBuilder();
+        if (messages == null) {
+            return "";
+        }
         for (Message message : messages) {
-            if (message.getContent() != null) {
-                sb.append(message.getContent()).append("\n");
+            if (message == null) {
+                continue;
+            }
+            String text = "";
+            Object target = message;
+            try {
+                java.lang.reflect.Method getText = target.getClass().getMethod("getText");
+                Object v = getText.invoke(target);
+                text = v != null ? v.toString() : "";
+            } catch (NoSuchMethodException e) {
+                try {
+                    java.lang.reflect.Method getContent = target.getClass().getMethod("getContent");
+                    Object v = getContent.invoke(target);
+                    text = v != null ? v.toString() : "";
+                } catch (NoSuchMethodException ex) {
+                    text = target.toString();
+                } catch (Exception ex) {
+                    log.debug("Failed to get message content via getContent: {}", ex.getMessage());
+                }
+            } catch (Exception e) {
+                log.debug("Failed to get message content via getText: {}", e.getMessage());
+            }
+
+            if (!text.isEmpty()) {
+                sb.append(text).append("\n");
             }
         }
         return sb.toString().trim();

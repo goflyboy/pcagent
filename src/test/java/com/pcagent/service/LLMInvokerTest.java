@@ -200,16 +200,17 @@ class LLMInvokerTest {
 
     /**
      * Mock ChatModel 响应
+     * 这里直接使用真实的 AssistantMessage 实例，避免依赖已删除的 getContent() 方法，
+     * LLMInvoker 会通过反射从 Generation 的 output 中提取文本。
      */
     private void mockChatModelResponse(String response) {
         ChatResponse chatResponse = mock(ChatResponse.class);
         Generation generation = mock(Generation.class);
-        AssistantMessage assistantMessage = mock(AssistantMessage.class);
+        AssistantMessage assistantMessage = new AssistantMessage(response);
 
         when(chatModel.call(any(Prompt.class))).thenReturn(chatResponse);
         when(chatResponse.getResult()).thenReturn(generation);
         when(generation.getOutput()).thenReturn(assistantMessage);
-        when(assistantMessage.getContent()).thenReturn(response);
     }
 
     /**

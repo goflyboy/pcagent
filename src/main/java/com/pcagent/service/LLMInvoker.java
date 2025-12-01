@@ -180,10 +180,29 @@ public class LLMInvoker {
                     log.debug("=== LLM 调用结束（无 Generation）===");
                 }
                 return "";
-            } 
-            
-            // Spring AI 1.0.0-M4 使用 getOutput().getContent() 方法
-            String content = generation.getOutput().getContent();
+            }
+
+            // 为兼容 Spring AI 不同版本，这里通过反射获取文本内容：
+            // - 优先尝试 output.getText()
+            // - 然后尝试 output.getContent()
+            // - 最后回退到 output.toString()
+            Object output = generation.getOutput();
+            String content = "";
+            if (output != null) {
+                try {
+                    java.lang.reflect.Method getText = output.getClass().getMethod("getText");
+                    Object v = getText.invoke(output);
+                    content = v != null ? v.toString() : "";
+                } catch (NoSuchMethodException ignore) {
+                    try {
+                        java.lang.reflect.Method getContent = output.getClass().getMethod("getContent");
+                        Object v = getContent.invoke(output);
+                        content = v != null ? v.toString() : "";
+                    } catch (NoSuchMethodException ignore2) {
+                        content = output.toString();
+                    }
+                }
+            }
             
             long callDuration = System.currentTimeMillis() - startTime;
             
