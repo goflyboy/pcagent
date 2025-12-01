@@ -5,8 +5,10 @@ import com.pcagent.service.PCAgentService;
 import com.pcagent.util.SessionUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,34 +36,17 @@ public class PCAgentController {
         String sessionId = SessionUtils.nextSessionId();
         agentService.doGeneratorConfig(sessionId, userInput);
 
-        // 等待异步配置任务完成，最多等待 120 秒
-        Session session = null;
-        long start = System.currentTimeMillis();
-        long timeoutMillis = 120_000L;
-        try {
-            while (System.currentTimeMillis() - start < timeoutMillis) {
-                session = agentService.getLatestSession(sessionId);
-                if (session != null && session.getProgress() != null) {
-                    Integer current = session.getProgress().getCurrent();
-                    String msg = session.getProgress().getMessage();
-                    // 当进度已完成且消息为“配置完成”时认为任务结束
-                    if (current != null && "配置完成".equals(msg)) {
-                        break;
-                    }
-                }
-                Thread.sleep(200L);
-            }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            log.warn("等待会话生成结果时被中断，sessionId={}", sessionId, e);
-        }
-
-        if (session == null) {
-            log.warn("在超时时间内未能获取会话结果，sessionId={}", sessionId);
-            return ResponseEntity.internalServerError().build();
-        }
-
+        // 立即返回当前会话基本信息（后续进度通过 SSE 推送）
+        Session session = agentService.getLatestSession(sessionId);
         return ResponseEntity.ok(session);
+    }
+
+    /**
+     * 订阅会话进度（Server-Sent Events）
+     */
+    @GetMapping(path = "/sessions/{session_id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter subscribeSession(@PathVariable("session_id") String sessionId) {
+        return agentService.registerSessionEmitter(sessionId);
     }
 
     // /**

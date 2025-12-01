@@ -68,7 +68,8 @@ export default {
       session: null,
       sessionId: null,
       loading: false,
-      pollInterval: null
+      pollInterval: null,
+      eventSource: null
     }
   },
   mounted() {
@@ -83,9 +84,8 @@ export default {
 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。`
   },
   beforeUnmount() {
-    if (this.pollInterval) {
-      clearInterval(this.pollInterval)
-    }
+    this.cleanupPolling()
+    this.cleanupEventSource()
   },
   methods: {
     async sendMessage() {
@@ -108,8 +108,8 @@ export default {
         this.session = response.data
         this.updateSessionDisplay()
 
-        // 开始轮询会话状态
-        this.startPolling()
+        // 使用 SSE 订阅会话进度
+        this.startEventStream()
       } catch (error) {
         console.error('Error creating session:', error)
         this.addSystemMessage('错误: ' + (error.response?.data?.message || error.message))
@@ -117,6 +117,7 @@ export default {
       }
     },
 
+    // 兼容保留：轮询方式（目前不再默认使用）
     async startPolling() {
       if (!this.sessionId) return
 
@@ -142,9 +143,51 @@ export default {
     },
 
     stopPolling() {
+      this.cleanupPolling()
+    },
+
+    cleanupPolling() {
       if (this.pollInterval) {
         clearInterval(this.pollInterval)
         this.pollInterval = null
+      }
+    },
+
+    startEventStream() {
+      this.cleanupEventSource()
+      if (!this.sessionId) return
+
+      const url = `/api/v1/sessions/${this.sessionId}/events`
+      this.eventSource = new EventSource(url)
+
+      this.eventSource.onmessage = (e) => {
+        try {
+          const session = JSON.parse(e.data)
+          this.session = session
+          this.updateSessionDisplay()
+
+          if (session.progress &&
+              session.progress.current >= session.progress.total) {
+            this.loading = false
+            this.addSystemMessage('配置完成！')
+            this.cleanupEventSource()
+          }
+        } catch (err) {
+          console.error('Error parsing SSE data:', err)
+        }
+      }
+
+      this.eventSource.onerror = (e) => {
+        console.error('SSE connection error:', e)
+        this.cleanupEventSource()
+        this.loading = false
+      }
+    },
+
+    cleanupEventSource() {
+      if (this.eventSource) {
+        this.eventSource.close()
+        this.eventSource = null
       }
     },
 

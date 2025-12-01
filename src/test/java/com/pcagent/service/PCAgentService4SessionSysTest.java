@@ -62,7 +62,8 @@ class PCAgentService4SessionSysTest {
         // 创建会话服务
         String sessionId = "test-session-sys-001";
         sessionService = new PCAgentService4Session(
-                sessionId, llmInvoker, specParserService, selectionService, configService);
+                sessionId, llmInvoker, specParserService, selectionService, configService,
+                s -> {});
     }
 
     /**
