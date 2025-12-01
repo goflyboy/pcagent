@@ -8,12 +8,26 @@ import org.springframework.ai.openai.api.OpenAiApi;
 /**
  * ChatModel 构建器
  * 用于根据环境变量创建 ChatModel 实例
- * 支持 DeepSeek 和通义千问（Qinwen）
+ * 支持自定义REST API、DeepSeek 和通义千问（Qinwen）
  * 
- * 注意：需要设置环境变量才能创建 ChatModel：
+ * 优先级顺序：
+ * 1. 自定义REST API（如果设置了 CUSTOM_LLM_API_URL）
+ * 2. DeepSeek（如果设置了 DEEPSEEK_API_KEY）
+ * 3. 通义千问（如果设置了 QINWEN_API_KEY）
+ * 
+ * 自定义REST API环境变量：
+ * - CUSTOM_LLM_API_URL: 第三方API的完整URL（必需）
+ * - CUSTOM_LLM_API_KEY: API密钥（可选）
+ * - CUSTOM_LLM_MODEL: 模型名称（可选）
+ * - CUSTOM_LLM_TEMPERATURE: 温度参数（可选，默认0.7）
+ * - CUSTOM_LLM_REQUEST_BODY_TEMPLATE: 请求体模板（可选，JSON格式）
+ * - CUSTOM_LLM_AUTH_HEADER: 认证头格式（可选，默认Bearer，支持：Bearer、X-API-Key或自定义格式）
+ * 
+ * DeepSeek环境变量：
  * - DEEPSEEK_API_KEY: DeepSeek API key
  * - DEEPSEEK_BASE_URL: DeepSeek API base URL (可选，默认: https://api.deepseek.com)
- * 或
+ * 
+ * 通义千问环境变量：
  * - QINWEN_API_KEY: 通义千问 API key
  * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
  */
@@ -26,12 +40,18 @@ public class ChatModelBuilder {
 
     /**
      * 创建 ChatModel（如果环境变量可用）
-     * 优先尝试 DeepSeek，如果不可用则尝试通义千问
+     * 优先级：自定义REST API > DeepSeek > 通义千问
      * 
      * @return ChatModel 实例，如果环境变量不可用则返回 null
      */
     public static ChatModel createIfAvailable() {
-        // 优先尝试 DeepSeek
+        // 优先尝试自定义REST API
+        CustomRestChatModel customModel = CustomRestChatModel.createIfAvailable();
+        if (customModel != null) {
+            return customModel;
+        }
+
+        // 尝试 DeepSeek
         String deepseekApiKey = getEnvVar("DEEPSEEK_API_KEY");
         if (deepseekApiKey != null && !deepseekApiKey.isEmpty()) {
             String baseUrl = getEnvVar("DEEPSEEK_BASE_URL", DEFAULT_DEEPSEEK_BASE_URL);

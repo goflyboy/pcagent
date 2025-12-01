@@ -16,12 +16,23 @@ import org.springframework.context.annotation.Configuration;
  * 3. 如果 ChatModel 不可用，LLMInvoker 会使用无参构造函数（使用简单解析）
  * 4. ProductConfigService 会自动注入 LLMInvoker（无论它是否有 ChatModel）
  * 
- * 注意：需要设置环境变量才能创建 ChatModel：
- * - DEEPSEEK_API_KEY: DeepSeek API key
- * - DEEPSEEK_BASE_URL: DeepSeek API base URL (可选，默认: https://api.deepseek.com)
- * 或
- * - QINWEN_API_KEY: 通义千问 API key
- * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
+ * 支持的ChatModel类型（按优先级）：
+ * 
+ * 1. 自定义REST API（CustomRestChatModel）：
+ *    - CUSTOM_LLM_API_URL: 第三方API的完整URL（必需）
+ *    - CUSTOM_LLM_API_KEY: API密钥（可选）
+ *    - CUSTOM_LLM_MODEL: 模型名称（可选）
+ *    - CUSTOM_LLM_TEMPERATURE: 温度参数（可选，默认0.7）
+ *    - CUSTOM_LLM_REQUEST_BODY_TEMPLATE: 请求体模板（可选，JSON格式，支持占位符：{prompt}, {model}, {temperature}）
+ *    - CUSTOM_LLM_AUTH_HEADER: 认证头格式（可选，默认Bearer，支持：Bearer、X-API-Key或自定义格式如"HeaderName:HeaderValue"）
+ * 
+ * 2. DeepSeek：
+ *    - DEEPSEEK_API_KEY: DeepSeek API key
+ *    - DEEPSEEK_BASE_URL: DeepSeek API base URL (可选，默认: https://api.deepseek.com)
+ * 
+ * 3. 通义千问（Qinwen）：
+ *    - QINWEN_API_KEY: 通义千问 API key
+ *    - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
  */
 @Slf4j
 @Configuration
