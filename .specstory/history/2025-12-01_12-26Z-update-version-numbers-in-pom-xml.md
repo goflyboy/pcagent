@@ -13745,3 +13745,1900 @@ mvn -q compile
 
 ---
 
+
+检查编译错误，并优化 Windows 下的处理：
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/cli/PCAgentChat.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
+
+**Chunk 1**
+Lines added: 7, lines removed: 14
+
+```diff
+@@ -38,22 +38,15 @@
+          IS_WINDOWS = System.getProperty(&quot;os.name&quot;, &quot;&quot;).toLowerCase().contains(&quot;windows&quot;);
+          
+-         // 检测是否支持 ANSI（Windows 10 1809+ 需要启用，或者使用 Windows Terminal）
++         // 检测是否支持 ANSI
++         // Windows: 默认不支持（避免乱码），除非使用 Windows Terminal 或 Git Bash
++         // Linux/Mac: 通常支持
+          boolean supportsAnsi = false;
+          if (IS_WINDOWS) {
+-             // Windows: 检查环境变量或尝试启用 ANSI
++             // Windows: 检查是否在 Windows Terminal 或 Git Bash 中运行
+              String term = System.getenv(&quot;TERM&quot;);
+              String wtSession = System.getenv(&quot;WT_SESSION&quot;);
+-             supportsAnsi = (term != null &amp;&amp; !term.isEmpty()) || (wtSession != null);
+-             
+-             // 尝试启用 ANSI（Windows 10+）
+-             try {
+-                 if (!supportsAnsi) {
+-                     // 尝试通过 JNA 或其他方式启用，这里简化处理
+-                     // 如果使用 Windows Terminal 或 Git Bash，通常已经支持
+-                     supportsAnsi = false; // 默认禁用，避免乱码
+-                 }
+-             } catch (Exception e) {
+-                 // 忽略
+-             }
++             String msystem = System.getenv(&quot;MSYSTEM&quot;); // Git Bash
++             supportsAnsi = (wtSession != null) || // Windows Terminal
++                           (msystem != null &amp;&amp; msystem.startsWith(&quot;MINGW&quot;)); // Git Bash
+          } else {
+              // Linux/Mac 通常支持 ANSI
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+已修复 Windows 下的乱码问题。主要改动：
+
+## 修复内容
+
+### 1. **ANSI 颜色码检测**
+- 自动检测是否支持 ANSI（Windows Terminal 或 Git Bash）
+- 如果不支持，自动禁用颜色输出，避免显示 `[1m[36m` 等乱码
+- 在 Windows 普通 cmd 中会显示提示信息
+
+### 2. **UTF-8 编码支持**
+- 在 `run-cli.bat` 中添加 `chcp 65001` 设置 UTF-8 代码页
+- 在 Java 代码中设置 UTF-8 输出流
+- 解决中文显示为 `????????` 的问题
+
+### 3. **改进的脚本**
+- `run-cli.bat` 现在会自动设置 UTF-8 编码
+- 添加了 JVM 参数确保编码正确
+
+## 使用方式
+
+现在可以直接运行：
+
+```bash
+run-cli.bat
+```
+
+**效果：**
+- ✅ 中文正常显示（不再有 `????????`）
+- ✅ 无 ANSI 乱码（在普通 cmd 中会禁用颜色，但文本正常）
+- ✅ 如果使用 Windows Terminal 或 Git Bash，会显示彩色输出
+
+**提示：**
+- 在普通 Windows cmd 中：无颜色，但文本正常显示
+- 在 Windows Terminal 或 Git Bash 中：有彩色输出
+
+请重新运行 `run-cli.bat` 测试，应该可以正常显示中文且无乱码。
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+@PCAgentService4Session.java (99-103)   大模型解析出 specReqItems不文档，有有是有空格，特殊字符等，不好匹配，做下列处理，对解析出specReqItems特殊符号的处理：去掉所有空格，所有特殊符号替换为英文符号，例如：中文逗号替换为英文符号，要写一个StringHelp类处理，这里调用
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+创建 `StringHelper` 工具类，用于处理 `specReqItems` 中的特殊字符，并在 `PCAgentService4Session` 中调用。
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/ConfigReq.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+**Chunk 1**
+Lines added: 118, lines removed: 1
+
+```diff
+@@ -1,1 +1,118 @@
+- 
++ package com.pcagent.util;
++ 
++ import java.util.ArrayList;
++ import java.util.List;
++ 
++ /**
++  * 字符串处理工具类
++  * 用于处理配置需求中的特殊字符和格式问题
++  */
++ public class StringHelper {
++     
++     /**
++      * 规范化规格需求项列表
++      * 处理内容：
++      * 1. 去掉所有空格
++      * 2. 将中文标点符号替换为英文标点符号
++      * 3. 统一特殊字符格式
++      * 
++      * @param specReqItems 原始规格需求项列表
++      * @return 规范化后的规格需求项列表
++      */
++     public static List&lt;String&gt; normalizeSpecReqItems(List&lt;String&gt; specReqItems) {
++         if (specReqItems == null || specReqItems.isEmpty()) {
++             return new ArrayList&lt;&gt;();
++         }
++         
++         List&lt;String&gt; normalized = new ArrayList&lt;&gt;();
++         for (String item : specReqItems) {
++             if (item != null &amp;&amp; !item.trim().isEmpty()) {
++                 String normalizedItem = normalizeSpecReqItem(item);
++                 if (!normalizedItem.isEmpty()) {
++                     normalized.add(normalizedItem);
++                 }
++             }
++         }
++         return normalized;
++     }
++     
++     /**
++      * 规范化单个规格需求项
++      * 
++      * @param item 原始规格需求项
++      * @return 规范化后的规格需求项
++      */
++     public static String normalizeSpecReqItem(String item) {
++         if (item == null) {
++             return &quot;&quot;;
++         }
++         
++         String result = item;
++         
++         // 1. 替换中文标点符号为英文标点符号
++         result = replaceChinesePunctuation(result);
++         
++         // 2. 去掉所有空格
++         result = result.replaceAll(&quot;\\s+&quot;, &quot;&quot;);
++         
++         return result;
++     }
++     
++     /**
++      * 替换中文标点符号为英文标点符号
++      * 
++      * @param text 原始文本
++      * @return 替换后的文本
++      */
++     private static String replaceChinesePunctuation(String text) {
++         if (text == null || text.isEmpty()) {
++             return text;
++         }
++         
++         // 中文标点符号到英文标点符号的映射
++         return text
++                 // 逗号
++                 .replace(&quot;，&quot;, &quot;,&quot;)
++                 .replace(&quot;。&quot;, &quot;.&quot;)
++                 .replace(&quot;；&quot;, &quot;;&quot;)
++                 .replace(&quot;：&quot;, &quot;:&quot;)
++                 // 括号
++                 .replace(&quot;（&quot;, &quot;(&quot;)
++                 .replace(&quot;）&quot;, &quot;)&quot;)
++                 .replace(&quot;【&quot;, &quot;[&quot;)
++                 .replace(&quot;】&quot;, &quot;]&quot;)
++                 .replace(&quot;「&quot;, &quot;[&quot;)
++                 .replace(&quot;」&quot;, &quot;]&quot;)
++                 // 引号
++                 .replace(&quot;&quot;&quot;, &quot;\&quot;&quot;)
++                 .replace(&quot;&quot;&quot;, &quot;\&quot;&quot;)
++                 .replace(&quot;&#39;&quot;, &quot;&#39;&quot;)
++                 .replace(&quot;&#39;&quot;, &quot;&#39;&quot;)
++                 // 其他符号
++                 .replace(&quot;？&quot;, &quot;?&quot;)
++                 .replace(&quot;！&quot;, &quot;!&quot;)
++                 .replace(&quot;、&quot;, &quot;,&quot;)
++                 .replace(&quot;—&quot;, &quot;-&quot;)
++                 .replace(&quot;–&quot;, &quot;-&quot;)
++                 .replace(&quot;…&quot;, &quot;...&quot;)
++                 // 全角字符
++                 .replace(&quot;（&quot;, &quot;(&quot;)
++                 .replace(&quot;）&quot;, &quot;)&quot;)
++                 .replace(&quot;【&quot;, &quot;[&quot;)
++                 .replace(&quot;】&quot;, &quot;]&quot;);
++     }
++     
++     /**
++      * 规范化单个字符串（去掉空格，替换特殊字符）
++      * 
++      * @param text 原始文本
++      * @return 规范化后的文本
++      */
++     public static String normalize(String text) {
++         if (text == null) {
++             return &quot;&quot;;
++         }
++         return normalizeSpecReqItem(text);
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -4,4 +4,5 @@
+  import com.pcagent.model.*;
+  import com.pcagent.util.SessionUtils;
++ import com.pcagent.util.StringHelper;
+  import lombok.Getter;
+  import lombok.RequiredArgsConstructor;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+**Chunk 1**
+Lines added: 8, lines removed: undefined
+
+```diff
+@@ -55,4 +55,12 @@
+              ConfigReq req = parseConfigReq(userInput);
+              validConfigReq(req);
++             
++             // 规范化 specReqItems：去掉空格，替换特殊字符
++             if (req.getSpecReqItems() != null &amp;&amp; !req.getSpecReqItems().isEmpty()) {
++                 List&lt;String&gt; normalizedItems = StringHelper.normalizeSpecReqItems(req.getSpecReqItems());
++                 req.setSpecReqItems(normalizedItems);
++                 log.debug(&quot;Normalized specReqItems: {} -&gt; {}&quot;, req.getSpecReqItems().size(), normalizedItems.size());
++             }
++             
+              SessionUtils.updateSession4NextStep(currentSession, req, Plan.STEP1);
+              notifySessionUpdated();
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查编译错误，并验证实现是否正确：
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/util/StringHelper.java`
+- `src/main/java/com/pcagent/service/PCAgentService4Session.java`
+
+Lint results
+
+Lint errors for `src/main/java/com/pcagent/service/PCAgentService4Session.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The import lombok.RequiredArgsConstructor is never used | 8:8-8:38 | DIAGNOSTIC_SEVERITY_WARNING |
+
+
+Lint errors for `src/main/java/com/pcagent/util/StringHelper.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The method replace(char, char) in the type String is not applicable for the arguments (String) | 87:18-87:25 | DIAGNOSTIC_SEVERITY_ERROR |
+| Syntax error on tokens, delete these tokens | 87:28-87:35 | DIAGNOSTIC_SEVERITY_ERROR |
+| Syntax error on tokens, delete these tokens | 88:28-88:35 | DIAGNOSTIC_SEVERITY_ERROR |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复编译错误：引号替换需要转义。
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+**Chunk 1**
+Lines added: 4, lines removed: 4
+
+```diff
+@@ -85,8 +85,8 @@
+                  .replace(&quot;」&quot;, &quot;]&quot;)
+                  // 引号
+-                 .replace(&quot;&quot;&quot;, &quot;\&quot;&quot;)
+-                 .replace(&quot;&quot;&quot;, &quot;\&quot;&quot;)
+-                 .replace(&quot;&#39;&quot;, &quot;&#39;&quot;)
+-                 .replace(&quot;&#39;&quot;, &quot;&#39;&quot;)
++                 .replace(&quot;\u201C&quot;, &quot;\&quot;&quot;)  // 左双引号
++                 .replace(&quot;\u201D&quot;, &quot;\&quot;&quot;)  // 右双引号
++                 .replace(&quot;\u2018&quot;, &quot;&#39;&quot;)  // 左单引号
++                 .replace(&quot;\u2019&quot;, &quot;&#39;&quot;)  // 右单引号
+                  // 其他符号
+                  .replace(&quot;？&quot;, &quot;?&quot;)
+```
+
+</details>
+
+</tool-use>
+
+---
+
+The string to replace was not found in the file.
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+移除未使用的导入：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 1
+
+```diff
+@@ -6,5 +6,4 @@
+  import com.pcagent.util.StringHelper;
+  import lombok.Getter;
+- import lombok.RequiredArgsConstructor;
+  import lombok.extern.slf4j.Slf4j;
+  import com.pcagent.util.Pair;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/util/StringHelper.java`
+- `src/main/java/com/pcagent/service/PCAgentService4Session.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证实现并检查是否有遗漏：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+移除重复的替换：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 6
+
+```diff
+@@ -95,10 +95,5 @@
+                  .replace(&quot;—&quot;, &quot;-&quot;)
+                  .replace(&quot;–&quot;, &quot;-&quot;)
+-                 .replace(&quot;…&quot;, &quot;...&quot;)
+-                 // 全角字符
+-                 .replace(&quot;（&quot;, &quot;(&quot;)
+-                 .replace(&quot;）&quot;, &quot;)&quot;)
+-                 .replace(&quot;【&quot;, &quot;[&quot;)
+-                 .replace(&quot;】&quot;, &quot;]&quot;);
++                 .replace(&quot;…&quot;, &quot;...&quot;);
+      }
+      
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+已完成。总结如下：
+
+## 完成的工作
+
+### 1. 创建 `StringHelper` 工具类
+位置：`src/main/java/com/pcagent/util/StringHelper.java`
+
+功能：
+- `normalizeSpecReqItems(List<String>)`: 规范化规格需求项列表
+- `normalizeSpecReqItem(String)`: 规范化单个规格需求项
+- `replaceChinesePunctuation(String)`: 将中文标点替换为英文标点
+
+处理内容：
+- 去掉所有空格（使用 `\s+` 正则）
+- 中文标点替换为英文标点：
+  - 中文逗号 `，` → 英文逗号 `,`
+  - 中文句号 `。` → 英文句号 `.`
+  - 中文分号 `；` → 英文分号 `;`
+  - 中文冒号 `：` → 英文冒号 `:`
+  - 中文括号 `（）` → 英文括号 `()`
+  - 中文引号 `""` → 英文引号 `""`
+  - 以及其他常见中文标点符号
+
+### 2. 在 `PCAgentService4Session` 中调用
+- 在 `doGeneratorConfig` 方法中，解析 `ConfigReq` 后立即规范化 `specReqItems`
+- 在调用 `parseProductSpecs` 之前完成规范化，确保后续匹配更准确
+
+### 3. 处理流程
+```
+LLM 解析 → ConfigReq → 规范化 specReqItems → 验证 → 使用规范化后的数据
+```
+
+代码已编译通过，可以正常使用。规范化后的 `specReqItems` 将：
+- 无空格
+- 使用英文标点符号
+- 便于后续匹配和处理
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+参考这个对 @StringHelper.java (45-47) 写测试用例，要求逻辑覆盖   ，参考这个输输入： 内存：配置≥256GB DDR4 ECC Registered内存
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看现有测试结构，然后为 `StringHelper` 编写测试用例：
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="list_dir">
+<details>
+            <summary>Tool use: **list_directory** • Listed directory undefined • **0** results</summary>
+        
+No results found
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "*Test.java" • **11** results in **1** directory</summary>
+
+Directory: **d:\01.code\mygithub\pcagent\src\test\java\com\pcagent** (11 files)
+
+| File |
+|------|
+| `controller\PCAgentControllerSysTest.java` |
+| `service\PCAgentService4SessionTest.java` |
+| `service\PCAgentService4SessionSysTest.java` |
+| `service\LLMInvokerTest.java` |
+| `service\ProductConfigServiceTest.java` |
+| `service\ProductConfigService4CheckerTest.java` |
+| `service\LLMInvokerSysTest.java` |
+| `service\ProductConfigService4ParameterIntentTest.java` |
+| `service\ProductSpecificationParserServiceTest.java` |
+| `service\ProductSelectionServiceTest.java` |
+| `service\ProductOntoService4LocalTest.java` |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/LLMInvokerTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+创建 `StringHelper` 的测试用例：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+**Chunk 1**
+Lines added: 298, lines removed: 1
+
+```diff
+@@ -1,1 +1,298 @@
+- 
++ package com.pcagent.util;
++ 
++ import org.junit.jupiter.api.Test;
++ 
++ import java.util.ArrayList;
++ import java.util.Arrays;
++ import java.util.List;
++ 
++ import static org.junit.jupiter.api.Assertions.*;
++ 
++ /**
++  * StringHelper 测试类
++  */
++ class StringHelperTest {
++ 
++     @Test
++     void testNormalizeSpecReqItem_NullInput() {
++         // 测试 null 输入
++         String result = StringHelper.normalizeSpecReqItem(null);
++         assertEquals(&quot;&quot;, result, &quot;null 输入应该返回空字符串&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_EmptyString() {
++         // 测试空字符串
++         String result = StringHelper.normalizeSpecReqItem(&quot;&quot;);
++         assertEquals(&quot;&quot;, result, &quot;空字符串应该返回空字符串&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_WhitespaceOnly() {
++         // 测试只有空格的字符串
++         String result = StringHelper.normalizeSpecReqItem(&quot;   &quot;);
++         assertEquals(&quot;&quot;, result, &quot;只有空格的字符串应该返回空字符串&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ReferenceInput() {
++         // 测试参考输入：内存：配置≥256GB DDR4 ECC Registered内存
++         String input = &quot;内存：配置≥256GB DDR4 ECC Registered内存&quot;;
++         String expected = &quot;内存:配置≥256GBDDR4ECCRegistered内存&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;应该去掉空格，中文冒号替换为英文冒号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_RemoveSpaces() {
++         // 测试去掉空格
++         String input = &quot;CPU: 最新一代 Intel Xeon 处理器&quot;;
++         String expected = &quot;CPU:最新一代IntelXeon处理器&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;应该去掉所有空格&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseComma() {
++         // 测试中文逗号替换
++         String input = &quot;内存：256GB，512GB，1024GB&quot;;
++         String expected = &quot;内存:256GB,512GB,1024GB&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文逗号应该替换为英文逗号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseColon() {
++         // 测试中文冒号替换
++         String input = &quot;CPU：核心数≥16核&quot;;
++         String expected = &quot;CPU:核心数≥16核&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文冒号应该替换为英文冒号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseParentheses() {
++         // 测试中文括号替换
++         String input = &quot;内存（DDR4）配置&quot;;
++         String expected = &quot;内存(DDR4)配置&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文括号应该替换为英文括号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseBrackets() {
++         // 测试中文方括号替换
++         String input = &quot;CPU【Intel Xeon】处理器&quot;;
++         String expected = &quot;CPU[IntelXeon]处理器&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文方括号应该替换为英文方括号，并去掉空格&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseQuotationMarks() {
++         // 测试中文引号替换
++         String input = &quot;配置&quot;高端&quot;服务器&quot;;
++         String expected = &quot;配置\&quot;高端\&quot;服务器&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文引号应该替换为英文引号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseSemicolon() {
++         // 测试中文分号替换
++         String input = &quot;CPU：16核；内存：256GB&quot;;
++         String expected = &quot;CPU:16核;内存:256GB&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文分号应该替换为英文分号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChinesePeriod() {
++         // 测试中文句号替换
++         String input = &quot;配置完成。&quot;;
++         String expected = &quot;配置完成.&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文句号应该替换为英文句号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseQuestionMark() {
++         // 测试中文问号替换
++         String input = &quot;是否需要？&quot;;
++         String expected = &quot;是否需要?&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文问号应该替换为英文问号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseExclamation() {
++         // 测试中文感叹号替换
++         String input = &quot;重要！&quot;;
++         String expected = &quot;重要!&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文感叹号应该替换为英文感叹号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseDash() {
++         // 测试中文破折号替换
++         String input = &quot;配置—完成&quot;;
++         String expected = &quot;配置-完成&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文破折号应该替换为英文短横线&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChineseEllipsis() {
++         // 测试中文省略号替换
++         String input = &quot;配置中…&quot;;
++         String expected = &quot;配置中...&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文省略号应该替换为三个英文句号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ChinesePauseMark() {
++         // 测试中文顿号替换
++         String input = &quot;CPU、内存、硬盘&quot;;
++         String expected = &quot;CPU,内存,硬盘&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中文顿号应该替换为英文逗号&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_MultipleSpaces() {
++         // 测试多个空格
++         String input = &quot;CPU:    16核    内存:    256GB&quot;;
++         String expected = &quot;CPU:16核内存:256GB&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;多个空格应该全部去掉&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_TabAndNewline() {
++         // 测试制表符和换行符
++         String input = &quot;CPU:\t16核\n内存:\t256GB&quot;;
++         String expected = &quot;CPU:16核内存:256GB&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;制表符和换行符应该被去掉&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_ComplexExample() {
++         // 测试复杂示例：包含多种中文标点和空格
++         String input = &quot;CPU：最新一代Intel® Xeon® Scalable处理器，核心数≥16核；内存：配置≥256GB DDR4 ECC Registered内存。&quot;;
++         String expected = &quot;CPU:最新一代Intel®Xeon®Scalable处理器,核心数≥16核;内存:配置≥256GBDDR4ECCRegistered内存.&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;复杂示例应该正确规范化&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_NoChangesNeeded() {
++         // 测试无需更改的输入（已经是规范化格式）
++         String input = &quot;CPU:16核,内存:256GB&quot;;
++         String expected = &quot;CPU:16核,内存:256GB&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;已经是规范化格式的输入应该保持不变&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_SpecialCharacters() {
++         // 测试特殊字符（如≥、®等）应该保留
++         String input = &quot;CPU：核心数≥16核，Intel®处理器&quot;;
++         String expected = &quot;CPU:核心数≥16核,Intel®处理器&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;特殊字符（≥、®）应该保留&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItems_NullInput() {
++         // 测试 null 列表
++         List&lt;String&gt; result = StringHelper.normalizeSpecReqItems(null);
++         assertNotNull(result, &quot;null 输入应该返回非 null 列表&quot;);
++         assertTrue(result.isEmpty(), &quot;null 输入应该返回空列表&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItems_EmptyList() {
++         // 测试空列表
++         List&lt;String&gt; input = new ArrayList&lt;&gt;();
++         List&lt;String&gt; result = StringHelper.normalizeSpecReqItems(input);
++         assertNotNull(result, &quot;空列表应该返回非 null 列表&quot;);
++         assertTrue(result.isEmpty(), &quot;空列表应该返回空列表&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItems_NormalList() {
++         // 测试正常列表
++         List&lt;String&gt; input = Arrays.asList(
++                 &quot;CPU：核心数≥16核&quot;,
++                 &quot;内存：配置≥256GB DDR4 ECC Registered内存&quot;,
++                 &quot;硬盘：SSD 1TB&quot;
++         );
++         List&lt;String&gt; expected = Arrays.asList(
++                 &quot;CPU:核心数≥16核&quot;,
++                 &quot;内存:配置≥256GBDDR4ECCRegistered内存&quot;,
++                 &quot;硬盘:SSD1TB&quot;
++         );
++         List&lt;String&gt; result = StringHelper.normalizeSpecReqItems(input);
++         assertEquals(expected.size(), result.size(), &quot;列表大小应该相同&quot;);
++         for (int i = 0; i &lt; expected.size(); i++) {
++             assertEquals(expected.get(i), result.get(i), 
++                     &quot;第 &quot; + (i + 1) + &quot; 项应该正确规范化&quot;);
++         }
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItems_WithNullItems() {
++         // 测试包含 null 项的列表
++         List&lt;String&gt; input = Arrays.asList(
++                 &quot;CPU：16核&quot;,
++                 null,
++                 &quot;内存：256GB&quot;,
++                 &quot;&quot;,
++                 &quot;   &quot;,
++                 &quot;硬盘：1TB&quot;
++         );
++         List&lt;String&gt; result = StringHelper.normalizeSpecReqItems(input);
++         assertEquals(3, result.size(), &quot;应该过滤掉 null、空字符串和只有空格的项&quot;);
++         assertEquals(&quot;CPU:16核&quot;, result.get(0));
++         assertEquals(&quot;内存:256GB&quot;, result.get(1));
++         assertEquals(&quot;硬盘:1TB&quot;, result.get(2));
++     }
++ 
++     @Test
++     void testNormalize_Method() {
++         // 测试 normalize 方法（应该和 normalizeSpecReqItem 行为一致）
++         String input = &quot;内存：配置≥256GB DDR4 ECC Registered内存&quot;;
++         String expected = &quot;内存:配置≥256GBDDR4ECCRegistered内存&quot;;
++         String result = StringHelper.normalize(input);
++         assertEquals(expected, result, &quot;normalize 方法应该和 normalizeSpecReqItem 行为一致&quot;);
++     }
++ 
++     @Test
++     void testNormalize_NullInput() {
++         // 测试 normalize 方法的 null 输入
++         String result = StringHelper.normalize(null);
++         assertEquals(&quot;&quot;, result, &quot;null 输入应该返回空字符串&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_MixedChineseAndEnglish() {
++         // 测试中英文混合
++         String input = &quot;CPU：Intel® Xeon® 处理器，核心数≥16核&quot;;
++         String expected = &quot;CPU:Intel®Xeon®处理器,核心数≥16核&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;中英文混合应该正确处理&quot;);
++     }
++ 
++     @Test
++     void testNormalizeSpecReqItem_AllChinesePunctuation() {
++         // 测试所有中文标点符号
++         String input = &quot;测试，。；：（）【】「」&quot;&quot;&#39;&#39;？！、—–…&quot;;
++         String expected = &quot;测试,.;:()[][]\&quot;\&quot;&#39;&#39;?!,---...&quot;;
++         String result = StringHelper.normalizeSpecReqItem(input);
++         assertEquals(expected, result, &quot;所有中文标点符号应该正确替换&quot;);
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test -Dtest=StringHelperTest</summary>
+
+```bash
+mvn -q test -Dtest=StringHelperTest
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查测试是否编译通过，并再次运行：
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/util/StringHelperTest.java`
+
+Lint results
+
+Lint errors for `src/test/java/com/pcagent/util/StringHelperTest.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The left-hand side of an assignment must be a variable | 94:24-94:28 | DIAGNOSTIC_SEVERITY_ERROR |
+| Syntax error on token "高端", invalid AssignmentOperator | 94:28-94:30 | DIAGNOSTIC_SEVERITY_ERROR |
+| Syntax error on token ""''？！、—–…"", delete this token | 292:38-292:48 | DIAGNOSTIC_SEVERITY_ERROR |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test-compile</summary>
+
+```bash
+mvn -q test-compile
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=StringHelperTest 2>&1 | findstr /C:"Tests run" /C:"BUILD" /C:"ERROR"</summary>
+
+```bash
+mvn test -Dtest=StringHelperTest 2>&1 | findstr /C:"Tests run" /C:"BUILD" /C:"ERROR"
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复测试代码中的引号问题：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -92,5 +92,5 @@
+      void testNormalizeSpecReqItem_ChineseQuotationMarks() {
+          // 测试中文引号替换
+-         String input = &quot;配置&quot;高端&quot;服务器&quot;;
++         String input = &quot;配置&quot; + &quot;\u201C&quot; + &quot;高端&quot; + &quot;\u201D&quot; + &quot;服务器&quot;;
+          String expected = &quot;配置\&quot;高端\&quot;服务器&quot;;
+          String result = StringHelper.normalizeSpecReqItem(input);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -290,5 +290,5 @@
+      void testNormalizeSpecReqItem_AllChinesePunctuation() {
+          // 测试所有中文标点符号
+-         String input = &quot;测试，。；：（）【】「」&quot;&quot;&#39;&#39;？！、—–…&quot;;
++         String input = &quot;测试，。；：（）【】「」&quot; + &quot;\u201C\u201D&quot; + &quot;\u2018\u2019&quot; + &quot;？！、—–…&quot;;
+          String expected = &quot;测试,.;:()[][]\&quot;\&quot;&#39;&#39;?!,---...&quot;;
+          String result = StringHelper.normalizeSpecReqItem(input);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test-compile</summary>
+
+```bash
+mvn -q test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查是否还有其他错误，并运行测试：
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/util/StringHelperTest.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test -Dtest=StringHelperTest</summary>
+
+```bash
+mvn -q test -Dtest=StringHelperTest
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证测试是否通过：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn test -Dtest=StringHelperTest 2>&1 | findstr /C:"Tests run" /C:"BUILD" /C:"ERROR" /C:"FAILURE" /C:"SUCCESS"</summary>
+
+```bash
+mvn test -Dtest=StringHelperTest 2>&1 | findstr /C:"Tests run" /C:"BUILD" /C:"ERROR" /C:"FAILURE" /C:"SUCCESS"
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/util/StringHelperTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+已创建 `StringHelper` 的测试用例。总结如下：
+
+## 测试用例总结
+
+### 测试文件
+`src/test/java/com/pcagent/util/StringHelperTest.java`
+
+### 测试覆盖范围
+
+#### 1. **边界情况测试**
+- `testNormalizeSpecReqItem_NullInput`: null 输入
+- `testNormalizeSpecReqItem_EmptyString`: 空字符串
+- `testNormalizeSpecReqItem_WhitespaceOnly`: 只有空格
+
+#### 2. **参考输入测试**
+- `testNormalizeSpecReqItem_ReferenceInput`: 测试参考输入
+  - 输入：`"内存：配置≥256GB DDR4 ECC Registered内存"`
+  - 期望：`"内存:配置≥256GBDDR4ECCRegistered内存"`
+  - 验证：去掉空格，中文冒号替换为英文冒号
+
+#### 3. **空格处理测试**
+- `testNormalizeSpecReqItem_RemoveSpaces`: 普通空格
+- `testNormalizeSpecReqItem_MultipleSpaces`: 多个连续空格
+- `testNormalizeSpecReqItem_TabAndNewline`: 制表符和换行符
+
+#### 4. **中文标点符号替换测试**
+- `testNormalizeSpecReqItem_ChineseComma`: 中文逗号 `，` → `,`
+- `testNormalizeSpecReqItem_ChineseColon`: 中文冒号 `：` → `:`
+- `testNormalizeSpecReqItem_ChineseSemicolon`: 中文分号 `；` → `;`
+- `testNormalizeSpecReqItem_ChinesePeriod`: 中文句号 `。` → `.`
+- `testNormalizeSpecReqItem_ChineseParentheses`: 中文括号 `（）` → `()`
+- `testNormalizeSpecReqItem_ChineseBrackets`: 中文方括号 `【】` → `[]`
+- `testNormalizeSpecReqItem_ChineseQuotationMarks`: 中文引号 `""` → `""`
+- `testNormalizeSpecReqItem_ChineseQuestionMark`: 中文问号 `？` → `?`
+- `testNormalizeSpecReqItem_ChineseExclamation`: 中文感叹号 `！` → `!`
+- `testNormalizeSpecReqItem_ChineseDash`: 中文破折号 `—` → `-`
+- `testNormalizeSpecReqItem_ChineseEllipsis`: 中文省略号 `…` → `...`
+- `testNormalizeSpecReqItem_ChinesePauseMark`: 中文顿号 `、` → `,`
+- `testNormalizeSpecReqItem_AllChinesePunctuation`: 所有中文标点符号
+
+#### 5. **特殊字符测试**
+- `testNormalizeSpecReqItem_SpecialCharacters`: 特殊字符（≥、®）应该保留
+- `testNormalizeSpecReqItem_MixedChineseAndEnglish`: 中英文混合
+
+#### 6. **复杂场景测试**
+- `testNormalizeSpecReqItem_ComplexExample`: 复杂示例（多种标点和空格）
+- `testNormalizeSpecReqItem_NoChangesNeeded`: 已经是规范化格式的输入
+
+#### 7. **列表处理测试**
+- `testNormalizeSpecReqItems_NullInput`: null 列表
+- `testNormalizeSpecReqItems_EmptyList`: 空列表
+- `testNormalizeSpecReqItems_NormalList`: 正常列表
+- `testNormalizeSpecReqItems_WithNullItems`: 包含 null、空字符串的列表
+
+#### 8. **normalize 方法测试**
+- `testNormalize_Method`: normalize 方法行为验证
+- `testNormalize_NullInput`: normalize 方法的 null 输入
+
+### 测试统计
+- 总共 28 个测试用例
+- 覆盖所有主要功能点
+- 包含边界情况和异常情况
+- 包含参考输入的测试
+
+测试代码已编译通过，可以运行测试验证功能。
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+@ProductOntoData.java (35-36) @ProductOntoService4Local.java (27) 在init加载后，对 orgSpecReqToStdSpecReqMap的key做一下特殊符号处理（调用StringHelper.normalizeSpecReqItem）
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看相关代码，在数据加载后对 `orgSpecReqToStdSpecReqMap` 的 key 进行规范化处理：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/model/ProductOntoData.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/StringHelper.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+在 `init()` 方法中，加载数据后对 `orgSpecReqToStdSpecReqMap` 的 key 进行规范化处理：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -5,4 +5,5 @@
+  import com.pcagent.util.CommHelper;
+  import com.pcagent.util.ProductOntoUtils;
++ import com.pcagent.util.StringHelper;
+  import lombok.extern.slf4j.Slf4j;
+  import org.springframework.stereotype.Service;
+```
+
+**Chunk 2**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -12,5 +13,7 @@
+  import java.util.ArrayList;
+  import java.util.Arrays;
++ import java.util.HashMap;
+  import java.util.List;
++ import java.util.Map;
+  import java.util.stream.Collectors;
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+**Chunk 1**
+Lines added: 60, lines removed: 2
+
+```diff
+@@ -33,10 +33,68 @@
+              this.data = ProductOntoUtils.fromJsonFile(dataPath, ProductOntoData.class);
+              log.info(&quot;Product ontology data loaded successfully from: {}&quot;, dataPath);
++             
++             // 对 orgSpecReqToStdSpecReqMap 的 key 进行规范化处理
++             normalizeOrgSpecReqToStdSpecReqMap();
+          } catch (IOException e) {
+              log.error(&quot;Failed to load product ontology data&quot;, e);
+              this.data = new ProductOntoData();
+          }
+- 
+-         
++     }
++     
++     /**
++      * 规范化 orgSpecReqToStdSpecReqMap 的 key
++      * 对原始规格请求的 key 进行特殊符号处理（去掉空格，替换中文标点为英文标点）
++      */
++     private void normalizeOrgSpecReqToStdSpecReqMap() {
++         if (data == null || data.getOrgSpecReqToStdSpecReqMap() == null) {
++             return;
++         }
++         
++         Map&lt;String, List&lt;Specification&gt;&gt; originalMap = data.getOrgSpecReqToStdSpecReqMap();
++         if (originalMap.isEmpty()) {
++             return;
++         }
++         
++         Map&lt;String, List&lt;Specification&gt;&gt; normalizedMap = new HashMap&lt;&gt;();
++         int normalizedCount = 0;
++         int duplicateCount = 0;
++         
++         for (Map.Entry&lt;String, List&lt;Specification&gt;&gt; entry : originalMap.entrySet()) {
++             String originalKey = entry.getKey();
++             List&lt;Specification&gt; value = entry.getValue();
++             
++             // 规范化 key
++             String normalizedKey = StringHelper.normalizeSpecReqItem(originalKey);
++             
++             // 如果 key 发生变化，记录日志
++             if (!originalKey.equals(normalizedKey)) {
++                 normalizedCount++;
++                 log.debug(&quot;Normalized spec req key: &#39;{}&#39; -&gt; &#39;{}&#39;&quot;, originalKey, normalizedKey);
++             }
++             
++             // 处理 key 规范化后可能重复的情况
++             if (normalizedMap.containsKey(normalizedKey)) {
++                 // 如果 key 重复，合并 value 列表（去重）
++                 List&lt;Specification&gt; existingSpecs = normalizedMap.get(normalizedKey);
++                 List&lt;Specification&gt; newSpecs = new ArrayList&lt;&gt;(existingSpecs);
++                 for (Specification spec : value) {
++                     if (!newSpecs.contains(spec)) {
++                         newSpecs.add(spec);
++                     }
++                 }
++                 normalizedMap.put(normalizedKey, newSpecs);
++                 duplicateCount++;
++                 log.warn(&quot;Duplicate normalized key found: &#39;{}&#39; (original: &#39;{}&#39;), merged specifications&quot;, 
++                         normalizedKey, originalKey);
++             } else {
++                 normalizedMap.put(normalizedKey, new ArrayList&lt;&gt;(value));
++             }
++         }
++         
++         // 替换原来的 Map
++         data.setOrgSpecReqToStdSpecReqMap(normalizedMap);
++         
++         log.info(&quot;Normalized orgSpecReqToStdSpecReqMap: {} keys normalized, {} duplicates merged, total keys: {}&quot;, 
++                 normalizedCount, duplicateCount, normalizedMap.size());
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+Model supplied an ambiguous edit
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+重新读取文件，查看当前状态：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "parseSpecItemReq" in "src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java" • 2 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java` | `public List<Specification> parseSpecItemReq(String originalSpec) \{` | L125 |
+| `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java` | `List<Specification> specItemReqs = parseSpecItemReq(originalSpec);` | L148 |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+更新 `parseSpecItemReq` 方法，使其在查询时也对输入进行规范化：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 1
+
+```diff
+@@ -127,5 +127,7 @@
+              return new ArrayList&lt;&gt;();
+          }
+-         List&lt;Specification&gt; result = data.getOrgSpecReqToStdSpecReqMap().get(originalSpec);
++         // 对输入的 originalSpec 也进行规范化，以便匹配规范化后的 key
++         String normalizedSpec = StringHelper.normalizeSpecReqItem(originalSpec);
++         List&lt;Specification&gt; result = data.getOrgSpecReqToStdSpecReqMap().get(normalizedSpec);
+          return result != null ? result : new ArrayList&lt;&gt;();
+      }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java`
+
+Lint results
+
+Lint errors for `src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The method matchesSpec(String, Specification) from the type ProductOntoService4Local is never used locally | 161:21-161:77 | DIAGNOSTIC_SEVERITY_WARNING |
+| The method extractSpecValue(String, Specification) from the type ProductOntoService4Local is never used locally | 174:20-174:81 | DIAGNOSTIC_SEVERITY_WARNING |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证实现并检查是否需要处理其他情况：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证实现是否完整：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/impl/ProductOntoService4Local.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test-compile</summary>
+
+```bash
+mvn -q test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+已完成。总结如下：
+
+## 完成的工作
+
+### 1. 在 `init()` 方法中添加规范化处理
+- 在数据加载后调用 `normalizeOrgSpecReqToStdSpecReqMap()` 方法
+- 对 `orgSpecReqToStdSpecReqMap` 的所有 key 进行规范化
+
+### 2. 创建 `normalizeOrgSpecReqToStdSpecReqMap()` 方法
+功能：
+- 遍历 `orgSpecReqToStdSpecReqMap` 的所有 key
+- 对每个 key 调用 `StringHelper.normalizeSpecReqItem()` 进行规范化
+- 处理 key 规范化后可能重复的情况（合并 value 列表）
+- 替换原来的 Map 为规范化后的 Map
+- 记录日志（规范化数量、重复合并数量等）
+
+### 3. 更新 `parseSpecItemReq()` 方法
+- 在查询时也对输入的 `originalSpec` 进行规范化
+- 确保能匹配规范化后的 key
+
+### 4. 处理逻辑
+```
+数据加载 → 规范化所有 key → 查询时也规范化输入 → 匹配成功
+```
+
+### 5. 特性
+- 自动处理：数据加载时自动规范化
+- 重复处理：如果规范化后 key 重复，会合并 value 列表
+- 日志记录：记录规范化过程和重复合并情况
+- 查询兼容：查询时也会规范化输入，确保匹配
+
+代码已编译通过，可以正常使用。现在 `orgSpecReqToStdSpecReqMap` 的 key 都会被规范化处理，即使 LLM 解析出的 `specReqItems` 包含空格或中文标点符号，也能正确匹配。
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+@PCAgentService4Session.java (57-63)  挪到 parseConfigReq里面
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+将规范化逻辑移到 `parseConfigReq` 方法中：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 8
+
+```diff
+@@ -54,12 +54,4 @@
+              ConfigReq req = parseConfigReq(userInput);
+              validConfigReq(req);
+-             
+-             // 规范化 specReqItems：去掉空格，替换特殊字符
+-             if (req.getSpecReqItems() != null &amp;&amp; !req.getSpecReqItems().isEmpty()) {
+-                 List&lt;String&gt; normalizedItems = StringHelper.normalizeSpecReqItems(req.getSpecReqItems());
+-                 req.setSpecReqItems(normalizedItems);
+-                 log.debug(&quot;Normalized specReqItems: {} -&gt; {}&quot;, req.getSpecReqItems().size(), normalizedItems.size());
+-             }
+-             
+              SessionUtils.updateSession4NextStep(currentSession, req, Plan.STEP1);
+              notifySessionUpdated();
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/service/PCAgentService4Session.java</summary>
+
+**Chunk 1**
+Lines added: 10, lines removed: 1
+
+```diff
+@@ -100,5 +100,14 @@
+          // 调用LLMInvoker
+          String productSerials = &quot;ONU,电脑,服务器,路由器&quot;;
+-         return llmInvoker.parseConfigReq(input, productSerials);
++         ConfigReq req = llmInvoker.parseConfigReq(input, productSerials);
++         
++         // 规范化 specReqItems：去掉空格，替换特殊字符
++         if (req != null &amp;&amp; req.getSpecReqItems() != null &amp;&amp; !req.getSpecReqItems().isEmpty()) {
++             List&lt;String&gt; normalizedItems = StringHelper.normalizeSpecReqItems(req.getSpecReqItems());
++             req.setSpecReqItems(normalizedItems);
++             log.debug(&quot;Normalized specReqItems: {} items&quot;, normalizedItems.size());
++         }
++         
++         return req;
+      }
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file">
+<details>
+<summary>Tool use: **read_file**</summary>
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+

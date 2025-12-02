@@ -4,6 +4,7 @@ import com.pcagent.model.*;
 import com.pcagent.service.ProductOntoService;
 import com.pcagent.util.CommHelper;
 import com.pcagent.util.ProductOntoUtils;
+import com.pcagent.util.StringHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,9 @@ import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -29,10 +32,70 @@ public class ProductOntoService4Local implements ProductOntoService {
             String dataPath = CommHelper.getCodeResourcePath() + "/data/product-onto-data-sample.json";
             this.data = ProductOntoUtils.fromJsonFile(dataPath, ProductOntoData.class);
             log.info("Product ontology data loaded successfully from: {}", dataPath);
+            
+            // 对 orgSpecReqToStdSpecReqMap 的 key 进行规范化处理
+            normalizeOrgSpecReqToStdSpecReqMap();
         } catch (IOException e) {
             log.error("Failed to load product ontology data", e);
             this.data = new ProductOntoData();
         }
+    }
+    
+    /**
+     * 规范化 orgSpecReqToStdSpecReqMap 的 key
+     * 对原始规格请求的 key 进行特殊符号处理（去掉空格，替换中文标点为英文标点）
+     */
+    private void normalizeOrgSpecReqToStdSpecReqMap() {
+        if (data == null || data.getOrgSpecReqToStdSpecReqMap() == null) {
+            return;
+        }
+        
+        Map<String, List<Specification>> originalMap = data.getOrgSpecReqToStdSpecReqMap();
+        if (originalMap.isEmpty()) {
+            return;
+        }
+        
+        Map<String, List<Specification>> normalizedMap = new HashMap<>();
+        int normalizedCount = 0;
+        int duplicateCount = 0;
+        
+        for (Map.Entry<String, List<Specification>> entry : originalMap.entrySet()) {
+            String originalKey = entry.getKey();
+            List<Specification> value = entry.getValue();
+            
+            // 规范化 key
+            String normalizedKey = StringHelper.normalizeSpecReqItem(originalKey);
+            
+            // 如果 key 发生变化，记录日志
+            if (!originalKey.equals(normalizedKey)) {
+                normalizedCount++;
+                log.debug("Normalized spec req key: '{}' -> '{}'", originalKey, normalizedKey);
+            }
+            
+            // 处理 key 规范化后可能重复的情况
+            if (normalizedMap.containsKey(normalizedKey)) {
+                // 如果 key 重复，合并 value 列表（去重）
+                List<Specification> existingSpecs = normalizedMap.get(normalizedKey);
+                List<Specification> newSpecs = new ArrayList<>(existingSpecs);
+                for (Specification spec : value) {
+                    if (!newSpecs.contains(spec)) {
+                        newSpecs.add(spec);
+                    }
+                }
+                normalizedMap.put(normalizedKey, newSpecs);
+                duplicateCount++;
+                log.warn("Duplicate normalized key found: '{}' (original: '{}'), merged specifications", 
+                        normalizedKey, originalKey);
+            } else {
+                normalizedMap.put(normalizedKey, new ArrayList<>(value));
+            }
+        }
+        
+        // 替换原来的 Map
+        data.setOrgSpecReqToStdSpecReqMap(normalizedMap);
+        
+        log.info("Normalized orgSpecReqToStdSpecReqMap: {} keys normalized, {} duplicates merged, total keys: {}", 
+                normalizedCount, duplicateCount, normalizedMap.size());
     }
 
     @Override
@@ -63,7 +126,9 @@ public class ProductOntoService4Local implements ProductOntoService {
         if (data == null || data.getOrgSpecReqToStdSpecReqMap() == null) {
             return new ArrayList<>();
         }
-        List<Specification> result = data.getOrgSpecReqToStdSpecReqMap().get(originalSpec);
+        // 对输入的 originalSpec 也进行规范化，以便匹配规范化后的 key
+        String normalizedSpec = StringHelper.normalizeSpecReqItem(originalSpec);
+        List<Specification> result = data.getOrgSpecReqToStdSpecReqMap().get(normalizedSpec);
         return result != null ? result : new ArrayList<>();
     }
     @Override

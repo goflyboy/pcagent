@@ -3,8 +3,8 @@ package com.pcagent.service;
 import com.pcagent.exception.InvalidInputException;
 import com.pcagent.model.*;
 import com.pcagent.util.SessionUtils;
+import com.pcagent.util.StringHelper;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.pcagent.util.Pair;
 
@@ -99,7 +99,16 @@ public class PCAgentService4Session {
     ConfigReq parseConfigReq(String input) {
         // 调用LLMInvoker
         String productSerials = "ONU,电脑,服务器,路由器";
-        return llmInvoker.parseConfigReq(input, productSerials);
+        ConfigReq req = llmInvoker.parseConfigReq(input, productSerials);
+        
+        // 规范化 specReqItems：去掉空格，替换特殊字符
+        if (req != null && req.getSpecReqItems() != null && !req.getSpecReqItems().isEmpty()) {
+            List<String> normalizedItems = StringHelper.normalizeSpecReqItems(req.getSpecReqItems());
+            req.setSpecReqItems(normalizedItems);
+            log.debug("Normalized specReqItems: {} items", normalizedItems.size());
+        }
+        
+        return req;
     }
 
     /**
