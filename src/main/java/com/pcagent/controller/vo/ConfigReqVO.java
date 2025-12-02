@@ -19,5 +19,6 @@ public class ConfigReqVO {
     private List<String> specReqItems = new ArrayList<>(); // 规格需求项
     private String configStrategy; // 配置策略（显示名称）
     private String totalQuantityMemo; // 总套数说明
+    private String country; // 国家/地区
 }
 

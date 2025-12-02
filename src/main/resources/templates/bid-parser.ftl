@@ -15,7 +15,8 @@ ${productSerials?join(", ")}
 2. 若未明确给出套数，则将 totalQuantity 设为 1，并在 totalQuantityMemo 中说明原因（示例："没有明确指定说明，默认值配置1套"）。
 3. 规格项请依据分割符（空行、换行、"；"、";"、"。"、"、"）进行拆分，仅保留有含义的语句。
 4. 配置策略请根据用户诉求推理，默认 PRICE_MIN_PRIORITY，如需强调技术上限可返回 TECH_MAX_PRIORITY。
-5. 输出必须是如下 JSON 且字段齐全：
+5. 国家/地区（country）：从用户输入中提取国家或地区信息，如"中国"、"美国"、"欧洲"等。如果未明确提及，则输出空字符串 ""。
+6. 输出必须是如下 JSON 且字段齐全：
 {
   "productSerial": "",
   "totalQuantity": 1,
@@ -23,7 +24,8 @@ ${productSerials?join(", ")}
     ""
   ],
   "configStrategy": "PRICE_MIN_PRIORITY",
-  "totalQuantityMemo": ""
+  "totalQuantityMemo": "",
+  "country": ""
 }
 
 请只返回 JSON。

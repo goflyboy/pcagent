@@ -315,6 +315,10 @@ public class PCAgentChat {
         System.out.println(formatter.bold("产品系列: ") + formatter.yellow(configReq.getProductSerial()));
         System.out.println(formatter.bold("总套数: ") + formatter.yellow(String.valueOf(configReq.getTotalQuantity())));
         
+        if (configReq.getCountry() != null && !configReq.getCountry().isEmpty()) {
+            System.out.println(formatter.bold("国家/地区: ") + formatter.yellow(configReq.getCountry()));
+        }
+        
         if (configReq.getConfigStrategy() != null) {
             System.out.println(formatter.bold("配置策略: ") + formatter.yellow(configReq.getConfigStrategy()));
         }

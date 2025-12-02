@@ -400,6 +400,12 @@ public class LLMInvoker {
         if (configReq.getSpecReqItems() == null || configReq.getSpecReqItems().isEmpty()) {
             configReq.setSpecReqItems(extractSpecItems(userInput));
         }
+        
+        // 确保国家/地区字段：如果 LLM 没有返回，尝试从输入中提取
+        if (!StringUtils.hasText(configReq.getCountry())) {
+            String country = extractCountry(userInput);
+            configReq.setCountry(country);
+        }
 
         // 确保 memo 不为 null
         if (configReq.getTotalQuantityMemo() == null) {
@@ -478,8 +484,39 @@ public class LLMInvoker {
                 req.getSpecReqItems().add(line.trim());
             }
         }
+        
+        // 简单提取国家/地区
+        String country = extractCountry(userInput);
+        req.setCountry(country);
 
         return req;
+    }
+    
+    /**
+     * 从用户输入中提取国家/地区信息
+     * 
+     * @param userInput 用户输入
+     * @return 国家/地区，如果未找到则返回空字符串
+     */
+    private String extractCountry(String userInput) {
+        if (userInput == null || userInput.trim().isEmpty()) {
+            return "";
+        }
+        
+        // 常见国家/地区关键词
+        String[] countries = {
+            "中国", "美国", "日本", "韩国", "德国", "法国", "英国", "意大利", "西班牙",
+            "俄罗斯", "印度", "巴西", "澳大利亚", "加拿大", "墨西哥", "阿根廷",
+            "欧洲", "亚洲", "北美", "南美", "非洲", "大洋洲"
+        };
+        
+        for (String country : countries) {
+            if (userInput.contains(country)) {
+                return country;
+            }
+        }
+        
+        return "";
     }
 }
 

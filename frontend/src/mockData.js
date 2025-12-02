@@ -18,7 +18,8 @@ export const mockSessionStep1 = {
       '内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。'
     ],
     configStrategy: '目标价最小优先',
-    totalQuantityMemo: ''
+    totalQuantityMemo: '',
+    country: '中国'
   }
 }
 

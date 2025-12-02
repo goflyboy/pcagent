@@ -285,6 +285,9 @@ export default {
         if (configReq.totalQuantity) {
           this.addSystemMessage(`总套数: ${configReq.totalQuantity}${configReq.totalQuantityMemo ? ' (' + configReq.totalQuantityMemo + ')' : ''}`)
         }
+        if (configReq.country) {
+          this.addSystemMessage(`国家/地区: ${configReq.country}`)
+        }
         if (configReq.specReqItems && configReq.specReqItems.length > 0) {
           this.addSystemMessage(`规格需求项:`)
           configReq.specReqItems.forEach((item, index) => {

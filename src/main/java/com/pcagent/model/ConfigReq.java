@@ -19,5 +19,6 @@ public class ConfigReq {
     private List<String> specReqItems = new ArrayList<>(); // 规格需求项
     private ConfigStrategy configStrategy = ConfigStrategy.PRICE_MIN_PRIORITY; // 配置策略
     private String totalQuantityMemo; // 总套数说明
+    private String country; // 国家/地区
 }
 

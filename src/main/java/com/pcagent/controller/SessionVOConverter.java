@@ -80,6 +80,7 @@ public class SessionVOConverter {
         vo.setTotalQuantity(configReq.getTotalQuantity());
         vo.setSpecReqItems(configReq.getSpecReqItems());
         vo.setTotalQuantityMemo(configReq.getTotalQuantityMemo());
+        vo.setCountry(configReq.getCountry());
 
         // 转换配置策略为显示名称
         if (configReq.getConfigStrategy() != null) {
