@@ -1,9 +1,7 @@
 package com.pcagent.service;
 
-import com.pcagent.exception.InvalidInputException;
 import com.pcagent.model.*;
 import com.pcagent.util.SessionUtils;
-import com.pcagent.util.StringHelper;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import com.pcagent.util.Pair;
@@ -19,7 +17,7 @@ import java.util.function.Consumer;
 @Getter
 public class PCAgentService4Session {
     private final String sessionId;
-    private final LLMInvoker llmInvoker;
+    private final ConfigReqRecognitionService configReqRecognitionService;
     private final ProductSpecificationParserService specParserService;
     private final ProductSelectionService selectionService;
     private final ProductConfigService configService;
@@ -33,7 +31,8 @@ public class PCAgentService4Session {
 
     public PCAgentService4Session(String sessionId, LLMInvoker llmInvoker, ProductSpecificationParserService specParserService, ProductSelectionService selectionService, ProductConfigService configService, Consumer<Session> sessionUpdateCallback) {
         this.sessionId = sessionId;
-        this.llmInvoker = llmInvoker;
+        // 创建 ConfigReqRecognitionService（需要 LLMInvoker）
+        this.configReqRecognitionService = new ConfigReqRecognitionService(llmInvoker);
         this.specParserService = specParserService;
         this.selectionService = selectionService;
         this.configService = configService;
@@ -51,8 +50,8 @@ public class PCAgentService4Session {
 
         try {
             // 调用parseConfigReq解析客户需求
-            ConfigReq req = parseConfigReq(userInput);
-            validConfigReq(req);
+            ConfigReq req = configReqRecognitionService.parseConfigReq(userInput);
+            configReqRecognitionService.validConfigReq(req);
             SessionUtils.updateSession4NextStep(currentSession, req, Plan.STEP1);
             notifySessionUpdated();
 
@@ -93,38 +92,6 @@ public class PCAgentService4Session {
         }
     }
 
-    /**
-     * 解析配置需求
-     */
-    ConfigReq parseConfigReq(String input) {
-        // 调用LLMInvoker
-        String productSerials = "ONU,电脑,服务器,路由器";
-        ConfigReq req = llmInvoker.parseConfigReq(input, productSerials);
-        
-        // 规范化 specReqItems：去掉空格，替换特殊字符
-        if (req != null && req.getSpecReqItems() != null && !req.getSpecReqItems().isEmpty()) {
-            List<String> normalizedItems = StringHelper.normalizeSpecReqItems(req.getSpecReqItems());
-            req.setSpecReqItems(normalizedItems);
-            log.debug("Normalized specReqItems: {} items", normalizedItems.size());
-        }
-        
-        return req;
-    }
-
-    /**
-     * 校验配置需求
-     */
-    void validConfigReq(ConfigReq req) {
-        if (req == null) {
-            throw new InvalidInputException("配置需求不能为空");
-        }
-        if (req.getProductSerial() == null || req.getProductSerial().trim().isEmpty()) {
-            throw new InvalidInputException("产品系列不能为空");
-        }
-        if (req.getTotalQuantity() == null || req.getTotalQuantity() <= 0) {
-            throw new InvalidInputException("总套数必须大于0");
-        }
-    }
 
     /**
      * 触发会话更新回调
