@@ -1,5 +1,7 @@
 package com.pcagent.service;
 
+import com.pcagent.controller.SessionVOConverter;
+import com.pcagent.controller.vo.SessionVO;
 import com.pcagent.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,7 @@ public class PCAgentService {
     private final ProductSpecificationParserService specParserService;
     private final ProductSelectionService selectionService;
     private final ProductConfigService configService;
+    private final SessionVOConverter sessionVOConverter;
 
     /**
      * 生成配置（异步执行）
@@ -78,7 +81,8 @@ public class PCAgentService {
         // 立即推送当前状态（如果已有）
         Session current = getLatestSession(sessionId);
         if (current != null) {
-            sendToEmitter(emitter, current);
+            SessionVO sessionVO = sessionVOConverter.convert(current);
+            sendToEmitter(emitter, sessionVO);
         }
 
         return emitter;
@@ -95,7 +99,7 @@ public class PCAgentService {
     }
 
     /**
-     * 收到会话更新回调时，向所有 SSE 订阅者推送最新 Session
+     * 收到会话更新回调时，向所有 SSE 订阅者推送最新 SessionVO
      */
     private void onSessionUpdated(Session session) {
         if (session == null || session.getSessionId() == null) {
@@ -106,16 +110,17 @@ public class PCAgentService {
         if (emitters == null || emitters.isEmpty()) {
             return;
         }
+        SessionVO sessionVO = sessionVOConverter.convert(session);
         for (SseEmitter emitter : new ArrayList<>(emitters)) {
-            sendToEmitter(emitter, session);
+            sendToEmitter(emitter, sessionVO);
         }
     }
 
-    private void sendToEmitter(SseEmitter emitter, Session session) {
+    private void sendToEmitter(SseEmitter emitter, SessionVO sessionVO) {
         try {
             SseEmitter.SseEventBuilder event = SseEmitter.event()
                     .name("session-update")
-                    .data(session, MediaType.APPLICATION_JSON);
+                    .data(sessionVO, MediaType.APPLICATION_JSON);
             emitter.send(event);
         } catch (IOException e) {
             log.warn("Failed to send SSE event: {}", e.getMessage());

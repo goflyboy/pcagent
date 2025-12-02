@@ -2,6 +2,17 @@
   <div class="app-container">
     <header class="app-header">
       <h1>产品配置Agent</h1>
+      <div class="mode-switch">
+        <label class="switch-label">
+          <input 
+            type="checkbox" 
+            v-model="useMockData" 
+            @change="onModeChange"
+            class="switch-input"
+          />
+          <span class="switch-text">{{ useMockData ? '模拟数据' : '真实服务' }}</span>
+        </label>
+      </div>
     </header>
     
     <main class="app-main">
@@ -58,6 +69,7 @@
 
 <script>
 import axios from 'axios'
+import { MockApiService } from './mockData'
 
 export default {
   name: 'App',
@@ -69,8 +81,13 @@ export default {
       sessionId: null,
       loading: false,
       pollInterval: null,
-      eventSource: null
+      eventSource: null,
+      useMockData: true, // 默认使用模拟数据，方便调试
+      mockApiService: null
     }
+  },
+  created() {
+    this.mockApiService = new MockApiService()
   },
   mounted() {
     this.addSystemMessage('欢迎使用产品配置Agent！请输入您的配置需求。')
@@ -88,6 +105,16 @@ export default {
     this.cleanupEventSource()
   },
   methods: {
+    onModeChange() {
+      // 切换模式时清理当前状态
+      this.cleanupEventSource()
+      this.cleanupPolling()
+      this.session = null
+      this.sessionId = null
+      this.messages = []
+      this.addSystemMessage('模式已切换，请重新发送消息')
+    },
+
     async sendMessage() {
       if (!this.userInput.trim() || this.loading) {
         return
@@ -99,22 +126,44 @@ export default {
       this.loading = true
 
       try {
-        // 创建会话
-        const response = await axios.post('/api/v1/sessions', {
-          user_input: input
-        })
-
-        this.sessionId = response.data.sessionId
-        this.session = response.data
-        this.updateSessionDisplay()
-
-        // 使用 SSE 订阅会话进度
-        this.startEventStream()
+        if (this.useMockData) {
+          // 使用模拟数据
+          await this.sendMessageWithMock(input)
+        } else {
+          // 使用真实服务
+          await this.sendMessageWithReal(input)
+        }
       } catch (error) {
         console.error('Error creating session:', error)
         this.addSystemMessage('错误: ' + (error.response?.data?.message || error.message))
         this.loading = false
       }
+    },
+
+    async sendMessageWithMock(input) {
+      // 使用模拟数据
+      const response = await this.mockApiService.createSession(input)
+      
+      this.sessionId = response.data.sessionId
+      this.session = response.data
+      this.updateSessionDisplay()
+
+      // 使用模拟 SSE 订阅会话进度
+      this.startMockEventStream()
+    },
+
+    async sendMessageWithReal(input) {
+      // 使用真实服务
+      const response = await axios.post('/api/v1/sessions', {
+        user_input: input
+      })
+
+      this.sessionId = response.data.sessionId
+      this.session = response.data
+      this.updateSessionDisplay()
+
+      // 使用 SSE 订阅会话进度
+      this.startEventStream()
     },
 
     // 兼容保留：轮询方式（目前不再默认使用）
@@ -151,6 +200,32 @@ export default {
         clearInterval(this.pollInterval)
         this.pollInterval = null
       }
+    },
+
+    startMockEventStream() {
+      this.cleanupEventSource()
+      if (!this.sessionId) return
+
+      // 使用模拟的 EventSource
+      const mockEventSource = this.mockApiService.subscribeSession(this.sessionId, (event) => {
+        try {
+          const session = JSON.parse(event.data)
+          this.session = session
+          this.updateSessionDisplay()
+
+          if (session.progress &&
+              session.progress.current >= session.progress.total) {
+            this.loading = false
+            this.addSystemMessage('配置完成！')
+            this.cleanupEventSource()
+          }
+        } catch (err) {
+          console.error('Error parsing SSE data:', err)
+        }
+      })
+
+      // 将模拟的 EventSource 存储起来，以便后续清理
+      this.eventSource = mockEventSource
     },
 
     startEventStream() {
@@ -196,19 +271,80 @@ export default {
     },
 
     updateSessionDisplay() {
-      if (!this.session || !this.session.data) return
+      if (!this.session || !this.session.displayData) return
 
-      // 根据当前步骤显示不同的信息
-      const step = this.  session.currentStep
-      const data = this.session.data
-      //打印data的内容
-      this.addSystemMessage(`data: ${JSON.stringify(data)}`)
-      if (step === 'step1' && data.productSerial) {
-        this.addSystemMessage(`识别到产品系列: ${data.productSerial}, 总套数: ${data.totalQuantity}`)
-      } else if (step === 'step2' && Array.isArray(data)) {
-        this.addSystemMessage(`已解析 ${data.length} 个产品规格需求`)
-      } else if (step === 'step3' && data.productCode) {
-        this.addSystemMessage(`已选择产品: ${data.productCode}, 配置完成`)
+      const step = this.session.currentStep
+      const displayData = this.session.displayData
+
+      if (step === 'step1') {
+        // 配置需求显示
+        const configReq = displayData
+        if (configReq.productSerial) {
+          this.addSystemMessage(`识别到产品系列: ${configReq.productSerial}`)
+        }
+        if (configReq.totalQuantity) {
+          this.addSystemMessage(`总套数: ${configReq.totalQuantity}${configReq.totalQuantityMemo ? ' (' + configReq.totalQuantityMemo + ')' : ''}`)
+        }
+        if (configReq.specReqItems && configReq.specReqItems.length > 0) {
+          this.addSystemMessage(`规格需求项:`)
+          configReq.specReqItems.forEach((item, index) => {
+            this.addSystemMessage(`  ${index + 1}. ${item}`)
+          })
+        }
+        if (configReq.configStrategy) {
+          this.addSystemMessage(`配置策略: ${configReq.configStrategy}`)
+        }
+      } else if (step === 'step2') {
+        // 规格解析结果或产品选型结果
+        if (displayData.items && Array.isArray(displayData.items)) {
+          // 规格解析结果
+          this.addSystemMessage(`完成原始规格需求解析为标准规格，需求结果如下:`)
+          const tableRows = displayData.items.map(item => 
+            `| ${item.index} | ${item.originalSpec} | ${item.stdSpec} |`
+          ).join('\n')
+          this.addSystemMessage(`\n| 序号 | 原始规格需求 | 标准规格需求 |\n| :- | :--- | :--- |\n${tableRows}`)
+        } else if (displayData.selectedProductCode) {
+          // 产品选型结果
+          this.addSystemMessage(`选型结果如下，按照匹配度对候选产品进行排序，选择产品${displayData.selectedProductName || displayData.selectedProductCode}，Top3的排序如下:`)
+          
+          if (displayData.candidates && displayData.candidates.length > 0) {
+            const tableRows = displayData.candidates.map(item => 
+              `| ${item.rank} | **${item.productName || item.productCode}** | ${item.deviationDegree}% | ${item.description || ''} |`
+            ).join('\n')
+            this.addSystemMessage(`\n| 排序 | 产品名称 | 偏离度 | 说明 |\n| :-- | :--- | :--- | :---- |\n${tableRows}`)
+          }
+
+          if (displayData.deviationDetails && displayData.deviationDetails.length > 0) {
+            this.addSystemMessage(`\n正在做**${displayData.selectedProductName || displayData.selectedProductCode}的规格偏离度计算，偏离度为${displayData.candidates && displayData.candidates.length > 0 ? displayData.candidates[0].deviationDegree : 100}%，详细如下：**`)
+            const tableRows = displayData.deviationDetails.map(item => 
+              `| ${item.index} | ${item.originalSpecReq} | ${item.stdSpecReq} | ${item.productSpecValue} | ${item.satisfy ? 'Y' : 'N'} | ${item.deviationType} |`
+            ).join('\n')
+            this.addSystemMessage(`\n| 序号 | 原始规格需求 | 标准规格需求 | 本产品规格值 | 是否满足 | 偏离情况 |\n| :- | :--- | :--- | :----- | :--- | :--- |\n${tableRows}`)
+          }
+        }
+      } else if (step === 'step3') {
+        // 参数配置结果
+        const paramConfig = displayData
+        if (paramConfig.productCode) {
+          this.addSystemMessage(`现在开始对选中的产品进行参数配置`)
+          this.addSystemMessage(`产品: ${paramConfig.productName || paramConfig.productCode}`)
+          
+          if (paramConfig.items && paramConfig.items.length > 0) {
+            this.addSystemMessage(`参数的配置结果如下：`)
+            const tableRows = paramConfig.items.map(item => 
+              `| ${item.index} | ${item.configReq || ''} | ${item.parameterName || item.parameterCode} | ${item.value} |`
+            ).join('\n')
+            this.addSystemMessage(`\n| 排序 | 配置需求 | 参数 | 参数值(配置结果) |\n| :- | :--- | :---- | :-------- |\n${tableRows}`)
+          }
+
+          if (paramConfig.checkResult) {
+            if (paramConfig.checkResult.errorCode === 0) {
+              this.addSystemMessage(`完成校验检查，没有错误，符合要求`)
+            } else {
+              this.addSystemMessage(`校验检查发现错误: ${paramConfig.checkResult.errorMessage || '未知错误'}`)
+            }
+          }
+        }
       }
     },
 
@@ -267,9 +403,40 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .app-header h1 {
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 0;
+}
+
+.mode-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-input {
+  margin-right: 0.5rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.switch-text {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .app-main {

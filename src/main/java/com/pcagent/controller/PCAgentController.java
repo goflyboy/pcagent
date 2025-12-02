@@ -1,5 +1,6 @@
 package com.pcagent.controller;
 
+import com.pcagent.controller.vo.SessionVO;
 import com.pcagent.model.Session;
 import com.pcagent.service.PCAgentService;
 import com.pcagent.util.SessionUtils;
@@ -10,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -22,12 +22,13 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PCAgentController {
     private final PCAgentService agentService;
+    private final SessionVOConverter sessionVOConverter;
 
     /**
      * 创建会话接口
      */
     @PostMapping("/sessions")
-    public ResponseEntity<Session> createSession(@RequestBody Map<String, Object> request) {
+    public ResponseEntity<SessionVO> createSession(@RequestBody Map<String, Object> request) {
         String userInput = (String) request.get("user_input");
         if (userInput == null || userInput.trim().isEmpty()) {
             return ResponseEntity.badRequest().build();
@@ -38,7 +39,8 @@ public class PCAgentController {
 
         // 立即返回当前会话基本信息（后续进度通过 SSE 推送）
         Session session = agentService.getLatestSession(sessionId);
-        return ResponseEntity.ok(session);
+        SessionVO sessionVO = sessionVOConverter.convert(session);
+        return ResponseEntity.ok(sessionVO);
     }
 
     /**
@@ -68,12 +70,13 @@ public class PCAgentController {
      * 获取会话状态接口
      */
     @GetMapping("/sessions/{session_id}")
-    public ResponseEntity<Session> getSession(@PathVariable("session_id") String sessionId) {
+    public ResponseEntity<SessionVO> getSession(@PathVariable("session_id") String sessionId) {
         Session session = agentService.getLatestSession(sessionId);
         if (session == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(session);
+        SessionVO sessionVO = sessionVOConverter.convert(session);
+        return ResponseEntity.ok(sessionVO);
     }
 
     // /**
