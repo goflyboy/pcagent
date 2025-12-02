@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pcagent.controller.vo.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.PrintStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,11 +29,64 @@ public class PCAgentChat {
             .connectTimeout(Duration.ofSeconds(10))
             .build();
     
-    private final AnsiFormatter formatter = new AnsiFormatter();
+    private final AnsiFormatter formatter;
+    private static final boolean SUPPORTS_ANSI;
+    private static final boolean IS_WINDOWS;
+
+    static {
+        // 检测操作系统
+        IS_WINDOWS = System.getProperty("os.name", "").toLowerCase().contains("windows");
+        
+        // 检测是否支持 ANSI
+        // Windows: 默认不支持（避免乱码），除非使用 Windows Terminal 或 Git Bash
+        // Linux/Mac: 通常支持
+        boolean supportsAnsi = false;
+        if (IS_WINDOWS) {
+            // Windows: 检查是否在 Windows Terminal 或 Git Bash 中运行
+            String term = System.getenv("TERM");
+            String wtSession = System.getenv("WT_SESSION");
+            String msystem = System.getenv("MSYSTEM"); // Git Bash
+            supportsAnsi = (wtSession != null) || // Windows Terminal
+                          (msystem != null && msystem.startsWith("MINGW")); // Git Bash
+        } else {
+            // Linux/Mac 通常支持 ANSI
+            supportsAnsi = true;
+        }
+        
+        SUPPORTS_ANSI = supportsAnsi;
+        
+        // 设置 UTF-8 编码输出
+        try {
+            System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+            System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            // 如果设置失败，继续使用默认编码
+        }
+    }
+
+    public PCAgentChat() {
+        this.formatter = new AnsiFormatter(SUPPORTS_ANSI);
+    }
 
     public static void main(String[] args) {
+        // 设置控制台编码为 UTF-8（Windows）
+        if (IS_WINDOWS) {
+            try {
+                // 尝试设置控制台代码页为 UTF-8
+                new ProcessBuilder("cmd", "/c", "chcp", "65001").inheritIO().start().waitFor();
+            } catch (Exception e) {
+                // 忽略错误，继续运行
+            }
+        }
+        
         // 检查服务器连接
         System.out.println("Connecting to: " + BASE_URL);
+        
+        if (IS_WINDOWS && !SUPPORTS_ANSI) {
+            System.out.println("提示: 检测到 Windows 环境，已禁用颜色输出以避免乱码");
+            System.out.println("      如需彩色输出，请使用 Windows Terminal 或 Git Bash");
+            System.out.println();
+        }
         
         PCAgentChat chat = new PCAgentChat();
         chat.run();
@@ -435,8 +490,11 @@ public class PCAgentChat {
 
     /**
      * ANSI 格式化工具类
+     * 如果系统不支持 ANSI，则返回原始文本（无颜色）
      */
     static class AnsiFormatter {
+        private final boolean enabled;
+        
         // ANSI 颜色码
         private static final String RESET = "\033[0m";
         private static final String BOLD = "\033[1m";
@@ -446,28 +504,32 @@ public class PCAgentChat {
         private static final String BLUE = "\033[34m";
         private static final String CYAN = "\033[36m";
 
+        public AnsiFormatter(boolean enabled) {
+            this.enabled = enabled;
+        }
+
         public String bold(String text) {
-            return BOLD + text + RESET;
+            return enabled ? (BOLD + text + RESET) : text;
         }
 
         public String red(String text) {
-            return RED + text + RESET;
+            return enabled ? (RED + text + RESET) : text;
         }
 
         public String green(String text) {
-            return GREEN + text + RESET;
+            return enabled ? (GREEN + text + RESET) : text;
         }
 
         public String yellow(String text) {
-            return YELLOW + text + RESET;
+            return enabled ? (YELLOW + text + RESET) : text;
         }
 
         public String blue(String text) {
-            return BLUE + text + RESET;
+            return enabled ? (BLUE + text + RESET) : text;
         }
 
         public String cyan(String text) {
-            return CYAN + text + RESET;
+            return enabled ? (CYAN + text + RESET) : text;
         }
     }
 }

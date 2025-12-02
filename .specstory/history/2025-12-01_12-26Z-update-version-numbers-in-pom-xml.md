@@ -12968,15 +12968,150 @@ _**Agent (model default, mode Agent)**_
 ---
 
 
+`exec-maven-plugin` 仍在使用默认主类。改用更可靠的方式运行 CLI 客户端：
+
 
 ---
 
-<tool-use data-tool-type="unknown" data-tool-name="read_file">
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: run-cli.bat</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: pom.xml</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: run-cli.bat</summary>
+
+**Chunk 1**
+Lines added: 25, lines removed: 4
+
+```diff
+@@ -5,11 +5,32 @@
+  
+  REM 先编译项目
++ echo Compiling project...
+  call mvn clean compile -q
++ if errorlevel 1 (
++     echo Error: Compilation failed.
++     pause
++     exit /b 1
++ )
++ 
++ REM 复制依赖（如果需要）
++ if not exist &quot;target\dependency&quot; (
++     echo Copying dependencies...
++     call mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q
++ )
++ 
++ REM 构建类路径
++ set CLASSPATH=target\classes
++ for %%f in (target\dependency\*.jar) do (
++     set CLASSPATH=!CLASSPATH!;%%f
++ )
+  
+  REM 使用 Java 命令直接运行，避免 Spring Boot 启动问题
+- if exist &quot;target\classes&quot; (
+-     java -cp &quot;target\classes;target\dependency\*&quot; com.pcagent.cli.PCAgentChat %*
+- ) else (
+-     echo Error: Compilation failed. Please check the error messages above.
++ echo Starting CLI client...
++ echo.
++ java -cp &quot;%CLASSPATH%&quot; com.pcagent.cli.PCAgentChat %*
++ 
++ if errorlevel 1 (
++     echo.
++     echo Error: Failed to start CLI client.
+      pause
+      exit /b 1
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: run-cli.sh</summary>
+
+**Chunk 1**
+Lines added: 26, lines removed: 4
+
+```diff
+@@ -6,11 +6,33 @@
+  
+  # 先编译项目
++ echo &quot;Compiling project...&quot;
+  mvn clean compile -q
++ if [ $? -ne 0 ]; then
++     echo &quot;Error: Compilation failed.&quot;
++     exit 1
++ fi
++ 
++ # 复制依赖（如果需要）
++ if [ ! -d &quot;target/dependency&quot; ]; then
++     echo &quot;Copying dependencies...&quot;
++     mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q
++ fi
++ 
++ # 构建类路径
++ CLASSPATH=&quot;target/classes&quot;
++ for jar in target/dependency/*.jar; do
++     if [ -f &quot;$jar&quot; ]; then
++         CLASSPATH=&quot;$CLASSPATH:$jar&quot;
++     fi
++ done
+  
+  # 使用 Java 命令直接运行，避免 Spring Boot 启动问题
+- if [ -d &quot;target/classes&quot; ]; then
+-     java -cp &quot;target/classes:target/dependency/*&quot; com.pcagent.cli.PCAgentChat &quot;$@&quot;
+- else
+-     echo &quot;Error: Compilation failed. Please check the error messages above.&quot;
++ echo &quot;Starting CLI client...&quot;
++ echo &quot;&quot;
++ java -cp &quot;$CLASSPATH&quot; com.pcagent.cli.PCAgentChat &quot;$@&quot;
++ 
++ if [ $? -ne 0 ]; then
++     echo &quot;&quot;
++     echo &quot;Error: Failed to start CLI client.&quot;
+      exit 1
+  fi
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
 <details>
-<summary>Tool use: **read_file**</summary>
+<summary>Tool use: **grep** • Grep for "import.*spring|@SpringBoot|@Component|@Service" in "src/main/java/com/pcagent/cli" • 0 matches</summary>
 
-Status: **loading**
+Output mode: content
 
+
+_No matches found_
 
 </details>
 </tool-use>
@@ -12988,6 +13123,133 @@ Status: **loading**
 ---
 
 
+问题在于 `exec-maven-plugin` 仍会加载 Spring Boot 上下文。改用直接运行 Java 命令，并确保依赖正确复制。更新脚本：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: run-cli.bat</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -1,3 +1,4 @@
+  @echo off
++ setlocal enabledelayedexpansion
+  REM Windows 批处理脚本 - 运行命令行客户端
+  echo Starting PCAgent Chat CLI...
+```
+
+**Chunk 2**
+Lines added: 9, lines removed: 3
+
+```diff
+@@ -17,14 +18,20 @@
+      echo Copying dependencies...
+      call mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q
++     if errorlevel 1 (
++         echo Warning: Failed to copy dependencies, trying without them...
++     )
+  )
+  
+  REM 构建类路径
+  set CLASSPATH=target\classes
+- for %%f in (target\dependency\*.jar) do (
+-     set CLASSPATH=!CLASSPATH!;%%f
+- )
++ if exist &quot;target\dependency&quot; (
++     for %%f in (target\dependency\*.jar) do (
++         set CLASSPATH=!CLASSPATH!;%%f
++     )
++ )
+  
+  REM 使用 Java 命令直接运行，避免 Spring Boot 启动问题
+  echo Starting CLI client...
++ echo Connecting to server...
+  echo.
+  java -cp &quot;%CLASSPATH%&quot; com.pcagent.cli.PCAgentChat %*
+```
+
+**Chunk 3**
+Lines added: 5, lines removed: undefined
+
+```diff
+@@ -33,4 +40,9 @@
+      echo.
+      echo Error: Failed to start CLI client.
++     echo.
++     echo Troubleshooting:
++     echo 1. Make sure the backend server is running on port 8080
++     echo 2. Check if all dependencies are available
++     echo 3. Try running: mvn dependency:copy-dependencies
+      pause
+      exit /b 1
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q</summary>
+
+```bash
+mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: docs/CLI使用说明.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: docs/CLI使用说明.md</summary>
+
+**Chunk 1**
+Lines added: 10, lines removed: 6
+
+```diff
+@@ -22,12 +22,16 @@
+  &#96;&#96;&#96;bash
+  # 在另一个终端运行 CLI 客户端
+- # 注意：必须使用 -Dexec.mainClass 参数指定 CLI 客户端的主类
+- mvn exec:java -Dexec.mainClass=&quot;com.pcagent.cli.PCAgentChat&quot; -Dexec.classpathScope=compile
++ # 推荐使用脚本（会自动处理依赖和类路径）
++ # Windows:
++ run-cli.bat
++ 
++ # Linux/Mac:
++ ./run-cli.sh
+  &#96;&#96;&#96;
+  
+- **重要提示**：如果遇到端口冲突或 Spring Boot 启动错误，请确保：
+- 1. 使用 &#96;-Dexec.mainClass&#96; 参数明确指定 CLI 客户端类
+- 2. 使用 &#96;-Dexec.classpathScope=compile&#96; 确保使用正确的类路径
+- 3. 或者直接使用 Java 命令运行（见下方&quot;方式三&quot;）
++ **重要提示**：如果遇到端口冲突或 Spring Boot 启动错误：
++ 1. **推荐**：使用提供的脚本 &#96;run-cli.bat&#96; 或 &#96;run-cli.sh&#96;（会自动处理所有依赖）
++ 2. 或者使用方式三：直接使用 Java 命令运行
++ 3. **不推荐**：使用 &#96;mvn exec:java&#96;，因为它会加载 Spring Boot 上下文
+  
+  ### 方式二：指定服务器地址
+```
+
+</details>
+
+</tool-use>
 
 ---
 
@@ -12996,28 +13258,156 @@ Status: **loading**
 ---
 
 
-
----
-
+创建一个更简单的测试脚本，并验证是否能正常运行：
 
 
 ---
 
+<tool-use data-tool-type="write" data-tool-name="write">
 
+<details><summary>Tool use: **code_edit** • Edit file: test-cli.bat</summary>
+
+**Chunk 1**
+Lines added: 46, lines removed: 1
+
+```diff
+@@ -1,1 +1,46 @@
+- 
++ @echo off
++ REM 快速测试脚本 - 验证 CLI 能否正常运行
++ echo Testing CLI client...
++ echo.
++ 
++ REM 检查编译
++ if not exist &quot;target\classes\com\pcagent\cli\PCAgentChat.class&quot; (
++     echo Compiling...
++     call mvn compile -q
++     if errorlevel 1 (
++         echo Compilation failed!
++         pause
++         exit /b 1
++     )
++ )
++ 
++ REM 复制依赖
++ if not exist &quot;target\dependency&quot; (
++     echo Copying dependencies...
++     call mvn dependency:copy-dependencies -DoutputDirectory=target/dependency -q
++ )
++ 
++ REM 构建类路径
++ set CLASSPATH=target\classes
++ if exist &quot;target\dependency&quot; (
++     for %%f in (target\dependency\*.jar) do (
++         set CLASSPATH=!CLASSPATH!;%%f
++     )
++ )
++ 
++ REM 测试运行（只显示帮助信息）
++ echo.
++ echo Classpath: %CLASSPATH%
++ echo.
++ echo Testing if CLI can start (will exit immediately)...
++ echo.
++ 
++ REM 检查 Java 版本
++ java -version
++ echo.
++ 
++ echo If you see Java version above, try running:
++ echo   java -cp &quot;%CLASSPATH%&quot; com.pcagent.cli.PCAgentChat
++ echo.
++ pause
++ 
+```
+
+</details>
+
+</tool-use>
 
 ---
 
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: run-cli.bat</summary>
 
+</details>
+</tool-use>
 
 ---
 
-<tool-use data-tool-type="unknown" data-tool-name="search_replace">
-<details>
-<summary>Tool use: **search_replace**</summary>
+Model supplied an ambiguous edit
 
-Status: **loading**
+---
 
+<tool-use data-tool-type="write" data-tool-name="search_replace">
 
+<details><summary>Tool use: **code_edit** • Edit file: docs/CLI使用说明.md</summary>
+
+**Chunk 1**
+Lines added: 19, lines removed: 13
+
+```diff
+@@ -37,27 +37,33 @@
+  ### 方式二：指定服务器地址
+  
++ 使用脚本时，可以通过环境变量指定服务器地址：
++ 
++ **Windows:**
++ &#96;&#96;&#96;cmd
++ set PCAGENT_BASE_URL=http://localhost:8080/api/v1
++ run-cli.bat
++ &#96;&#96;&#96;
++ 
++ **Linux/Mac:**
+  &#96;&#96;&#96;bash
+- # 通过环境变量指定
+  export PCAGENT_BASE_URL=http://localhost:8080/api/v1
+- mvn exec:java -Dexec.mainClass=&quot;com.pcagent.cli.PCAgentChat&quot; -Dexec.classpathScope=compile
+- &#96;&#96;&#96;
+- &#96;&#96;&#96;bash
+- # 或通过系统属性指定
+- mvn exec:java -Dexec.mainClass=&quot;com.pcagent.cli.PCAgentChat&quot; -Dexec.classpathScope=compile -Dpcagent.base.url=http://localhost:8080/api/v1
++ ./run-cli.sh
+  &#96;&#96;&#96;
+  
+- ### 方式三：使用 Java 命令直接运行（推荐，避免 Spring Boot 启动问题）
++ ### 方式三：手动使用 Java 命令运行
++ 
++ 如果脚本不工作，可以手动运行：
+  
+  &#96;&#96;&#96;bash
+- # 先编译项目
++ # 1. 编译项目
+  mvn clean compile
+  
+- # 然后使用 Java 命令运行（需要指定类路径）
++ # 2. 复制依赖
++ mvn dependency:copy-dependencies -DoutputDirectory=target/dependency
++ 
++ # 3. 运行（Windows）
+  java -cp &quot;target/classes;target/dependency/*&quot; com.pcagent.cli.PCAgentChat
+- &#96;&#96;&#96;
+  
+- 在 Linux/Mac 上：
+- &#96;&#96;&#96;bash
+- mvn clean compile
++ # 3. 运行（Linux/Mac）
+  java -cp &quot;target/classes:target/dependency/*&quot; com.pcagent.cli.PCAgentChat
+  &#96;&#96;&#96;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: dir target\dependency 2>nul | findstr /C:"个文件" || echo "Dependencies directory not found or empty"</summary>
+
+```bash
+dir target\dependency 2>nul | findstr /C:"个文件" || echo "Dependencies directory not found or empty"
+```
 </details>
 </tool-use>
 
@@ -13028,28 +13418,324 @@ Status: **loading**
 ---
 
 
+已更新脚本和文档。问题在于 `mvn exec:java` 会加载 Spring Boot 上下文。请按以下方式运行：
+
+## 解决方案
+
+### 推荐方式：使用脚本（已更新）
+
+```bash
+# Windows
+run-cli.bat
+
+# Linux/Mac  
+./run-cli.sh
+```
+
+脚本会：
+1. 自动编译项目
+2. 自动复制依赖
+3. 使用 `java` 命令直接运行（不通过 Maven exec 插件）
+
+### 如果脚本仍有问题，手动运行：
+
+```bash
+# 1. 编译
+mvn clean compile
+
+# 2. 复制依赖
+mvn dependency:copy-dependencies -DoutputDirectory=target/dependency
+
+# 3. 直接运行（Windows）
+java -cp "target/classes;target/dependency/*" com.pcagent.cli.PCAgentChat
+
+# 3. 直接运行（Linux/Mac）
+java -cp "target/classes:target/dependency/*" com.pcagent.cli.PCAgentChat
+```
+
+### 重要提示
+
+- 不要使用 `mvn exec:java`，它会尝试启动 Spring Boot 应用
+- 确保后端服务已启动（`mvn spring-boot:run`）
+- 使用脚本或直接 `java` 命令运行
+
+请尝试运行 `run-cli.bat`，如果还有问题，请提供具体错误信息。
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+@PCAgentChat.java 显示好多乱码，在windows [1m[36mYou: [0m[0m我有一名高端客户，需要建立数据中心，要求如下：数据中心服务器 500台CPU:最新一代Intel® Xeon® Scalable处理器，核心数≥16核内存：配置≥256GB DDR4 ECC Registered内存&#x20;
+
+
+
+[1m[36m┌─ You ───────────────────────────────────────────────────[0m[0m
+
+??????????????????????????????????????????????????? 500?CPU:???????Intel? Xeon? Scalable????????????????16????棺???á?256GB DDR4 ECC Registered???&#x20;
+
+[36m└─────────────────────────────────────────────────────────────────[0m
+
+[1m[34mProgress: [0m[0m[32m[0m[33m????????????????????????????????????????[0m[1m 0% (0/3)[0m
+
+[36m  → 初始化会话[0m
+
+[1m[34mProgress: [0m[0m[32m[0m[33m????????????????????????????????????????[0m[1m 0% (0/3)[0m
+
+[36m  → 初始化会话[0m
+
+[1m[34mProgress: [0m[0m[32m██████████████████████████[0m[33m??????????????[0m[1m 66% (2/3)[0m
+
+[36m  → 初始化会话[0m
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
 
 ---
 
 
+修复 Windows 下的两个问题：
+1. ANSI 颜色码显示为乱码（Windows cmd 默认不支持）
+2. 中文显示为乱码（编码问题）
 
----
-
-
-
----
-
+添加 Windows 兼容性处理：
 
 
 ---
 
-<tool-use data-tool-type="unknown" data-tool-name="write">
-<details>
-<summary>Tool use: **write**</summary>
+<tool-use data-tool-type="write" data-tool-name="search_replace">
 
-Status: **loading**
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
 
+**Chunk 1**
+Lines added: 2, lines removed: undefined
 
+```diff
+@@ -5,8 +5,10 @@
+  import lombok.extern.slf4j.Slf4j;
+  
++ import java.io.PrintStream;
+  import java.net.URI;
+  import java.net.http.HttpClient;
+  import java.net.http.HttpRequest;
+  import java.net.http.HttpResponse;
++ import java.nio.charset.StandardCharsets;
+  import java.time.Duration;
+  import java.util.HashMap;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
+
+**Chunk 1**
+Lines added: 61, lines removed: 1
+
+```diff
+@@ -30,9 +30,69 @@
+              .build();
+      
+-     private final AnsiFormatter formatter = new AnsiFormatter();
++     private final AnsiFormatter formatter;
++     private static final boolean SUPPORTS_ANSI;
++     private static final boolean IS_WINDOWS;
++ 
++     static {
++         // 检测操作系统
++         IS_WINDOWS = System.getProperty(&quot;os.name&quot;, &quot;&quot;).toLowerCase().contains(&quot;windows&quot;);
++         
++         // 检测是否支持 ANSI（Windows 10 1809+ 需要启用，或者使用 Windows Terminal）
++         boolean supportsAnsi = false;
++         if (IS_WINDOWS) {
++             // Windows: 检查环境变量或尝试启用 ANSI
++             String term = System.getenv(&quot;TERM&quot;);
++             String wtSession = System.getenv(&quot;WT_SESSION&quot;);
++             supportsAnsi = (term != null &amp;&amp; !term.isEmpty()) || (wtSession != null);
++             
++             // 尝试启用 ANSI（Windows 10+）
++             try {
++                 if (!supportsAnsi) {
++                     // 尝试通过 JNA 或其他方式启用，这里简化处理
++                     // 如果使用 Windows Terminal 或 Git Bash，通常已经支持
++                     supportsAnsi = false; // 默认禁用，避免乱码
++                 }
++             } catch (Exception e) {
++                 // 忽略
++             }
++         } else {
++             // Linux/Mac 通常支持 ANSI
++             supportsAnsi = true;
++         }
++         
++         SUPPORTS_ANSI = supportsAnsi;
++         
++         // 设置 UTF-8 编码输出
++         try {
++             System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
++             System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
++         } catch (Exception e) {
++             // 如果设置失败，继续使用默认编码
++         }
++     }
++ 
++     public PCAgentChat() {
++         this.formatter = new AnsiFormatter(SUPPORTS_ANSI);
++     }
+  
+      public static void main(String[] args) {
++         // 设置控制台编码为 UTF-8（Windows）
++         if (IS_WINDOWS) {
++             try {
++                 // 尝试设置控制台代码页为 UTF-8
++                 new ProcessBuilder(&quot;cmd&quot;, &quot;/c&quot;, &quot;chcp&quot;, &quot;65001&quot;).inheritIO().start().waitFor();
++             } catch (Exception e) {
++                 // 忽略错误，继续运行
++             }
++         }
++         
+          // 检查服务器连接
+          System.out.println(&quot;Connecting to: &quot; + BASE_URL);
++         
++         if (IS_WINDOWS &amp;&amp; !SUPPORTS_ANSI) {
++             System.out.println(&quot;提示: 检测到 Windows 环境，已禁用颜色输出以避免乱码&quot;);
++             System.out.println(&quot;      如需彩色输出，请使用 Windows Terminal 或 Git Bash&quot;);
++             System.out.println();
++         }
+          
+          PCAgentChat chat = new PCAgentChat();
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/main/java/com/pcagent/cli/PCAgentChat.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: undefined
+
+```diff
+@@ -498,6 +498,9 @@
+      /**
+       * ANSI 格式化工具类
++      * 如果系统不支持 ANSI，则返回原始文本（无颜色）
+       */
+      static class AnsiFormatter {
++         private final boolean enabled;
++         
+          // ANSI 颜色码
+          private static final String RESET = &quot;\033[0m&quot;;
+```
+
+**Chunk 2**
+Lines added: 10, lines removed: 6
+
+```diff
+@@ -508,27 +511,31 @@
+          private static final String BLUE = &quot;\033[34m&quot;;
+          private static final String CYAN = &quot;\033[36m&quot;;
++ 
++         public AnsiFormatter(boolean enabled) {
++             this.enabled = enabled;
++         }
+  
+          public String bold(String text) {
+-             return BOLD + text + RESET;
++             return enabled ? (BOLD + text + RESET) : text;
+          }
+  
+          public String red(String text) {
+-             return RED + text + RESET;
++             return enabled ? (RED + text + RESET) : text;
+          }
+  
+          public String green(String text) {
+-             return GREEN + text + RESET;
++             return enabled ? (GREEN + text + RESET) : text;
+          }
+  
+          public String yellow(String text) {
+-             return YELLOW + text + RESET;
++             return enabled ? (YELLOW + text + RESET) : text;
+          }
+  
+          public String blue(String text) {
+-             return BLUE + text + RESET;
++             return enabled ? (BLUE + text + RESET) : text;
+          }
+  
+          public String cyan(String text) {
+-             return CYAN + text + RESET;
++             return enabled ? (CYAN + text + RESET) : text;
+          }
+      }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: run-cli.bat</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: undefined
+
+```diff
+@@ -2,4 +2,7 @@
+  setlocal enabledelayedexpansion
+  REM Windows 批处理脚本 - 运行命令行客户端
++ REM 设置 UTF-8 编码
++ chcp 65001 &gt;nul 2&gt;&amp;1
++ 
+  echo Starting PCAgent Chat CLI...
+  echo.
+```
+
+**Chunk 2**
+Lines added: 2, lines removed: 1
+
+```diff
+@@ -32,8 +35,9 @@
+  
+  REM 使用 Java 命令直接运行，避免 Spring Boot 启动问题
++ REM 设置 JVM 参数：UTF-8 编码，禁用 ANSI 检测（如果需要）
+  echo Starting CLI client...
+  echo Connecting to server...
+  echo.
+- java -cp &quot;%CLASSPATH%&quot; com.pcagent.cli.PCAgentChat %*
++ java -Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8 -cp &quot;%CLASSPATH%&quot; com.pcagent.cli.PCAgentChat %*
+  
+  if errorlevel 1 (
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q compile</summary>
+
+```bash
+mvn -q compile
+```
 </details>
 </tool-use>
 
