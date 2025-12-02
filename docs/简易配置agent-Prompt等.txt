@@ -394,6 +394,11 @@ PCAgentService4Session
 逐步往里方
 
 
+写一个小程序，开口一个网页，登录一下，然后抓取界面的接口的xxxa,的cookie和ref两个，然后填到的本地配置文件application.yml中
+
+2025-12-2：
+1、调通主流程，测试用例，跑起来（sys，有开关）
+2、
 
 TODO:
 1、可以先做node，如果匹配度满足，不需要再去匹配（目录也有筛选策略）
@@ -428,6 +433,8 @@ idea： 人的习惯，等等 SpecItemDeviationDegree buildNotFound(orignalSpec,
 
  class Specification 增加字段
     ParameterType type; 默认是 ParameterType.INTEGER
+
+
 
 
 

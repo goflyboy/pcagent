@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Parameter {
     private String code;
+    private String name = ""; // 参数名称
     private ParameterType type = ParameterType.INTEGER; // 参数类型，默认INTEGER
     private String defaultValue; // 建议值
     private Integer sortNo; // 排序号
