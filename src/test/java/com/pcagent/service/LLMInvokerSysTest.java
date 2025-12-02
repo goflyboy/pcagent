@@ -11,7 +11,7 @@ import org.springframework.ai.chat.model.ChatModel;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * LLMInvoker 系统测试类
+ * ConfigReqRecognitionService 系统测试类
  * 使用真实的 ChatModel（不 mock）
  * 参考 BidParserMain 编写
  * 
@@ -24,18 +24,20 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class LLMInvokerSysTest {
 
-    private LLMInvoker llmInvoker;
+    private ConfigReqRecognitionService configReqRecognitionService;
 
     @BeforeEach
     void setUp() {
         // 尝试创建真实的 ChatModel
         ChatModel chatModel = ChatModelBuilder.createIfAvailable();
+        LLMInvoker llmInvoker;
         if (chatModel != null) {
             llmInvoker = new LLMInvoker(chatModel);
         } else {
             // 如果没有可用的 ChatModel，使用无参构造函数（会使用简单解析）
             llmInvoker = new LLMInvoker();
         }
+        configReqRecognitionService = new ConfigReqRecognitionService(llmInvoker);
     }
 
     /**
@@ -55,9 +57,7 @@ class LLMInvokerSysTest {
                 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
                 """;
 
-        String productSerials = "ONU,电脑,服务器,路由器";
-
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         // 验证基本字段不为空
         assertNotNull(result, "ConfigReq不应为null");
@@ -68,6 +68,7 @@ class LLMInvokerSysTest {
         assertTrue(result.getSpecReqItems().size() > 0, "应该至少有一个规格项");
 
         // 验证产品系列在枚举中
+        String productSerials = "ONU,电脑,服务器,路由器";
         assertTrue(
                 productSerials.contains(result.getProductSerial()),
                 "产品系列应该在枚举中: " + result.getProductSerial()
@@ -92,9 +93,7 @@ class LLMInvokerSysTest {
                 2. 内存≥256GB
                 """;
 
-        String productSerials = "ONU,电脑,服务器,路由器";
-
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         assertNotNull(result);
         assertEquals("服务器", result.getProductSerial());
@@ -107,17 +106,17 @@ class LLMInvokerSysTest {
      */
     @Test
     void shouldFallbackToSimpleParserWhenLlmNotAvailable() {
-        // 使用无 ChatModel 的 LLMInvoker
+        // 使用无 ChatModel 的 ConfigReqRecognitionService
         LLMInvoker simpleInvoker = new LLMInvoker();
+        ConfigReqRecognitionService simpleService = new ConfigReqRecognitionService(simpleInvoker);
 
         String userInput = """
                 数据中心服务器 500台
                 1. CPU核心数≥16核
                 2. 内存≥256GB
                 """;
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = simpleInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = simpleService.parseConfigReq(userInput);
 
         // Fallback 应该能解析出基本信息
         assertNotNull(result);

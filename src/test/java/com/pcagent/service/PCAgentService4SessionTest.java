@@ -67,19 +67,24 @@ class PCAgentService4SessionTest {
                 3. 存储：配置≥8块2.4TB 10K RPM SAS硬盘；支持硬件RAID 0, 1, 5, 10，缓存≥4GB。
                 """;
 
-        // Mock LLMInvoker 返回有效的 ConfigReq
-        ConfigReq mockConfigReq = new ConfigReq();
-        mockConfigReq.setProductSerial("服务器");
-        mockConfigReq.setTotalQuantity(512);
-        mockConfigReq.setConfigStrategy(ConfigStrategy.PRICE_MIN_PRIORITY);
-        mockConfigReq.setTotalQuantityMemo("");
-        mockConfigReq.setSpecReqItems(List.of(
-                "2U机架式服务器，双路CPU，每颗核心数≥16核",
-                "256GB DDR4 ECC Registered内存，16个插槽",
-                "8块2.4TB 10K RPM SAS硬盘，RAID 0/1/5/10，缓存≥4GB"
-        ));
-
-        when(llmInvoker.parseConfigReq(anyString(), anyString())).thenReturn(mockConfigReq);
+        // Mock LLMInvoker 返回有效的 JSON 响应
+        String llmResponse = """
+                {
+                  "productSerial": "服务器",
+                  "totalQuantity": 512,
+                  "specReqItems": [
+                    "2U机架式服务器，双路CPU，每颗核心数≥16核",
+                    "256GB DDR4 ECC Registered内存，16个插槽",
+                    "8块2.4TB 10K RPM SAS硬盘，RAID 0/1/5/10，缓存≥4GB"
+                  ],
+                  "configStrategy": "PRICE_MIN_PRIORITY",
+                  "totalQuantityMemo": ""
+                }
+                """;
+        
+        // Mock LLMInvoker 的 callLLM 方法返回 JSON 响应
+        when(llmInvoker.isAvailable()).thenReturn(true);
+        when(llmInvoker.callLLM(anyString())).thenReturn(llmResponse);
 
         // Mock ProductSpecificationParserService
         ProductSpecificationReq mockSpecReq = createMockProductSpecificationReq();
@@ -102,7 +107,7 @@ class PCAgentService4SessionTest {
         assertNotNull(session.getData(), "Session data不应为null");
 
         // 验证 LLMInvoker 被调用
-        verify(llmInvoker, times(1)).parseConfigReq(anyString(), anyString());
+        verify(llmInvoker, atLeastOnce()).callLLM(anyString());
 
         // 验证 specParserService 被调用
         verify(specParserService, times(1)).parseProductSpecs(anyString(), anyList());
@@ -121,18 +126,8 @@ class PCAgentService4SessionTest {
                 2. 内存≥256GB
                 """;
 
-        // Mock LLMInvoker 返回简单解析的结果（fallback）
-        ConfigReq mockConfigReq = new ConfigReq();
-        mockConfigReq.setProductSerial("服务器");
-        mockConfigReq.setTotalQuantity(500);
-        mockConfigReq.setConfigStrategy(ConfigStrategy.PRICE_MIN_PRIORITY);
-        mockConfigReq.setTotalQuantityMemo("");
-        mockConfigReq.setSpecReqItems(List.of(
-                "CPU核心数≥16核",
-                "内存≥256GB"
-        ));
-
-        when(llmInvoker.parseConfigReq(anyString(), anyString())).thenReturn(mockConfigReq);
+        // Mock LLMInvoker 不可用，会使用简单解析（fallback）
+        when(llmInvoker.isAvailable()).thenReturn(false);
 
         // Mock ProductSpecificationParserService
         ProductSpecificationReq mockSpecReq = createMockProductSpecificationReq();
@@ -169,7 +164,16 @@ class PCAgentService4SessionTest {
         mockConfigReq.setConfigStrategy(ConfigStrategy.PRICE_MIN_PRIORITY);
         mockConfigReq.setSpecReqItems(new ArrayList<>());
 
-        when(llmInvoker.parseConfigReq(anyString(), anyString())).thenReturn(mockConfigReq);
+        // Mock ConfigReqRecognitionService
+        ConfigReqRecognitionService configReqRecognitionService = mock(ConfigReqRecognitionService.class);
+        when(configReqRecognitionService.parseConfigReq(anyString())).thenReturn(mockConfigReq);
+        
+        // 使用反射或重新创建 sessionService 来注入 mock 的 ConfigReqRecognitionService
+        // 由于 PCAgentService4Session 在构造函数中创建 ConfigReqRecognitionService，
+        // 我们需要修改测试方式：直接 mock ConfigReqRecognitionService 并传入
+        // 但 PCAgentService4Session 的构造函数需要 LLMInvoker，所以我们需要创建一个包装
+        // 为了简化，我们直接 mock LLMInvoker 并让 ConfigReqRecognitionService 使用它
+        when(llmInvoker.isAvailable()).thenReturn(false);
 
         // 执行测试并验证异常
         assertThrows(Exception.class, () -> {

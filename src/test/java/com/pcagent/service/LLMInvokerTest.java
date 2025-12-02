@@ -15,18 +15,21 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 /**
- * LLMInvoker 测试类
+ * ConfigReqRecognitionService 测试类
+ * 测试配置需求识别服务的解析功能
  * 参考 BidParserTest 编写
  */
 class LLMInvokerTest {
 
     private ChatModel chatModel;
     private LLMInvoker llmInvoker;
+    private ConfigReqRecognitionService configReqRecognitionService;
 
     @BeforeEach
     void setUp() {
         chatModel = mock(ChatModel.class);
         llmInvoker = new LLMInvoker(chatModel);
+        configReqRecognitionService = new ConfigReqRecognitionService(llmInvoker);
     }
 
     /**
@@ -53,9 +56,8 @@ class LLMInvokerTest {
         mockChatModelResponse(llmResponse);
 
         String userInput = sampleInput();
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         assertEquals("服务器", result.getProductSerial());
         assertEquals(512, result.getTotalQuantity());
@@ -77,9 +79,8 @@ class LLMInvokerTest {
         mockChatModelResponse("not a json");
 
         String userInput = sampleInput();
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         // Fallback 应该能解析出基本信息
         assertEquals("服务器", result.getProductSerial());
@@ -111,9 +112,8 @@ class LLMInvokerTest {
         mockChatModelResponse(llmResponse);
 
         String userInput = sampleInput();
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         assertEquals("服务器", result.getProductSerial());
         assertEquals(512, result.getTotalQuantity());
@@ -124,17 +124,17 @@ class LLMInvokerTest {
      */
     @Test
     void shouldUseSimpleParserWhenChatModelNotAvailable() {
-        // 创建没有 ChatModel 的 LLMInvoker
+        // 创建没有 ChatModel 的 ConfigReqRecognitionService
         LLMInvoker simpleInvoker = new LLMInvoker();
+        ConfigReqRecognitionService simpleService = new ConfigReqRecognitionService(simpleInvoker);
 
         String userInput = """
                 数据中心服务器 500台
                 1. CPU核心数≥16核
                 2. 内存≥256GB
                 """;
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = simpleInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = simpleService.parseConfigReq(userInput);
 
         assertNotNull(result);
         assertEquals("服务器", result.getProductSerial());
@@ -162,9 +162,8 @@ class LLMInvokerTest {
         mockChatModelResponse(llmResponse);
 
         String userInput = "需要100台服务器";
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         // 产品系列应该被清空（因为不在枚举中）
         assertEquals("", result.getProductSerial());
@@ -189,9 +188,8 @@ class LLMInvokerTest {
         mockChatModelResponse(llmResponse);
 
         String userInput = "需要服务器";
-        String productSerials = "ONU,电脑,服务器,路由器";
 
-        ConfigReq result = llmInvoker.parseConfigReq(userInput, productSerials);
+        ConfigReq result = configReqRecognitionService.parseConfigReq(userInput);
 
         // 数量应该被设置为1
         assertEquals(1, result.getTotalQuantity());
