@@ -10523,6 +10523,285 @@ Lines added: 4, lines removed: 4
 ---
 
 
+已完成以下工作：
+
+## 完成的工作
+
+### 1. 创建模拟数据文件 (`frontend/src/mockData.js`)
+- 基于 "Agent对话交互UI详细实例" 生成完整的 JSON 模拟数据
+- 包含三个步骤的数据：
+  - `mockSessionStep1`: 配置需求（Step1）
+  - `mockSessionStep2Parse`: 规格解析结果（Step2）
+  - `mockSessionStep2Selection`: 产品选型结果（Step2.5）
+  - `mockSessionStep3`: 参数配置结果（Step3）
+- 创建了 `MockApiService` 类，模拟：
+  - `createSession()`: 创建会话
+  - `subscribeSession()`: 模拟 SSE 事件流
+  - `getSession()`: 获取会话状态
+
+### 2. 修改前端代码 (`frontend/src/App.vue`)
+- 在 header 添加模式切换开关（复选框）
+- 添加 `useMockData` 数据属性（默认 `true`，方便调试）
+- 实现两个发送方法：
+  - `sendMessageWithMock()`: 使用模拟数据
+  - `sendMessageWithReal()`: 使用真实服务
+- 实现两个 SSE 订阅方法：
+  - `startMockEventStream()`: 使用模拟 SSE
+  - `startEventStream()`: 使用真实 SSE
+- 添加 `onModeChange()` 方法，切换模式时清理状态
+
+### 3. 功能特点
+- 可通过页面右上角的开关切换模式
+- 模拟数据按时间顺序推送（1.5s、2.5s、3.5s）
+- 模拟数据完全符合 VO 结构，可直接用于前端渲染
+- 切换模式时会清理当前状态，避免数据混乱
+
+### 使用方法
+1. 默认使用模拟数据模式（右上角显示"模拟数据"）
+2. 点击开关可切换到真实服务模式（显示"真实服务"）
+3. 在模拟数据模式下，发送消息后会按顺序推送三个步骤的数据
+4. 在真实服务模式下，会调用后端 API 获取真实数据
+
+代码已就绪，可直接测试。
+
+---
+
+_**User (2025-12-01 12:26Z)**_
+
+请调通 PCAgentControllerSysTest
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+查看测试文件，了解需要修复的内容：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "class PCAgentController" in "src/test" • 1 match</summary>
+
+Output mode: files_with_matches
+
+
+| File |
+|------|
+| `src/test\java\com\pcagent\controller\PCAgentControllerSysTest.java` |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+测试仍期望返回 `Session`，但 Controller 已改为返回 `SessionVO`。检查 Controller 实现，并更新测试以匹配新的返回类型：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/controller/PCAgentController.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/PCAgentService.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+更新测试以使用 `SessionVO`，并添加等待异步任务完成的逻辑：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/controller/vo/ParameterConfigVO.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: 2
+
+```diff
+@@ -1,6 +1,6 @@
+  package com.pcagent.controller;
+  
+- import com.pcagent.model.ProductConfig;
+- import com.pcagent.model.Session;
++ import com.pcagent.controller.vo.ParameterConfigVO;
++ import com.pcagent.controller.vo.SessionVO;
+  import org.junit.jupiter.api.Test;
+  import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+```
+
+**Chunk 2**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -18,4 +18,5 @@
+  import java.util.HashMap;
+  import java.util.Map;
++ import java.util.concurrent.TimeUnit;
+  
+  import static org.junit.jupiter.api.Assertions.*;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 53, lines removed: 19
+
+```diff
+@@ -61,30 +61,64 @@
+          HttpEntity&lt;Map&lt;String, Object&gt;&gt; entity = new HttpEntity&lt;&gt;(request, headers);
+  
+-         // 执行测试
+-         ResponseEntity&lt;Session&gt; response = restTemplate.exchange(
++         // 执行测试 - 创建会话
++         ResponseEntity&lt;SessionVO&gt; response = restTemplate.exchange(
+                  getBaseUrl() + &quot;/sessions&quot;,
+                  HttpMethod.POST,
+                  entity,
+-                 Session.class
++                 SessionVO.class
+          );
+  
+-         // 验证结果
++         // 验证初始响应
+          assertEquals(HttpStatus.OK, response.getStatusCode());
+-         Session session = response.getBody();
+-         assertNotNull(session, &quot;Session不应为null&quot;);
+-         assertNotNull(session.getSessionId(), &quot;Session ID不应为null&quot;);
+-         assertNotNull(session.getProgress(), &quot;Progress不应为null&quot;);
+-         assertEquals(3, session.getProgress().getCurrent(), &quot;进度应该完成&quot;);
+-         assertEquals(&quot;配置完成&quot;, session.getProgress().getMessage());
+- 
+-         // 验证最终结果是 ProductConfig
+-         assertNotNull(session.getData(), &quot;Session data不应为null&quot;);
+-         assertTrue(session.getData() instanceof ProductConfig, 
+-                 &quot;最终数据应该是 ProductConfig&quot;);
++         SessionVO sessionVO = response.getBody();
++         assertNotNull(sessionVO, &quot;SessionVO不应为null&quot;);
++         assertNotNull(sessionVO.getSessionId(), &quot;Session ID不应为null&quot;);
++         assertNotNull(sessionVO.getProgress(), &quot;Progress不应为null&quot;);
++         
++         String sessionId = sessionVO.getSessionId();
++         
++         // 等待异步任务完成（最多等待60秒）
++         SessionVO finalSessionVO = null;
++         int maxWaitSeconds = 60;
++         int waitIntervalMs = 500;
++         int maxAttempts = maxWaitSeconds * 1000 / waitIntervalMs;
++         
++         for (int i = 0; i &lt; maxAttempts; i++) {
++             Thread.sleep(waitIntervalMs);
++             
++             // 轮询获取最新状态
++             ResponseEntity&lt;SessionVO&gt; statusResponse = restTemplate.exchange(
++                     getBaseUrl() + &quot;/sessions/&quot; + sessionId,
++                     HttpMethod.GET,
++                     null,
++                     SessionVO.class
++             );
++             
++             if (statusResponse.getStatusCode() == HttpStatus.OK) {
++                 finalSessionVO = statusResponse.getBody();
++                 if (finalSessionVO != null &amp;&amp; 
++                     finalSessionVO.getProgress() != null &amp;&amp;
++                     finalSessionVO.getProgress().getCurrent() &gt;= finalSessionVO.getProgress().getTotal()) {
++                     // 任务完成
++                     break;
++                 }
++             }
++         }
++         
++         // 验证最终结果
++         assertNotNull(finalSessionVO, &quot;最终SessionVO不应为null&quot;);
++         assertNotNull(finalSessionVO.getProgress(), &quot;Progress不应为null&quot;);
++         assertEquals(3, finalSessionVO.getProgress().getCurrent(), &quot;进度应该完成&quot;);
++         assertEquals(3, finalSessionVO.getProgress().getTotal(), &quot;总进度应该是3&quot;);
++         
++         // 验证最终结果是 ParameterConfigVO
++         assertNotNull(finalSessionVO.getDisplayData(), &quot;DisplayData不应为null&quot;);
++         assertTrue(finalSessionVO.getDisplayData() instanceof ParameterConfigVO, 
++                 &quot;最终数据应该是 ParameterConfigVO&quot;);
+          
+-         ProductConfig productConfig = (ProductConfig) session.getData();
+-         assertNotNull(productConfig.getProductCode(), &quot;产品代码不应为null&quot;);
+-         assertNotNull(productConfig.getParas(), &quot;参数列表不应为null&quot;);
+-         assertTrue(productConfig.getParas().size() &gt; 0, &quot;应该至少有一个参数&quot;);
++         ParameterConfigVO parameterConfigVO = (ParameterConfigVO) finalSessionVO.getDisplayData();
++         assertNotNull(parameterConfigVO.getProductCode(), &quot;产品代码不应为null&quot;);
++         assertNotNull(parameterConfigVO.getItems(), &quot;参数列表不应为null&quot;);
++         assertTrue(parameterConfigVO.getItems().size() &gt; 0, &quot;应该至少有一个参数&quot;);
+      } 
+  }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **command** • Run command: mvn -q test-compile</summary>
+
+```bash
+mvn -q test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
 
 ---
 
