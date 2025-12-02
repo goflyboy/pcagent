@@ -9,7 +9,6 @@ import com.pcagent.util.Pair;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * 产品选型服务

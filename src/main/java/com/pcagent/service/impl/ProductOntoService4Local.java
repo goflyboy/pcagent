@@ -153,56 +153,8 @@ public class ProductOntoService4Local implements ProductOntoService {
         }
 
         return req;
-    }
-
-    /**
-     * 检查原始规格是否匹配节点规格模板
-     */
-    private boolean matchesSpec(String originalSpec, Specification nodeSpec) {
-        //这里按originalSpec和nodeSpec的":“分割，比较前半部分是否相等
-        String[] originalSpecParts = originalSpec.split(":");
-        String[] nodeSpecParts = nodeSpec.getSpecName().split(":");
-        if (originalSpecParts.length != 2 || nodeSpecParts.length != 2) {
-            return false;
-        }
-        return originalSpecParts[0].equals(nodeSpecParts[0]);      
-    }
-
-    /**
-     * 从原始规格中提取值
-     */
-    private String extractSpecValue(String originalSpec, Specification nodeSpec) {
-        // 简单的提取逻辑，实际应该使用更复杂的解析
-        String specName = nodeSpec.getSpecName();
-        int nameIndex = originalSpec.indexOf(specName);
-        if (nameIndex == -1) {
-            return "";
-        }
-
-        // 尝试提取数值
-        String afterName = originalSpec.substring(nameIndex + specName.length());
-        // 提取操作符和数值
-        if (afterName.contains("≥") || afterName.contains(">=")) {
-            // 提取数值
-            String[] parts = afterName.split("[≥>=]");
-            if (parts.length > 1) {
-                String valuePart = parts[1].trim();
-                // 提取数字
-                String number = valuePart.replaceAll("[^0-9.]", "");
-                return number;
-            }
-        } else if (afterName.contains("=")) {
-            String[] parts = afterName.split("=");
-            if (parts.length > 1) {
-                String valuePart = parts[1].trim();
-                String number = valuePart.replaceAll("[^0-9.-]", "");
-                return number;
-            }
-        }
-
-        return "";
-    }
-
+    } 
+    
     @Override
     public ProductSpecification queryProductSpecification(String productCode) {
         if (data == null || data.getProductSpecifications() == null) {

@@ -77,7 +77,7 @@ class PCAgentService4SessionSysTest {
     void shouldUseRealLlmToGenerateConfig_CompleteFlow() {
         // 准备测试数据
         String userInput = """
-                我有一名高端客户 招商局，需要建立数据中心，要求如下：
+                我有一名高端客户 深圳国资委，需要建立数据中心，要求如下：
                 数据中心服务器 512台
                 1. 形态与处理器：2U机架式服务器；配置≥2颗最新一代Intel® Xeon® Scalable处理器，每颗核心数≥16核。
                 2. 内存：配置≥256GB DDR4 ECC Registered内存，并提供≥16个内存插槽以供扩展。

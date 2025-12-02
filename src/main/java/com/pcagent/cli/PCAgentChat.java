@@ -43,7 +43,7 @@ public class PCAgentChat {
         boolean supportsAnsi = false;
         if (IS_WINDOWS) {
             // Windows: 检查是否在 Windows Terminal 或 Git Bash 中运行
-            String term = System.getenv("TERM");
+            // String term = System.getenv("TERM");
             String wtSession = System.getenv("WT_SESSION");
             String msystem = System.getenv("MSYSTEM"); // Git Bash
             supportsAnsi = (wtSession != null) || // Windows Terminal
