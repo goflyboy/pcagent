@@ -176,8 +176,11 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
+                    <!-- 默认主类为 Spring Boot 应用 -->
                     <mainClass>com.pcagent.PcAgentApplication</mainClass>
                 </configuration>
+                <!-- 可以通过命令行参数覆盖主类 -->
+                <!-- 例如: mvn exec:java -Dexec.mainClass="com.pcagent.cli.PCAgentChat" -->
             </plugin>
         </plugins>
     </build>

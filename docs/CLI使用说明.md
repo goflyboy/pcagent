@@ -18,20 +18,54 @@
 ```bash
 # 确保后端服务已启动（默认端口 8080）
 mvn spring-boot:run
-
-# 在另一个终端运行 CLI 客户端
-mvn exec:java -Dexec.mainClass="com.pcagent.cli.PCAgentChat"
 ```
+```bash
+# 在另一个终端运行 CLI 客户端
+# 推荐使用脚本（会自动处理依赖和类路径）
+# Windows:
+run-cli.bat
+
+# Linux/Mac:
+./run-cli.sh
+```
+
+**重要提示**：如果遇到端口冲突或 Spring Boot 启动错误：
+1. **推荐**：使用提供的脚本 `run-cli.bat` 或 `run-cli.sh`（会自动处理所有依赖）
+2. 或者使用方式三：直接使用 Java 命令运行
+3. **不推荐**：使用 `mvn exec:java`，因为它会加载 Spring Boot 上下文
 
 ### 方式二：指定服务器地址
 
-```bash
-# 通过环境变量指定
-export PCAGENT_BASE_URL=http://localhost:8080/api/v1
-mvn exec:java -Dexec.mainClass="com.pcagent.cli.PCAgentChat"
+使用脚本时，可以通过环境变量指定服务器地址：
 
-# 或通过系统属性指定
-mvn exec:java -Dexec.mainClass="com.pcagent.cli.PCAgentChat" -Dpcagent.base.url=http://localhost:8080/api/v1
+**Windows:**
+```cmd
+set PCAGENT_BASE_URL=http://localhost:8080/api/v1
+run-cli.bat
+```
+
+**Linux/Mac:**
+```bash
+export PCAGENT_BASE_URL=http://localhost:8080/api/v1
+./run-cli.sh
+```
+
+### 方式三：手动使用 Java 命令运行
+
+如果脚本不工作，可以手动运行：
+
+```bash
+# 1. 编译项目
+mvn clean compile
+
+# 2. 复制依赖
+mvn dependency:copy-dependencies -DoutputDirectory=target/dependency
+
+# 3. 运行（Windows）
+java -cp "target/classes;target/dependency/*" com.pcagent.cli.PCAgentChat
+
+# 3. 运行（Linux/Mac）
+java -cp "target/classes:target/dependency/*" com.pcagent.cli.PCAgentChat
 ```
 
 ## 使用说明
