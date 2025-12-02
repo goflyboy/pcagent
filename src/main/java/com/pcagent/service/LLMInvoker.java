@@ -148,17 +148,7 @@ public class LLMInvoker {
             log.error("Failed to call LLM", e);
             throw new RuntimeException("Failed to call LLM", e);
         }
-    }
-
-    /**
-     * 调用 LLM 进行配置检查（公共方法，供其他服务调用）
-     * 
-     * @param prompt 提示词
-     * @return LLM 响应内容
-     */
-    public String callLLMForCheck(String prompt) {
-        return callLLM(prompt);
-    }
+    } 
 
     /**
      * 打印 LLM 请求参数信息（URL、模型、temperature 等）

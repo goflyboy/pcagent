@@ -219,7 +219,7 @@ public class ProductConfigService {
             log.debug("Rendered config check prompt: {}", prompt);
 
             // 调用 LLM
-            String response = llmInvoker.callLLMForCheck(prompt);
+            String response = llmInvoker.callLLM(prompt);
             log.debug("LLM check response: {}", response);
 
             // 解析 JSON 响应
