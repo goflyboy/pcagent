@@ -4,11 +4,11 @@ package com.pcagent.model;
  * 参数类型枚举
  */
 public enum ParameterType {
-    ENUM(0, "EnumType"),
-    BOOLEAN(1, "Boolean"),
-    INTEGER(2, "Integer"),
-    FLOAT(3, "Float"),
-    STRING(5, "String");
+    ENUMINT(5, "5-[Int]"),
+    ENUMSTRING(6, "6-[String]"),
+    INTEGER(0, "0-Int"),
+    FLOAT(1, "1-Float"),
+    STRING(3, "3-String");
 
     private final int code;
     private final String description;

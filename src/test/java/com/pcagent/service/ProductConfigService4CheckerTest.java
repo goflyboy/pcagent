@@ -62,7 +62,7 @@ class ProductConfigService4CheckerTest {
         // 创建参数1：P_Capacity（容量类型）
         Parameter capacityParam = new Parameter();
         capacityParam.setCode("P_Capacity");
-        capacityParam.setType(ParameterType.ENUM);
+        capacityParam.setType(ParameterType.ENUMSTRING);
         capacityParam.setCheckRule("""
                 //自然语言：中国销售，只有10-8GE(8*POE)一个可选择 其他有"10-8GE(8*POE)","20-16GE(16*POE)"两个可选 
                 //配置DSL：

@@ -26,7 +26,7 @@ class ProductConfigService4ParameterIntentTest {
             String parameterJson = """
                 {
                 "code": "CPU_CONFIG",
-                "type": "ENUM",
+                "type": "ENUMINT",
                 "defaultValue": "32核",
                 "sortNo": 1,
                 "options": [

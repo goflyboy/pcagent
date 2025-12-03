@@ -192,7 +192,7 @@
         {
           "code": "CPU_CONFIG",
           "name": "CPU配置",
-          "type": "ENUM",
+          "type": "ENUMINT",
           "defaultValue": "16核",
           "sortNo": 1,
           "options": [
@@ -206,7 +206,7 @@
         {
           "code": "MEM_CONFIG",
           "name": "内存配置",
-          "type": "ENUM",
+          "type": "ENUMINT",
           "defaultValue": "256GB",
           "sortNo": 2,
           "options": [
@@ -235,7 +235,7 @@
         {
           "code": "CPU_CONFIG",
           "name": "CPU配置",
-          "type": "ENUM",
+          "type": "ENUMINT",
           "defaultValue": "32核",
           "sortNo": 1,
           "options": [
@@ -249,7 +249,7 @@
         {
           "code": "MEM_CONFIG",
           "name": "内存配置",
-          "type": "ENUM",
+          "type": "ENUMINT",
           "defaultValue": "512GB",
           "sortNo": 2,
           "options": [
