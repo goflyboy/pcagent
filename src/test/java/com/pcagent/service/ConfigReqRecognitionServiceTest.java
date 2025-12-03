@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * - 后续运行：使用缓存，不调用大模型
  */
 @ExtendWith(LLMCacheTestExtension.class)
-class LLMInvokerSysTest {
+class ConfigReqRecognitionServiceTest {
 
     private ConfigReqRecognitionService configReqRecognitionService;
 
