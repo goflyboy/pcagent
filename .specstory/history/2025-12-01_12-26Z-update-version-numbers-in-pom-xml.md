@@ -20146,3 +20146,649 @@ System.clearProperty("llm.cache.enabled");
 
 ---
 
+_**User (2025-12-02 23:21Z)**_
+
+@PCAgentService4SessionSysTest.java (79) 在方法级设置这个没有生效
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+检查方法级 `@EnableLLMCache` 未生效的原因。查看相关文件：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "**/EnableLLMCache.java" • **1** result in **1** directory</summary>
+
+Directory: **d:\01.code\mygithub\pcagent** (1 file)
+
+| File |
+|------|
+| `src\test\java\com\pcagent\testcore\EnableLLMCache.java` |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "**/LLMCacheTestExtension.java" • **1** result in **1** directory</summary>
+
+Directory: **d:\01.code\mygithub\pcagent** (1 file)
+
+| File |
+|------|
+| `src\test\java\com\pcagent\testcore\LLMCacheTestExtension.java` |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查 `LLMCacheTestExtension` 的实现，并查看测试类的配置：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/testcore/LLMCacheTestExtension.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/testcore/EnableLLMCache.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+问题：
+1. 测试类未使用 `@ExtendWith(LLMCacheTestExtension.class)`
+2. `setUp()` 中直接设置系统属性，覆盖了扩展的设置
+
+修复：添加扩展，并移除 `setUp()` 中的系统属性设置。
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -4,8 +4,10 @@
+  import com.pcagent.service.impl.ProductOntoService4Local;
+  import com.pcagent.testcore.EnableLLMCache;
++ import com.pcagent.testcore.LLMCacheTestExtension;
+  import com.pcagent.util.ChatModelBuilder;
+  import org.junit.jupiter.api.BeforeEach;
+  import org.junit.jupiter.api.Test;
+  import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
++ import org.junit.jupiter.api.extension.ExtendWith;
+  import org.springframework.ai.chat.model.ChatModel;
+  
+```
+
+**Chunk 2**
+Lines added: 5, lines removed: undefined
+
+```diff
+@@ -23,5 +25,10 @@
+   * - QINWEN_API_KEY: 通义千问 API key
+   * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
++  * 
++  * 使用 @EnableLLMCache 注解可以控制缓存行为：
++  * - 类级别：所有测试方法使用相同的缓存设置
++  * - 方法级别：可以覆盖类级别的设置
+   */
++ @ExtendWith(LLMCacheTestExtension.class)
+  class PCAgentService4SessionSysTest {
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: 1
+
+```diff
+@@ -42,5 +42,6 @@
+      @BeforeEach
+      void setUp() {
+-         System.setProperty("llm.cache.enabled", "true");
++         // 注意：不要在这里设置 llm.cache.enabled，应该使用 @EnableLLMCache 注解
++         // LLMCacheTestExtension 会在 beforeEach 中根据注解设置缓存状态
+          // 初始化 ProductOntoService
+          productOntoService = new ProductOntoService4Local();
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/testcore/LLMCacheTestExtension.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+检查并优化 `LLMCacheTestExtension` 的逻辑，确保方法级别注解能正确覆盖类级别设置：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/testcore/LLMCacheTestExtension.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -33,5 +33,5 @@
+          
+          // 检查类级别和方法级别的注解
+-         boolean enableCache = false;
++         Boolean enableCache = null; // 使用 null 表示没有找到注解
+          
+          // 检查类级别的注解
+```
+
+**Chunk 2**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -42,5 +42,5 @@
+          }
+          
+-         // 检查方法级别的注解（方法级别优先级更高）
++         // 检查方法级别的注解（方法级别优先级更高，会覆盖类级别的设置）
+          Method testMethod = context.getRequiredTestMethod();
+          EnableLLMCache methodAnnotation = testMethod.getAnnotation(EnableLLMCache.class);
+```
+
+**Chunk 3**
+Lines added: 4, lines removed: 3
+
+```diff
+@@ -50,8 +50,9 @@
+          
+          // 设置系统属性
+-         if (enableCache) {
+-             System.setProperty("llm.cache.enabled", "true");
++         if (enableCache != null) {
++             // 如果找到了注解（类级别或方法级别），使用注解的值
++             System.setProperty("llm.cache.enabled", String.valueOf(enableCache));
+          } else {
+-             // 如果没有注解，默认不启用缓存
++             // 如果没有找到任何注解，默认不启用缓存
+              System.setProperty("llm.cache.enabled", "false");
+          }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java`
+- `src/test/java/com/pcagent/testcore/LLMCacheTestExtension.java`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q test-compile</summary>
+
+```bash
+mvn -q test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证修复是否正确。编写一个简单的测试验证方法级别注解是否生效：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: src/test/java/com/pcagent/testcore/LLMCacheTestExtensionTest.java</summary>
+
+**Chunk 1**
+Lines added: 84, lines removed: 1
+
+```diff
+@@ -1,1 +1,84 @@
+- 
++ package com.pcagent.testcore;
++ 
++ import com.pcagent.util.LLMCache;
++ import org.junit.jupiter.api.AfterEach;
++ import org.junit.jupiter.api.BeforeEach;
++ import org.junit.jupiter.api.Test;
++ import org.junit.jupiter.api.extension.ExtendWith;
++ 
++ import static org.junit.jupiter.api.Assertions.*;
++ 
++ /**
++  * LLMCacheTestExtension 测试类
++  * 验证扩展是否能正确处理类级别和方法级别的注解
++  */
++ @ExtendWith(LLMCacheTestExtension.class)
++ class LLMCacheTestExtensionTest {
++ 
++     @BeforeEach
++     void setUp() {
++         // 确保测试前清除缓存设置
++         System.clearProperty("llm.cache.enabled");
++     }
++ 
++     @AfterEach
++     void tearDown() {
++         // 测试后清除缓存设置
++         System.clearProperty("llm.cache.enabled");
++     }
++ 
++     /**
++      * 测试：没有注解时，默认不启用缓存
++      */
++     @Test
++     void testNoAnnotation_ShouldDisableCache() {
++         assertFalse(LLMCache.isEnabled(), "没有注解时应该禁用缓存");
++     }
++ 
++     /**
++      * 测试：类级别启用缓存
++      */
++     @Test
++     @EnableLLMCache(true)
++     void testClassLevelEnable_ShouldEnableCache() {
++         assertTrue(LLMCache.isEnabled(), "类级别启用缓存时应该返回 true");
++     }
++ 
++     /**
++      * 测试：类级别禁用缓存
++      */
++     @Test
++     @EnableLLMCache(false)
++     void testClassLevelDisable_ShouldDisableCache() {
++         assertFalse(LLMCache.isEnabled(), "类级别禁用缓存时应该返回 false");
++     }
++ 
++     /**
++      * 测试：方法级别注解覆盖类级别注解
++      */
++     @EnableLLMCache(true) // 类级别启用
++     static class ClassLevelEnabled {
++         @Test
++         @ExtendWith(LLMCacheTestExtension.class)
++         @EnableLLMCache(false) // 方法级别禁用，应该覆盖类级别
++         void testMethodLevelOverride_ShouldDisableCache() {
++             assertFalse(LLMCache.isEnabled(), 
++                 "方法级别的 @EnableLLMCache(false) 应该覆盖类级别的 @EnableLLMCache(true)");
++         }
++     }
++ 
++     /**
++      * 测试：方法级别注解覆盖类级别注解（相反情况）
++      */
++     @EnableLLMCache(false) // 类级别禁用
++     static class ClassLevelDisabled {
++         @Test
++         @ExtendWith(LLMCacheTestExtension.class)
++         @EnableLLMCache(true) // 方法级别启用，应该覆盖类级别
++         void testMethodLevelOverride_ShouldEnableCache() {
++             assertTrue(LLMCache.isEnabled(), 
++                 "方法级别的 @EnableLLMCache(true) 应该覆盖类级别的 @EnableLLMCache(false)");
++         }
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q test -Dtest=LLMCacheTestExtensionTest 2>&1 | head -50</summary>
+
+```bash
+mvn -q test -Dtest=LLMCacheTestExtensionTest 2>&1 | head -50
+```
+
+```
+head : �޷�����head����ʶ��Ϊ cmdlet���������ű��ļ�������г�������ơ��������Ƶ�ƴд���������·������ȷ��·����ȷ��Ȼ��
+����һ�Ρ�
+����λ�� C:\Users\Administrator\AppData\Local\Temp\ps-script-cec6d0cc-5137-4ad4-9f5d-5ec192d42a68.ps1:94 �ַ�: 53
++ mvn -q test -Dtest=LLMCacheTestExtensionTest 2&gt;&amp;1 | head -50
++                                                     ~~~~
+    + CategoryInfo          : ObjectNotFound: (head:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+直接运行测试验证修复：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q test -Dtest=LLMCacheTestExtensionTest</summary>
+
+```bash
+mvn -q test -Dtest=LLMCacheTestExtensionTest
+```
+
+```
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.435 s &lt;&lt;&lt; FAILURE! -- in com.pcagent.testcore.LLMCacheTestExtensionTest
+[ERROR] com.pcagent.testcore.LLMCacheTestExtensionTest.testClassLevelEnable_ShouldEnableCache -- Time elapsed: 0.021 s &lt;&lt;&lt; FAILURE!
+org.opentest4j.AssertionFailedError: �༶�����û���ʱӦ�÷��� true ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at com.pcagent.testcore.LLMCacheTestExtensionTest.testClassLevelEnable_ShouldEnableCache(LLMCacheTestExtensionTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] Failures: 
+[ERROR]   LLMCacheTestExtensionTest.testClassLevelEnable_ShouldEnableCache:44 �༶�����û���ʱӦ�÷��� true ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project pcagent: There are test failures.
+[ERROR] 
+[ERROR] Please refer to D:\01.code\mygithub\pcagent\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -&gt; [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/testcore/LLMCacheTestExtension.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+问题在于测试类的 `@BeforeEach` 在扩展的 `beforeEach` 之后执行，覆盖了扩展的设置。修复测试类：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/testcore/LLMCacheTestExtensionTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 11
+
+```diff
+@@ -16,15 +16,7 @@
+  class LLMCacheTestExtensionTest {
+  
+-     @BeforeEach
+-     void setUp() {
+-         // 确保测试前清除缓存设置
+-         System.clearProperty("llm.cache.enabled");
+-     }
+- 
+-     @AfterEach
+-     void tearDown() {
+-         // 测试后清除缓存设置
+-         System.clearProperty("llm.cache.enabled");
+-     }
++     // 注意：不要在 @BeforeEach 中清除系统属性，因为扩展的 beforeEach 会在 @BeforeEach 之前执行
++     // 如果在这里清除，会覆盖扩展设置的属性
++     // @AfterEach 中也不需要清除，因为扩展的 afterEach 会恢复原始设置
+  
+      /**
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/testcore/LLMCacheTestExtensionTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复内部类的扩展注册问题：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/testcore/LLMCacheTestExtensionTest.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -49,8 +49,8 @@
+       * 测试：方法级别注解覆盖类级别注解
+       */
++     @ExtendWith(LLMCacheTestExtension.class)
+      @EnableLLMCache(true) // 类级别启用
+      static class ClassLevelEnabled {
+          @Test
+-         @ExtendWith(LLMCacheTestExtension.class)
+          @EnableLLMCache(false) // 方法级别禁用，应该覆盖类级别
+          void testMethodLevelOverride_ShouldDisableCache() {
+```
+
+**Chunk 2**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -63,8 +63,8 @@
+       * 测试：方法级别注解覆盖类级别注解（相反情况）
+       */
++     @ExtendWith(LLMCacheTestExtension.class)
+      @EnableLLMCache(false) // 类级别禁用
+      static class ClassLevelDisabled {
+          @Test
+-         @ExtendWith(LLMCacheTestExtension.class)
+          @EnableLLMCache(true) // 方法级别启用，应该覆盖类级别
+          void testMethodLevelOverride_ShouldEnableCache() {
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q test -Dtest=LLMCacheTestExtensionTest</summary>
+
+```bash
+mvn -q test -Dtest=LLMCacheTestExtensionTest
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+测试通过。总结修复内容：
+
+## 修复总结
+
+### 问题原因
+1. 测试类 `PCAgentService4SessionSysTest` 没有使用 `@ExtendWith(LLMCacheTestExtension.class)`，扩展未注册
+2. `setUp()` 方法中直接设置了 `System.setProperty("llm.cache.enabled", "true")`，覆盖了扩展的设置
+
+### 修复内容
+1. 添加了 `@ExtendWith(LLMCacheTestExtension.class)` 注解到测试类
+2. 移除了 `setUp()` 方法中直接设置系统属性的代码
+3. 优化了 `LLMCacheTestExtension` 的逻辑，使用 `Boolean` 类型来区分"没有注解"和"注解值为 false"
+
+### 现在的行为
+- 类级别注解：所有测试方法使用相同的缓存设置
+- 方法级别注解：可以覆盖类级别的设置
+- 执行顺序：
+  1. `LLMCacheTestExtension.beforeEach()` 执行（根据注解设置系统属性）
+  2. `@BeforeEach` 方法执行（不再覆盖系统属性）
+  3. 测试方法执行（使用扩展设置的缓存状态）
+
+### 使用示例
+
+```java
+@ExtendWith(LLMCacheTestExtension.class)
+class MyTest {
+    @Test
+    @EnableLLMCache(false)  // 方法级别禁用缓存
+    void testWithoutCache() {
+        // 这个测试不会使用缓存
+    }
+    
+    @Test
+    @EnableLLMCache(true)  // 方法级别启用缓存
+    void testWithCache() {
+        // 这个测试会使用缓存
+    }
+}
+```
+
+现在方法级别的 `@EnableLLMCache(false)` 注解应该可以正常工作了。
+
+---
+
+_**User (2025-12-02 23:21Z)**_
+
+@PCAgentService4SessionSysTest.java (32)   这个没有生效
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+

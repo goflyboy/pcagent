@@ -2,10 +2,13 @@ package com.pcagent.service;
 
 import com.pcagent.model.*;
 import com.pcagent.service.impl.ProductOntoService4Local;
+import com.pcagent.testcore.EnableLLMCache;
+import com.pcagent.testcore.LLMCacheTestExtension;
 import com.pcagent.util.ChatModelBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.ai.chat.model.ChatModel;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,7 +24,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * 或
  * - QINWEN_API_KEY: 通义千问 API key
  * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
+ * 
+ * 使用 @EnableLLMCache 注解可以控制缓存行为：
+ * - 类级别：所有测试方法使用相同的缓存设置
+ * - 方法级别：可以覆盖类级别的设置
  */
+@ExtendWith(LLMCacheTestExtension.class)
 class PCAgentService4SessionSysTest {
 
     private LLMInvoker llmInvoker;
@@ -32,7 +40,7 @@ class PCAgentService4SessionSysTest {
     private PCAgentService4Session sessionService;
 
     @BeforeEach
-    void setUp() {
+    void setUp() { 
         // 初始化 ProductOntoService
         productOntoService = new ProductOntoService4Local();
         productOntoService.init();
@@ -74,6 +82,7 @@ class PCAgentService4SessionSysTest {
      */
     @Test
     @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
+    @EnableLLMCache(true)
     void shouldUseRealLlmToGenerateConfig_CompleteFlow() {
         // 准备测试数据
         String userInput = """

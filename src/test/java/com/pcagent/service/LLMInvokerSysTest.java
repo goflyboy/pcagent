@@ -2,9 +2,10 @@ package com.pcagent.service;
 
 import com.pcagent.model.ConfigReq;
 import com.pcagent.model.ConfigStrategy;
+import com.pcagent.testcore.EnableLLMCache;
+import com.pcagent.testcore.LLMCacheTestExtension;
 import com.pcagent.util.ChatModelBuilder;
-import com.pcagent.util.EnableLLMCache;
-import com.pcagent.util.LLMCacheTestExtension;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;

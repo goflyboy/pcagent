@@ -1,4 +1,4 @@
-package com.pcagent.util;
+package com.pcagent.testcore;
 
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.AfterEachCallback;
@@ -32,7 +32,7 @@ public class LLMCacheTestExtension implements BeforeEachCallback, AfterEachCallb
                .put(ORIGINAL_CACHE_ENABLED, original);
         
         // 检查类级别和方法级别的注解
-        boolean enableCache = false;
+        Boolean enableCache = null; // 使用 null 表示没有找到注解
         
         // 检查类级别的注解
         EnableLLMCache classAnnotation = context.getRequiredTestClass()
@@ -41,7 +41,7 @@ public class LLMCacheTestExtension implements BeforeEachCallback, AfterEachCallb
             enableCache = classAnnotation.value();
         }
         
-        // 检查方法级别的注解（方法级别优先级更高）
+        // 检查方法级别的注解（方法级别优先级更高，会覆盖类级别的设置）
         Method testMethod = context.getRequiredTestMethod();
         EnableLLMCache methodAnnotation = testMethod.getAnnotation(EnableLLMCache.class);
         if (methodAnnotation != null) {
@@ -49,10 +49,11 @@ public class LLMCacheTestExtension implements BeforeEachCallback, AfterEachCallb
         }
         
         // 设置系统属性
-        if (enableCache) {
-            System.setProperty("llm.cache.enabled", "true");
+        if (enableCache != null) {
+            // 如果找到了注解（类级别或方法级别），使用注解的值
+            System.setProperty("llm.cache.enabled", String.valueOf(enableCache));
         } else {
-            // 如果没有注解，默认不启用缓存
+            // 如果没有找到任何注解，默认不启用缓存
             System.setProperty("llm.cache.enabled", "false");
         }
     }

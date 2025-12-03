@@ -1,4 +1,4 @@
-package com.pcagent.util;
+package com.pcagent.testcore;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

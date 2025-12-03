@@ -21,7 +21,7 @@ LLM 缓存功能用于在开发过程中缓存大模型的输入和输出，减�
 # Maven
 mvn test -Dllm.cache.enabled=true
 
-# 或者在测试类中设置
+ 
 System.setProperty("llm.cache.enabled", "true");
 ```
 
@@ -35,6 +35,8 @@ mvn test
 ### 3. 通过注解启用（推荐用于单元测试）
 
 在测试类或测试方法上使用 `@EnableLLMCache` 注解：
+  注意：不要在测试类setUp这里设置 llm.cache.enabled，应该使用 @EnableLLMCache 注解
+   LLMCacheTestExtension 会在 beforeEach 中根据注解设置缓存状态
 
 ```java
 import com.pcagent.util.EnableLLMCache;
