@@ -1,5 +1,6 @@
 package com.pcagent.service;
 
+import com.pcagent.util.LLMCache;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
@@ -59,6 +60,18 @@ public class LLMInvoker {
         if (chatModel == null) {
             log.warn("ChatModel not available");
             return null;
+        }
+        
+        // 检查是否启用缓存
+        boolean cacheEnabled = LLMCache.isEnabled();
+        
+        // 如果启用缓存，先尝试从缓存中获取
+        if (cacheEnabled) {
+            String cachedResponse = LLMCache.get(prompt);
+            if (cachedResponse != null) {
+                log.info("Using cached LLM response (cache enabled)");
+                return cachedResponse;
+            }
         }
         
         long startTime = System.currentTimeMillis();
@@ -132,6 +145,11 @@ public class LLMInvoker {
                     log.debug("响应内容: {}", content);
                 }
                 log.debug("=== LLM 调用结束 ===");
+            }
+            
+            // 如果启用缓存，保存响应到缓存
+            if (cacheEnabled && content != null && !content.isEmpty()) {
+                LLMCache.put(prompt, content);
             }
             
             return content;

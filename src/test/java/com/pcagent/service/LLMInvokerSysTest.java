@@ -3,9 +3,12 @@ package com.pcagent.service;
 import com.pcagent.model.ConfigReq;
 import com.pcagent.model.ConfigStrategy;
 import com.pcagent.util.ChatModelBuilder;
+import com.pcagent.util.EnableLLMCache;
+import com.pcagent.util.LLMCacheTestExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.ai.chat.model.ChatModel;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,7 +24,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * 或
  * - QINWEN_API_KEY: 通义千问 API key
  * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
+ * 
+ * 使用 @EnableLLMCache 注解可以启用缓存，减少大模型调用次数：
+ * - 第一次运行：调用大模型并缓存结果
+ * - 后续运行：使用缓存，不调用大模型
  */
+@ExtendWith(LLMCacheTestExtension.class)
 class LLMInvokerSysTest {
 
     private ConfigReqRecognitionService configReqRecognitionService;
@@ -45,9 +53,11 @@ class LLMInvokerSysTest {
      * 参考 LLMInvokerTest.shouldUseLlmResponseWhenJsonValid
      * 
      * 注意：此测试需要设置环境变量才能运行
+     * 使用 @EnableLLMCache 启用缓存，第一次运行会调用大模型，后续运行使用缓存
      */
     @Test
     @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
+    @EnableLLMCache
     void shouldUseRealLlmToParseConfigReq() {
         String userInput = """
                 我有一名高端客户，需要建立数据中心，要求如下：
@@ -83,9 +93,11 @@ class LLMInvokerSysTest {
 
     /**
      * 测试使用真实 LLM 解析简单输入
+     * 使用 @EnableLLMCache 启用缓存
      */
     @Test
     @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
+    @EnableLLMCache
     void shouldUseRealLlmToParseSimpleInput() {
         String userInput = """
                 数据中心服务器 500台

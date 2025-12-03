@@ -19001,3 +19001,1148 @@ mvn -q compile test-compile
 
 ---
 
+_**User (2025-12-02 23:21Z)**_
+
+对LLMInvoker做下列改造：为减少开发过程对大模型的使用，减少开发过程等待时间，做下列修改
+
+
+
+1、在本地缓存大模型调用的输入和输出
+
+2、在跑测试用例时，默认情况下，如果本地有缓存，则使用上次的缓存，如果没有则调用大模型
+
+3、在测试类可以显性指定是否启动大模型本地缓存
+
+4、默认是不启用大模型本地缓存调用
+
+
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+实现 LLM 调用缓存机制，减少开发等待时间。查看当前 `LLMInvoker` 的实现：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="codebase_search">
+<details>
+                <summary>Tool use: **codebase_search** • Searched codebase "How are test classes configured with system properties or annotations?" • **15** results</summary>
+            
+| File | Lines |
+|------|-------|
+| `src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java` | L27 |
+| `src/test/java/com/pcagent/service/LLMInvokerSysTest.java` | L26 |
+| `src/test/java/com/pcagent/controller/PCAgentControllerSysTest.java` | L20-78 |
+| `src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java` | L26 |
+| `src/test/java/com/pcagent/service/ProductConfigService4CheckerTest.java` | L26 |
+| `src/test/java/com/pcagent/service/PCAgentService4SessionSysTest.java` | L10-75 |
+| `src/test/java/com/pcagent/service/ProductConfigServiceTest.java` | L45 |
+| `src/test/java/com/pcagent/service/ProductConfigService4ParameterIntentTest.java` | L60 |
+| `src/test/java/com/pcagent/service/PCAgentService4SessionTest.java` | L57 |
+| `src/test/java/com/pcagent/service/LLMInvokerSysTest.java` | L10-49 |
+| `src/test/java/com/pcagent/service/ProductConfigService4CheckerTest.java` | L12-56 |
+| `src/test/java/com/pcagent/service/ProductOntoService4LocalTest.java` | L59 |
+| `src/test/java/com/pcagent/service/ProductSpecificationParserServiceTest.java` | L49 |
+| `pom.xml` | L100-140 |
+| `pom.xml` | L54 |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+实现 LLM 调用缓存机制。创建缓存管理类，并更新 `LLMInvoker`：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: src/main/java/com/pcagent/util/LLMCache.java</summary>
+
+**Chunk 1**
+Lines added: 207, lines removed: 1
+
+```diff
+@@ -1,1 +1,207 @@
+- 
++ package com.pcagent.util;
++ 
++ import com.fasterxml.jackson.databind.ObjectMapper;
++ import lombok.extern.slf4j.Slf4j;
++ 
++ import java.io.File;
++ import java.io.IOException;
++ import java.nio.charset.StandardCharsets;
++ import java.nio.file.Files;
++ import java.nio.file.Path;
++ import java.nio.file.Paths;
++ import java.security.MessageDigest;
++ import java.security.NoSuchAlgorithmException;
++ 
++ /**
++  * LLM 调用缓存管理器
++  * 用于缓存大模型的输入和输出，减少开发过程中的等待时间
++  */
++ @Slf4j
++ public class LLMCache {
++     private static final String CACHE_DIR = ".llm-cache";
++     private static final ObjectMapper objectMapper = new ObjectMapper();
++     
++     /**
++      * 缓存条目
++      */
++     public static class CacheEntry {
++         private String prompt;
++         private String response;
++         private long timestamp;
++         
++         public CacheEntry() {
++         }
++         
++         public CacheEntry(String prompt, String response) {
++             this.prompt = prompt;
++             this.response = response;
++             this.timestamp = System.currentTimeMillis();
++         }
++         
++         public String getPrompt() {
++             return prompt;
++         }
++         
++         public void setPrompt(String prompt) {
++             this.prompt = prompt;
++         }
++         
++         public String getResponse() {
++             return response;
++         }
++         
++         public void setResponse(String response) {
++             this.response = response;
++         }
++         
++         public long getTimestamp() {
++             return timestamp;
++         }
++         
++         public void setTimestamp(long timestamp) {
++             this.timestamp = timestamp;
++         }
++     }
++     
++     /**
++      * 获取缓存目录
++      */
++     private static Path getCacheDir() {
++         String userDir = System.getProperty("user.dir");
++         Path cacheDir = Paths.get(userDir, CACHE_DIR);
++         if (!Files.exists(cacheDir)) {
++             try {
++                 Files.createDirectories(cacheDir);
++                 log.debug("Created cache directory: {}", cacheDir);
++             } catch (IOException e) {
++                 log.warn("Failed to create cache directory: {}", cacheDir, e);
++             }
++         }
++         return cacheDir;
++     }
++     
++     /**
++      * 计算 prompt 的 hash 值
++      */
++     private static String hashPrompt(String prompt) {
++         try {
++             MessageDigest md = MessageDigest.getInstance("SHA-256");
++             byte[] hash = md.digest(prompt.getBytes(StandardCharsets.UTF_8));
++             StringBuilder hexString = new StringBuilder();
++             for (byte b : hash) {
++                 String hex = Integer.toHexString(0xff &amp; b);
++                 if (hex.length() == 1) {
++                     hexString.append('0');
++                 }
++                 hexString.append(hex);
++             }
++             return hexString.toString();
++         } catch (NoSuchAlgorithmException e) {
++             log.error("Failed to hash prompt", e);
++             // 如果 hash 失败，使用简单的文件名（截断）
++             return prompt.substring(0, Math.min(50, prompt.length())).replaceAll("[^a-zA-Z0-9]", "_");
++         }
++     }
++     
++     /**
++      * 获取缓存文件路径
++      */
++     private static Path getCacheFile(String prompt) {
++         String hash = hashPrompt(prompt);
++         return getCacheDir().resolve(hash + ".json");
++     }
++     
++     /**
++      * 从缓存中获取响应
++      * 
++      * @param prompt 提示词
++      * @return 缓存的响应，如果不存在则返回 null
++      */
++     public static String get(String prompt) {
++         if (prompt == null || prompt.trim().isEmpty()) {
++             return null;
++         }
++         
++         Path cacheFile = getCacheFile(prompt);
++         if (!Files.exists(cacheFile)) {
++             return null;
++         }
++         
++         try {
++             String content = Files.readString(cacheFile, StandardCharsets.UTF_8);
++             CacheEntry entry = objectMapper.readValue(content, CacheEntry.class);
++             
++             // 验证 prompt 是否匹配（防止 hash 冲突）
++             if (!entry.getPrompt().equals(prompt)) {
++                 log.warn("Cache entry prompt mismatch, ignoring cache");
++                 return null;
++             }
++             
++             log.debug("Cache hit for prompt hash: {}", hashPrompt(prompt));
++             return entry.getResponse();
++         } catch (IOException e) {
++             log.warn("Failed to read cache file: {}", cacheFile, e);
++             return null;
++         }
++     }
++     
++     /**
++      * 将响应保存到缓存
++      * 
++      * @param prompt 提示词
++      * @param response 响应
++      */
++     public static void put(String prompt, String response) {
++         if (prompt == null || prompt.trim().isEmpty() || response == null) {
++             return;
++         }
++         
++         try {
++             CacheEntry entry = new CacheEntry(prompt, response);
++             Path cacheFile = getCacheFile(prompt);
++             String json = objectMapper.writeValueAsString(entry);
++             Files.writeString(cacheFile, json, StandardCharsets.UTF_8);
++             log.debug("Cached response for prompt hash: {}", hashPrompt(prompt));
++         } catch (IOException e) {
++             log.warn("Failed to write cache file", e);
++         }
++     }
++     
++     /**
++      * 清除所有缓存
++      */
++     public static void clear() {
++         Path cacheDir = getCacheDir();
++         if (Files.exists(cacheDir)) {
++             try {
++                 Files.walk(cacheDir)
++                     .filter(Files::isRegularFile)
++                     .filter(p -&gt; p.toString().endsWith(".json"))
++                     .forEach(p -&gt; {
++                         try {
++                             Files.delete(p);
++                         } catch (IOException e) {
++                             log.warn("Failed to delete cache file: {}", p, e);
++                         }
++                     });
++                 log.info("Cleared all LLM cache files");
++             } catch (IOException e) {
++                 log.error("Failed to clear cache", e);
++             }
++         }
++     }
++     
++     /**
++      * 检查是否启用缓存
++      * 通过系统属性 llm.cache.enabled 控制，默认为 false
++      */
++     public static boolean isEnabled() {
++         String enabled = System.getProperty("llm.cache.enabled");
++         if (enabled == null) {
++             // 检查环境变量
++             enabled = System.getenv("LLM_CACHE_ENABLED");
++         }
++         return "true".equalsIgnoreCase(enabled);
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -1,4 +1,5 @@
+  package com.pcagent.service;
+  
++ import com.pcagent.util.LLMCache;
+  import lombok.extern.slf4j.Slf4j;
+  import org.springframework.ai.chat.model.ChatModel;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+**Chunk 1**
+Lines added: 12, lines removed: undefined
+
+```diff
+@@ -62,4 +62,16 @@
+              return null;
+          }
++         
++         // 检查是否启用缓存
++         boolean cacheEnabled = LLMCache.isEnabled();
++         
++         // 如果启用缓存，先尝试从缓存中获取
++         if (cacheEnabled) {
++             String cachedResponse = LLMCache.get(prompt);
++             if (cachedResponse != null) {
++                 log.info("Using cached LLM response (cache enabled)");
++                 return cachedResponse;
++             }
++         }
+          
+          long startTime = System.currentTimeMillis();
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+**Chunk 1**
+Lines added: 5, lines removed: undefined
+
+```diff
+@@ -147,4 +147,9 @@
+                  log.debug("=== LLM 调用结束 ===");
+              }
++             
++             // 如果启用缓存，保存响应到缓存
++             if (cacheEnabled &amp;&amp; content != null &amp;&amp; !content.isEmpty()) {
++                 LLMCache.put(prompt, content);
++             }
+              
+              return content;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+创建测试注解，让测试类可显式控制缓存：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: src/test/java/com/pcagent/util/EnableLLMCache.java</summary>
+
+**Chunk 1**
+Lines added: 30, lines removed: 1
+
+```diff
+@@ -1,1 +1,30 @@
+- 
++ package com.pcagent.util;
++ 
++ import java.lang.annotation.ElementType;
++ import java.lang.annotation.Retention;
++ import java.lang.annotation.RetentionPolicy;
++ import java.lang.annotation.Target;
++ 
++ /**
++  * 启用 LLM 缓存的注解
++  * 在测试类或测试方法上使用此注解可以启用 LLM 缓存
++  * 
++  * 使用示例：
++  * &lt;pre&gt;
++  * {@code
++  * @EnableLLMCache
++  * class MyTest {
++  *     // 测试方法会使用缓存
++  * }
++  * }
++  * &lt;/pre&gt;
++  */
++ @Target({ElementType.TYPE, ElementType.METHOD})
++ @Retention(RetentionPolicy.RUNTIME)
++ public @interface EnableLLMCache {
++     /**
++      * 是否启用缓存，默认为 true
++      */
++     boolean value() default true;
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: src/test/java/com/pcagent/util/LLMCacheTestExtension.java</summary>
+
+**Chunk 1**
+Lines added: 72, lines removed: 1
+
+```diff
+@@ -1,1 +1,72 @@
+- 
++ package com.pcagent.util;
++ 
++ import org.junit.jupiter.api.extension.BeforeEachCallback;
++ import org.junit.jupiter.api.extension.AfterEachCallback;
++ import org.junit.jupiter.api.extension.ExtensionContext;
++ 
++ import java.lang.reflect.Method;
++ 
++ /**
++  * JUnit 5 扩展，用于在测试中启用/禁用 LLM 缓存
++  * 
++  * 使用方式：
++  * &lt;pre&gt;
++  * {@code
++  * @ExtendWith(LLMCacheTestExtension.class)
++  * @EnableLLMCache
++  * class MyTest {
++  *     // 测试会使用缓存
++  * }
++  * }
++  * &lt;/pre&gt;
++  */
++ public class LLMCacheTestExtension implements BeforeEachCallback, AfterEachCallback {
++     
++     private static final String ORIGINAL_CACHE_ENABLED = "llm.cache.enabled.original";
++     
++     @Override
++     public void beforeEach(ExtensionContext context) throws Exception {
++         // 保存原始的缓存设置
++         String original = System.getProperty("llm.cache.enabled");
++         context.getStore(ExtensionContext.Namespace.create(getClass()))
++                .put(ORIGINAL_CACHE_ENABLED, original);
++         
++         // 检查类级别和方法级别的注解
++         boolean enableCache = false;
++         
++         // 检查类级别的注解
++         EnableLLMCache classAnnotation = context.getRequiredTestClass()
++             .getAnnotation(EnableLLMCache.class);
++         if (classAnnotation != null) {
++             enableCache = classAnnotation.value();
++         }
++         
++         // 检查方法级别的注解（方法级别优先级更高）
++         Method testMethod = context.getRequiredTestMethod();
++         EnableLLMCache methodAnnotation = testMethod.getAnnotation(EnableLLMCache.class);
++         if (methodAnnotation != null) {
++             enableCache = methodAnnotation.value();
++         }
++         
++         // 设置系统属性
++         if (enableCache) {
++             System.setProperty("llm.cache.enabled", "true");
++         } else {
++             // 如果没有注解，默认不启用缓存
++             System.setProperty("llm.cache.enabled", "false");
++         }
++     }
++     
++     @Override
++     public void afterEach(ExtensionContext context) throws Exception {
++         // 恢复原始的缓存设置
++         String original = context.getStore(ExtensionContext.Namespace.create(getClass()))
++                                  .get(ORIGINAL_CACHE_ENABLED, String.class);
++         if (original != null) {
++             System.setProperty("llm.cache.enabled", original);
++         } else {
++             System.clearProperty("llm.cache.enabled");
++         }
++     }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/util/LLMCache.java`
+- `src/main/java/com/pcagent/service/LLMInvoker.java`
+
+Lint results
+
+Lint errors for `src/main/java/com/pcagent/util/LLMCache.java`
+
+
+| Message | Range | Severity |
+|-------|-------|----------|
+| The import java.io.File is never used | 6:8-6:20 | DIAGNOSTIC_SEVERITY_WARNING |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q compile test-compile</summary>
+
+```bash
+mvn -q compile test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+修复未使用的导入，并创建一个示例测试类展示用法：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/main/java/com/pcagent/util/LLMCache.java</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 1
+
+```diff
+@@ -4,5 +4,4 @@
+  import lombok.extern.slf4j.Slf4j;
+  
+- import java.io.File;
+  import java.io.IOException;
+  import java.nio.charset.StandardCharsets;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/test/java/com/pcagent/service/LLMInvokerSysTest.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: docs/LLM缓存使用说明.md</summary>
+
+**Chunk 1**
+Lines added: 179, lines removed: 1
+
+```diff
+@@ -1,1 +1,179 @@
+- 
++ # LLM 缓存使用说明
++ 
++ ## 概述
++ 
++ LLM 缓存功能用于在开发过程中缓存大模型的输入和输出，减少等待时间，提高开发效率。
++ 
++ ## 功能特性
++ 
++ 1. **本地文件缓存**：缓存存储在项目根目录下的 &#96;.llm-cache&#96; 目录中
++ 2. **自动缓存管理**：使用 prompt 的 SHA-256 hash 作为文件名，避免文件名过长
++ 3. **缓存验证**：缓存时会验证 prompt 是否匹配，防止 hash 冲突
++ 4. **默认禁用**：默认情况下不启用缓存，需要显式启用
++ 
++ ## 使用方式
++ 
++ ### 1. 通过系统属性启用（推荐用于测试）
++ 
++ 在运行测试时，通过系统属性启用缓存：
++ 
++ &#96;&#96;&#96;bash
++ # Maven
++ mvn test -Dllm.cache.enabled=true
++ 
++ # 或者在测试类中设置
++ System.setProperty("llm.cache.enabled", "true");
++ &#96;&#96;&#96;
++ 
++ ### 2. 通过环境变量启用
++ 
++ &#96;&#96;&#96;bash
++ export LLM_CACHE_ENABLED=true
++ mvn test
++ &#96;&#96;&#96;
++ 
++ ### 3. 通过注解启用（推荐用于单元测试）
++ 
++ 在测试类或测试方法上使用 &#96;@EnableLLMCache&#96; 注解：
++ 
++ &#96;&#96;&#96;java
++ import com.pcagent.util.EnableLLMCache;
++ import com.pcagent.util.LLMCacheTestExtension;
++ import org.junit.jupiter.api.extension.ExtendWith;
++ 
++ @ExtendWith(LLMCacheTestExtension.class)
++ @EnableLLMCache
++ class MyTest {
++     @Test
++     void testWithCache() {
++         // 这个测试会使用缓存
++         // 如果缓存存在，直接使用缓存
++         // 如果缓存不存在，调用大模型并保存到缓存
++     }
++     
++     @Test
++     @EnableLLMCache(false)  // 方法级别禁用缓存
++     void testWithoutCache() {
++         // 这个测试不使用缓存
++     }
++ }
++ &#96;&#96;&#96;
++ 
++ ## 缓存行为
++ 
++ ### 默认行为（缓存未启用）
++ 
++ - 每次调用都会请求大模型
++ - 不会读取或写入缓存
++ 
++ ### 启用缓存后的行为
++ 
++ 1. **首次调用**：
++    - 检查缓存是否存在
++    - 如果不存在，调用大模型
++    - 将响应保存到缓存
++ 
++ 2. **后续调用**：
++    - 检查缓存是否存在
++    - 如果存在，直接返回缓存内容
++    - 如果不存在，调用大模型并保存到缓存
++ 
++ ## 缓存文件结构
++ 
++ &#96;&#96;&#96;
++ 项目根目录/
++   └── .llm-cache/
++       ├── a1b2c3d4e5f6...json  (prompt hash)
++       ├── f6e5d4c3b2a1...json
++       └── ...
++ &#96;&#96;&#96;
++ 
++ 每个缓存文件包含：
++ &#96;&#96;&#96;json
++ {
++   "prompt": "原始 prompt 内容",
++   "response": "LLM 响应内容",
++   "timestamp": 1234567890123
++ }
++ &#96;&#96;&#96;
++ 
++ ## 清除缓存
++ 
++ ### 手动清除
++ 
++ 删除 &#96;.llm-cache&#96; 目录下的所有文件，或使用代码：
++ 
++ &#96;&#96;&#96;java
++ LLMCache.clear();
++ &#96;&#96;&#96;
++ 
++ ### 自动清除
++ 
++ 缓存文件不会自动过期，需要手动管理。建议在以下情况清除缓存：
++ 
++ - 修改了 prompt 模板
++ - 更新了大模型版本
++ - 需要重新测试大模型响应
++ 
++ ## 注意事项
++ 
++ 1. **缓存目录**：&#96;.llm-cache&#96; 目录应该添加到 &#96;.gitignore&#96; 中，避免提交到版本控制
++ 2. **缓存一致性**：如果修改了 prompt 模板或大模型配置，应该清除相关缓存
++ 3. **测试隔离**：不同测试之间的缓存是共享的，注意测试之间的影响
++ 4. **性能考虑**：缓存可以显著提高测试速度，但要注意缓存的有效性
++ 
++ ## 示例
++ 
++ ### 示例 1：在系统测试中使用缓存
++ 
++ &#96;&#96;&#96;java
++ @ExtendWith(LLMCacheTestExtension.class)
++ @EnableLLMCache
++ @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
++ class LLMInvokerSysTest {
++     @Test
++     void shouldUseCacheWhenAvailable() {
++         // 第一次运行：调用大模型并缓存
++         // 第二次运行：使用缓存，不调用大模型
++         String response = llmInvoker.callLLM("test prompt");
++     }
++ }
++ &#96;&#96;&#96;
++ 
++ ### 示例 2：在测试方法中动态启用缓存
++ 
++ &#96;&#96;&#96;java
++ class MyTest {
++     @Test
++     void testWithDynamicCache() {
++         // 启用缓存
++         System.setProperty("llm.cache.enabled", "true");
++         try {
++             String response = llmInvoker.callLLM("test prompt");
++         } finally {
++             // 恢复设置
++             System.clearProperty("llm.cache.enabled");
++         }
++     }
++ }
++ &#96;&#96;&#96;
++ 
++ ## 故障排除
++ 
++ ### 缓存不生效
++ 
++ 1. 检查是否启用了缓存：&#96;System.getProperty("llm.cache.enabled")&#96; 应该返回 &#96;"true"&#96;
++ 2. 检查缓存目录是否存在：&#96;.llm-cache&#96; 目录应该存在
++ 3. 检查日志：查看是否有缓存命中的日志
++ 
++ ### 缓存文件过多
++ 
++ 定期清理 &#96;.llm-cache&#96; 目录，删除不需要的缓存文件。
++ 
++ ### 缓存内容过期
++ 
++ 如果怀疑缓存内容过期，可以：
++ 1. 删除特定的缓存文件
++ 2. 调用 &#96;LLMCache.clear()&#96; 清除所有缓存
++ 3. 重新运行测试以生成新的缓存
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: .gitignore</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+更新 `.gitignore`，并创建一个示例测试类：
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: .gitignore</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: undefined
+
+```diff
+@@ -40,4 +40,7 @@
+  .env
+  .env.local
++ 
++ # LLM Cache
++ .llm-cache/
+  
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/service/LLMInvokerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: undefined
+
+```diff
+@@ -4,7 +4,10 @@
+  import com.pcagent.model.ConfigStrategy;
+  import com.pcagent.util.ChatModelBuilder;
++ import com.pcagent.util.EnableLLMCache;
++ import com.pcagent.util.LLMCacheTestExtension;
+  import org.junit.jupiter.api.BeforeEach;
+  import org.junit.jupiter.api.Test;
+  import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
++ import org.junit.jupiter.api.extension.ExtendWith;
+  import org.springframework.ai.chat.model.ChatModel;
+  
+```
+
+**Chunk 2**
+Lines added: 5, lines removed: undefined
+
+```diff
+@@ -22,5 +25,10 @@
+   * - QINWEN_API_KEY: 通义千问 API key
+   * - QINWEN_BASE_URL: 通义千问 API base URL (可选，默认: https://dashscope.aliyuncs.com/compatible-mode/v1)
++  * 
++  * 使用 @EnableLLMCache 注解可以启用缓存，减少大模型调用次数：
++  * - 第一次运行：调用大模型并缓存结果
++  * - 后续运行：使用缓存，不调用大模型
+   */
++ @ExtendWith(LLMCacheTestExtension.class)
+  class LLMInvokerSysTest {
+  
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/service/LLMInvokerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -54,7 +54,9 @@
+       * 
+       * 注意：此测试需要设置环境变量才能运行
++      * 使用 @EnableLLMCache 启用缓存，第一次运行会调用大模型，后续运行使用缓存
+       */
+      @Test
+      @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
++     @EnableLLMCache
+      void shouldUseRealLlmToParseConfigReq() {
+          String userInput = """
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: src/test/java/com/pcagent/service/LLMInvokerSysTest.java</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -94,7 +94,9 @@
+      /**
+       * 测试使用真实 LLM 解析简单输入
++      * 使用 @EnableLLMCache 启用缓存
+       */
+      @Test
+      @EnabledIfEnvironmentVariable(named = "DEEPSEEK_API_KEY", matches = ".+")
++     @EnableLLMCache
+      void shouldUseRealLlmToParseSimpleInput() {
+          String userInput = """
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 3 files</summary>
+      
+Lint paths:
+
+- `src/main/java/com/pcagent/util/LLMCache.java`
+- `src/main/java/com/pcagent/service/LLMInvoker.java`
+- `src/test/java/com/pcagent/util`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q compile test-compile</summary>
+
+```bash
+mvn -q compile test-compile
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+验证实现是否符合要求，并创建一个简单的测试示例：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/util/LLMCache.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: src/test/java/com/pcagent/util/LLMCacheTest.java</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mvn -q test -Dtest=LLMCacheTest</summary>
+
+```bash
+mvn -q test -Dtest=LLMCacheTest
+```
+
+```
+2025-12-03 08:04:51.385 [main] DEBUG com.pcagent.util.LLMCache - Created cache directory: D:\01.code\mygithub\pcagent\.llm-cache
+2025-12-03 08:04:51.389 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.479 [main] DEBUG com.pcagent.util.LLMCache - Cached response for prompt hash: cb2fea287ffb357f914bffe2f58c7583bb74a60f3f96f259866c94b77a843a2d
+2025-12-03 08:04:51.516 [main] DEBUG com.pcagent.util.LLMCache - Cache hit for prompt hash: cb2fea287ffb357f914bffe2f58c7583bb74a60f3f96f259866c94b77a843a2d
+2025-12-03 08:04:51.520 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.531 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.533 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.535 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.535 [main] DEBUG com.pcagent.util.LLMCache - Cached response for prompt hash: cb2fea287ffb357f914bffe2f58c7583bb74a60f3f96f259866c94b77a843a2d
+2025-12-03 08:04:51.535 [main] DEBUG com.pcagent.util.LLMCache - Cache hit for prompt hash: cb2fea287ffb357f914bffe2f58c7583bb74a60f3f96f259866c94b77a843a2d
+2025-12-03 08:04:51.535 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.535 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.544 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.545 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.546 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.546 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.553 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.555 [main] DEBUG com.pcagent.util.LLMCache - Cached response for prompt hash: 7e5b8ad56422e58bca8c8272a62ab32bb2721fc72d0a13e765a175c028432069
+2025-12-03 08:04:51.556 [main] DEBUG com.pcagent.util.LLMCache - Cached response for prompt hash: 259a648c7737779497c41b77a45b5f7449eaa5d7f36a96cb92e5341678c54f4c
+2025-12-03 08:04:51.557 [main] DEBUG com.pcagent.util.LLMCache - Cache hit for prompt hash: 7e5b8ad56422e58bca8c8272a62ab32bb2721fc72d0a13e765a175c028432069
+2025-12-03 08:04:51.558 [main] DEBUG com.pcagent.util.LLMCache - Cache hit for prompt hash: 259a648c7737779497c41b77a45b5f7449eaa5d7f36a96cb92e5341678c54f4c
+2025-12-03 08:04:51.560 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.564 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+2025-12-03 08:04:51.566 [main] INFO  com.pcagent.util.LLMCache - Cleared all LLM cache files
+
+```
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+测试通过。总结实现的功能：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: src/main/java/com/pcagent/service/LLMInvoker.java</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] 实现 LLM 调用缓存机制
+- [x] 创建 LLMCache 类管理缓存
+- [x] 在 LLMInvoker 中集成缓存逻辑
+- [x] 创建测试注解和扩展支持
+- [x] 编写使用文档和测试用例
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+## 实现总结
+
+### 1. 本地缓存机制
+- 创建了 `LLMCache` 类管理缓存
+- 缓存存储在项目根目录的 `.llm-cache` 目录
+- 使用 SHA-256 对 prompt 进行 hash，作为缓存文件名
+- 缓存文件为 JSON，包含 prompt、response 和 timestamp
+
+### 2. 测试用例中的缓存行为
+- 启用缓存时：先检查缓存，存在则直接返回；不存在则调用大模型并保存到缓存
+- 默认禁用：`LLMCache.isEnabled()` 默认返回 `false`
+
+### 3. 测试类显式控制缓存
+- 创建了 `@EnableLLMCache` 注解，可在测试类或方法上使用
+- 创建了 `LLMCacheTestExtension` JUnit 5 扩展，自动管理缓存开关
+- 支持系统属性 `llm.cache.enabled` 和环境变量 `LLM_CACHE_ENABLED`
+
+### 4. 默认禁用缓存
+- 默认情况下缓存功能关闭
+- 需要显式启用才会使用缓存
+
+## 使用示例
+
+### 方式 1：使用注解（推荐）
+
+```java
+@ExtendWith(LLMCacheTestExtension.class)
+@EnableLLMCache
+class MyTest {
+    @Test
+    void testWithCache() {
+        // 第一次运行：调用大模型并缓存
+        // 第二次运行：使用缓存，不调用大模型
+    }
+}
+```
+
+### 方式 2：使用系统属性
+
+```bash
+mvn test -Dllm.cache.enabled=true
+```
+
+### 方式 3：在代码中动态启用
+
+```java
+System.setProperty("llm.cache.enabled", "true");
+// ... 测试代码 ...
+System.clearProperty("llm.cache.enabled");
+```
+
+## 文件清单
+
+1. `src/main/java/com/pcagent/util/LLMCache.java` - 缓存管理类
+2. `src/test/java/com/pcagent/util/EnableLLMCache.java` - 缓存启用注解
+3. `src/test/java/com/pcagent/util/LLMCacheTestExtension.java` - JUnit 5 扩展
+4. `src/test/java/com/pcagent/util/LLMCacheTest.java` - 缓存功能测试
+5. `docs/LLM缓存使用说明.md` - 使用文档
+6. `.gitignore` - 已添加 `.llm-cache/` 目录
+
+所有功能已实现并通过测试。代码已编译通过，可以直接使用。
+
+---
+
